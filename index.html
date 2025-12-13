@@ -54,6 +54,38 @@ tr:hover{background:#f1f1f1;cursor:pointer;}
   <button class="btn btn-outline-primary level-btn" data-level="Level 8">Level 8</button>
   <button class="btn btn-outline-primary level-btn" data-level="Level 9">Level 9</button>
 </div>
+<!--Form Date and Examp-->
+<div class="card p-3 mb-3">
+
+    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+
+        <!-- Exam Type -->
+        <div class="d-flex align-items-center">
+            <span class="me-2" style="">សូមជ្រើសរើសប្រភេទប្រឡង៖</span>
+            <select id="examType"
+                    class="form-select"
+                    style="width: 200px; text-align:center; border:1px solid green;border:none">
+                <option value="">--- ជ្រើសរើស ---</option>
+                <option value="ប្រឡងប្រចាំខែ">ប្រឡងប្រចាំខែ</option>
+                <option value="ពាក់កណ្ដាលឆមាស១">ពាក់កណ្ដាលឆមាស១</option>
+                <option value="ឆមាស១">ឆមាស១</option>
+                <option value="ពាក់កណ្ដាលឆមាស២">ពាក់កណ្ដាលឆមាស២</option>
+                <option value="ឆមាស២">ឆមាស២</option>
+            </select>
+        </div>
+
+        <!-- Date -->
+        <div class="d-flex align-items-center">
+            <span class="me-2">សូមជ្រើសកាលបរិច្ឆេទ៖</span>
+            <input type="date" id="date"
+                   class="form-control text-center"
+                   style="width: 160px;border:none" />
+        </div>
+
+    </div>
+
+</div>
+
 
 <!-- ✅ FORM -->
 <div class="card p-3 mb-3">
@@ -112,7 +144,6 @@ tr:hover{background:#f1f1f1;cursor:pointer;}
 <button id="clear" class="btn btn-secondary">Clear</button>
 </div>
 </div>
-
 <!-- ✅ TABLE -->
 <!-- ✅ EXPORT AREA -->
 <div id="exportArea" style="padding:20px">
@@ -122,22 +153,15 @@ tr:hover{background:#f1f1f1;cursor:pointer;}
     <!--<h1><span style="color:green;">AIS</span></h1>
     <h5>American <span>Intercon</span> School</h5>
     <p>A Mengly J. Quach Education School</p>-->
-    <img id="logoPrint" src="logoais.png" width="400" crossorigin="anonymous">
+    <div >
+    <img id="logoPrint" src="logoais.png" width="400">
+    </div>
+  
+      <!-- 👉 ដោយបង្ហាញនៅទីនេះ -->
+<p id="displayInfo" 
+   style="font-weight:bold; color:#000; font-size:16px; margin-top:2px;">
+</p>
 
-
-    <p style=" color:rgb(10, 161, 20)"><span >មេរៀនសម្រាប់មើលត្រៀមប្រឡង​៖</span>
-     <select id="examType" style="border:green;text-align:center;" required>
-  <option value="">-- ជ្រើសរើសប្រភេទ --</option>
-  <option value="សម្រាប់ប្រចាំខែ">សម្រាប់ប្រចាំខែ</option>
-  <option value="ពាក់កណ្ដាលឆមាស១">ពាក់កណ្ដាលឆមាស១</option>
-  <option value="សម្រាប់ឆមាស១">សម្រាប់ឆមាស១</option>
-  <option value="ពាក់កណ្ដាលឆមាស២">ពាក់កណ្ដាលឆមាស២</option>
-  <option value="សម្រាប់ឆមាស២">សម្រាប់ឆមាស២</option>
-</select>
-  <div class=""​ style="margin-top:-15px">
-    <span class="" >កាលបរិច្ឆេទ​៖</span>
-  <input type="date" id="examDate"class="center" style="border:none;font-weight: bold;font-size:20;"/>
-</div>
     </p>
   </div>
 
@@ -518,6 +542,46 @@ $("#title").on("change", function(){
   let page  = pageByTitle[title] || "";
   $("#page").val(page);
 });
+//Create Date KH
+// 🟦 Convert to Khmer date
+// 🟦 Convert to Khmer date with Khmer numbers
+function convertDateToKhmer(dateStr) {
+    const daysKh = ["អាទិត្យ","ចន្ទ","អង្គារ","ពុធ","ព្រហស្បតិ៍","សុក្រ","សៅរ៍"];
+    const monthsKh = ["មករា","កុម្ភៈ","មិនា","មេសា","ឧសភា","មិថុនា","កក្កដា","សីហា",
+                      "កញ្ញា","តុលា","វិច្ឆិកា","ធ្នូ"];
+    const khNum = ['០','១','២','៣','៤','៥','៦','៧','៨','៩'];
+
+    function toKhmerNumber(num){
+        return num.toString().split('').map(d => khNum[d]).join('');
+    }
+
+    let d = new Date(dateStr);
+    let day = daysKh[d.getDay()];
+    let date = toKhmerNumber(d.getDate());
+    let month = monthsKh[d.getMonth()];
+    let year = toKhmerNumber(d.getFullYear());
+
+    return `ថ្ងៃ${day} ទី${date} ខែ${month} ឆ្នាំ${year}`;
+}
+
+
+// 🟨 Event: update preview when user selects both type & date
+function updateDisplay() {
+    let type = document.getElementById("examType").value;
+    let date = document.getElementById("date").value;
+
+    if(type && date){
+        let khDate = convertDateToKhmer(date);
+        document.getElementById("displayInfo").innerHTML =
+            `មេរៀនសម្រាប់មើលត្រៀមប្រឡង​៖ <span style="color:red;padding-bottom:10px;">${type}</span><br>
+             កាលបរិច្ឆេទ៖ <span style="color:red">${khDate}</span>`;
+    }
+}
+
+// 🟨 Listen Events
+document.getElementById("examType").addEventListener("change", updateDisplay);
+document.getElementById("date").addEventListener("change", updateDisplay);
+
 
 
 // ✅ Auto Load Title when Level Change
@@ -706,90 +770,11 @@ $("#clear").click(function(){
   clearForm();       // Clear Form
 });
 
-/* ✅ EXPORT */
-//full excel 
-/*function exportExcel(){
-
-  let list = JSON.parse(localStorage.getItem("aisData")) || [];
-
-  // ✅ Create Header like Logo Area
-  let wsData = [
-    ["AIS"],
-    ["American Intercon School"],
-    ["A Mengly J. Quach Education School"],
-    [""],
-    ["Level", "Title", "Page"]
-  ];
-
-  // ✅ Add table data
-  list.forEach(d => {
-    wsData.push([d.level, d.title, d.page]);
-  });
-
-  let ws = XLSX.utils.aoa_to_sheet(wsData);
-
-  // ✅ Create Workbook
-  let wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "AIS Data");
-
-  // ✅ Export
-  XLSX.writeFile(wb, "AIS_Full_Export.xlsx");
-}*/
-
-function exportExcel(){
- let wb=XLSX.utils.table_to_book(document.getElementById("dataTable"));
- XLSX.writeFile(wb,"AISReviewlesson.xlsx");
-}
-//function export pdf
-/*function exportPDF(){
- const { jsPDF } = window.jspdf;
- let doc=new jsPDF();
- doc.autoTable({ html:"#dataTable" });
- doc.save("AIS.pdf");
-}*/
-function exportPDF(){
-  const { jsPDF } = window.jspdf;
-
-  html2canvas(document.getElementById("exportArea"), {
-    scale: 3,
-    useCORS: true
-  }).then(canvas => {
-
-    let imgData = canvas.toDataURL("image/png");
-    let pdf = new jsPDF("p", "mm", "a4");
-
-    let pageWidth  = pdf.internal.pageSize.getWidth();
-    let imgHeight = canvas.height * pageWidth / canvas.width;
-
-    pdf.addImage(imgData, "PNG", 0, 0, pageWidth, imgHeight);
-    pdf.save("AIS_Full_Export.pdf");
-  });
-}
-
-
-function exportImage(){
-  html2canvas(document.getElementById("exportArea"), {
-    scale: 3,
-    useCORS: true,
-    allowTaint: false
-  }).then(function(canvas){
-
-    let link = document.createElement("a");
-    link.download = "AIS_Table_Review_Lesson.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-
-  }).catch(function(err){
-    alert("Export Photo Failed: " + err);
-  });
-}
-
-
-loadData();
-//validation export pdf
+// ================== VALIDATE BEFORE EXPORT ==================
 function validateExport(){
   let examType = $("#examType").val();
-  let examDate = $("#examDate").val();
+  let examDate = $("#date").val(); 
+  let list = JSON.parse(localStorage.getItem("aisData")) || [];
 
   if(!examType){
     alert("សូមជ្រើសរើសប្រភេទប្រឡងសិន!");
@@ -801,21 +786,110 @@ function validateExport(){
     return false;
   }
 
+  if(!currentLevel){
+    alert("សូមជ្រើស Level ជាមុនសិន!");
+    return false;
+  }
+
+  let hasData = list.some(d => d.level === currentLevel);
+  if(!hasData){
+    alert("សូមជ្រើរើសប្រភេទទិន្នន័យ និង add ឱ្យអស់សិន!");
+    return false;
+  }
+
   return true;
 }
+
+// ================== EXPORT EXCEL ==================
+function exportExcel(){
+  if(!validateExport()) return;
+
+  let list = JSON.parse(localStorage.getItem("aisData")) || [];
+  list = list.filter(d => d.level === currentLevel);
+
+  let wsData = [
+    ["AIS"],
+    ["American Intercon School"],
+    ["A Mengly J. Quach Education School"],
+    [""],
+    ["Exam Type:", $("#examType").val()],
+    ["Date:", $("#date").val()],
+    [""],
+    ["Level", "Title", "Page"]
+  ];
+
+  list.forEach(d => {
+    wsData.push([d.level, d.title, d.page]);
+  });
+
+  let ws = XLSX.utils.aoa_to_sheet(wsData);
+  let wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "AIS Data");
+  XLSX.writeFile(wb, `AIS_${currentLevel}_Export.xlsx`);
+}
+
+// ================== EXPORT PDF ==================
+function exportPDF() {
+  if (!validateExport()) return;
+
+  html2canvas(document.getElementById("exportArea"), {
+    scale: 3,
+    useCORS: true,
+    allowTaint: false
+  }).then(canvas => {
+    let imgData = canvas.toDataURL("image/png");
+
+    const { jsPDF } = window.jspdf;
+    let pdf = new jsPDF("p", "mm", "a4");
+
+    let pageWidth = pdf.internal.pageSize.getWidth();
+    let pageHeight = pdf.internal.pageSize.getHeight();
+
+    let imgWidth = pageWidth;
+    let imgHeight = (canvas.height * pageWidth) / canvas.width;
+
+    let heightLeft = imgHeight;
+    let position = 0;
+
+    while (heightLeft > 0) {
+      pdf.addImage(imgData, "PNG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      if (heightLeft > 0) {
+        pdf.addPage();
+        position = -pageHeight;
+      }
+    }
+
+    pdf.save(`AIS_${currentLevel}_Export.pdf`);
+  }).catch(err => {
+    alert("Export PDF Failed: " + err);
+  });
+}
+
+// ================== EXPORT PHOTO ==================
+function exportImage(){
+  if(!validateExport()) return;
+
+  html2canvas(document.getElementById("exportArea"), {
+    scale: 3,
+    useCORS: true,
+    allowTaint: false
+  }).then(canvas => {
+    let link = document.createElement("a");
+    link.download = `AIS_${currentLevel}_Table.png`;
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  }).catch(err => {
+    alert("Export Photo Failed: " + err);
+  });
+}
+
+
 
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
