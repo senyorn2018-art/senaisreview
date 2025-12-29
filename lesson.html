@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AIS Level Buttons</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+body{
+  background: linear-gradient(to bottom,#7ec8ff,#ffe066);
+  font-family:"Khmer OS Battambang", Arial;
+}
+.main-box{
+  background:#fff;
+  max-width:1000px;
+  margin:40px auto;
+  padding:30px;
+  border-radius:20px;
+}
+.level-btn.active{
+  background:#007bff !important;
+  color:#fff;
+}
+/*summarize Row*/
+/* hide summary by default */
+.summary-row {
+  display: none;
+}
+
+/* summary box base */
+.summary-box{
+  
+  border-left:5px solid #2196f3;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  padding: 10px;
+}
+.summary-box h4{
+  margin:0 0 6px 0;
+  font-size:18px;
+  color:#d32f2f;
+  text-decoration: underline;
+}
+.summary-box ul{
+  margin:0px;
+  padding-left:20px;
+}
+
+.summary-box li{
+  margin-bottom:4px;
+  font-size:16px;
+  line-height:1.5;
+}
+
+
+/* color per level */
+.level-1 { background:#f5f9ff; border-left:6px solid #1e88e5; } /* Soft Blue */
+.level-2 { background:#f6fbf7; border-left:6px solid #43a047; } /* Soft Green */
+.level-3 { background:#fff8f1; border-left:6px solid #fb8c00; } /* Soft Orange */
+.level-4 { background:#fff5f8; border-left:6px solid #d81b60; } /* Soft Pink */
+.level-5 { background:#f8f5ff; border-left:6px solid #5e35b1; } /* Soft Purple */
+.level-6 { background:#f3fbfd; border-left:6px solid #00acc1; } /* Soft Cyan */
+.level-7 { background:#f7fbf3; border-left:6px solid #7cb342; } /* Soft Lime */
+.level-8 { background:#fffdf4; border-left:6px solid #f9a825; } /* Soft Yellow */
+.level-9 { background:#f6f7f9; border-left:6px solid #546e7a; } /* Soft Gray */
+
+/* small animation */
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(-5px);}
+  to {opacity:1; transform:translateY(0);}
+}
+h4{
+  color:red;
+  text-decoration: underline;
+}
+ul li{
+  font-size:20px;
+}
+/* ===== SUMMARY SMOOTH DROP ===== */
+.summary-row{
+  display:none;
+}
+
+.summary-box{
+  
+  border-left:5px solid #0d6efd;
+  border-radius:12px;
+  padding:10px 15px;
+  margin-top:5px;
+  animation: fadeSlide .35s ease;
+  font-size:15px;
+}
+
+@keyframes fadeSlide{
+  from{opacity:0; transform:translateY(-6px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.summary-box h4{
+  margin:0 0 6px 0;
+  font-size:16px;
+  color:#0d6efd;
+}
+
+.summary-box ul{
+  margin:0;
+  padding-left:18px;
+}
+
+.summary-box li{
+  margin-bottom:3px;
+  line-height:1.45;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="main-box">
+  <h3 class="text-center text-primary mb-4">AIS 9 Level Lesson</h3>
+
+  <!-- LEVEL BUTTONS -->
+  <div class="text-center mb-3">
+    <button class="btn btn-outline-primary level-btn" data-level="1">Level 1</button>
+    <button class="btn btn-outline-primary level-btn" data-level="2">Level 2</button>
+    <button class="btn btn-outline-primary level-btn" data-level="3">Level 3</button>
+    <button class="btn btn-outline-primary level-btn" data-level="4">Level 4</button>
+    <button class="btn btn-outline-primary level-btn" data-level="5">Level 5</button>
+    <button class="btn btn-outline-primary level-btn" data-level="6">Level 6</button>
+    <button class="btn btn-outline-primary level-btn" data-level="7">Level 7</button>
+    <button class="btn btn-outline-primary level-btn" data-level="8">Level 8</button>
+    <button class="btn btn-outline-primary level-btn" data-level="9">Level 9</button>
+      <a href="reviewlesson.html" target="_bland" class="btn btn-outline-primary level-btn" data-level="lesson">All lesson</a>
+  </div>
+  <p class="text-center text-muted"></p>
+  <div class="container mt-4">
+    <h4 class="text-center mb-3">Lesson Table (Editable)</h4>
+    <table class="table table-bordered" id="lessonTable">
+      <thead class="thead-light">
+        <tr>
+          <th>Module</th>
+          <th>Task</th>
+          <th>Title</th>
+          <th>Page</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+//local storage summary key
+function getSummaryKey(level,index){
+  return `summary_${level}_${index}`;
+}
+// Lessons per level
+let lessonsLevel = {
+  1: [
+    {
+  module:1,
+  task:1,
+  title:"Dinosaurs and computers",
+  page:8,
+  summary: `
+<ul>
+  <li>ENIAC គឺជាកុំព្យូទ័រដំបូងគេ</li>
+  <li>Abacus ជាឧបករណ៍គណនាបុរាណ</li>
+  <li>Computer ជួយធ្វើការងារលឿន និងត្រឹមត្រូវ</li>
+</ul>
+`
+},
+    {
+      module:1,
+    task:2,
+    title:"They are everywhere",
+    page:10,
+    summary: `
+<ul>
+  <li>Computer </li>
+  <li>Mouse</li>
+  <li>Keyboard</li>
+  <li>Monitor</li>
+  <li>Printer</li>
+  <li>Speaker</li>
+  <li>System Unit</li>
+</ul>
+`
+    },
+    {
+      module:1,
+    task:3,
+    title:"The computer",
+    page:12,
+    summary: `
+<ul>
+  <li>Computer មានឧបករណ៍ជាច្រើនដែលធ្វើការជាមួយគ្នា</li>
+  <li>System Unit គឺជាធុងសម្រាប់ផ្ទុកសមាសធាតុសំខាន់ៗរបស់ Computer</li>
+  <li>Monitor មានតួនាទីសម្រាប់បង្ហាញរូបភាព និងព័ត៌មាន</li>
+  <li>Keyboard ប្រើសម្រាប់ចុចអក្សរ និងលេខ</li>
+  <li>Mouse ប្រើសម្រាប់បញ្ជាសញ្ញាព្រួញ និងចុចជម្រើស</li>
+  <li>Speakers មានតួនាទីសម្រាប់បញ្ចេញសម្លេង</li>
+  <li>Microphone មានតួនាទីសម្រាប់ស្រូបសម្លេង</li>
+  <li>Printer មានតួនាទីសម្រាប់បោះពុម្ពឯកសារ</li>
+</ul>
+`
+    },
+    {
+      module:1,
+    task:4,
+    title:"Click and type",
+    page:14,
+    summary: `
+<ul>
+  <li>Mouse គឺជាឧបករណ៍សម្រាប់បញ្ជាកុំព្យូទ័រ</li>
+  <li>Mouse មានប៊ូតុងសំខាន់ៗ ២</li>
+  <ul>
+    <li>Left Click</li>
+    <li>Right Click</li>
+  </ul>
+</ul>
+`
+    },
+    {
+    module: 2,
+    task: 1,
+    title: "My desktop",
+    page: 22,
+    summary: `
+<ul>
+  <li>Desktop គឺជាផ្ទៃអេក្រង់ដំបូងនៅពេលបើក Computer</li>
+  <li>Icon សំខាន់ៗលើ Desktop មានដូចជា៖</li>
+  <li>This PC</li>
+  <li>Recycle Bin</li>
+  <li>Folder</li>
+  <li>Microsoft Edge</li>
+</ul>
+`
+  },
+  {
+    module: 2,
+    task: 2,
+    title: "Start a program",
+    page: 24,
+    summary: `
+<ul>
+  <li>ប៊ូតុងសម្រាប់គ្រប់គ្រងកម្មវិធី</li>
+  <li>Minimize – ធ្វើឲ្យកម្មវិធីតូចបំផុត</li>
+  <li>Maximize – ធ្វើឲ្យកម្មវិធីធំបំផុត</li>
+  <li>Close – បិទកម្មវិធី</li>
+</ul>
+`
+  },
+  {
+    module: 2,
+    task: 3,
+    title: "Text and pictures",
+    page: 26,
+    summary: `
+<ul>
+  <li>ប្រភេទព័ត៌មានដែល Computer អាចបង្ហាញបាន</li>
+  <li>Sound – សម្លេង</li>
+  <li>Text – អក្សរ</li>
+  <li>Picture – រូបភាព</li>
+  <li>Video – វីដេអូ</li>
+</ul>
+`
+  },
+  {
+    module: 2,
+    task: 4,
+    title: "My workspace",
+    page:28,
+    summary: `
+<ul>
+  <li>ការថែរក្សាកន្លែងធ្វើការ</li>
+  <li>រក្សា Computer និងតុឲ្យស្អាតជានិច្ច</li>
+  <li>ប្រយ័ត្នជានិច្ចជាមួយខ្សែភ្លើង</li>
+</ul>
+`
+  },
+    {
+    module: 3,
+    task: 1,
+    title: "Free drawing",
+    page:34,
+    summary: `
+<ul>
+  <li>Paint គឺជាកម្មវិធីសម្រាប់គូររូប និងផាត់ពណ៌</li>
+  <li>របៀបបើកកម្មវិធី Paint</li>
+  <li>ចុចលើ Window key</li>
+  <li>ចុចលើ Search</li>
+  <li>វាយពាក្យថា Paint</li>
+  <li>ចុចលើកម្មវិធី Paint</li>
+</ul>
+`
+  },
+  {
+    module: 3,
+    task: 2,
+    title: "Make shapes",
+    page: 36,
+    summary: `
+<ul>
+  <li>Shapes ប្រើសម្រាប់គូររូបភាពដែលមានស្រាប់ៗ</li>
+  <li>Fill with color ប្រើសម្រាប់ចាក់ពណ៌ទៅកាន់ Shapes</li>
+  <li>Size ប្រើសម្រាប់ជ្រើសរើសកម្រាស់ទំហំ Shapes</li>
+  <li>Select ប្រើសម្រាប់ចាប់យក shape ណាមួយ</li>
+  <li>Move ប្រើសម្រាប់ប្ដូរទីតាំង shape ដែលបាន select</li>
+  <li>Delete ប្រើសម្រាប់លុប shape ដែលបាន select</li>
+</ul>
+`
+  },
+  {
+    module: 3,
+    task: 3,
+    title: "Copy and Paste",
+    page:42,
+    summary: `
+<ul>
+  <li>Copy a selected shape and paste it</li>
+  <li>Copy គឺជាការចម្លងយកអ្វីដែលយើងបាន select</li>
+  <li>Paste គឺជាការបញ្ចេញយកអ្វីដែលយើងបាន Copy</li>
+</ul>
+`
+  },
+  {
+    module: 3,
+    task: 4,
+    title: "Save My Picture",
+    page:44,
+    summary: `
+<ul>
+  <li>Always save your work</li>
+  <li>Save គឺជាការរក្សាទុកឯកសារ ឬរូបភាព</li>
+  <li>Open គឺជាការបើកឯកសារ ឬរូបភាពដែលបានរក្សាទុក</li>
+  <li>របៀបរក្សាទុករូបភាព</li>
+  <li>ចុច File</li>
+  <li>ចុច Save as</li>
+  <li>សរសេរឈ្មោះរូបភាព</li>
+  <li>ចុច Save</li>
+</ul>
+`
+  },
+    {
+    module: 4,
+    task: 1,
+    title: "The Notepad",
+    page:48,
+    summary: `
+<ul>
+  <li>Notepad គឺជាកម្មវិធីសម្រាប់កត់ត្រា ឬវាយអក្សរ</li>
+  <li>របៀបបើកកម្មវិធី Notepad</li>
+  <li>ចុចលើ Window key</li>
+  <li>វាយពាក្យ Notepad នៅត្រង់ Search</li>
+  <li>ចុចលើកម្មវិធី Notepad</li>
+</ul>
+`
+  },
+  {
+    module: 4,
+    task: 2,
+    title: "Letters and words",
+    page:50,
+    summary: `
+<ul>
+  <li>Spacebar ប្រើសម្រាប់ដកឃ្លា</li>
+  <li>Backspace ប្រើសម្រាប់លុបអក្សរ</li>
+  <li>Enter ប្រើសម្រាប់ចុះបន្ទាត់</li>
+  <li>Caps Lock ប្រើសម្រាប់វាយអក្សរធំ</li>
+</ul>
+`
+  },
+  {
+    module: 4,
+    task: 3,
+    title: "Move Around",
+    page:54,
+    summary: `
+<ul>
+  <li>Arrow keys ប្រើសម្រាប់បញ្ជា Cursor ទៅឆ្វេង ស្ដាំ លើ ក្រោម</li>
+  <li>Delete ប្រើសម្រាប់លុបអក្សរដែលនៅខាងស្ដាំ</li>
+</ul>
+`
+  },
+  {
+    module: 4,
+    task: 4,
+    title: "Select and Change a word",
+    page:56,
+    summary: `
+<ul>
+  <li>Font គឺជាពុម្ពនៃអក្សរ</li>
+  <li>Font Style គឺជាម៉ូតនៃអក្សរ</li>
+  <li>Font Size គឺជាទំហំនៃអក្សរ</li>
+</ul>
+`
+  },
+    {
+    module: 5,
+    task: 1,
+    title: "The Internet",
+    page:62,
+    summary: `
+<ul>
+  <li>Internet គឺជាប្រព័ន្ធសម្រាប់ភ្ជាប់ទំនាក់ទំនងពីកុំព្យូទ័រមួយ ទៅកាន់កុំព្យូទ័រជុំវិញសកលលោក</li>
+  <li>Internet អាចប្រើសម្រាប់ស្វែងរកចំណេះដឹង និងព័ត៌មានផ្សេងៗ</li>
+</ul>
+`
+  },
+  {
+    module: 5,
+    task: 2,
+    title: "Communicate",
+    page:66,
+    summary: `
+<ul>
+  <li>Email ប្រើសម្រាប់ផ្ញើសំបុត្រ ឯកសារ រូបភាព និងវីដេអូ</li>
+  <li>Email អាចប្រើបានលើ កុំព្យូទ័រ ទូរស័ព្ទដៃ និង Tablet</li>
+</ul>
+`
+  },
+  {
+    module: 5,
+    task: 3,
+    title: "Have Fun",
+    page:68,
+    summary: `
+<ul>
+  <li>Microsoft Edge គឺជា Web Browser សម្រាប់បង្ហាញគេហទំព័រនៅលើ Internet</li>
+  <li>របៀបបើក Microsoft Edge</li>
+  <li>ចុចលើ Start menu</li>
+  <li>ចុច All programs</li>
+  <li>ស្វែងរក និងចុច Microsoft Edge</li>
+</ul>
+`
+  },
+  {
+    module: 5,
+    task: 4,
+    title: "Learn",
+    page:70,
+    summary: `
+<ul>
+  <li>Internet អាចប្រើសម្រាប់ស្វែងរកព័ត៌មានអំពី សត្វ ទីកន្លែង និងអ្វីៗផ្សេងទៀត</li>
+  <li>របៀបស្វែងរកព័ត៌មាន</li>
+  <li>បើកកម្មវិធី Google Chrome</li>
+  <li>វាយ www.google.com ហើយចុច Enter</li>
+  <li>វាយពាក្យដែលចង់រក ហើយចុច Enter</li>
+</ul>
+`
+  }
+  ],
+  2: [
+      {
+    module: 1,
+    task: 1,
+    title: "My Computer",
+    page: 8,
+    summary: `
+<ul>
+  <li>Keyboard ប្រើសម្រាប់វាយអក្សរ</li>
+  <li>Mouse ប្រើសម្រាប់បញ្ជាសញ្ញាព្រួញ</li>
+  <li>Monitor មានតួនាទីសម្រាប់បង្ហាញរូបភាព</li>
+  <li>Printer មានតួនាទីសម្រាប់បោះពុម្ពឯកសារ</li>
+  <li>System Unit ជាធុងផ្ទុកសមាសធាតុសំខាន់ៗ</li>
+  <li>Speakers ប្រើសម្រាប់បំពងសម្លេង</li>
+  <li>Microphone ប្រើសម្រាប់ស្រូបសម្លេង</li>
+  <li>Headphones ប្រើសម្រាប់ស្ដាប់សម្លេង</li>
+  <li>Memory Stick ប្រើសម្រាប់ផ្ទុកឯកសារ</li>
+  <li>Webcam ជា Camera ដែលភ្ជាប់ជាមួយកុំព្យូទ័រ</li>
+  <li>Scanner ប្រើសម្រាប់ថតចម្លងឯកសារចូលកុំព្យូទ័រ</li>
+  <li>Camera ប្រើសម្រាប់ថតរូប និងវីដេអូ</li>
+</ul>
+`
+  },
+  {
+    module: 1,
+    task: 2,
+    title: "The Desktop",
+    page: 14,
+    summary: `
+<ul>
+  <li>របៀបប្ដូរ Background Desktop</li>
+  <ul>
+  <li>Right Click លើ Desktop</li>
+  <li>ចុច Personalize</li>
+  <li>ជ្រើសរើសរូបភាព</li>
+  <li>ចុច Close</li>
+  </ul>
+</ul>
+`
+  },
+  {
+    module: 1,
+    task: 3,
+    title: "Mouse and Keyboard",
+    page: 18,
+    summary: `
+<ul>
+  <li>ប្រភេទ Mouse Cursor</li>
+  <ul><li>Normal Select</li>
+    <li>Move</li>
+    <li>Text Select</li>
+    <li>Link Select</li>
+    <li>Busy</li>
+  </ul>
+</ul>
+`
+  },
+  {
+    module: 1,
+    task: 4,
+    title: "My Workspace",
+    page: 20,
+    summary: `
+<ul>
+  <li>ការថែរក្សាកន្លែងធ្វើការ</li>
+  <li>រក្សា Computer និងតុឲ្យស្អាតជានិច្ច</li>
+  <li>ប្រយ័ត្នជានិច្ចជាមួយខ្សែភ្លើង</li>
+</ul>
+`
+  },
+    {
+    module: 2,
+    task: 1,
+    title: "Start typing",
+    page: 24,
+    summary: `
+<ul>
+  <li>របៀបបើកកម្មវិធី WordPad</li>
+  <ul><li>ចុច Start Menu</li>
+  <li>ចូល Search</li>
+  <li>វាយពាក្យ WordPad</li>
+  <li>ចុចបើក WordPad</li>
+</ul>
+  <li>Ctrl + A ប្រើសម្រាប់ Select អក្សរទាំងអស់</li>
+  <li>Double-click ប្រើសម្រាប់ Select អក្សរមួយពាក្យ</li>
+  <li>Cut ប្រើសម្រាប់កាត់យកអក្សរ ឬរូបភាព</li>
+  <li>Copy ប្រើសម្រាប់ចម្លងអក្សរ ឬរូបភាព</li>
+  <li>Paste ប្រើសម្រាប់បញ្ចេញអ្វីដែលបាន Copy</li>
+</ul>
+`
+  },
+  {
+    module: 2,
+    task: 2,
+    title: "Change the font",
+    page: 32,
+    summary: `
+<ul>
+  <li>របៀបប្ដូ Font អក្សរ</li>
+    <ul><li>Select លើពាក្យ ឬអក្សរ</li>
+      <li>ចុច Font ហើយជ្រើស Font</li>
+    </ul>
+      <li>របៀបប្ដូ Font Size</li>
+      <ul>
+      <li>Select អក្សរ → Font Size → ជ្រើសទំហំ</li>
+      <li>របៀបប្ដូពណ៌អក្សរ</li>
+      <li>Select អក្សរ → Font Color → ជ្រើសពណ៌</li>
+      </ul>
+    </ul>
+</ul>
+`
+  },
+  {
+    module: 2,
+    task: 3,
+    title: "Insert pictures",
+    page: 36,
+    summary: `
+<ul>
+  <li>របៀប Insert Picture ក្នុង WordPad</li>
+  <ul>
+    <li>ចុច Picture</li>
+    <li>ជ្រើសរើសរូបភាព</li>
+    <li>ចុច Open</li>
+  </ul>
+</ul>
+`
+  },
+  {
+    module: 2,
+    task: 4,
+    title: "Save and print",
+    page: 40,
+    summary: `
+<ul>
+  <li>Save ប្រើសម្រាប់រក្សាទុកឯកសារ</li>
+  <ul>
+  <li>ចុច File → Save ឬ Save as</li>
+  <li>សរសេរឈ្មោះឯកសារ</li>
+  <li>ចុច Save</li>
+  </ul>
+  <li>Print ប្រើសម្រាប់បោះពុម្ពឯកសារ</li>
+  
+  <ul>
+    <li>របៀប Print ឯកសារ</li>
+    <ul>
+    <li>ចុច File → Print → Print</li>
+    </ul>
+  </ul>
+</ul>
+`
+  },
+    {
+    module: 3,
+    task: 1,
+    title: "How to surf",
+    page: 44,
+    summary: `
+<ul>
+  <li>ប្រើ Web surfing rules ដើម្បីការពារខ្លួនឯង</li>
+  <li>Nickname គឺជាឈ្មោះហៅក្រៅ (ឈ្មោះទីពីរ)</li>
+  <li>ប្រើកម្មវិធីកម្ចាត់មេរោគ ដើម្បីការពារកុំព្យូទ័រ</li>
+  <li>មិនត្រូវដោត Memory Stick ឬ Flash Drive ផ្ដេសផ្ដាស</li>
+</ul>
+`
+  },
+  {
+    module: 3,
+    task: 2,
+    title: "The web page",
+    page: 46,
+    summary: `
+<ul>
+  <li>Scroll up and down ប្រើសម្រាប់រំកិលឡើង និងចុះ</li>
+  <li>Hyperlinks ប្រើសម្រាប់ចុចទៅកាន់ Website ផ្សេង</li>
+  <li>របៀបចូលមើល Web page</li>
+  <li>បើក Microsoft Edge</li>
+  <ul><li>វាយ www.google.com</li>
+  <li>វាយពាក្យដែលចង់រក</li>
+  <li>ចុច Search</li>
+  <li>ចុច Link ដែលចង់មើល</li></ul>
+</ul>
+`
+  },
+  {
+    module: 3,
+    task: 3,
+    title: "Educational games",
+    page: 48,
+    summary: `
+<ul>
+  <li>ស្វែងរក Educational Games នៅ dkidsnet.com</li>
+  <ul><li>បើក Microsoft Edge</li>
+  <li>វាយ dkidsnet.com</li>
+  <li>ចុច Online Games</li>
+  <li>ជ្រើសរើស Game ដែលចង់លេង</li>
+  </ul>
+</ul>
+`
+  },
+  {
+    module: 3,
+    task: 4,
+    title: "Copy from the web",
+    page: 50,
+    summary: `
+<ul>
+  <li>របៀប Copy អក្សរពី Web page</li>
+  <ul><li>Select លើអក្សរ → Right Click → Copy</li>
+  <li>Paste ទៅក្នុងកម្មវិធី WordPad</li>
+  </ul>
+  <li>របៀប Save រូបភាពពី Web page</li>
+  <ul>
+  <li>Right Click លើរូបភាព → Save Image as</li>
+  <li>ជ្រើសទីតាំង → ដាក់ឈ្មោះ → Save</li>
+  </ul>
+</ul>
+`
+  },
+     {
+    module: 4,
+    task: 1,
+    title: "My email",
+    page: 54,
+    summary: `
+<ul>
+  <li>Email គឺជាសារឬសំបុត្រអេឡិចត្រូនិច</li>
+  <li>និមិត្តសញ្ញារបស់ Email គឺ @</li>
+  <li>ផ្ញើ Email បានលឿន និងចំណេញពេលវេលា</li>
+  <li>អាចផ្ញើម្ដងបានច្រើននាក់</li>
+  <li>អាចផ្ញើ File ច្រើនប្រភេទ (រូបភាព, MP3, MP4, Text)</li>
+  <li>អាចផ្ញើបានគ្រប់ទីកន្លែង</li>
+</ul>
+`
+  },
+  {
+    module: 4,
+    task: 2,
+    title: "Send a message",
+    page: 56,
+    summary: `
+<ul>
+  <li>របៀបផ្ញើ Message</li>
+  <li>បំពេញឈ្មោះ Email</li>
+  <li>បំពេញ Subject</li>
+  <li>ចុច Send</li>
+</ul>
+`
+  },
+  {
+    module: 4,
+    task: 3,
+    title: "Read and reply",
+    page: 60,
+    summary: `
+<ul>
+  <li>Reply Message ប្រើសម្រាប់ឆ្លើយតបសារ</li>
+  <li>Delete Message ប្រើសម្រាប់លុបសារ</li>
+</ul>
+`
+  },
+    {
+    module: 5,
+    task: 1,
+    title: "LOGO and the turtle",
+    page: 66,
+    summary: `
+<ul>
+  <li>Computer Language គឺជាភាសាសម្រាប់បញ្ជាកុំព្យូទ័រ</li>
+  <li>Commands គឺជាការបញ្ជាទៅកាន់ប្រព័ន្ធកុំព្យូទ័រ</li>
+</ul>
+`
+  },
+  {
+    module: 5,
+    task: 2,
+    title: "Move the turtle",
+    page: 68,
+    summary: `
+<ul>
+  <li>របៀបបើកកម្មវិធី FMSLogo</li>
+  <li>វាយ FMSLogo ក្នុង Search</li>
+  <li>ចុចលើកម្មវិធី FMSLogo</li>
+  <li>Commands សម្រាប់បញ្ជា Turtle</li>
+  <li>fd – ឆ្ពោះទៅមុខ</li>
+  <li>bk – ត្រឡប់ក្រោយ</li>
+  <li>rt – បត់ស្តាំ</li>
+  <li>lt – បត់ឆ្វេង</li>
+  <li>pd – ដាក់បន្ទាត់</li>
+  <li>pu – ដកបន្ទាត់</li>
+  <li>cs – សម្អាតផ្ទៃគំនូរ</li>
+</ul>
+`
+  },
+  {
+    module: 5,
+    task: 3,
+    title: "Draw a shape",
+    page: 72,
+    summary: `
+<ul>
+  <li>គូរត្រីកោណ (Triangle)</li>
+  <li>repeat 3 [fd 100 rt 120]</li>
+  <li>គូរការេ (Square)</li>
+  <li>repeat 4 [fd 100 rt 90]</li>
+  <li>គូរប្រាំមុំ (Hexagon)</li>
+  <li>repeat 6 [fd 100 rt 60]</li>
+  <li>គូរវង់មូល (Circle)</li>
+  <li>repeat 360 [fd 1 rt 1]</li>
+  <li>គូរផ្ទះ (Draw a house)</li>
+</ul>
+`
+  },
+  {
+    module: 5,
+    task: 4,
+    title: "Let's have fun!",
+    page: 76,
+    summary: `
+<ul>
+  <li>គូរដើមឈើ (Draw a tree)</li>
+  <li>pd</li>
+  <li>lt 135 → fd 50</li>
+  <li>repeat 2 [lt 135 fd 20 rt 135 fd 50]</li>
+  <li>lt 135 → fd 130</li>
+  <li>repeat 2 [lt 135 fd 50 rt 135 fd 20]</li>
+  <li>lt 135 → fd 50</li>
+</ul>
+`
+  },
+  ],
+  //Level 3
+  //Module 1
+  3: [
+  {
+  module: 1,
+  task: 1,
+  title: "Store",
+  page: 8,
+  summary: `
+<ul>
+  <li>កុំព្យូទ័ររក្សាទុកឯកសារនៅក្នុង Internal Hard Disk ដែលហៅថា Drive (C:) ឬ (D:)</li>
+  <li>បើ Drive ពេញ អាចប្រើ External Hard Disk បន្ថែម</li>
+  <li>Hard Disk មាន ២ ប្រភេទ គឺ Internal Hard Disk និង External Hard Disk</li>
+  <li>Memory Card ប្រើសម្រាប់រក្សាទុកឯកសារនៅលើ Smartphone និង Camera</li>
+  <li>USB Flash (Memory Stick) ប្រើសម្រាប់ផ្ទេរឯកសារពីកុំព្យូទ័រមួយទៅមួយទៀតបានលឿន</li>
+</ul>
+`
+},
+{
+  module: 1,
+  task: 2,
+  title: "Print",
+  page: 11,
+  summary: `
+<ul>
+  <li>Printer គឺជាម៉ាស៊ីនសម្រាប់បោះពុម្ពឯកសារ</li>
+  <li>Inkjet Printer ប្រើទឹកថ្នាំ តម្លៃធូរថ្លៃ និងបោះពុម្ពរូបភាពបានច្បាស់</li>
+  <li>Laser Printer ប្រើម្សៅ តម្លៃថ្លៃ បោះពុម្ពលឿន និងមានគុណភាពល្អ</li>
+  <li>Thermal Printer ប្រើសម្រាប់បោះពុម្ពវិក្កយបត្រ តាមផ្សារទំនើប</li>
+  <li>Dot Matrix ជាម៉ាស៊ីនសេរីចាស់ បោះពុម្ពបានច្រើន ប៉ុន្តែគុណភាពអន់</li>
+  <li>Plotter ជាម៉ាស៊ីនខ្នាតធំ សម្រាប់បោះពុម្ពស្លាកយីហោធំៗ</li>
+</ul>
+`
+},
+{
+  module: 1,
+  task: 3,
+  title: "Capture",
+  page: 14,
+  summary: `
+<ul>
+  <li>Capture Device ជាឧបករណ៍សម្រាប់ថតសំឡេង រូបភាព និងវីដេអូ</li>
+  <li>Microphone ប្រើសម្រាប់ស្រូបសំឡេង</li>
+  <li>Webcam ប្រើសម្រាប់ថតរូបភាព ឬវីដេអូ ដោយភ្ជាប់ជាមួយកុំព្យូទ័រ</li>
+  <li>Camera ប្រើសម្រាប់ថតរូបភាព ឬវីដេអូ ដោយមិនចាំបាច់ភ្ជាប់កុំព្យូទ័រ</li>
+  <li>Digital Camera ថតបានតែរូបភាព មិនអាចថតវីដេអូបាន</li>
+  <li>Video Camera ថតបានតែវីដេអូ មិនអាចថតរូបភាពបាន</li>
+</ul>
+`
+},
+{
+  module: 1,
+  task: 4,
+  title: "Interact",
+  page: 18,
+  summary: `
+<ul>
+  <li>Interact Devices ជាឧបករណ៍សម្រាប់បញ្ជាគ្រឿងអេឡិចត្រូនិច</li>
+  <li>Mouse ប្រើសម្រាប់បញ្ជាសញ្ញាព្រួញ</li>
+  <li>Touchpad ប្រើសម្រាប់បញ្ជាដោយម្រាមដៃ</li>
+  <li>Touchscreen ប្រើសម្រាប់ប៉ះ និងបញ្ជានៅលើ Monitor ផ្ទាល់</li>
+  <li>Graphic Tablet ឬ Digitizer ប្រើសម្រាប់រចនា និងគូររូបភាពលើកុំព្យូទ័រ</li>
+</ul>
+`
+},
+//Module 2
+  {
+  module: 2,
+  task: 1,
+  title: "What is a file?",
+  page: 27,
+  summary: `
+<ul>
+  <li>កុំព្យូទ័រ គឺជាឃ្លាំងធំសម្រាប់រក្សាទុកទិន្នន័យ ដែលគេហៅថា Files</li>
+  <li>File គឺជាឯកសារដែលបង្កើតឡើងដោយកុំព្យូទ័រ</li>
+  <li>File មាន Icon, File name និង Extension</li>
+  <li>Icon គឺជារូបតំណាងរបស់ឯកសារ</li>
+  <li>File name គឺជាឈ្មោះរបស់ឯកសារ</li>
+  <li>Extension គឺជាពាក្យបន្ថែមនៅចុងឈ្មោះឯកសារ</li>
+  <li>Right-Click លើ File អាច Open, Delete, Copy និងមើល Properties</li>
+</ul>
+`
+},
+{
+  module: 2,
+  task: 2,
+  title: "Organize my folder",
+  page: 31,
+  summary: `
+<ul>
+  <li>Folder គឺជាប្រអប់សម្រាប់ដាក់ឯកសារ</li>
+  <li>បង្កើត Folder ដោយ Right-Click → New → Folder</li>
+  <li>Subfolder គឺជា Folder ដែលស្ថិតនៅខាងក្នុង Folder មេ</li>
+  <li>Open មានន័យថា បើក</li>
+  <li>Delete មានន័យថា លុប</li>
+  <li>Cut មានន័យថា កាត់ និងប្តូរទីតាំង</li>
+  <li>Copy មានន័យថា ចម្លង</li>
+  <li>Send to មានន័យថា បញ្ជូនទៅទីតាំងផ្សេង</li>
+</ul>
+`
+},
+{
+  module: 2,
+  task: 3,
+  title: "Search and find",
+  page: 35,
+  summary: `
+<ul>
+  <li>Search ប្រើសម្រាប់ស្វែងរក File និង Folder នៅក្នុង Computer</li>
+  <li>ចុច Windows Explorer ឬ Windows Button</li>
+  <li>វាយឈ្មោះ File ឬ Folder ដែលចង់រក</li>
+  <li>Double-Click ដើម្បីបើក File ឬ Folder</li>
+  <li>Windows Key + E ប្រើសម្រាប់បើក Windows Explorer បានលឿន</li>
+</ul>
+`
+},
+{
+  module: 2,
+  task: 4,
+  title: "Start a program",
+  page: 38,
+  summary: `
+<ul>
+  <li>ចុច Windows Key ដើម្បីបើក Start Menu</li>
+  <li>Scroll រកកម្មវិធី Calculator</li>
+  <li>Click លើ Calculator ដើម្បីបើកកម្មវិធី</li>
+  <li>កម្មវិធីនៅលើ Computer ដូចជា Calculator, Paint និង WordPad</li>
+</ul>
+`
+},
+//Module 3
+  {
+  module: 3,
+  task: 1,
+  title: "Work with text",
+  page: 45,
+  summary: `
+  <ul>
+    <li>Text Highlight color: ប្រើសម្រាប់ពណ៌ផ្ទៃរបស់អក្សរឬអត្ថបទ</li>
+    <li>Bold: ប្រើសម្រាប់ធ្វើឲ្យអក្សរដិត</li>
+    <li>Italic: ប្រើសម្រាប់ធ្វើអក្សរទ្រេត</li>
+    <li>Underline: ប្រើសម្រាប់គូសបន្ទាត់ពីក្រោម</li>
+    <li>Undo: ប្រើសម្រាប់ហៅអ្វីដែលយើងបានធ្វើមុន ឲ្យមកដូចដើមវិញ</li>
+    <li>Find: ប្រើសម្រាប់ស្វែងរកអក្សរឬពាក្យនៅក្នុង Microsoft Word</li>
+    <li>Zoom in: ប្រើសម្រាប់ពង្រីកសន្លឹកកិច្ចការឲ្យធំ</li>
+    <li>Zoom Out: ប្រើសម្រាប់បង្រួមសន្លឹកកិច្ចការឲ្យតូច</li>
+  </ul>
+  `
+},
+
+{
+  module: 3,
+  task: 2,
+  title: "Give a title",
+  page: 48,
+  summary: `
+  <ul>
+    <li>Font: ប្រើសម្រាប់ប្ដូរម៉ូតអក្សរ</li>
+    <li>Font Size: ប្រើសម្រាប់ប្ដូរទំហំអក្សរ</li>
+    <li>Alignment Left: ប្រើសម្រាប់តម្រឹមខាងឆ្វេង</li>
+    <li>Alignment Center: ប្រើសម្រាប់តម្រឹមកណ្ដាល</li>
+    <li>Alignment Right: ប្រើសម្រាប់តម្រឹមខាងស្ដាំ</li>
+    <li>Alignment Justify: ប្រើសម្រាប់តម្រឹមសងខាង</li>
+  </ul>
+  `
+},
+
+{
+  module: 3,
+  task: 3,
+  title: "Make a list",
+  page: 50,
+  summary: `
+  <ul>
+    <li>Bullet: គឺជាការដាក់ចំនុចរៀងគ្នា</li>
+    <li>Numbering: គឺជាការដាក់លេខរៀង</li>
+    <li>Symbol: គឺជាការដាក់តួអក្សរពិសេស</li>
+    <li>ដើម្បីបញ្ចប់ការដាក់លេខរៀង ឬចំនុច ត្រូវចុច Enter Key ពីរដង</li>
+    <li>ដើម្បីលុបលេខរៀង ឬចំនុច និងតួអក្សរពិសេស ត្រូវចុច Backspace Key</li>
+  </ul>
+  `
+},
+
+{
+  module: 3,
+  task: 4,
+  title: "Check and save",
+  page: 52,
+  summary: `
+  <ul>
+    <li>Spelling & Grammar: ប្រើសម្រាប់ពិនិត្យពាក្យ ត្រូវឬខុស (ប្រើបានពាក្យ English)</li>
+    <li>F7 Key: ប្រើសម្រាប់បើកផ្ទាំង Spelling and Grammar</li>
+    <li>Ignore Once: រំលងពាក្យខុសមួយ ដោយមិនចាំបាច់កែ</li>
+    <li>Ignore All: រំលងពាក្យខុសទាំងអស់ ដោយមិនចាំបាច់កែ</li>
+    <li>Save As: ប្រើសម្រាប់រក្សាទុកឯកសារ និងផ្លាស់ប្ដូទីតាំងបាន</li>
+  </ul>
+  `
+},
+//Module 4
+{
+  module: 4,
+  task: 1,
+  title: "Search for anything",
+  page: 59,
+  summary: `
+  <ul>
+    <li>Internet: គឺបណ្ណាល័យដ៏ធំមួយ ដែលអាចប្រើសម្រាប់ស្វែងរកព័ត៌មាន</li>
+    <li>Browser: គឺកម្មវិធីសម្រាប់បើក Internet ដូចជា Fire Fox, Safari, Opera, Chrome, Internet Explorer</li>
+    <li>Web address: គឺត្រូវបានគេហៅថា Uniform Resource Locator (URL)</li>
+    <li>Search Engine ដែលគេនិយមប្រើប្រាស់ជាងបំផុតគឺ:</li>
+    <li>www.google.com</li>
+    <li>www.bing.com</li>
+  </ul>
+  `
+},
+
+{
+  module: 4,
+  task: 2,
+  title: "Knowledge treasure sites",
+  page: 62,
+  summary: `
+  <ul>
+    <li>Virtual Libraries and dictionaries</li>
+    <li>របៀប Search ក្នុង Website Wikipedia:</li>
+    <ol>
+      <li>ចុចបើក Browser រួចសរសេរ www.wikipedia.org</li>
+      <li>វាយពាក្យ ឬឃ្លាដែលត្រូវការព័ត៌មានក្នុងប្រអប់ Search</li>
+      <li>ចុច Search icon</li>
+    </ol>
+    <li>របៀប Copy និង Paste អក្សរ:</li>
+    <ol>
+      <li>Select លើអក្សរ រួច Right-Click ហើយចុច Copy</li>
+      <li>បើក WordPad ឬ Microsoft Word រួច Right-Click ហើយចុច Paste</li>
+    </ol>
+  </ul>
+  `
+},
+
+{
+  module: 4,
+  task: 3,
+  title: "Be polite",
+  page: 66,
+  summary: `
+  <ul>
+    <li>Internet មិនត្រឹមតែជាកន្លែងរក្សាទុកព័ត៌មានទេ ប៉ុន្តែជាកន្លែងទំនាក់ទំនងជាមួយមនុស្សជុំវិញពិភពលោក</li>
+    <li>ត្រូវមានសុជីវធម៌ក្នុងការប្រើប្រាស់ Internet ដូចជាជីវិតប្រចាំថ្ងៃ</li>
+    <li>ការប្រាស្រ័យទាក់ទងត្រូវប្រុងប្រយ័ត្នខ្ពស់</li>
+    <li>កុំលេងសារជាមួយមនុស្សដែលមិនស្គាល់</li>
+    <li>កុំនិយាយជាមួយមនុស្សដែលកូនមិនស្គាល់</li>
+    <li>ត្រូវអនុវត្តសេចក្ដីណែនាំនេះនៅពេលប្រើប្រាស់ Internet</li>
+  </ul>
+  `
+},
+
+{
+  module: 4,
+  task: 4,
+  title: "Safety online",
+  page: 70,
+  summary: `
+  <ul>
+    <li>Virus គឺជាកម្មវិធីដែលបំផ្លិចបំផ្លាញឯកសារ ឬលួចយកទិន្នន័យសម្ងាត់</li>
+    <li>វិធីការពារខ្លួនឯង:</li>
+    <ul>
+      <li>មិនលេងសារជាមួយមនុស្សមិនស្គាល់</li>
+      <li>ប្រើ Nickname</li>
+      <li>មិនប្រាប់ឈ្មោះពិត អាយុ និងលេខទូរស័ព្ទទៅជនមិនស្គាល់</li>
+      <li>ស្តាប់ឪពុកម្តាយអំពីការប្រើប្រាស់ Internet</li>
+      <li>ចូលទៅ Website ដែលទុកចិត្ត</li>
+      <li>មិនប្រើ Internet រយៈពេលយូ</li>
+    </ul>
+    <li>ការពារកុំព្យូទ័រពីមេរោគ:</li>
+    <ul>
+      <li>ដំឡើងកម្មវិធីកម្ចាត់មេរោគ</li>
+      <li>Update កម្មវិធីជារៀងរាល់ថ្ងៃ</li>
+    </ul>
+  </ul>
+  `
+},
+//Module 5
+{
+  module: 5,
+  task: 1,
+  title: "All about slide",
+  page: 76,
+  summary: `
+  <ul>
+    <li>Microsoft PowerPoint គឺជាកម្មវិធីប្រើសម្រាប់ធ្វើបទបង្ហាញ បង្រៀន ឬការណែនាំដែលមានលក្ខណៈជា Slide</li>
+    <li>Theme គឺជាគំរូ Slide ដែលមានស្រាប់</li>
+    <li>Color set គឺជាពណ៌ Slide ដែលមានស្រាប់</li>
+    <li>Font set គឺជាម៉ូតអក្សរ ដែលមានស្រាប់</li>
+    <li>របៀបបើកកម្មវិធី PowerPoint:</li>
+    <ol>
+      <li>ចុច Start menu</li>
+      <li>វាយពាក្យ PowerPoint ក្នុងប្រអប់ Search</li>
+      <li>ចុចលើកម្មវិធី ឬ Enter key</li>
+    </ol>
+    <li>របៀបបង្កើត Slide ថ្មី:</li>
+    <ol>
+      <li>ចុចចូល Home Tab</li>
+      <li>ចុច New Slide</li>
+      <li>ជ្រើសរើសទម្រង់ Slide ដែលចង់បាន</li>
+    </ol>
+  </ul>
+  `
+},
+
+{
+  module: 5,
+  task: 2,
+  title: "Insert text",
+  page: 79,
+  summary: `
+  <ul>
+    <li>Textbox: ប្រអប់សម្រាប់សរសេរអក្សរ ដែលទំហំប្រែប្រួលតាមអក្សរដែលសរសេរ</li>
+    <li>Shapes: ប្រអប់សម្រាប់គូររូបរាង ដែលអាចពង្រីក និងបង្រួមបាន</li>
+    <li>Shape Fill: សម្រាប់ចាក់ពណ៌ឱ្យប្រអប់</li>
+    <li>Text Fill: សម្រាប់ចាក់ពណ៌ឱ្យអក្សរ</li>
+    <li>របៀបគូរប្រអប់សរសេរអក្សរ:</li>
+    <ol>
+      <li>ចូលទៅ Insert tab → Shapes → ជ្រើស Textbox</li>
+      <li>ចុចម៉ៅខាងឆ្វេង ហើយអូសយកទំហំដែលចង់បាន</li>
+      <li>វាយអក្សរតាមការចង់បាន</li>
+    </ol>
+  </ul>
+  `
+},
+
+{
+  module: 5,
+  task: 3,
+  title: "Insert picture",
+  page: 84,
+  summary: `
+  <ul>
+    <li>PowerPoint ប្រើសម្រាប់ធ្វើបទបង្ហាញ បង្រៀន ឬការណែនាំជាលក្ខណៈ Slide</li>
+    <li>ដើម្បីធ្វើបទបង្ហាញឱ្យបានល្អ គួរប្រើ ClipArt ឬ Picture ជំនួសការសរសេរអក្សរ</li>
+    <li>របៀបបញ្ចូលរូបភាពពីអ៊ីនធឺណេត:</li>
+    <ol>
+      <li>ចូល Insert tab → Picture → Online Picture</li>
+      <li>បញ្ចូលពាក្យ ឬឃ្លា រួចចុច Enter</li>
+      <li>Select រូបភាព ហើយចុច Insert</li>
+    </ol>
+  </ul>
+  `
+},
+
+{
+  module: 5,
+  task: 4,
+  title: "Presentation is cool",
+  page: 90,
+  summary: `
+  <ul>
+    <li>ការធ្វើបទបង្ហាញ គឺការបញ្ចាំងស្លាយឱ្យពេញអេក្រង់ ដើម្បីបង្ហាញគំនិតដល់ទស្សនិកជន</li>
+    <li>វិធីបញ្ចាំងស្លាយ:</li>
+    <ul>
+      <li>ចុច F5 សម្រាប់បញ្ចាំងពីស្លាយដំបូង</li>
+      <li>ចុច Shift + F5 សម្រាប់បញ្ចាំងពីស្លាយបច្ចុប្បន្ន</li>
+    </ul>
+    <li>ទៅស្លាយបន្ទាប់:</li>
+    <ul>
+      <li>Enter</li>
+      <li>Arrow Down (↓)</li>
+      <li>Arrow Right (→)</li>
+    </ul>
+    <li>ត្រលប់ទៅស្លាយមុន:</li>
+    <ul>
+      <li>Backspace</li>
+      <li>Arrow Up (↑)</li>
+      <li>Arrow Left (←)</li>
+    </ul>
+    <li>ចាកចេញពីការបង្ហាញ: ចុច Key ESC</li>
+  </ul>
+  `
+}
+],
+  4: [
+
+
+//Level 4
+//Module 1
+{
+  module: 1,
+  task: 1,
+  title: "My desktop",
+  page: 9,
+  summary: `
+  <ul>
+    <li>File គឺជាឯកសារដែលមាននៅក្នុងកុំព្យូទ័រ</li>
+    <li>Folder គឺជាប្រអប់សម្រាប់ផ្ទុករាល់ឯកសារ</li>
+    <li>Shortcut គឺជាផ្លូវកាត់សម្រាប់បើកកម្មវិធី, ឯកសារ និង Folder យ៉ាងរហ័ស</li>
+    <li>របៀបបង្កើត Shortcut:</li>
+    <ol>
+      <li>កំណត់ឯកសារមួយដែលចង់បង្កើត Shortcut</li>
+      <li>Right click លើឯកសារ → Click Send to</li>
+      <li>Click Desktop (create shortcut)</li>
+      <li>Shortcut នឹងបង្ហាញនៅលើ Desktop</li>
+    </ol>
+  </ul>
+  `
+},
+
+{
+  module: 1,
+  task: 2,
+  title: "Files and folders",
+  page: 12,
+  summary: `
+  <ul>
+    <li>Compressed file or folder គឺជាការប្រមូលផ្ដុំ Files ច្រើនក្នុង File តែមួយ ដែលទំហំតូច</li>
+    <li>របៀប Compress Folder or File:</li>
+    <ol>
+      <li>Right Click លើ Folder or File</li>
+      <li>Click Send to</li>
+      <li>Click Compressed (zipped) folder</li>
+    </ol>
+  </ul>
+  `
+},
+
+{
+  module: 1,
+  task: 3,
+  title: "Control panel",
+  page: 18,
+  summary: `
+  <ul>
+    <li>ប្ដូរ Screen resolution:</li>
+    <ol>
+      <li>Right click លើ Desktop → Click Screen resolution</li>
+      <li>បង្ហាញផ្ទាំង Screen resolution</li>
+      <li>ជ្រើសរើសទំហំ Screen resolution</li>
+      <li>Click Apply → Click Revert</li>
+    </ol>
+    <li>ប្ដូររូបភាព Desktop:</li>
+    <ol>
+      <li>Right click លើ Desktop → Click Personalize</li>
+      <li>ជ្រើសរើសរូបភាពដែលចូលចិត្ត</li>
+    </ol>
+  </ul>
+  `
+},
+
+{
+  module: 1,
+  task: 4,
+  title: "Protect my computer",
+  page: 22,
+  summary: `
+  <ul>
+    <li>Malware គឺជាកម្មវិធីដែលអាចធ្វើឲ្យកុំព្យូទ័រគាំង និងបំផ្លាញឯកសារ</li>
+    <li>ការការពារ៖</li>
+    <ol>
+      <li>ប្រើកម្មវិធីកម្ចាត់មេរោគ</li>
+      <li>មិនដោត Memory Stick ឬ Flash Drive ផ្ដេសផ្ដាស</li>
+    </ol>
+    <li>កម្មវិធីកម្ចាត់មេរោគមានដូចជា៖ Eset, Avast, Anti Virus…</li>
+  </ul>
+  `
+}
+,
+  //Module 2
+  {
+  module: 2,
+  task: 1,
+  title: "Format a paragraph",
+  page: 31,
+  summary: `
+  <ul>
+    <li>Align Text: កំណត់ទីតាំងអក្សរឱ្យនៅឆ្វេង, ស្តាំ ឬ កណ្តាល</li>
+    <li>Align មាន ៤ ប្រភេទ: Align Left, Align Right, Align Center, Align Justify</li>
+    <li>Line Spacing: កំណត់ចន្លោះរវាងជួរអក្សរ</li>
+    <li>Border: ដាក់/ដកបន្ទាត់ជុំវិញអក្សរ</li>
+    <li>Shading: ចាក់ពណ៌ទៅក្នុងផ្ទៃអត្ថបទ ឬ អក្សរ</li>
+  </ul>
+  `
+},
+
+{
+  module: 2,
+  task: 2,
+  title: "Images - Advanced formatting",
+  page: 35,
+  summary: `
+  <ul>
+    <li>ដាក់រូបភាពចូលអត្ថបទ: Insert Tab → Picture → ជ្រើសរើសរូបភាព → Insert</li>
+    <li>Remove Background: លុប Background រូបភាព</li>
+    <li>Color: ប្តូរពណ៌រូបភាពឱ្យសមជាមួយអត្ថបទ</li>
+    <li>Picture Border: ដាក់បន្ទាត់ជុំវិញរូបភាព</li>
+  </ul>
+  `
+},
+
+{
+  module: 2,
+  task: 3,
+  title: "Spelling and grammar check",
+  page: 38,
+  summary: `
+  <ul>
+    <li>ត្រួតពិនិត្យអក្ខរាវិរុទ្ធ:</li>
+    <ol>
+      <li>View tab → Spelling & Grammar (ឬ F7)</li>
+      <li>ត្រួតពិនិត្យពាក្យ → Change / Change all</li>
+    </ol>
+    <li>Shift + F7: ត្រួតពិនិត្យពាក្យ/ឃ្លា ដោយផ្អែកលើវចនានុក្រម</li>
+    <li>Spelling & Grammar (F7): ត្រួតពិនិតអក្ខរាវិរុទ្ធ និងកែប្រែ</li>
+  </ul>
+  `
+},
+
+{
+  module: 2,
+  task: 4,
+  title: "Print",
+  page: 40,
+  summary: `
+  <ul>
+    <li>Print គឺបោះពុម្ពឯកសារចេញក្រៅតាមម៉ាស៊ីនព្រីន</li>
+    <li>ចូលទៅកន្លែង Print: Ctrl + P ឬ File → Print</li>
+    <li>កំណត់មុនបោះពុម្ព:</li>
+    <ul>
+      <li>Copies: ចំនួនសន្លឹក</li>
+      <li>Printer: ជ្រើសម៉ាស៊ីនព្រីន</li>
+      <li>Pages: កំណត់ទំព័រ (ឧ. 1,5 ឬ 5-10)</li>
+      <li>Print All Pages / Print Current Page</li>
+    </ul>
+    <li>របៀបបោះពុម្ព: File tab (Ctrl + P) → Print → ត្រួតពិនិត្យ → Print</li>
+  </ul>
+  `
+},
+    //Module 3
+    {
+  module: 3,
+  task: 1,
+  title: "Create a sound clip",
+  page: 46,
+  summary: `
+  <ul>
+    <li>រក្សាទុកសំឡេងផ្សេងៗនៅលើកុំព្យូទ័រ ឬទាញពី Internet</li>
+    <li>អាចបង្កើតសំឡេងដោយខ្លួនឯង</li>
+    <li>របៀបបង្កើត Sound Clip:
+      <ol>
+        <li>ចុច Start button</li>
+        <li>វាយពាក្យ Start Recording</li>
+        <li>ចុច Start record button</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 3,
+  task: 2,
+  title: "View images and videos",
+  page: 48,
+  summary: `
+  <ul>
+    <li>មើលរូបភាព និងវីដេអូដែលមាននៅលើកុំព្យូទ័រ</li>
+    <li>រូបភាពអាចទាញពី Internet, ថតផ្ទាល់, ឬគូស</li>
+    <li>ប្រើកម្មវិធី Windows Live Photo Gallery ដើម្បី View និងកែប្រែរូបភាព</li>
+    <li>របៀបប្រើកម្មវិធី:
+      <ol>
+        <li>Mouse លើរូបភាព</li>
+        <li>រើស Open with</li>
+        <li>ចុច Photo Gallery</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 3,
+  task: 3,
+  title: "Fix a photo",
+  page: 50,
+  summary: `
+  <ul>
+    <li>ប្រើបច្ចេកវិទ្យាកែប្រែរូបភាព បើរូបភាពមិនស្អាត ឬមិនពេញចិត្ត</li>
+    <li>អាចប្រើនៅ Window Live Photo Gallery ឬ Photo Gallery</li>
+    <li>Tools:
+      <ul>
+        <li>Red eye removal: បំបាត់ភ្នែកក្រហមទៅខ្មៅ</li>
+        <li>Retouch: ការបំបាត់ស្នាមលើរូបភាព</li>
+        <li>Rotate: បង្វិលរូបភាព</li>
+        <li>Crop: កាត់ចំណុចដែលត្រូវការ</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 3,
+  task: 4,
+  title: "Apply photo effects",
+  page: 53,
+  summary: `
+  <ul>
+    <li>កែប្រែរូបភាព ដើម្បីផ្លាស់ប្តូរពណ៌ និងពន្លឺ</li>
+    <li>ប្រើកម្មវិធី Window Live Photo Gallery</li>
+    <li>របៀបកែ:
+      <ol>
+        <li>បើករូបភាពជាមួយ Window Live Photo Gallery</li>
+        <li>ចុច ២ ដងលើរូបភាពដើម្បី Edit</li>
+        <li>ជ្រើស ឬបន្ថែមបន្ថយ ពណ៌ និងពន្លឺ</li>
+        <li>ចុច Close file ដើម្បី Save</li>
+      </ol>
+    </li>
+    <li>Color effects: Black and white, Sepia tone, Cyan tone</li>
+  </ul>
+  `
+},
+  //Module 4
+  {
+  module: 4,
+  task: 1,
+  title: "Transitions and animations",
+  page: 61,
+  summary: `
+  <ul>
+    <li>Transitions: ចលនាសម្រាប់ Slide នៅពេលឆ្លងទៅ Slide បន្ទាប់</li>
+    <li>Animations: ចលនាសម្រាប់អក្សរ ឬរូបភាព</li>
+    <li>របៀបដាក់ Transitions:
+      <ol>
+        <li>Select លើ Slide</li>
+        <li>ចុច Transitions tab</li>
+        <li>ជ្រើសរើស Transition ដែលចូលចិត្ត</li>
+      </ol>
+    </li>
+    <li>របៀបដាក់ Animations:
+      <ol>
+        <li>Select លើអក្សរ ឬរូបភាព</li>
+        <li>ចុច Animation tab</li>
+        <li>ជ្រើសរើស Animation ដែលចូលចិត្ត</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 4,
+  task: 2,
+  title: "Set the timing",
+  page: 64,
+  summary: `
+  <ul>
+    <li>Durations: កំណត់ចលនាឱ្យដើរយឺត ឬលឿន</li>
+    <li>កំណត់រយៈពេលលើ Transition:
+      <ol>
+        <li>Select លើ Slide</li>
+        <li>ចុច Transition tab</li>
+        <li>ក្នុង Group Timing ស្វែងរក Durations</li>
+        <li>កំណត់តម្លៃវិនាទី</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 4,
+  task: 3,
+  title: "Insert a sound or video clip",
+  page: 66,
+  summary: `
+  <ul>
+    <li>ដាក់ចម្រៀងក្នុង Slide:
+      <ol>
+        <li>Insert → Audio → Select Audio → Insert</li>
+      </ol>
+      <li>Audio Options:
+        <ul>
+          <li>Play Across Slides: ដំណើរការឆ្លង Slide</li>
+          <li>Loop until Stopped: ដំណើរការឡើងវិញរហូតដល់ឈប់</li>
+          <li>Hide During Show: លាក់ប៊ូតុងពេលបង្ហាញ</li>
+        </ul>
+      </li>
+    </li>
+    <li>ដាក់វីដេអូក្នុង Slide:
+      <ol>
+        <li>Insert → Audio → Select Audio → Insert</li>
+      </ol>
+      <li>Video Options:
+        <ul>
+          <li>Play Full Screen: ពេញអេក្រង់</li>
+          <li>Loop until Stopped: ដំណើរឡើងវិញរហូតដល់ឈប់</li>
+          <li>Hide While Not Playing: លាក់វីដេអូពេលមិនដំណើរការ</li>
+        </ul>
+      </li>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 4,
+  task: 4,
+  title: "Transfer data across apps",
+  page: 70,
+  summary: `
+  <ul>
+    <li>ផ្ទេរទិន្នន័យពីកម្មវិធីមួយទៅមួយផ្សេងស្រួលបំផុត</li>
+    <li>វិធីសាស្រ្ត:
+      <ol>
+        <li>Drag and Drop: Select → ចុច Mouse ឆ្វេង → អូសចូលកម្មវិធីផ្សេង</li>
+        <li>Copy and Paste: Select → Copy → ចូលកម្មវិធីផ្សេង → Paste</li>
+        <li>Ctrl + C and Ctrl + V: Select → Ctrl + C → ចូលកម្មវិធីផ្សេង → Ctrl + V</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+   //Module 5 
+   {
+  module: 5,
+  task: 1,
+  title: "What is a spreadsheet?",
+  page: 76,
+  summary: `
+  <ul>
+    <li>Spreadsheet: កម្មវិធីអេឡិចត្រូនិច សម្រាប់គ្រប់គ្រងទិន្នន័យជាជួរដេក និងជួរឈរ</li>
+    <li>វាមើលទៅដូចក្រឡាធំៗ ដែលពោពេញដោយប្រអប់ជាច្រើន</li>
+    <li>ប្រើសម្រាប់គណនាលេខ និងបញ្ជាទិន្នន័យ</li>
+    <li>Spreadsheet Programs:
+      <ul>
+        <li>Microsoft Excel</li>
+        <li>Apple Numbers</li>
+        <li>Google Sheets</li>
+        <li>LibreOffice Calc</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 5,
+  task: 2,
+  title: "Row - Column - Cell",
+  page: 78,
+  summary: `
+  <ul>
+    <li>របៀបបើក Microsoft Excel:
+      <ol>
+        <li>ចុច Button ស្វែងរក</li>
+        <li>វាយពាក្យ Excel ហើយចុចយកកម្មវិធី</li>
+      </ol>
+    </li>
+    <li>Cell: ប្រអប់នីមួយៗក្នុងតារាង ដែលបង្កើតដោយជួរឈរ និងជួរដេក</li>
+    <li>Column: ជួរឈរ</li>
+    <li>Row: ជួរដេក</li>
+  </ul>
+  `
+},
+
+{
+  module: 5,
+  task: 3,
+  title: "Insert numbers and text",
+  page: 80,
+  summary: `
+  <ul>
+    <li>ដើម្បីវាយអក្សរ/លេខក្នុង Cell:
+      <ol>
+        <li>យក Mouse ដាក់លើ Cell</li>
+        <li>វាយអក្សរ/លេខ</li>
+      </ol>
+    </li>
+    <li>ប្រើ Key:
+      <ul>
+        <li>Backspace: លុបអក្សរម្តងៗ ក្នុង Cell</li>
+        <li>Delete: លុបអក្សរពហុ Cell ដែល Select</li>
+        <li>Arrow Keys: ទៅឆ្វេង/ស្តាំ/ក្រោម/លើ</li>
+        <li>Enter: ចុះបន្ទាត់</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 5,
+  task: 4,
+  title: "Simple calculations",
+  page: 82,
+  summary: `
+  <ul>
+    <li>របៀបគណនាលេខ:
+      <ol>
+        <li>យក Mouse ដាក់លើ Cell រួចវាយសញ្ញាស្មើ (=)</li>
+        <li>Select Cell ទី១ → ដាក់ប្រម៉ានវិធី (+ - * /) → Select Cell ទី២</li>
+        <li>ចុច Enter</li>
+      </ol>
+    </li>
+    <li>សញ្ញាក្នុង Excel:
+      <ul>
+        <li>បូក: +</li>
+        <li>ដក: -</li>
+        <li>គុណ: *</li>
+        <li>ចែក: /</li>
+      </ul>
+    </li>
+  </ul>
+  `
+}
+  ],
+  5: [
+    //Level 5
+    //Module 1
+  {
+  module: 1,
+  task: 1,
+  title: "Advanced formatting",
+  page: 9,
+  summary: `
+  <ul>
+    <li><strong>Advanced Formatting of Characters</strong>:
+      <ul>
+        <li>Character Spacing: គំលាតរវាងតួអក្សរ
+          <ul>
+            <li>Expanded: ធ្វើឱ្យគំលាតតួអក្សរចេញពីគ្នា</li>
+            <li>Condensed: ធ្វើឱ្យគំលាតតួអក្សររួមចូលគ្នា</li>
+          </ul>
+        </li>
+        <li>Line Spacing: គំលាតរវាងជួរអក្សរ</li>
+        <li>Paragraph Spacing: គំលាតរវាងកថាខណ្ឌ</li>
+      </ul>
+    </li>
+    <li><strong>Adding line Break</strong>:
+      <ul>
+        <li>Shift + Enter: ចុះបន្ទាត់បន្តនៅក្នុងកថាខណ្ឌដដែល</li>
+        <li>Enter key: ចុះបន្ទាត់ និងបង្កើតកថាខណ្ឌថ្មី</li>
+      </ul>
+    </li>
+    <li><strong>Non-Printable characters</strong>: និមិត្តសញ្ញាជំនួយសម្រាប់ពិនិត្យអត្ថបទ</li>
+  </ul>
+  `
+},
+
+{
+  module: 1,
+  task: 2,
+  title: "Search and replace",
+  page: 12,
+  summary: `
+  <ul>
+    <li><strong>Search</strong>: ស្វែងរកពាក្យ ឬឃ្លា
+      <ul>
+        <li>Shortcut: Ctrl + F</li>
+      </ul>
+    </li>
+    <li><strong>Replace</strong>: ជំនួសពាក្យថ្មីក្នុងអត្ថបទ
+      <ul>
+        <li>Shortcut: Ctrl + H</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 1,
+  task: 3,
+  title: "Working with tables",
+  page: 15,
+  summary: `
+  <ul>
+    <li>Table: តារាងសម្រាប់វាយបញ្ចូលទិន្នន័យ 
+      <ul>
+        <li>Row: ជួរដេក</li>
+        <li>Column: ជួរឈរ</li>
+      </ul>
+    </li>
+    <li>Border: ដកដាក់ លុប ឬកែច្នៃស៊ុម Table</li>
+    <li>Shading: ប្តូរពណ៌ Table តាមចំណង់ចំណូលចិត្ត</li>
+    <li>របៀបបង្កើត Table:
+      <ol>
+        <li>ចុច Insert Tab</li>
+        <li>ចុចលើ Table</li>
+        <li>កំណត់ចំនួន Row និង Column</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 1,
+  task: 4,
+  title: "Document views",
+  page: 19,
+  summary: `
+  <ul>
+    <li>Document View: ការបង្ហាញព័ត៌មានផ្សេងៗរបស់ឯកសារ</li>
+    <li>Print Layout: ទម្រង់ទូទៅ Microsoft Word</li>
+    <li>Read Mode: បង្ហាញដូចស្លាយ, មិនអាចកែប្រែ</li>
+    <li>Web Layout: បង្ហាញជា Web Page, អូសពីលើចុះក្រោម</li>
+    <li>Outline: បង្ហាញជាចំណុច</li>
+    <li>Draft: ទម្រង់ Microsoft Word ចាស់</li>
+    <li>Zoom In: ពង្រីកផ្ទៃការងារ</li>
+    <li>Zoom Out: បង្រួមផ្ទៃការងារ</li>
+  </ul>
+  `
+},
+
+  ,
+  {
+  module: 3,
+  task: 1,
+  title: "Internet and the web",
+  page: 47,
+  summary: `
+  <ul>
+    <li>Internet: បណ្ណាល័យធំ សម្រាប់ស្វែងរកទិន្នន័យផ្សេងៗបានយ៉ាងងាយ</li>
+    <li>Browser: Microsoft Edge, Chrome, Opera, Safari, Mozilla Firefox, …</li>
+    <li>Network មាន ២ ប្រភេទ:
+      <ul>
+        <li>LAN (Local Area Network): បណ្ដាញតូច ប្រើនៅសាលារៀន ជាន់ជាន់ អាគារតូច</li>
+        <li>WAN (Wide Area Network): បណ្ដាញធំ ជាតំបន់ ទៅទីក្រុង/ប្រទេសផ្សេងៗ</li>
+      </ul>
+    </li>
+    <li>Search Engines: ស្វែងរកទិន្នន័យផ្សេងៗតាម Internet យ៉ាងងាយ និងលឿន</li>
+  </ul>
+  `
+},
+
+{
+  module: 3,
+  task: 2,
+  title: "Communication tools",
+  page: 54,
+  summary: `
+  <ul>
+    <li>Email: សារអេឡិចត្រូនិច សម្រាប់ផ្ញើរសារ, Video Call, រូបភាព, …</li>
+    <li>Email platforms: Gmail, Yahoo, Windows Live Mail, …</li>
+    <li>Chat platforms: Gmail, Yahoo, Telegram, Line, Skype, Facebook, …</li>
+  </ul>
+  `
+},
+
+{
+  module: 3,
+  task: 3,
+  title: "Sharing your moments",
+  page: 62,
+  summary: `
+  <ul>
+    <li>OneDrive: រក្សាទុកឯកសារផ្ទាល់ខ្លួន (រូបភាព, វីដេអូ, ឯកសារផ្សេងៗ) យ៉ាងងាយស្រួល</li>
+    <li>Intellectual Property (កម្មសិទ្ធិបញ្ញា): រក្សាសិទ្ធលើឯកសារតាម Internet (សៀវភៅ, រូបភាព, ចម្រៀង, វីដេអូ)</li>
+    <li>Intellectual Property Law: ច្បាប់កំណត់អ្នកប្រើប្រាស់</li>
+    <li>Copyrighted Material:
+      <ul>
+        <li>Literary Work: Book, Poetry</li>
+        <li>Computer Software</li>
+        <li>Music, Songs, MP3</li>
+        <li>Art: Graphic Drawing</li>
+        <li>Animation and Videos</li>
+        <li>Architectural Works</li>
+      </ul>
+    </li>
+    <li>Tools for sharing:
+      <ul>
+        <li>Share: ចែកចាយឯកសារ</li>
+        <li>Add to Album: បង្កើតជា Album</li>
+        <li>Play Slideshow: បង្ហាញជា Video</li>
+        <li>Rotate: បង្វិលរូបភាព</li>
+        <li>Download: ទាញយកឯកសារ</li>
+        <li>Delete: លុបឯកសារ</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 3,
+  task: 4,
+  title: "Be secure online",
+  page: 69,
+  summary: `
+  <ul>
+    <li>ការកំណត់លេខសម្ងាត់:
+      <ul>
+        <li>ចាប់ពី ៨ តួឡើង (អក្សរ និងលេខ)</li>
+        <li>មិនប្រើពាក្យងាយទាយ (ឧ. football)</li>
+        <li>មិនប្រើព័ត៌មានផ្ទាល់ខ្លួន (ឈ្មោះ, ថ្ងៃខែឆ្នាំកំណើត, លេខទូរស័ព្ទ)</li>
+        <li>ប្រើនិមិត្តសញ្ញាពិសេស (! @ # $ % & ...)</li>
+      </ul>
+    </li>
+    <li>ច្បាប់សុវត្ថិភាពប្រើ Website:
+      <ul>
+        <li>មិនចែកចាយព័ត៌មានផ្ទាល់ខ្លួនទៅមិត្តភ័ក្ដិ Online</li>
+        <li>មិនបំពេញព័ត៌មាននៅ Website មិនស្គាល់</li>
+        <li>មិនទំនាក់ទំនងជាមួយមនុស្សមិនទុកចិត្ត</li>
+        <li>បញ្ឈប់ភ្លាម ប្រសិនបើសួរព័ត៌មានផ្ទាល់ខ្លួន ឬប្រាប់អាណាព្យាបាល</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+
+  {
+  module: 4,
+  task: 1,
+  title: "Format a cell",
+  page: 79,
+  summary: `
+  <ul>
+    <li>Table: តារាងផ្តុំឡើងដោយជួរឈរ និងជួរដេក</li>
+    <li>Cells: ចំណុចប្រសព្វរវាងជួរឈរ និងជួរដេក</li>
+    <li>Column: ជួរឈរ</li>
+    <li>Row: ជួរដេក</li>
+    <li>Microsoft Excel ប្រើសម្រាប់គ្រប់គ្រង និងគណនាទិន្នន័យ (ឧ. ពិន្ទុសិស្ស, ប្រាក់ចំណូលចំណាយ, បញ្ជីមុខទំនិញ)</li>
+    <li>Merge Cells:
+      <ol>
+        <li>Select cell ជាមុនសិន</li>
+        <li>ចុច Home Tab</li>
+        <li>ចុច Merge & Center ដើម្បីបម្លែងប្រអប់ចូលគ្នា</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 4,
+  task: 2,
+  title: "Make calculations",
+  page: 86,
+  summary: `
+  <ul>
+    <li>=SUM(): បូកសរុបទិន្នន័យដែល Select</li>
+    <li>=AVERAGE(): រកតម្លៃមធ្យម</li>
+    <li>=MAX(): រកតម្លៃធំបំផុត</li>
+    <li>=MIN(): រកតម្លៃតូចបំផុត</li>
+    <li>=COUNT(): រាប់តម្លៃជាលេខ</li>
+    <li>ចំណាំ: រូបមន្តត្រូវបញ្ចូលសញ្ញា (=) ហើយចុច Enter</li>
+    <li>Autofill: ចម្លងរូបមន្តពី Cell មួយទៅ Cell មួយដោយស្វ័យប្រវត្តិ</li>
+  </ul>
+  `
+},
+
+{
+  module: 4,
+  task: 3,
+  title: "Create a graph",
+  page: 92,
+  summary: `
+  <ul>
+    <li>Graph/Chart: បង្ហាញព័ត៌មាន និងទិន្នន័យតាមរូបភាព ងាយស្រួលយល់ និងវិភាគ</li>
+    <li>ប្រភេទ Chart: Column, Pie, Line, …</li>
+  </ul>
+  `
+},
+
+{
+  module: 4,
+  task: 4,
+  title: "Print a sheet",
+  page: 94,
+  summary: `
+  <ul>
+    <li>Print: បោះពុម្ពឯកសារ ឬកិច្ចការ</li>
+    <li>Margins: គែមក្រដាសនៅសល់ព័ទ្ធជុំវិញឯកសារពេល Print</li>
+    <li>Orientation:
+      <ul>
+        <li>Portrait: បោះពុម្ពទម្រង់បញ្ឈរ</li>
+        <li>Landscape: បោះពុម្ពទម្រង់ផ្ដេក</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+
+  {
+  module: 5,
+  task: 1,
+  title: "Gather data",
+  page: 102,
+  summary: `
+  <ul>
+    <li>Data: ព័ត៌មានផ្សេងៗដែលបានរក្សាទុក</li>
+    <li>Database: ការប្រមូលព័ត៌មានផ្សេងៗនៅលើកុំព្យូទ័រ</li>
+  </ul>
+  `
+},
+
+{
+  module: 5,
+  task: 2,
+  title: "Introduction to database",
+  page: 104,
+  summary: `
+  <ul>
+    <li>Database: ប្រព័ន្ធសម្រាប់រៀបចំ និងរក្សាទុកទិន្នន័យ, អាចផ្លាស់ប្ដូរ តំរៀប និងស្វែងរកបានលឿន</li>
+    <li>A record (ជួរដេក): ធាតុមួយនៃព័ត៌មានក្នុងតារាង</li>
+    <li>Field: លក្ខណៈនៃធាតុ, ឧ. name, date of birth, address</li>
+  </ul>
+  `
+},
+
+{
+  module: 5,
+  task: 3,
+  title: "Create a database",
+  page: 106,
+  summary: `
+  <ul>
+    <li>បង្កើត Table:
+      <ol>
+        <li>Select Table</li>
+        <li>ចុច Home Tab → Format as Table</li>
+        <li>ជ្រើសរើស Style ដែលចូលចិត្ត</li>
+        <li>ក្នុង Create Table, ចុច My table has Header</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+
+{
+  module: 5,
+  task: 4,
+  title: "Sort and print",
+  page: 109,
+  summary: `
+  <ul>
+    <li>Sort and view data efficiently</li>
+    <li>Sort A to Z: តម្រៀបពីធំទៅតូច</li>
+    <li>Sort Z to A: តម្រៀបពីតូចទៅធំ</li>
+    <li>Sort by Color: តម្រៀបតាមពណ៌</li>
+    <li>Select All: ជ្រើសរើសទាំងអស់</li>
+  </ul>
+  `
+}
+],
+
+  6: [
+  {module:1, task:1, title:"Presentation graphics", page:9},
+  {module:1, task:2, title:"Columns and tabs", page:13},
+  {module:1, task:3, title:"Headers and footers", page:16},
+  {module:1, task:4, title:"The final touch", page:19},
+
+  {module:2, task:1, title:"What is a web page", page:26},
+  {module:2, task:2, title:"Design a web page", page:28},
+  {module:2, task:3, title:"Add more pages", page:32},
+  {module:2, task:4, title:"Publishing the web page", page:34},
+
+  {module:3, task:1, title:"More calculations", page:41},
+  {module:3, task:2, title:"Functions", page:45},
+  {module:3, task:3, title:"References", page:50},
+  {module:3, task:4, title:"More charts", page:54},
+
+  {module:4, task:1, title:"Structured information", page:61},
+  {module:4, task:2, title:"Use a data entry form", page:66},
+  {module:4, task:3, title:"Filter the data", page:72},
+  {module:4, task:4, title:"Create a report", page:77},
+
+  {module:5, task:1, title:"Introduction to programming", page:86},
+  {module:5, task:2, title:"How to design a program", page:90},
+  {module:5, task:3, title:"Variables and commands", page:92},
+  {module:5, task:4, title:"More programming", page:96}
+],
+  7: [
+  {module:1, task:1, title:"Formatting text", page:7},
+  {module:1, task:2, title:"Advanced font formatting", page:14},
+  {module:1, task:3, title:"Images and graphics", page:18},
+  {module:1, task:4, title:"Working with tables", page:22},
+  {module:1, task:5, title:"Check and print", page:27},
+  {module:1, task:"Project", title:"Project", page:34},
+
+  {module:2, task:1, title:"Surfing the web", page:39},
+  {module:2, task:2, title:"Use online resources", page:47},
+  {module:2, task:3, title:"Send and receive email", page:52},
+  {module:2, task:4, title:"Organizing email", page:62},
+  {module:2, task:5, title:"Be safe online", page:68},
+  {module:2, task:"Project", title:"Project", page:73},
+
+  {module:3, task:1, title:"Rows and columns", page:77},
+  {module:3, task:2, title:"Advanced formatting", page:84},
+  {module:3, task:3, title:"Simple calculations", page:88},
+  {module:3, task:4, title:"Logical functions", page:92},
+  {module:3, task:5, title:"Create a chart", page:95},
+  {module:3, task:"Project", title:"Project", page:98},
+
+  {module:4, task:1, title:"Slides, text and images", page:103},
+  {module:4, task:2, title:"Transitions and animations", page:109},
+  {module:4, task:3, title:"Sound and video", page:112},
+  {module:4, task:4, title:"Charts and graphs", page:119},
+  {module:4, task:5, title:"Tips and tricks", page:122},
+  {module:4, task:"Project", title:"Project", page:122}
+],
+
+  8: [
+  {module:1, task:1, title:"Tabs and columns", page:7},
+  {module:1, task:2, title:"Headers and footers", page:16},
+  {module:1, task:3, title:"HTML and PDF", page:21},
+  {module:1, task:4, title:"Mail merge", page:27},
+  {module:1, task:5, title:"Advanced topics", page:34},
+  {module:1, task:"Project", title:"Project", page:38},
+
+  {module:2, task:1, title:"Complex calculations", page:43},
+  {module:2, task:2, title:"Functions", page:46},
+  {module:2, task:3, title:"References", page:56},
+  {module:2, task:4, title:"Advanced charts", page:60},
+  {module:2, task:5, title:"Import and export data", page:65},
+  {module:2, task:"Project", title:"Project", page:70},
+
+  {module:3, task:1, title:"Introduction to databases", page:75},
+  {module:3, task:2, title:"Filter and sort", page:79},
+  {module:3, task:3, title:"Keys and relationships", page:82},
+  {module:3, task:4, title:"Contact management", page:87},
+  {module:3, task:5, title:"Lab data collection", page:91},
+  {module:3, task:"Project", title:"Project", page:94},
+
+  {module:4, task:1, title:"Design your website", page:99},
+  {module:4, task:2, title:"Publish your website", page:106},
+  {module:4, task:3, title:"Introduction to infographic design", page:108},
+  {module:4, task:4, title:"Creating custom infographics", page:119},
+  {module:4, task:5, title:"Science projects", page:124},
+  {module:4, task:"Project", title:"Project", page:128}
+],
+    9: [
+  {module:1, task:1, title:"Data representation", page:6},
+  {module:1, task:1, title:"Data manipulation", page:7},
+  {module:1, task:2, title:"Computer architecture", page:14},
+  {module:1, task:3, title:"Operating systems", page:18},
+  {module:1, task:4, title:"Computer fundamentals", page:22},
+  {module:1, task:5, title:"Computers in society", page:28},
+  {module:1, task:"Project", title:"Project", page:34},
+
+  {module:2, task:1, title:"Structured information", page:36},
+  {module:2, task:2, title:"Data entry forms", page:41},
+  {module:2, task:3, title:"Queries", page:47},
+  {module:2, task:4, title:"Reports", page:53},
+  {module:2, task:5, title:"Import and export data", page:58},
+  {module:2, task:"Project", title:"Project", page:64},
+
+  {module:3, task:1, title:"Networking basics", page:66},
+  {module:3, task:2, title:"What is a blog?", page:74},
+  {module:3, task:3, title:"Social Media", page:83},
+  {module:3, task:4, title:"Communication tools", page:95},
+  {module:3, task:5, title:"Digital citizenship", page:101},
+  {module:3, task:"Project", title:"Project", page:106},
+
+  {module:4, task:1, title:"Text documents", page:110},
+  {module:4, task:2, title:"Spreadsheets", page:123},
+  {module:4, task:3, title:"Presentations", page:130},
+  {module:4, task:4, title:"Project 1 - Leaflet", page:136},
+  {module:4, task:5, title:"Project 2 - Labels", page:138},
+  {module:4, task:6, title:"Project 3 - Market research", page:140}
+],
+};
+
+// Level button click
+$(".level-btn").click(function(){
+  $(".level-btn").removeClass("active");
+  $(this).addClass("active");
+  let level = $(this).data("level");
+  renderTable(level);
+});
+
+// Render table for selected level
+function renderTable(level){
+  let data = lessonsLevel[level] || [];
+  let html = "";
+
+  data.forEach((d,i)=>{
+    // ROW មេរៀន
+    html += `
+      <tr>
+        <td>${d.module || ""}</td>
+        <td>${d.task || ""}</td>
+        <td>
+          <input class="form-control form-control-sm"
+                 value="${d.title || ""}"
+                 onchange="updateValue(${level},${i},'title',this.value)">
+        </td>
+        <td>
+          <input class="form-control form-control-sm text-center"
+                 value="${d.page || ""}"
+                 onchange="updateValue(${level},${i},'page',this.value)">
+        </td>
+        <td class="text-center">
+          <button class="btn btn-sm btn-success">Add Lesson</button>
+          <button class="btn btn-sm btn-info"
+          onclick="toggleSummary(${level},${i},this)">
+ ​​​        📘 Summary ▼
+          </button>
+        </td>
+      </tr>
+      <!-- SUMMARY ROW (បញ្ចូលនៅទីនេះ) -->
+      <tr id="summary-${level}-${i}" class="summary-row">
+      <td colspan="6">
+      <div class="summary-box level-${level}">
+  <h4>មេរៀនសង្ខេប</h4>
+
+  <div class="summary-view">
+  ${
+    localStorage.getItem(getSummaryKey(level,i))
+    || d.summary
+    || "<ul><li>មិនទាន់មានមេរៀនសង្ខេប</li></ul>"
+  }
+</div>
+
+  <!-- EDIT MODE -->
+  <textarea class="form-control mt-2 summary-edit d-none"
+rows="5">${
+  (
+    localStorage.getItem(getSummaryKey(level,i))
+    || d.summary
+    || ""
+  ).replace(/<[^>]*>/g,'')
+}</textarea>
+
+  <div class="mt-2 text-right">
+    <button class="btn btn-sm btn-warning"
+      onclick="editSummary(this)">✏️ Edit</button>
+
+    <button class="btn btn-sm btn-success d-none"
+      onclick="saveSummary(${level},${i},this)">💾 Save</button>
+  </div>
+</div>
+
+      </td>
+      </tr>
+    `;
+  });
+
+  $("#lessonTable tbody").html(html);
+}
+// Diplay and none Sumarize
+  function toggleSummary(level,index,btn){
+    let row = $("#summary-"+level+"-"+index);
+
+    row.slideToggle(100);
+
+    if($(btn).text().includes("▼")){
+      $(btn).text("Summary ▲")
+            .removeClass("btn-info")
+            .addClass("btn-secondary");
+    }else{
+      $(btn).text("Summary ▼")
+            .removeClass("btn-secondary")
+            .addClass("btn-info");
+    }
+  }
+
+// Update value in lessonsLevel object
+function updateValue(level,index,key,value){
+  if(lessonsLevel[level] && lessonsLevel[level][index]){
+    lessonsLevel[level][index][key] = value;
+  }
+}
+//បង្ហាញ Level 1 ពេលទំព័របើក
+$(document).ready(function(){
+  $(".level-btn[data-level='1']").addClass("active"); // បង្ហាញ button active
+  renderTable(1); // បង្ហាញ table Level 1
+});
+//edit and sumarize
+function editSummary(btn){
+  let box = $(btn).closest(".summary-box");
+  box.find(".summary-view").addClass("d-none");
+  box.find(".summary-edit").removeClass("d-none");
+  $(btn).addClass("d-none");
+  box.find(".btn-success").removeClass("d-none");
+}
+
+//save to local storage
+function saveSummary(level,index,btn){
+  let box = $(btn).closest(".summary-box");
+  let text = box.find(".summary-edit").val();
+
+  let html = "<ul>" +
+    text.split("\n").filter(t=>t.trim())
+        .map(t=>`<li>${t}</li>`).join("") +
+    "</ul>";
+
+  // ✅ Save to localStorage
+  localStorage.setItem(getSummaryKey(level,index), html);
+
+  // Update object (optional)
+  lessonsLevel[level][index].summary = html;
+
+  // Refresh
+  renderTable(level);
+}
+
+function toggleSummary(level,index,btn){
+  let row = $("#summary-"+level+"-"+index);
+
+  row.stop(true,true).slideToggle(250);
+
+  if($(btn).text().includes("▼")){
+    $(btn).html("Summary ▲")
+          .removeClass("btn-info")
+          .addClass("btn-secondary");
+  }else{
+    $(btn).html("Summary ▼")
+          .removeClass("btn-secondary")
+          .addClass("btn-info");
+  }
+}
+
+
+</script>
+
+</body>
+</html>
