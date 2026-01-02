@@ -130,7 +130,7 @@ ul li{
     <button class="btn btn-outline-primary level-btn" data-level="7">Level 7</button>
     <button class="btn btn-outline-primary level-btn" data-level="8">Level 8</button>
     <button class="btn btn-outline-primary level-btn" data-level="9">Level 9</button>
-      <a href="reviewlesson.html" target="_bland" class="btn btn-outline-primary level-btn" data-level="lesson">All lesson</a>
+    <button class="btn btn-outline-primary level-btn" data-level="9">Level 10</button>
   </div>
   <p class="text-center text-muted"></p>
   <div class="container mt-4">
@@ -151,6 +151,10 @@ ul li{
 </div>
 
 <script>
+  // 👉 Auto load Level 1
+  $(document).ready(function () {
+    $(".level-btn[data-level='1']").click();
+  });
 //local storage summary key
 function getSummaryKey(level,index){
   return `summary_${level}_${index}`;
@@ -167,7 +171,6 @@ let lessonsLevel = {
 <ul>
   <li>ENIAC គឺជាកុំព្យូទ័រដំបូងគេ</li>
   <li>Abacus ជាឧបករណ៍គណនាបុរាណ</li>
-  <li>Computer ជួយធ្វើការងារលឿន និងត្រឹមត្រូវ</li>
 </ul>
 `
 },
@@ -213,7 +216,7 @@ let lessonsLevel = {
     page:14,
     summary: `
 <ul>
-  <li>Mouse គឺជាឧបករណ៍សម្រាប់បញ្ជាកុំព្យូទ័រ</li>
+  <li>Mouse គឺជាឧបករណ៍សម្រាប់បញ្ជាសញ្ញាព្រួញ</li>
   <li>Mouse មានប៊ូតុងសំខាន់ៗ ២</li>
   <ul>
     <li>Left Click</li>
@@ -229,8 +232,7 @@ let lessonsLevel = {
     page: 22,
     summary: `
 <ul>
-  <li>Desktop គឺជាផ្ទៃអេក្រង់ដំបូងនៅពេលបើក Computer</li>
-  <li>Icon សំខាន់ៗលើ Desktop មានដូចជា៖</li>
+  <li>Desktop គឺជាប្រភេទ Computerលើតុ</li>
   <li>This PC</li>
   <li>Recycle Bin</li>
   <li>Folder</li>
@@ -289,23 +291,22 @@ let lessonsLevel = {
 <ul>
   <li>Paint គឺជាកម្មវិធីសម្រាប់គូររូប និងផាត់ពណ៌</li>
   <li>របៀបបើកកម្មវិធី Paint</li>
-  <li>ចុចលើ Window key</li>
+  <ul><li>ចុចលើ Window key</li>
   <li>ចុចលើ Search</li>
   <li>វាយពាក្យថា Paint</li>
-  <li>ចុចលើកម្មវិធី Paint</li>
+  <li>ចុចលើកម្មវិធី Paint</li></ul>
 </ul>
 `
   },
   {
     module: 3,
     task: 2,
-    title: "Make shapes",
+    title: "Make a shapes",
     page: 36,
     summary: `
 <ul>
   <li>Shapes ប្រើសម្រាប់គូររូបភាពដែលមានស្រាប់ៗ</li>
   <li>Fill with color ប្រើសម្រាប់ចាក់ពណ៌ទៅកាន់ Shapes</li>
-  <li>Size ប្រើសម្រាប់ជ្រើសរើសកម្រាស់ទំហំ Shapes</li>
   <li>Select ប្រើសម្រាប់ចាប់យក shape ណាមួយ</li>
   <li>Move ប្រើសម្រាប់ប្ដូរទីតាំង shape ដែលបាន select</li>
   <li>Delete ប្រើសម្រាប់លុប shape ដែលបាន select</li>
@@ -320,8 +321,8 @@ let lessonsLevel = {
     summary: `
 <ul>
   <li>Copy a selected shape and paste it</li>
-  <li>Copy គឺជាការចម្លងយកអ្វីដែលយើងបាន select</li>
-  <li>Paste គឺជាការបញ្ចេញយកអ្វីដែលយើងបាន Copy</li>
+  <ul><li>Copy គឺជាការចម្លងយកអ្វីដែលយើងបាន select</li>
+  <li>Paste គឺជាការបញ្ចេញយកអ្វីដែលយើងបាន Copy</li></ul>
 </ul>
 `
   },
@@ -336,10 +337,10 @@ let lessonsLevel = {
   <li>Save គឺជាការរក្សាទុកឯកសារ ឬរូបភាព</li>
   <li>Open គឺជាការបើកឯកសារ ឬរូបភាពដែលបានរក្សាទុក</li>
   <li>របៀបរក្សាទុករូបភាព</li>
-  <li>ចុច File</li>
+  <ul><li>ចុច File</li>
   <li>ចុច Save as</li>
   <li>សរសេរឈ្មោះរូបភាព</li>
-  <li>ចុច Save</li>
+  <li>ចុច Save</li></ul>
 </ul>
 `
   },
@@ -352,9 +353,9 @@ let lessonsLevel = {
 <ul>
   <li>Notepad គឺជាកម្មវិធីសម្រាប់កត់ត្រា ឬវាយអក្សរ</li>
   <li>របៀបបើកកម្មវិធី Notepad</li>
-  <li>ចុចលើ Window key</li>
+  <ul><li>ចុចលើ Window key</li>
   <li>វាយពាក្យ Notepad នៅត្រង់ Search</li>
-  <li>ចុចលើកម្មវិធី Notepad</li>
+  <li>ចុចលើកម្មវិធី Notepad</li></ul>
 </ul>
 `
   },
@@ -379,7 +380,7 @@ let lessonsLevel = {
     page:54,
     summary: `
 <ul>
-  <li>Arrow keys ប្រើសម្រាប់បញ្ជា Cursor ទៅឆ្វេង ស្ដាំ លើ ក្រោម</li>
+  <li>Arrow keys ប្រើសម្រាប់បញ្ជា Cursor ទៅឆ្វេង ស្ដាំ លើ និងក្រោម</li>
   <li>Delete ប្រើសម្រាប់លុបអក្សរដែលនៅខាងស្ដាំ</li>
 </ul>
 `
@@ -405,7 +406,7 @@ let lessonsLevel = {
     summary: `
 <ul>
   <li>Internet គឺជាប្រព័ន្ធសម្រាប់ភ្ជាប់ទំនាក់ទំនងពីកុំព្យូទ័រមួយ ទៅកាន់កុំព្យូទ័រជុំវិញសកលលោក</li>
-  <li>Internet អាចប្រើសម្រាប់ស្វែងរកចំណេះដឹង និងព័ត៌មានផ្សេងៗ</li>
+  <li>Internet អាចប្រើសម្រាប់សិក្សាស្រាវជ្រាវស្វែងរកចំណេះដឹង និងព័ត៌មានផ្សេងៗបានជុំវិញពិភពលោក</li>
 </ul>
 `
   },
@@ -430,9 +431,9 @@ let lessonsLevel = {
 <ul>
   <li>Microsoft Edge គឺជា Web Browser សម្រាប់បង្ហាញគេហទំព័រនៅលើ Internet</li>
   <li>របៀបបើក Microsoft Edge</li>
-  <li>ចុចលើ Start menu</li>
+  <ul><li>ចុចលើ Start menu</li>
   <li>ចុច All programs</li>
-  <li>ស្វែងរក និងចុច Microsoft Edge</li>
+  <li>ស្វែងរក និងចុច Microsoft Edge</li></ul>
 </ul>
 `
   },
@@ -446,8 +447,10 @@ let lessonsLevel = {
   <li>Internet អាចប្រើសម្រាប់ស្វែងរកព័ត៌មានអំពី សត្វ ទីកន្លែង និងអ្វីៗផ្សេងទៀត</li>
   <li>របៀបស្វែងរកព័ត៌មាន</li>
   <li>បើកកម្មវិធី Google Chrome</li>
+  <ul>
   <li>វាយ www.google.com ហើយចុច Enter</li>
   <li>វាយពាក្យដែលចង់រក ហើយចុច Enter</li>
+  </ul>
 </ul>
 `
   }
@@ -460,15 +463,15 @@ let lessonsLevel = {
     page: 8,
     summary: `
 <ul>
-  <li>Keyboard ប្រើសម្រាប់វាយអក្សរ</li>
-  <li>Mouse ប្រើសម្រាប់បញ្ជាសញ្ញាព្រួញ</li>
+  <li>Keyboard គឺជាឧបករណ៌ប្រើសម្រាប់វាយអក្សរ</li>
+  <li>Mouse គឺជាឧបករណ៌ប្រើសម្រាប់បញ្ជាសញ្ញាព្រួញ</li>
   <li>Monitor មានតួនាទីសម្រាប់បង្ហាញរូបភាព</li>
   <li>Printer មានតួនាទីសម្រាប់បោះពុម្ពឯកសារ</li>
-  <li>System Unit ជាធុងផ្ទុកសមាសធាតុសំខាន់ៗ</li>
-  <li>Speakers ប្រើសម្រាប់បំពងសម្លេង</li>
-  <li>Microphone ប្រើសម្រាប់ស្រូបសម្លេង</li>
-  <li>Headphones ប្រើសម្រាប់ស្ដាប់សម្លេង</li>
-  <li>Memory Stick ប្រើសម្រាប់ផ្ទុកឯកសារ</li>
+  <li>System Unit ជាធុងផ្ទុកសមាសធាតុសំខាន់ៗរបស់ Computer</li>
+  <li>Speakers គឺជាឧបករណ៌ប្រើសម្រាប់បំពងសម្លេង</li>
+  <li>Microphone គឺជាឧបករណ៌ប្រើសម្រាប់ស្រូបសម្លេង</li>
+  <li>Headphones គឺជាឧបករណ៌ប្រើសម្រាប់ស្ដាប់សម្លេង</li>
+  <li>Memory Stick គឺជាឧបករណ៌ប្រើសម្រាប់ផ្ទុកឯកសារ</li>
   <li>Webcam ជា Camera ដែលភ្ជាប់ជាមួយកុំព្យូទ័រ</li>
   <li>Scanner ប្រើសម្រាប់ថតចម្លងឯកសារចូលកុំព្យូទ័រ</li>
   <li>Camera ប្រើសម្រាប់ថតរូប និងវីដេអូ</li>
@@ -500,11 +503,13 @@ let lessonsLevel = {
     summary: `
 <ul>
   <li>ប្រភេទ Mouse Cursor</li>
-  <ul><li>Normal Select</li>
-    <li>Move</li>
-    <li>Text Select</li>
-    <li>Link Select</li>
-    <li>Busy</li>
+  <ul><li>Normal Select
+        ប្រើសម្រាប់ជ្រើសរើស(Click)ទូទៅលើអេក្រង់ ដូចជា Icon, Button, File</li>
+    <li>Move    
+        ប្រើសម្រាប់អូស (Drag) និងផ្លាស់ទី ដូចជា Icon ឬ Object ពីទីតាំងមួយទៅមួយទៀត។</li>
+    <li>Text Select ប្រើសម្រាប់ជ្រើសរើសអត្ថបទ (Text) ដើម្បី Copy, Cut ឬ Edit។</li>
+    <li>Link Select ប្រើសម្រាប់ចុចលើ Link ឬ Hyperlink ដើម្បីបើក Website</li>
+    <li>Busy បង្ហាញថា Computer យើងកំពុងដំណើរការ (Processing) ហើយមិនទាន់អាចបើកប្រើបានភ្លាមៗទេ។</li>
   </ul>
 </ul>
 `
@@ -611,7 +616,7 @@ let lessonsLevel = {
     page: 44,
     summary: `
 <ul>
-  <li>ប្រើ Web surfing rules ដើម្បីការពារខ្លួនឯង</li>
+  <li></li>
   <li>Nickname គឺជាឈ្មោះហៅក្រៅ (ឈ្មោះទីពីរ)</li>
   <li>ប្រើកម្មវិធីកម្ចាត់មេរោគ ដើម្បីការពារកុំព្យូទ័រ</li>
   <li>មិនត្រូវដោត Memory Stick ឬ Flash Drive ផ្ដេសផ្ដាស</li>
@@ -643,7 +648,7 @@ let lessonsLevel = {
     page: 48,
     summary: `
 <ul>
-  <li>ស្វែងរក Educational Games នៅ dkidsnet.com</li>
+  <li>ស្វែងរក Educational Games នៅ www.dkidsnet.com</li>
   <ul><li>បើក Microsoft Edge</li>
   <li>វាយ dkidsnet.com</li>
   <li>ចុច Online Games</li>
@@ -680,10 +685,13 @@ let lessonsLevel = {
 <ul>
   <li>Email គឺជាសារឬសំបុត្រអេឡិចត្រូនិច</li>
   <li>និមិត្តសញ្ញារបស់ Email គឺ @</li>
+  <li>អត្ថប្រយោជន៌ការប្រើប្រាស់ Email</li>
+  <ul>
   <li>ផ្ញើ Email បានលឿន និងចំណេញពេលវេលា</li>
   <li>អាចផ្ញើម្ដងបានច្រើននាក់</li>
   <li>អាចផ្ញើ File ច្រើនប្រភេទ (រូបភាព, MP3, MP4, Text)</li>
   <li>អាចផ្ញើបានគ្រប់ទីកន្លែង</li>
+  </ul>
 </ul>
 `
   },
@@ -695,9 +703,9 @@ let lessonsLevel = {
     summary: `
 <ul>
   <li>របៀបផ្ញើ Message</li>
-  <li>បំពេញឈ្មោះ Email</li>
+  <ul><li>បំពេញឈ្មោះ Email</li>
   <li>បំពេញ Subject</li>
-  <li>ចុច Send</li>
+  <li>ចុច Send</li></ul>
 </ul>
 `
   },
@@ -742,7 +750,7 @@ let lessonsLevel = {
   <li>lt – បត់ឆ្វេង</li>
   <li>pd – ដាក់បន្ទាត់</li>
   <li>pu – ដកបន្ទាត់</li>
-  <li>cs – សម្អាតផ្ទៃគំនូរ</li>
+  <li>cs – សុបបន្ទាត់ទាំងអស់</li>
 </ul>
 `
   },
@@ -754,14 +762,13 @@ let lessonsLevel = {
     summary: `
 <ul>
   <li>គូរត្រីកោណ (Triangle)</li>
-  <li>repeat 3 [fd 100 rt 120]</li>
+  <ul><li>repeat 3 [fd 100 rt 120]</li></ul>
   <li>គូរការេ (Square)</li>
-  <li>repeat 4 [fd 100 rt 90]</li>
+  <ul><li>repeat 4 [fd 100 rt 90]</li></ul>
   <li>គូរប្រាំមុំ (Hexagon)</li>
-  <li>repeat 6 [fd 100 rt 60]</li>
+  <ul><li>repeat 6 [fd 100 rt 60]</li></ul>
   <li>គូរវង់មូល (Circle)</li>
-  <li>repeat 360 [fd 1 rt 1]</li>
-  <li>គូរផ្ទះ (Draw a house)</li>
+  <ul><li>repeat 360 [fd 1 rt 1]</li></ul>
 </ul>
 `
   },
@@ -797,7 +804,7 @@ let lessonsLevel = {
   <li>បើ Drive ពេញ អាចប្រើ External Hard Disk បន្ថែម</li>
   <li>Hard Disk មាន ២ ប្រភេទ គឺ Internal Hard Disk និង External Hard Disk</li>
   <li>Memory Card ប្រើសម្រាប់រក្សាទុកឯកសារនៅលើ Smartphone និង Camera</li>
-  <li>USB Flash (Memory Stick) ប្រើសម្រាប់ផ្ទេរឯកសារពីកុំព្យូទ័រមួយទៅមួយទៀតបានលឿន</li>
+  <li>USB Flash (Memory Stick) គឺជាឧបករណ៌ផ្ទុកទិន្នន័យដែរប្រើសម្រាប់ផ្ទេរឯកសារពីកុំព្យូទ័រមួយទៅមួយទៀតបានលឿនតាមរយៈ USB Port</li>
 </ul>
 `
 },
@@ -811,7 +818,7 @@ let lessonsLevel = {
   <li>Printer គឺជាម៉ាស៊ីនសម្រាប់បោះពុម្ពឯកសារ</li>
   <li>Inkjet Printer ប្រើទឹកថ្នាំ តម្លៃធូរថ្លៃ និងបោះពុម្ពរូបភាពបានច្បាស់</li>
   <li>Laser Printer ប្រើម្សៅ តម្លៃថ្លៃ បោះពុម្ពលឿន និងមានគុណភាពល្អ</li>
-  <li>Thermal Printer ប្រើសម្រាប់បោះពុម្ពវិក្កយបត្រ តាមផ្សារទំនើប</li>
+  <li>Thermal Printer ប្រើសម្រាប់បោះពុម្ពវិក្កយបត្រ គេច្រើនប្រើនៅតាមផ្សារទំនើប</li>
   <li>Dot Matrix ជាម៉ាស៊ីនសេរីចាស់ បោះពុម្ពបានច្រើន ប៉ុន្តែគុណភាពអន់</li>
   <li>Plotter ជាម៉ាស៊ីនខ្នាតធំ សម្រាប់បោះពុម្ពស្លាកយីហោធំៗ</li>
 </ul>
@@ -824,12 +831,14 @@ let lessonsLevel = {
   page: 14,
   summary: `
 <ul>
-  <li>Capture Device ជាឧបករណ៍សម្រាប់ថតសំឡេង រូបភាព និងវីដេអូ</li>
+  <li>Capture Device គឺជាឧបករណ៍ដែលអាចថតសំឡេង, ថតរូបភាព,
+     ថតវីដេអូ និងរក្សាទុកសម្រាប់ប្រើប្រាស់នៅពេលក្រោយបាន។
+</li>
   <li>Microphone ប្រើសម្រាប់ស្រូបសំឡេង</li>
   <li>Webcam ប្រើសម្រាប់ថតរូបភាព ឬវីដេអូ ដោយភ្ជាប់ជាមួយកុំព្យូទ័រ</li>
   <li>Camera ប្រើសម្រាប់ថតរូបភាព ឬវីដេអូ ដោយមិនចាំបាច់ភ្ជាប់កុំព្យូទ័រ</li>
-  <li>Digital Camera ថតបានតែរូបភាព មិនអាចថតវីដេអូបាន</li>
-  <li>Video Camera ថតបានតែវីដេអូ មិនអាចថតរូបភាពបាន</li>
+  <li>Digital Camera គឺជាឧបករណ៍ប្រើសម្រាប់ផ្ដោតសំខាន់ទៅលើការថតរូបភាព</li>
+  <li>Video Camera គឺជាឧបករណ៍ប្រើសម្រាប់ផ្ដោតសំខាន់ទៅលើការថតវីដេអូ</li>
 </ul>
 `
 },
@@ -844,7 +853,8 @@ let lessonsLevel = {
   <li>Mouse ប្រើសម្រាប់បញ្ជាសញ្ញាព្រួញ</li>
   <li>Touchpad ប្រើសម្រាប់បញ្ជាដោយម្រាមដៃ</li>
   <li>Touchscreen ប្រើសម្រាប់ប៉ះ និងបញ្ជានៅលើ Monitor ផ្ទាល់</li>
-  <li>Graphic Tablet ឬ Digitizer ប្រើសម្រាប់រចនា និងគូររូបភាពលើកុំព្យូទ័រ</li>
+  <li>Graphic Tablet or Digitizer: គឺជាឧបករណ៍សម្រាប់ភ្ជាប់ទៅកាន់ Computer 
+    ដែលអនុញ្ញាតឲ្យយើងរចនានិងគូរូបភាពបានតាមការចង់បាន។</li>
 </ul>
 `
 },
@@ -874,8 +884,8 @@ let lessonsLevel = {
   summary: `
 <ul>
   <li>Folder គឺជាប្រអប់សម្រាប់ដាក់ឯកសារ</li>
-  <li>បង្កើត Folder ដោយ Right-Click → New → Folder</li>
-  <li>Subfolder គឺជា Folder ដែលស្ថិតនៅខាងក្នុង Folder មេ</li>
+  <li>បង្កើត Folder -> Right-Click → New → Folder</li>
+  <li>Subfolder គឺជា Folder ដែលស្ថិតនៅខាងក្នុង Folder</li>
   <li>Open មានន័យថា បើក</li>
   <li>Delete មានន័យថា លុប</li>
   <li>Cut មានន័យថា កាត់ និងប្តូរទីតាំង</li>
@@ -906,8 +916,9 @@ let lessonsLevel = {
   page: 38,
   summary: `
 <ul>
-  <li>ចុច Windows Key ដើម្បីបើក Start Menu</li>
-  <li>Scroll រកកម្មវិធី Calculator</li>
+  <li>របៀបបើកកម្មវិធី Calulator</li>
+  <li>ចុច Windows Key ឬក៏លើរូបStart </li>
+  <li>វាយពាក្យ Calculator</li>
   <li>Click លើ Calculator ដើម្បីបើកកម្មវិធី</li>
   <li>កម្មវិធីនៅលើ Computer ដូចជា Calculator, Paint និង WordPad</li>
 </ul>
@@ -924,7 +935,7 @@ let lessonsLevel = {
     <li>Text Highlight color: ប្រើសម្រាប់ពណ៌ផ្ទៃរបស់អក្សរឬអត្ថបទ</li>
     <li>Bold: ប្រើសម្រាប់ធ្វើឲ្យអក្សរដិត</li>
     <li>Italic: ប្រើសម្រាប់ធ្វើអក្សរទ្រេត</li>
-    <li>Underline: ប្រើសម្រាប់គូសបន្ទាត់ពីក្រោម</li>
+    <li>Underline: ប្រើសម្រាប់គូសបន្ទាត់ពីក្រោមពាក្យ</li>
     <li>Undo: ប្រើសម្រាប់ហៅអ្វីដែលយើងបានធ្វើមុន ឲ្យមកដូចដើមវិញ</li>
     <li>Find: ប្រើសម្រាប់ស្វែងរកអក្សរឬពាក្យនៅក្នុង Microsoft Word</li>
     <li>Zoom in: ប្រើសម្រាប់ពង្រីកសន្លឹកកិច្ចការឲ្យធំ</li>
@@ -993,8 +1004,8 @@ let lessonsLevel = {
     <li>Browser: គឺកម្មវិធីសម្រាប់បើក Internet ដូចជា Fire Fox, Safari, Opera, Chrome, Internet Explorer</li>
     <li>Web address: គឺត្រូវបានគេហៅថា Uniform Resource Locator (URL)</li>
     <li>Search Engine ដែលគេនិយមប្រើប្រាស់ជាងបំផុតគឺ:</li>
-    <li>www.google.com</li>
-    <li>www.bing.com</li>
+    <ul><li>www.google.com</li>
+    <li>www.bing.com</li></ul>
   </ul>
   `
 },
@@ -1031,10 +1042,16 @@ let lessonsLevel = {
   <ul>
     <li>Internet មិនត្រឹមតែជាកន្លែងរក្សាទុកព័ត៌មានទេ ប៉ុន្តែជាកន្លែងទំនាក់ទំនងជាមួយមនុស្សជុំវិញពិភពលោក</li>
     <li>ត្រូវមានសុជីវធម៌ក្នុងការប្រើប្រាស់ Internet ដូចជាជីវិតប្រចាំថ្ងៃ</li>
-    <li>ការប្រាស្រ័យទាក់ទងត្រូវប្រុងប្រយ័ត្នខ្ពស់</li>
-    <li>កុំលេងសារជាមួយមនុស្សដែលមិនស្គាល់</li>
-    <li>កុំនិយាយជាមួយមនុស្សដែលកូនមិនស្គាល់</li>
-    <li>ត្រូវអនុវត្តសេចក្ដីណែនាំនេះនៅពេលប្រើប្រាស់ Internet</li>
+    <li>ប្អូនត្រូវតែមានការប្រុងប្រយ័ត្នខ្ពស់ចំពោះការលេងសារ ឬផ្ញើអ៊ីមែល</li>
+    <li>កុំលេងជាមួយមនុស្សដែលប្អូនមិនស្គាល់</li>
+    <li>ត្រូវចងចាំ</li>
+    <li>មនុស្សគ្រប់គ្នាបានឃើញសាររបស់ប្អូន ទាំងលោកគ្រូផងដែរ។
+      ដូច្នេះ, ជៀសវាងផ្ញើសារមិនសមរម្យ។
+    </li>
+    <li>មិនត្រូវប្រាប់អាយុ លេខទូរស័ព្ទ ឬព័ត៌មានផ្សេងៗអំពីប្អូនទៅឱ្យមនុស្សមិនស្គាល់។
+    ត្រូវប្រាប់ឳពុកម្តាយឱ្យដឹង បើសិនជាមាននរណាម្នាក់ព្យាយាមសុំប្អូន។
+    </li>
+
   </ul>
   `
 },
@@ -1314,15 +1331,6 @@ let lessonsLevel = {
       <li>Print All Pages / Print Current Page</li>
     </ul>
     <li>របៀបបោះពុម្ព: File tab (Ctrl + P) → Print → ត្រួតពិនិត្យ → Print</li>
-    <ul>
-    <li>លំហាត់(page 41)ចូរកូនបំពេញលេខទំព័រខាងក្រោមឱ្យបានត្រឹមត្រូវ៖អ្នកគ្រូមានឯកសារមានចំនួន ១០ទំព័រ ចង់ Print:</li>
-    All page:	->1,2,3,4,5,6,7,8,9,10<br>
-    1.1-5	->1,2,3,4,5<br>
-    2.1, 3, 5 ->1,3,5<br>
-    3.1-3, 5	->1,2,3,5<br>
-    4.1-3, 5-7 ->1,2,3,5,6,7<br>
-    5.Current page Print ទំព័រដែលមាន Cursor
-    </ul>
   </ul>
   `
 },
@@ -1703,8 +1711,95 @@ let lessonsLevel = {
   </ul>
   `
 },
+{
+  module: 2,
+  task: 1,
+  title: "Use capture devices",
+  page: 27,
+  summary: `
+  <ul>
+  <li><b>Scanner</b> – សម្រាប់ចម្លងរូបភាពចូលក្នុងកុំព្យូទ័រ</li>
+  <li><b>Digital Camera</b> – សម្រាប់ថតរូបភាព</li>
+  <li><b>Digital Video Camera</b> – សម្រាប់ថតវីដេអូ</li>
+  <li><b>Microphone</b> – សម្រាប់ស្រូបសំឡេង ឬនិយាយ</li>
+  <li><b>USB Port</b> – សម្រាប់ដោតភ្ជាប់ USB Devices</li>
+  <li><b>Sound Port</b> – សម្រាប់ដោត Headphone</li>
+</ul>
+  `
+},
+{
+  module: 2,
+  task: 2,
+  title: "Create and edit a sound clip",
+  page: 30,
+  summary: `
+  <ul>
+  <li>Audacity គឺជាកម្មវិធីសម្រាប់ធ្វើការកែប្រែនូវសូសំឡេង។</li>
+  <li>Spacebar ប្រើសម្រាប់ Play សំឡេង។</li>
+  <li>Delete ប្រើសម្រាប់លុបផ្នែកណាមួយនៃសំឡេង។</li>
+  <li>របៀបបើកកម្មវិធី  Audacity </li>
+  <ul><li>ចុចទៅលើ Start Menu</li>
+  <li>ចុច Search Button</li>
+  <li>វាយពាក្យ Audacity</li>
+  <li>ចុចលើកម្មវិធី ឬ Enter key</li></ul>
+</ul>
+  `
+},
+{
+  module: 2,
+  task: 3,
+  title: "Find and use multimedia material",
+  page: 33,
+  summary: `
+  <p><b>Browser</b> គឺជាកម្មវិធីសម្រាប់ស្វែងរក អត្ថបទ រូបភាព វីដេអូ និងឯកសារផ្សេងៗ</p>
+<p>Browser មានដូចជា: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera</p>
 
-  ,
+<b>របៀបស្វែងរករូបភាព</b>
+<ol>
+  <li>វាយ www.google.com ក្នុង Address bar</li>
+  <li>ចុច Image</li>
+  <li>វាយឈ្មោះរូបភាព → Enter</li>
+</ol>
+
+<b>របៀបទាញយករូបភាព</b>
+<ul>
+  <li>ចុចលើរូបភាព</li>
+  <li>Right Click → Save Image As</li>
+  <li>ដាក់ឈ្មោះ និងទីតាំង → Save</li>
+</ul>
+  `
+},
+{
+  module: 2,
+  task: 3,
+  title: "Create an animated story",
+  page: 33,
+  summary: `
+  <p><b>Microsoft Photos</b> ប្រើសម្រាប់កែរូបភាព និងបង្កើតវីដេអូ</p>
+
+<b>បើកកម្មវិធី</b>
+<ul>
+  <li>Start Menu</li>
+  <li>វាយ Microsoft Photo / Photo Legacy</li>
+</ul>
+
+<b>បង្កើត Video</b>
+<ol>
+  <li>Folder → New</li>
+  <li>New video project</li>
+  <li>ដាក់ឈ្មោះ → OK</li>
+  <li>Add រូបភាព</li>
+</ol>
+
+<b>រក្សាទុក & ចែករំលែក</b>
+<ul>
+  <li>Finish video → Export video</li>
+  <li>ជ្រើសរើសទំហំ</li>
+  <li>Export → ដាក់ឈ្មោះ → Export ម្តងទៀត</li>
+</ul>
+`
+},
+
   {
   module: 3,
   task: 1,
@@ -2208,4 +2303,3 @@ function toggleSummary(level,index,btn){
 
 </body>
 </html>
-
