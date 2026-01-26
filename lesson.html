@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AIS Level Buttons</title>
+<title>AIS Level eSkills</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
@@ -10,6 +10,14 @@ body{
   background: linear-gradient(to bottom,#7ec8ff,#ffe066);
   font-family:"Khmer OS Battambang", Arial;
 }
+/* Khmer text 
+body .kh{
+  font-family: "Khmer OS Battambang", Arial;
+}*/
+/* English text 
+body .en{
+  font-family: "Tw Cen MT", Arial, sans-serif;
+}*/
 .main-box{
   background:#fff;
   max-width:1000px;
@@ -116,25 +124,24 @@ ul li{
 </head>
 <body>
 
-<div class="main-box">
-  <h3 class="text-center text-primary mb-4">AIS 9 Level Lesson</h3>
-
+<div class="main-box en kh">
+  <h3 class="text-center text-primary mb-4">AIS ESKILLS LESSON</h3>
   <!-- LEVEL BUTTONS -->
   <div class="text-center mb-3">
-    <button class="btn btn-outline-primary level-btn" data-level="1">Level 1</button>
-    <button class="btn btn-outline-primary level-btn" data-level="2">Level 2</button>
-    <button class="btn btn-outline-primary level-btn" data-level="3">Level 3</button>
-    <button class="btn btn-outline-primary level-btn" data-level="4">Level 4</button>
-    <button class="btn btn-outline-primary level-btn" data-level="5">Level 5</button>
-    <button class="btn btn-outline-primary level-btn" data-level="6">Level 6</button>
-    <button class="btn btn-outline-primary level-btn" data-level="7">Level 7</button>
-    <button class="btn btn-outline-primary level-btn" data-level="8">Level 8</button>
-    <button class="btn btn-outline-primary level-btn" data-level="9">Level 9</button>
-    <button class="btn btn-outline-primary level-btn" data-level="9">Level 10</button>
+    <button class="btn btn-outline-primary level-btn" data-level="1">eSkills1</button>
+    <button class="btn btn-outline-primary level-btn" data-level="2">eSkills2</button>
+    <button class="btn btn-outline-primary level-btn" data-level="3">eSkills3</button>
+    <button class="btn btn-outline-primary level-btn" data-level="4">eSkills4</button>
+    <button class="btn btn-outline-primary level-btn" data-level="5">eSkills5</button>
+    <button class="btn btn-outline-primary level-btn" data-level="6">eSkills6</button>
+    <button class="btn btn-outline-primary level-btn" data-level="7">eSkills7</button>
+    <button class="btn btn-outline-primary level-btn" data-level="8">eSkills8</button>
+    <button class="btn btn-outline-primary level-btn" data-level="9">eSkills9</button>
+    <button class="btn btn-outline-primary level-btn" data-level="9">eSkills10</button>
   </div>
   <p class="text-center text-muted"></p>
   <div class="container mt-4">
-    <h4 class="text-center mb-3">Lesson Table (Editable)</h4>
+    <h4 class="text-center mb-3">Lesson Summary</h4>
     <table class="table table-bordered" id="lessonTable">
       <thead class="thead-light">
         <tr>
@@ -171,6 +178,7 @@ let lessonsLevel = {
 <ul>
   <li>ENIAC គឺជាកុំព្យូទ័រដំបូងគេ</li>
   <li>Abacus ជាឧបករណ៍គណនាបុរាណ</li>
+  <li>សព្វថ្ងៃ Computer ដើរតួនាទីយ៉ាងសំខាន់ក្នុងការជួយសម្រួលការងារទូរទៅរបស់មនុស្សលោក</li>
 </ul>
 `
 },
@@ -181,13 +189,13 @@ let lessonsLevel = {
     page:10,
     summary: `
 <ul>
-  <li>Computer </li>
-  <li>Mouse</li>
-  <li>Keyboard</li>
-  <li>Monitor</li>
-  <li>Printer</li>
-  <li>Speaker</li>
-  <li>System Unit</li>
+  <li>ឧបករណ៍ដែលចាត់ចូលជាប្រភេទ Computer មាន៖ </li>
+  <ul><li>Desktop Computer</li>
+  <li>Laptop</li>
+  <li>Smartphone</li>
+  <li>Tablet</li>
+  <li>Handheld Game Console (ម៉ាស៊ីនលេខហ្គេមដៃ)</li>
+  </ul>
 </ul>
 `
     },
@@ -198,7 +206,6 @@ let lessonsLevel = {
     page:12,
     summary: `
 <ul>
-  <li>Computer មានឧបករណ៍ជាច្រើនដែលធ្វើការជាមួយគ្នា</li>
   <li>System Unit គឺជាធុងសម្រាប់ផ្ទុកសមាសធាតុសំខាន់ៗរបស់ Computer</li>
   <li>Monitor មានតួនាទីសម្រាប់បង្ហាញរូបភាព និងព័ត៌មាន</li>
   <li>Keyboard ប្រើសម្រាប់ចុចអក្សរ និងលេខ</li>
@@ -232,11 +239,11 @@ let lessonsLevel = {
     page: 22,
     summary: `
 <ul>
-  <li>Desktop គឺជាប្រភេទ Computerលើតុ</li>
-  <li>This PC</li>
-  <li>Recycle Bin</li>
-  <li>Folder</li>
-  <li>Microsoft Edge</li>
+  <li>Desktop:ផ្ទៃការងារដំបូងគេបន្ទាប់ពីបើក Computerរួច</li>
+  <li>This PC:គឺជាកន្លែងសម្រាប់ចូលទៅគ្រប់គ្រងរាល់ទិន្នន័យទាំងអស់នៅក្នុងកុំព្យូទ័រ</li>
+  <li>Recycle Bin: ធុងសំរាម</li>
+  <li>Folder: ថតសម្រាប់ទុកឯកសារ</li>
+  <li>Microsoft Edge: កម្មវិធីសម្រាប់ប្រើជាមួយអ៊ីនធឺណិត</li>
 </ul>
 `
   },
@@ -262,10 +269,10 @@ let lessonsLevel = {
     summary: `
 <ul>
   <li>ប្រភេទព័ត៌មានដែល Computer អាចបង្ហាញបាន</li>
-  <li>Sound – សម្លេង</li>
+  <ul><li>Sound – សម្លេង</li>
   <li>Text – អក្សរ</li>
   <li>Picture – រូបភាព</li>
-  <li>Video – វីដេអូ</li>
+  <li>Video – វីដេអូ</li></ul>
 </ul>
 `
   },
@@ -276,7 +283,6 @@ let lessonsLevel = {
     page:28,
     summary: `
 <ul>
-  <li>ការថែរក្សាកន្លែងធ្វើការ</li>
   <li>រក្សា Computer និងតុឲ្យស្អាតជានិច្ច</li>
   <li>ប្រយ័ត្នជានិច្ចជាមួយខ្សែភ្លើង</li>
 </ul>
@@ -398,16 +404,16 @@ let lessonsLevel = {
 </ul>
 `
   },
-    {
+
+  {
     module: 5,
     task: 1,
     title: "The Internet",
     page:62,
     summary: `
 <ul>
-  <li>Internet គឺជាប្រព័ន្ធសម្រាប់ភ្ជាប់ទំនាក់ទំនងពីកុំព្យូទ័រមួយ ទៅកាន់កុំព្យូទ័រជុំវិញសកលលោក</li>
+   <li>Internet គឺជាប្រព័ន្ធសម្រាប់ភ្ជាប់ទំនាក់ទំនងពីកុំព្យូទ័រមួយ ទៅកាន់កុំព្យូទ័រជុំវិញសកលលោក</li>
   <li>Internet អាចប្រើសម្រាប់សិក្សាស្រាវជ្រាវស្វែងរកចំណេះដឹង និងព័ត៌មានផ្សេងៗបានជុំវិញពិភពលោក</li>
-</ul>
 `
   },
   {
@@ -429,11 +435,11 @@ let lessonsLevel = {
     page:68,
     summary: `
 <ul>
-  <li>Microsoft Edge គឺជា Web Browser សម្រាប់បង្ហាញគេហទំព័រនៅលើ Internet</li>
+  <li>Microsoft Edge(Browser) គឺជាកម្មវិធីសម្រាប់បើកប្រើជាមួយ Internet។</li>
   <li>របៀបបើក Microsoft Edge</li>
   <ul><li>ចុចលើ Start menu</li>
-  <li>ចុច All programs</li>
-  <li>ស្វែងរក និងចុច Microsoft Edge</li></ul>
+  <li>ត្រង់ Search វាយពាក្យ Microsoft Edge</li>
+  <li>ចុច Microsoft Edge</li></ul>
 </ul>
 `
   },
@@ -444,7 +450,7 @@ let lessonsLevel = {
     page:70,
     summary: `
 <ul>
-  <li>Internet អាចប្រើសម្រាប់ស្វែងរកព័ត៌មានអំពី សត្វ ទីកន្លែង និងអ្វីៗផ្សេងទៀត</li>
+  <li>Internet អាចប្រើសម្រាប់ស្វែងរកព័ត៌មានដូចជា៖ រូបភាព ទីកន្លែង និង  Video សម្រាប់សិក្សាជាដើម។</li>
   <li>របៀបស្វែងរកព័ត៌មាន</li>
   <li>បើកកម្មវិធី Google Chrome</li>
   <ul>
@@ -521,7 +527,6 @@ let lessonsLevel = {
     page: 20,
     summary: `
 <ul>
-  <li>ការថែរក្សាកន្លែងធ្វើការ</li>
   <li>រក្សា Computer និងតុឲ្យស្អាតជានិច្ច</li>
   <li>ប្រយ័ត្នជានិច្ចជាមួយខ្សែភ្លើង</li>
 </ul>
@@ -545,6 +550,13 @@ let lessonsLevel = {
   <li>Cut ប្រើសម្រាប់កាត់យកអក្សរ ឬរូបភាព</li>
   <li>Copy ប្រើសម្រាប់ចម្លងអក្សរ ឬរូបភាព</li>
   <li>Paste ប្រើសម្រាប់បញ្ចេញអ្វីដែលបាន Copy</li>
+  <li><b>របៀប Copyអត្ថបទក្នុងកម្មវិធី Wordpad</b></li>
+  <ul>
+  <li>ចុច Select លើអក្សរដែលចង់ Copy</li>  
+  <li>ចុច Copy</li>
+  <li>រួចយក Mouse ទៅចុចទីតាំងដែលចង់ដាក់</li>
+  <li>ចុច Paste</li>
+  </ul>
 </ul>
 `
   },
@@ -594,9 +606,11 @@ let lessonsLevel = {
 <ul>
   <li>Save ប្រើសម្រាប់រក្សាទុកឯកសារ</li>
   <ul>
-  <li>ចុច File → Save ឬ Save as</li>
-  <li>សរសេរឈ្មោះឯកសារ</li>
-  <li>ចុច Save</li>
+  <li>របៀបរក្សាទុកឯកសារ/li>
+  <li>ចុចចូល File </li>
+  <li>យកពាក្យ Save as</li>
+  <li>រើសទីតាំង បន្ទាប់មកដាក់ឈ្មោះ</li>
+  <li> Save</li>
   </ul>
   <li>Print ប្រើសម្រាប់បោះពុម្ពឯកសារ</li>
   
@@ -616,10 +630,14 @@ let lessonsLevel = {
     page: 44,
     summary: `
 <ul>
-  <li></li>
-  <li>Nickname គឺជាឈ្មោះហៅក្រៅ (ឈ្មោះទីពីរ)</li>
-  <li>ប្រើកម្មវិធីកម្ចាត់មេរោគ ដើម្បីការពារកុំព្យូទ័រ</li>
-  <li>មិនត្រូវដោត Memory Stick ឬ Flash Drive ផ្ដេសផ្ដាស</li>
+  <li>Use web surfing rules to protect yourself.</li>
+  <ul>
+  <li>កម្មវិធីកម្ចាត់មេរោគមានដូចជា៖ Microsoft Security essential, Eset, Anti-Virus Avas....។
+</li>
+  <li>ដើម្បីការពារកុំព្យូទ័រកុំឱ្យឆ្លងមេរោគយើងត្រូវប្រើកម្មវិធី  កម្ចាត់មេរោគ និងមិនត្រូវដោត Memory Stick ឬ 
+​   Flash Drive ផ្ដេសផ្ដាស។
+</li>
+  </ul>
 </ul>
 `
   },
@@ -704,7 +722,7 @@ let lessonsLevel = {
 <ul>
   <li>របៀបផ្ញើ Message</li>
   <ul><li>បំពេញឈ្មោះ Email</li>
-  <li>បំពេញ Subject</li>
+  <li>បំពេញ Subject និងបញ្ចូលឯកសារដែលយើងរៀបចំរួច</li>
   <li>ចុច Send</li></ul>
 </ul>
 `
@@ -741,8 +759,8 @@ let lessonsLevel = {
     summary: `
 <ul>
   <li>របៀបបើកកម្មវិធី FMSLogo</li>
-  <li>វាយ FMSLogo ក្នុង Search</li>
-  <li>ចុចលើកម្មវិធី FMSLogo</li>
+  <ul><li>វាយ FMSLogo ក្នុង Search</li>
+  <li>ចុចលើកម្មវិធី FMSLogo</li></ul>
   <li>Commands សម្រាប់បញ្ជា Turtle</li>
   <li>fd – ឆ្ពោះទៅមុខ</li>
   <li>bk – ត្រឡប់ក្រោយ</li>
@@ -866,9 +884,12 @@ let lessonsLevel = {
   page: 27,
   summary: `
 <ul>
-  <li>កុំព្យូទ័រ គឺជាឃ្លាំងធំសម្រាប់រក្សាទុកទិន្នន័យ ដែលគេហៅថា Files</li>
+  <li>កុំព្យូទ័ររបស់យើងគឺជាឃ្លាំងដ៏ធំមួយដែលអាចរក្សាទុក​ទិន្នន័យបានជាច្រើន 
+    ហើយទិន្នន័យទាំងនោះត្រូវបានគេហៅថា Files។
+</li>
   <li>File គឺជាឯកសារដែលបង្កើតឡើងដោយកុំព្យូទ័រ</li>
-  <li>File មាន Icon, File name និង Extension</li>
+  <li>File មានច្រើនប្រភេទ និងមានលក្ខណៈសម្គាល់របស់វាដូចជា (Icon, File name and Extension)។
+</li>
   <li>Icon គឺជារូបតំណាងរបស់ឯកសារ</li>
   <li>File name គឺជាឈ្មោះរបស់ឯកសារ</li>
   <li>Extension គឺជាពាក្យបន្ថែមនៅចុងឈ្មោះឯកសារ</li>
@@ -901,14 +922,16 @@ let lessonsLevel = {
   page: 35,
   summary: `
 <ul>
-  <li>Search ប្រើសម្រាប់ស្វែងរក File និង Folder នៅក្នុង Computer</li>
-  <li>ចុច Windows Explorer ឬ Windows Button</li>
-  <li>វាយឈ្មោះ File ឬ Folder ដែលចង់រក</li>
-  <li>Double-Click ដើម្បីបើក File ឬ Folder</li>
-  <li>Windows Key + E ប្រើសម្រាប់បើក Windows Explorer បានលឿន</li>
+  <li>Search ប្រើសម្រាប់ស្វែងរកឯកសារផ្សេងៗនៅក្នុង Computer</li>
+  <li>វិធីស្វែងរក File ឬ​​ Folder យើងត្រូវ​​​៖</li>
+    <ul><li>ចុច Windows Explorer ឬ Windows Button</li>
+    <li> វាយឈ្មោះ File ឬ​​ Folder នោះ</li>
+    <li>រួចDouble_Click លើ File ឬ Folder</li>
+    </ul>
+    <li>Windows Key + E ប្រើសម្រាប់បើក Windows Explorer បានលឿន</li>
+    <li>F3 ឬ Ctrl + F ប្រើសម្រាប់ចូលSearch Windows Explorer បានលឿន</li>
 </ul>
-`
-},
+`},
 {
   module: 2,
   task: 4,
@@ -917,9 +940,9 @@ let lessonsLevel = {
   summary: `
 <ul>
   <li>របៀបបើកកម្មវិធី Calulator</li>
-  <li>ចុច Windows Key ឬក៏លើរូបStart </li>
+  <ul><li>ចុច Windows Key ឬក៏លើរូបStart </li>
   <li>វាយពាក្យ Calculator</li>
-  <li>Click លើ Calculator ដើម្បីបើកកម្មវិធី</li>
+  <li>Click លើ Calculator ដើម្បីបើកកម្មវិធី</li></ul>
   <li>កម្មវិធីនៅលើ Computer ដូចជា Calculator, Paint និង WordPad</li>
 </ul>
 `
@@ -936,7 +959,7 @@ let lessonsLevel = {
     <li>Bold: ប្រើសម្រាប់ធ្វើឲ្យអក្សរដិត</li>
     <li>Italic: ប្រើសម្រាប់ធ្វើអក្សរទ្រេត</li>
     <li>Underline: ប្រើសម្រាប់គូសបន្ទាត់ពីក្រោមពាក្យ</li>
-    <li>Undo: ប្រើសម្រាប់ហៅអ្វីដែលយើងបានធ្វើមុន ឲ្យមកដូចដើមវិញ</li>
+    <li>Undo(Ctrl + Z): ប្រើសម្រាប់ហៅអ្វីដែលយើងបានធ្វើមុន ឲ្យមកដូចដើមវិញ</li>
     <li>Find: ប្រើសម្រាប់ស្វែងរកអក្សរឬពាក្យនៅក្នុង Microsoft Word</li>
     <li>Zoom in: ប្រើសម្រាប់ពង្រីកសន្លឹកកិច្ចការឲ្យធំ</li>
     <li>Zoom Out: ប្រើសម្រាប់បង្រួមសន្លឹកកិច្ចការឲ្យតូច</li>
@@ -989,6 +1012,8 @@ let lessonsLevel = {
     <li>Ignore Once: រំលងពាក្យខុសមួយ ដោយមិនចាំបាច់កែ</li>
     <li>Ignore All: រំលងពាក្យខុសទាំងអស់ ដោយមិនចាំបាច់កែ</li>
     <li>Save As: ប្រើសម្រាប់រក្សាទុកឯកសារ និងផ្លាស់ប្ដូទីតាំងបាន</li>
+    <li> របៀបរក្សាទុកឯកសារក្នុងកម្មវិធី Microsoft Word</li>
+    <ul><li>->ចុចចូល File ->ចុចពាក្យ Save us -> រើសទីតាំងនិងដាក់ឈ្មោះ -> ចុច Save</li></ul>
   </ul>
   `
 },
@@ -1288,11 +1313,16 @@ let lessonsLevel = {
   page: 35,
   summary: `
   <ul>
-    <li>ដាក់រូបភាពចូលអត្ថបទ: Insert Tab → Picture → ជ្រើសរើសរូបភាព → Insert</li>
+    <li>ដាក់រូបភាពចូលមកក្នុងកម្មវិធី Ms.Word : ចុចInsert Tab → ចុចចូលPicture → ជ្រើសរើសរូបភាព → ចុចInsert</li>
     <li>Remove Background: លុប Background រូបភាព</li>
     <li>Color: ប្តូរពណ៌រូបភាពឱ្យសមជាមួយអត្ថបទ</li>
     <li>Picture Border: ដាក់បន្ទាត់ជុំវិញរូបភាព</li>
-  </ul>
+   ​ <li>Wrap text: កំណត់ទីតាំងអត្ថបទ</li>
+    <ul><li>In line with text: រូបភាពនៅខាងក្នុងនៃអត្ថបទ</li>
+    <li>Square: រូបភាពនៅកណ្ដាលនៃអត្ថបទ</li>
+    <li>Tight: អក្សរនៅព័ទ្ធជុំវិញនៃរូបភាព</li>
+    <li>Top and bottom: អត្ថបទនៅ ខាងលើ និងខាងក្រោមនៃរូបភាព។</li></ul>
+    </ul>
   `
 },
 
@@ -1342,8 +1372,13 @@ let lessonsLevel = {
   page: 46,
   summary: `
   <ul>
-    <li>រក្សាទុកសំឡេងផ្សេងៗនៅលើកុំព្យូទ័រ ឬទាញពី Internet</li>
-    <li>អាចបង្កើតសំឡេងដោយខ្លួនឯង</li>
+    <li>កម្មវិធី Voice Recorder  គឺជាកម្មវិធីប្រើសម្រាប់ Record សម្លេង។</li>
+    <li>របៀបបើកកម្មវិធី Voice Recorder</li>
+    <ul>
+      <li>ចុច Start window</li>
+      <li>វាយពាក្យ Voice Recorder</li> 
+      <li>ចុចបើកកម្មវិធី</li> 
+    </ul>
     <li>របៀបបង្កើត Sound Clip:
       <ol>
         <li>ចុច Start button</li>
@@ -1362,12 +1397,13 @@ let lessonsLevel = {
   page: 48,
   summary: `
   <ul>
-    <li>មើលរូបភាព និងវីដេអូដែលមាននៅលើកុំព្យូទ័រ</li>
-    <li>រូបភាពអាចទាញពី Internet, ថតផ្ទាល់, ឬគូស</li>
-    <li>ប្រើកម្មវិធី Windows Live Photo Gallery ដើម្បី View និងកែប្រែរូបភាព</li>
-    <li>របៀបប្រើកម្មវិធី:
+    <li>Windows live Photo Gallery ជាកម្មវិធីមួយសម្រាប់ View រូបភាព ហើយក៏អាចកែប្រែរូបភាពបានថែមទៀតផង។</li>
+    <li> Zoom ប្រើសម្រាប់ពង្រីកឬបង្រួមរូបភាព </li>
+    <li>Delete ប្រើសម្រាប់លុបរូបភាព </li>
+    <li>Slide Show ប្រើសម្រាប់បង្ហាញរូបភាពជា Slide </li>
+    <li>របៀបប្រើកម្មវិធី Windows live Photo Gallery</li>
       <ol>
-        <li>Mouse លើរូបភាព</li>
+        <li>Right Click លើរូបភាព</li>
         <li>រើស Open with</li>
         <li>ចុច Photo Gallery</li>
       </ol>
@@ -1383,8 +1419,8 @@ let lessonsLevel = {
   page: 50,
   summary: `
   <ul>
-    <li>ប្រើបច្ចេកវិទ្យាកែប្រែរូបភាព បើរូបភាពមិនស្អាត ឬមិនពេញចិត្ត</li>
-    <li>អាចប្រើនៅ Window Live Photo Gallery ឬ Photo Gallery</li>
+    <li>នៅក្នុង Computer មានកម្មវិធីជាច្រើនសម្រាប់កែប្រែរូបភាពទៅតាមការចង់បាន</li>
+    <li>កម្មវិធី Window Live Photo Gallery ឬ Photo Gallery យើងអាចប្រើដើម្បីកែរូបភាពបាន</li>
     <li>Tools:
       <ul>
         <li>Red eye removal: បំបាត់ភ្នែកក្រហមទៅខ្មៅ</li>
@@ -1445,7 +1481,6 @@ let lessonsLevel = {
   </ul>
   `
 },
-
 {
   module: 4,
   task: 2,
@@ -1527,9 +1562,7 @@ let lessonsLevel = {
   page: 76,
   summary: `
   <ul>
-    <li>Spreadsheet: កម្មវិធីអេឡិចត្រូនិច សម្រាប់គ្រប់គ្រងទិន្នន័យជាជួរដេក និងជួរឈរ</li>
-    <li>វាមើលទៅដូចក្រឡាធំៗ ដែលពោពេញដោយប្រអប់ជាច្រើន</li>
-    <li>ប្រើសម្រាប់គណនាលេខ និងបញ្ជាទិន្នន័យ</li>
+    <li>Spreadsheet: កម្មវិធីអេឡិចត្រូនិច សម្រាប់គ្រប់គ្រងទិន្នន័យជាជួរដេក និងជួរឈរ។វាមើលទៅដូចក្រឡាធំៗ ដែលពោពេញដោយប្រអប់ជាច្រើន។ប្រើសម្រាប់គណនាលេខ និងបញ្ជាទិន្នន័យ</li>
     <li>Spreadsheet Programs:
       <ul>
         <li>Microsoft Excel</li>
@@ -1547,7 +1580,16 @@ let lessonsLevel = {
   task: 2,
   title: "Row - Column - Cell",
   page: 78,
-  summary: `
+  summary:
+   `
+   <p><b>តើអ្វីទៅជាកម្មវិធី Microsoft Excel ?</b></p>
+   <p>កម្មវិធី Microsoft Office Excel គឺជាកម្មវិធីមួយដែលមានសារៈ
+    សំខាន់សម្រាប់ជួយសម្រួលការងារបានយ៉ាងច្រើនរបស់មនុស្ស។ 
+    ជាមួយកម្មវិធីនេះផងដែលត្រូវបានបង្កើតឡើងដោយក្រុមហ៊ុន Microsoft ។ 
+    ប្រសិនបើយើងនិយាយអំពីគុណសម្បត្តិការងារវិញ កម្មវិធីនេះអាចធ្វើការគ្រប់គ្រងក្នុងការងារបានយ៉ាងច្រើន 
+    ក្នុងនោះរួមមានដូចជា៖ ធ្វើបញ្ជីគ្រប់គ្រងសិស្ស បញ្ជីគ្រប់គ្រងបុគ្គលិក គ្បញ្ជីបើកប្រាក់ខែ បញ្ជីគ្រប់គ្រងពិន្ទុសិស្ស 
+    បញ្ជីកត់ត្រាចំណាយ និង ចំណូលពីការលក់ទំនិញ ផ្សេងៗ…..។
+</p>
   <ul>
     <li>របៀបបើក Microsoft Excel:
       <ol>
@@ -1558,8 +1600,7 @@ let lessonsLevel = {
     <li>Cell: ប្រអប់នីមួយៗក្នុងតារាង ដែលបង្កើតដោយជួរឈរ និងជួរដេក</li>
     <li>Column: ជួរឈរ</li>
     <li>Row: ជួរដេក</li>
-  </ul>
-  `
+  </ul>`
 },
 
 {
@@ -1578,7 +1619,7 @@ let lessonsLevel = {
     <li>ប្រើ Key:
       <ul>
         <li>Backspace: លុបអក្សរម្តងៗ ក្នុង Cell</li>
-        <li>Delete: លុបអក្សរពហុ Cell ដែល Select</li>
+        <li>Delete: លុបអក្សរគ្រប់Cell ដែល Select</li>
         <li>Arrow Keys: ទៅឆ្វេង/ស្តាំ/ក្រោម/លើ</li>
         <li>Enter: ចុះបន្ទាត់</li>
       </ul>
@@ -1663,6 +1704,18 @@ let lessonsLevel = {
         <li>Shortcut: Ctrl + H</li>
       </ul>
     </li>
+     <li>របៀបស្វែងរកពាក្យ ឬឃ្លាក្នុងអត្ថបទ (Find)</li>
+     <ul>
+      <li>ចូល Home tab​  ចុច Find ក្នុង Editing group </li>
+      <li>វាយពាក្យ ឬឃ្លាដែរចង់ស្វែងរក</li>
+      </ul>
+      <li>របៀបជំនួសពាក្យ (Replace)</li>
+     <ul>
+      <li>ចូល Home  ចុចលើ Replace ក្នុង​ Editing group </li>
+      <li>Find what:សរសេរពាក្យដែលចង់រក</li>
+      <li>Replace with:សរសេរពាក្យដែលត្រូវជំនួស</li>
+      <li>យក Replace or Replace All</li>
+      </ul>
   </ul>
   `
 },
@@ -1781,6 +1834,7 @@ let lessonsLevel = {
 <ul>
   <li>Start Menu</li>
   <li>វាយ Microsoft Photo / Photo Legacy</li>
+  <li>ចុចបើកកម្មវិធី</li>
 </ul>
 
 <b>បង្កើត Video</b>
@@ -1797,6 +1851,8 @@ let lessonsLevel = {
   <li>ជ្រើសរើសទំហំ</li>
   <li>Export → ដាក់ឈ្មោះ → Export ម្តងទៀត</li>
 </ul>
+<b>- Export ប្រើសម្រាប់បញ្ចេញលវីដេអូ ដែលបានកាត់ឬ កែប្រែរួច។
+</b>
 `
 },
 
@@ -1833,7 +1889,6 @@ let lessonsLevel = {
   </ul>
   `
 },
-
 {
   module: 3,
   task: 3,
@@ -1842,16 +1897,16 @@ let lessonsLevel = {
   summary: `
   <ul>
     <li>OneDrive: រក្សាទុកឯកសារផ្ទាល់ខ្លួន (រូបភាព, វីដេអូ, ឯកសារផ្សេងៗ) យ៉ាងងាយស្រួល</li>
-    <li>Intellectual Property (កម្មសិទ្ធិបញ្ញា): រក្សាសិទ្ធលើឯកសារតាម Internet (សៀវភៅ, រូបភាព, ចម្រៀង, វីដេអូ)</li>
+    <li>Intellectual Property (កម្មសិទ្ធិបញ្ញា): វាជាការរក្សាសិទ្ធទៅលើឯកសារតាមប្រព័ន្ធ Internet ដែលមានដូចជា សៀវភៅ រូបភាព ចម្រៀង វីដេអូ ជាដើម</li>
     <li>Intellectual Property Law: ច្បាប់កំណត់អ្នកប្រើប្រាស់</li>
     <li>Copyrighted Material:
       <ul>
-        <li>Literary Work: Book, Poetry</li>
-        <li>Computer Software</li>
-        <li>Music, Songs, MP3</li>
-        <li>Art: Graphic Drawing</li>
-        <li>Animation and Videos</li>
-        <li>Architectural Works</li>
+        <li>ស្នាដៃអក្សរសាស្ត្រ (Literary Work): រួមមាន សៀវភៅ កំណាព្យ និងអត្ថបទនានា</li>
+        <li>កម្មវិធីកុំព្យូទ័រ (Computer Software): រាល់កូដ (Code) និងកម្មវិធីដែលបានបង្កើតឡើង</li>
+        <li>តន្ត្រី និងចម្រៀង (Music, Songs, MP3): រួមបញ្ចូលទាំងទំនុកច្រៀង និងបទភ្លេង</li>
+        <li>សិល្បៈ (Art): រូបភាពក្រាហ្វិក (Graphic Drawing) និងការរចនាផ្សេងៗ</li>
+        <li>រូបភាពមានចលនា និងវីដេអូ (Animation and Videos): ខ្សែភាពយន្ត ឬវីដេអូខ្លីៗ</li>
+        <li>ស្នាដៃស្ថាបត្យកម្ម (Architectural Works): ប្លង់អាគារ និងការរចនាបទសំណង់</li>
       </ul>
     </li>
     <li>Tools for sharing:
@@ -1945,6 +2000,13 @@ let lessonsLevel = {
   <ul>
     <li>Graph/Chart: បង្ហាញព័ត៌មាន និងទិន្នន័យតាមរូបភាព ងាយស្រួលយល់ និងវិភាគ</li>
     <li>ប្រភេទ Chart: Column, Pie, Line, …</li>
+    <li>របៀបបង្កើត Graphi ឬ Chart </li>
+    <ul>
+        <li>ដំបូងលោកអ្នកត្រូវមានទិន្នន័យជាមុនសិន</li>  
+        <li>បន្ទាប់មកសូមលោកអ្នកយក Mouse ទៅ Select លើទិន្នន័យទាំងអស់នោះ</li>
+        <li>រួចចុច Insert tab</li>
+        <li>ចុច Chart group</li>
+    </ul>
   </ul>
   `
 },
@@ -1957,6 +2019,7 @@ let lessonsLevel = {
   summary: `
   <ul>
     <li>Print: បោះពុម្ពឯកសារ ឬកិច្ចការ</li>
+    <li>របៀបបោះពុម្ភ Print -> ចូលFile -> ចុចពាក្យ Print -> ចុច Print </li>
     <li>Margins: គែមក្រដាសនៅសល់ព័ទ្ធជុំវិញឯកសារពេល Print</li>
     <li>Orientation:
       <ul>
@@ -2022,128 +2085,4242 @@ let lessonsLevel = {
   summary: `
   <ul>
     <li>Sort and view data efficiently</li>
-    <li>Sort A to Z: តម្រៀបពីធំទៅតូច</li>
-    <li>Sort Z to A: តម្រៀបពីតូចទៅធំ</li>
+    <li>Sort A to Z(Ascending): តម្រៀបពីធំទៅតូច</li>
+    <li>Sort Z to A(Descending): តម្រៀបពីតូចទៅធំ</li>
     <li>Sort by Color: តម្រៀបតាមពណ៌</li>
     <li>Select All: ជ្រើសរើសទាំងអស់</li>
+    <b>ការកំណត់ទៅលើការបោះពុម្ព (Print Selection)</b>
+    <ul><li>No Scaling ការបោះពុម្ពតាមធម្មតា</li>
+    <li>Fit Sheet on One Page ការបោះពុម្ពដោយបង្រួម Rows និង Columns ចូលក្នុងទំព័រ</li>
+    <li>Fit All Columns on One Page ការបោះពុម្ពដោយបង្រួម Columns ចូលក្នុងទំព័រ</li>
+    <li>Fit All Rows on One Page ការបោះពុម្ពដោយបង្រួម Rows ចូលក្នុងទំព័រ</li></ul>
   </ul>
   `
 }
 ],
 
   6: [
-  {module:1, task:1, title:"Presentation graphics", page:9},
-  {module:1, task:2, title:"Columns and tabs", page:13},
-  {module:1, task:3, title:"Headers and footers", page:16},
-  {module:1, task:4, title:"The final touch", page:19},
+  {
+  module: 1,
+  task: 1,
+  title: "Presentation Graphics",
+  page: 9,
+  summary: `
+  <p><b>M.S Word</b> : គឺជាកម្មវិធីមួយប្រើប្រាស់សម្រាប់វាយអត្ថបទ បញ្ចូលភាព បង្កើតឯកសារ និងបោះពុម្ភឯកសារជាដើម។</p>
 
-  {module:2, task:1, title:"What is a web page", page:26},
-  {module:2, task:2, title:"Design a web page", page:28},
-  {module:2, task:3, title:"Add more pages", page:32},
-  {module:2, task:4, title:"Publishing the web page", page:34},
+  <p><b>របៀបបើកឯកសារក្នុងកម្មវិធី MS. Word</b></p>
+  <p>
+    ចុចលើ File ⇒ Open (Ctrl + O) ⇒ Browse <br>
+    Select លើឯកសារចង់បើក ⇒ Open
+  </p>
 
-  {module:3, task:1, title:"More calculations", page:41},
-  {module:3, task:2, title:"Functions", page:45},
-  {module:3, task:3, title:"References", page:50},
-  {module:3, task:4, title:"More charts", page:54},
+  <p><b>1. ភាពខុសគ្នារវាង Save និង Save As</b></p>
+  <ul>
+    <li><b>Save (Ctrl + S)</b> : រក្សាទុកឯកសារដែលមានឈ្មោះស្រាប់</li>
+    <li><b>Save As (F12)</b> : រក្សាទុកឯកសារថ្មី</li>
+  </ul>
 
-  {module:4, task:1, title:"Structured information", page:61},
-  {module:4, task:2, title:"Use a data entry form", page:66},
-  {module:4, task:3, title:"Filter the data", page:72},
-  {module:4, task:4, title:"Create a report", page:77},
+  <p><b>2. ដើម្បីរក្សាទុកឯកសារ</b></p>
+  <p>
+    File ⇒ Save As ⇒ Browse ⇒ Folder <br>
+    File Name ⇒ Save
+  </p>
 
-  {module:5, task:1, title:"Introduction to programming", page:86},
-  {module:5, task:2, title:"How to design a program", page:90},
-  {module:5, task:3, title:"Variables and commands", page:92},
-  {module:5, task:4, title:"More programming", page:96}
+  <p><b>SmartArt</b> : រូបភាពក្រាហ្វិចតំណាងឱ្យព័ត៌មាន និងគំនិត។</p>
+  <ul>
+    <li>Insert ⇒ SmartArt</li>
+    <li>ជ្រើសរើស SmartArt</li>
+  </ul>
+
+  <p><b>Shapes (Alt + N + S + H)</b> : គូសរូបភាពដែលមានស្រាប់។</p>
+  <ul>
+    <li>Insert ⇒ Shapes</li>
+    <li>ជ្រើស Shapes</li>
+  </ul>
+  `
+},
+  {
+  module: 1,
+  task: 2,
+  title: "Columns and Tabs",
+  page: 13,
+  summary: `
+  <ul>
+    <li><b>Columns</b> : បែងចែក 2 ឬ 3 ជួរឈរ</li>
+    <li><b>Tabs / Tab Stop</b> : តម្រឹមអត្ថបទតាម Tab</li>
+    <li><b>Indent</b> : ការចូលបន្ទាត់</li>
+    <li><b>Line Between</b> : បន្ទាត់ចន្លោះជួរឈរ</li>
+    <li><b>This Point Forward</b> : ចាប់ពីចំណុចនេះទៅមុខ</li>
+    <li><b>Whole Document</b> : កំណត់ទាំងឯកសារ</li>
+  </ul>
+
+  <p><b>Columns</b></p>
+  <ol>
+    <li>Layout Tab</li>
+    <li>Columns</li>
+    <li>Two Columns</li>
+    <li>More Columns ⇒ Two Columns ⇒ OK</li>
+  </ol>
+
+  <p><b>Tabs Stop</b></p>
+  <ol>
+    <li>Tabs Ruler</li>
+    <li>ទាញ Line Indent Ruler</li>
+  </ol>
+
+  <p><b>Indent</b></p>
+  <ol>
+    <li>Paragraph</li>
+    <li>By: 3 cm</li>
+    <li>OK</li>
+  </ol>
+  `
+},
+  {
+  module: 1,
+  task: 3,
+  title: "Headers and Footers",
+  page: 16,
+  summary: `
+  <ul>
+    <li><b>Header</b> : ក្បាលទំព័រ</li>
+    <li><b>Footer</b> : ជើងទំព័រ</li>
+    <li><b>Symbol</b> : និមិត្តសញ្ញាពិសេស</li>
+    <li><b>Date & Time</b> : ថ្ងៃខែឆ្នាំ និងពេលវេលា</li>
+  </ul>
+
+  <p><b>Header</b></p>
+  <ol>
+    <li>Insert Tab</li>
+    <li>Header</li>
+    <li>Close Header/Footer</li>
+  </ol>
+
+  <p><b>Footer</b></p>
+  <ol>
+    <li>Insert Tab</li>
+    <li>Footer</li>
+    <li>Close Header/Footer</li>
+  </ol>
+
+  <p><b>Symbol</b></p>
+  <ol>
+    <li>Insert Tab</li>
+    <li>More Symbol</li>
+    <li>Select ⇒ Insert ⇒ Close</li>
+  </ol>
+  `
+},
+  {
+  module: 1,
+  task: 4,
+  title: "The Final Touch",
+  page: 19,
+  summary: `
+  <ul>
+    <li><b>Cover Page</b> : ផ្នែកសំខាន់នៃឯកសារដែលមានចំណងជើង រូបភាព និងព័ត៌មានផ្សេងៗ</li>
+    <li><b>Heading Style</b> : រៀបចំឯកសារ និង Table of Contents</li>
+    <li><b>Page Break</b> : ចាប់ផ្តើមទំព័រថ្មី</li>
+  </ul>
+
+  <p><b>Cover Page</b></p>
+  <ol>
+    <li>Insert Tab</li>
+    <li>Cover Page</li>
+    <li>ជ្រើស Template</li>
+  </ol>
+
+  <p><b>Apply Style</b></p>
+  <ol>
+    <li>Home Tab</li>
+    <li>Style</li>
+  </ol>
+
+  <p><b>Page Break</b></p>
+  <ol>
+    <li>ដាក់ Cursor</li>
+    <li>Insert Tab</li>
+    <li>Page Break</li>
+  </ol>
+  `
+},
+
+  {
+  module: 2,
+  task: 1,
+  title: "What is a Web Page",
+  page: 26,
+  summary: `
+  <ul>
+    <li><b>Web Page</b> : (ទំព័រវេប) វាគឺជាកន្លែងឯកសារមួយនៅលើអ៊ីនធឺណិត ដែលត្រូវបានបង្កើតឡើងជាមួយភាសា (HTML, CSS, JavaScript)</li>
+    <li><b>Web Browser</b> : គឺជាកន្លែងដែលអនុញ្ញាតឲ្យអ្នកប្រើកុំព្យូទ័រ ឬទូរស័ព្ទ ចូលទៅកាន់ និងមើលព័ត៌មាននៅលើអ៊ីនធឺណិត</li>
+    <li><b>Website</b> : គឺជាបណ្តុំគេហទំព័រដែលទាក់ទងគ្នា និងត្រូវបានដាក់នៅលើអ៊ីនធឺណិត</li>
+    <li><b>Web Server</b> : គឺជាកន្លែង Hosting websites</li>
+    <li><b>URL (Uniform Resource Locator)</b> : គឺជា Address របស់ Websites</li>
+    <li><b>HTML (Hypertext Markup Language)</b> : គឺជាភាសាកូដសម្រាប់បង្កើត និងរៀបចំទំព័រគេហទំព័រ (Web Pages)</li>
+  </ul>
+  `
+},
+  {
+  module: 2,
+  task: 2,
+  title: "Design a Web Page",
+  page: 28,
+  summary: `
+  <ul>
+    <li><b>Sign Up</b> : គឺជាការចុះឈ្មោះក្នុងគេហទំព័រណាមួយ</li>
+    <li><b>Password</b> : ពាក្យសម្ងាត់សម្រាប់ការពារគណនី</li>
+    <li><b>Email Address</b> : គឺជាសារអេឡិចត្រូនិច សម្រាប់ធ្វើទំនាក់ទំនងគ្នាតាមរយៈសារ</li>
+    <li><b>Update</b> : ការកែប្រែទិន្នន័យឱ្យស្របតាមស្ថានភាពបច្ចុប្បន្ន</li>
+    <li><b>Large Banner</b> : ផ្ទាំងរូបភាពធំៗនៅលើគេហទំព័រ (ផ្សព្វផ្សាយផលិតផល សេវាកម្ម ឬព្រឹត្តិការណ៍)</li>
+    <li><b>Banner</b> : ផ្ទាំងផ្សាយពាណិជ្ជកម្ម (Ads) នៅលើគេហទំព័រ</li>
+    <li><b>Theme</b> : រចនាបថ និង Layout របស់គេហទំព័រ</li>
+    <li><b>Hero Slide</b> : បែប Dynamic ដែលប្រើ Slideshow ដើម្បីបង្ហាញរូបភាព និងអត្ថបទច្រើនលើផ្ទាំងដើម Website ដោយផ្លាស់ប្តូរបន្តៗ</li>
+    <li><b>Show Hero Banner</b> : បង្ហាញផ្ទាំងធំៗនៅផ្នែកលើគេហទំព័រ ដូចជា រូបភាព + ចំណងជើង + អត្ថបទ</li>
+  </ul>
+  `
+},
+  {
+  module: 2,
+  task: 3,
+  title: "Add More Pages",
+  page: 32,
+  summary: `
+  <ul>
+    <li><b>Template</b> : គឺជាទម្រង់ដែលមានស្រាប់ៗ ហើយងាយស្រួលយកមកប្រើ</li>
+    <li><b>Apps</b> : កម្មវិធីដែលត្រូវបានរចនាឡើងដើម្បីបំពេញភារកិច្ច ឬមុខងារជាក់លាក់</li>
+    <li><b>Sections</b> : ដាក់បញ្ចូលមាតិកាដែលពាក់ព័ន្ធជាមួយគ្នា layout ដូចជា Header, Body, Footer</li>
+    <li><b>Forms</b> : ជាទម្រង់សំដៅទៅលើរូបរាង រចនាសម្ព័ន្ធ ឬការកំណត់រចនាសម្ព័ន្ធនៃវត្ថុ ឬគំនិត</li>
+  </ul>
+  `
+},
+  {
+  module: 2,
+  task: 4,
+  title: "Publishing the Web Page",
+  page: 34,
+  summary: `
+  <ul>
+    <li><b>Domain</b> : (គឺជា Hosting) ឬជាឈ្មោះអាសយដ្ឋានដែលប្រើក្នុងអ៊ីនធឺណិត ដើម្បីឲ្យមនុស្សអាចចូលទៅកាន់វេបសាយបានងាយស្រួល (IP Address ឧ. 142.250.190.78)</li>
+    <li><b>Testing</b> : គឺជាការបង្ហោះ ឬតេស្ត Website មុនពេលឲ្យប្រើប្រាស់ពិតប្រាកដ</li>
+    <li><b>Upload Files</b> : គឺជា FileZilla ដែលផ្ទុកឯកសារ Website (HTML, CSS, JavaScript, រូបភាព, វីដេអូ…)</li>
+    <li><b>Domain Configuration</b> : គឺជាដំណើរការរបស់ Domain ដើម្បីឲ្យវាអាចភ្ជាប់បានត្រឹមត្រូវទៅកាន់ Web Hosting, Email, DNS, Server ឬប្រព័ន្ធផ្សេងៗ</li>
+    <li><b>Web Hosting</b> : គឺជាការផ្ទុកឯកសារ និងទិន្នន័យនៃ Website (HTML, CSS, JavaScript, រូបភាព, វីដេអូ, Database...) លើ Server ដែលតភ្ជាប់ជាមួយអ៊ីនធឺណិត</li>
+  </ul>
+  `
+},
+  {
+  module: 3,
+  task: 1,
+  title: "More Calculations",
+  page: 41,
+  summary: `
+  <ul>
+    <li><b>M.S Excel</b> : យើងប្រើប្រាស់កម្មវិធី Microsoft Excel ដើម្បីគណនា និងគ្រប់គ្រងទៅលើទិន្នន័យ។ Excel ត្រូវបានគេប្រើប្រាស់យ៉ាងទូលំទូលាយក្នុងវិស័យផ្សេងៗជាច្រើនដូចជា ហិរញ្ញវត្ថុ អាជីវកម្ម ការអប់រំ និងវិស្វកម្មជាដើម។</li>
+    <li><b>របៀបបើកកម្មវិធី M.S Excel</b> :
+      <ul>
+        <li>1. ចុច (Start window + R) → វាយពាក្យ Excel → ចុច Enter</li>
+        <li>2. ចុច Start window → វាយពាក្យ Excel → ចុចលើ M.S Excel</li>
+      </ul>
+    </li>
+    <li><b>ភាពខុសគ្នារវាង Save និង Save As</b> :
+      <ul>
+        <li><b>Save (Ctrl + S)</b> : ប្រើសម្រាប់រក្សាទុកឯកសារដែលមានឈ្មោះស្រាប់ (ឯកសារចាស់)</li>
+        <li><b>Save As (F12)</b> : ប្រើសម្រាប់រក្សាទុកឯកសារដែលពុំមានឈ្មោះ (ឯកសារថ្មី)</li>
+      </ul>
+    </li>
+    <li><b>ដើម្បីរក្សាទុកឯកសារ</b> : File → Save As → Browse → File Name → Save (Ctrl + O)</li>
+    <li><b>Worksheet</b> : ជាផ្ទៃសន្លឹកកិច្ចការងារដែលមាន 1058555 Columns និង 1048576 Rows</li>
+    <li><b>Workbook</b> : គឺជាសៀវភៅកិច្ចការមួយនៃកម្មវិធី Microsoft Excel ដែលបានផ្ទុកនូវ Sheet ជាច្រើន</li>
+    <li><b>Formula</b> : គឺជាកន្លែងបង្ហាញពាក្យ អត្ថបទ ឬរូបមន្ត ដែលបានវាយនៅក្នុង Cell</li>
+    <li><b>Columns Heading</b> : (ជាជួរឈរ) A, B, C … XFD មានចំនួន 1058555</li>
+    <li><b>Rows Heading</b> : (ជាជួរដេក) 1, 2, 3 … 1048576</li>
+    <li><b>Cell</b> : ជាចំណុចប្រសព្វរវាង Columns និង Rows</li>
+    <li><b>Merge Cells</b> : ប្រើសម្រាប់ផ្ដាច់ Cells ជាច្រើនចូលគ្នាតែមួយ</li>
+    <li><b>Shortcut Ctrl + N</b> : បើក Workbook ថ្មី</li>
+    <li><b>Shortcut Ctrl + O</b> : បើកឯកសារ</li>
+    <li><b>Shortcut F2</b> : កែប្រែទិន្នន័យនៅក្នុង Active Cell</li>
+  </ul>
+  `
+},
+  {
+  module: 3,
+  task: 2,
+  title: "Functions",
+  page: 45,
+  summary: `
+  <ul>
+    <li><b>Function</b> : គឺជារូបមន្ត ឬអនុគមន៍ដែលមានស្រាប់ប្រើសម្រាប់ដោះស្រាយបញ្ហា</li>
+    <li>Function មាន 2 ប្រភេទ :
+      <ul>
+        <li><b>Pre-Build Function</b> : អនុគមន៍ដែលមានស្រាប់ក្នុងកម្មវិធី</li>
+        <li><b>Writing Function</b> : អនុគមន៍ដែលបង្កើតឡើងដោយអ្នកប្រើប្រាស់</li>
+      </ul>
+    </li>
+    <li><b>COUNT</b> : ការគណនាចំនួនទិន្នន័យជាលេខ</li>
+    <li><b>TODAY</b> : បង្ហាញកាលបរិច្ឆេទ (ទម្រង់ខ្លី)</li>
+    <li><b>NOW</b> : បង្ហាញកាលបរិច្ឆេទ និងម៉ោងបច្ចុប្បន្ន (ទម្រង់វែង)</li>
+    <li><b>CONCAT</b> : បញ្ចូលអក្សរពី Cell ជាច្រើនៗចូលគ្នាតែមួយ</li>
+    <li><b>LEN</b> : គណនាចំនួនតួអក្សរ</li>
+  </ul>
+  `
+},
+  {
+  module: 3,
+  task: 3,
+  title: "References",
+  page: 50,
+  summary: `
+  <ul>
+    <li><b>Cell Reference</b> : គឺជាការកំណត់លក្ខណៈរបស់ Cells</li>
+    <li>Cell Reference មាន 2 ប្រភេទ :
+      <ul>
+        <li><b>Relative Cell Reference</b></li>
+        <li><b>Absolute Cell Reference</b></li>
+      </ul>
+    </li>
+    <li><b>Relative Cell Reference</b> : Cell អាចផ្លាស់ប្ដូរទីតាំងបាន</li>
+    <li>ឧទាហរណ៍ : =A1+B1 → Copy ទៅ C2 នឹងក្លាយជា =A2+B2</li>
+    <li><b>Absolute Cell Reference</b> : Cell មិនអាចផ្លាស់ប្ដូរទីតាំងបាន</li>
+    <li>ប្រើសញ្ញា $ ដើម្បីថេរទីតាំង</li>
+    <li>ឧទាហរណ៍ : =$A$1+$B$1</li>
+    <li><b>############</b> : តម្លៃលើសពីទំហំ Cell</li>
+    <li><b>#DIV/0!</b> : ចែកលេខដោយ 0</li>
+    <li><b>#N/A</b> : Function មិនអាចរកទិន្នន័យ</li>
+    <li><b>#Name?</b> : Formula មានអក្សរមិនត្រឹមត្រូវ</li>
+    <li><b>#Null!</b> : Cell Reference ខុស</li>
+    <li><b>#Num!</b> : ទិន្នន័យលេខខុស</li>
+    <li><b>#Ref!</b> : Reference មិនត្រឹមត្រូវ</li>
+    <li><b>#VALUE!</b> : ប្រើទិន្នន័យខុសប្រភេទ</li>
+  </ul>
+  `
+},
+  {
+  module: 3,
+  task: 4,
+  title: "More Charts",
+  page: 54,
+  summary: `
+  <ul>
+    <li><b>Chart Layouts</b> : ជ្រើសរើសរចនាបថប្លង់ (Layout) សម្រាប់ Chart</li>
+    <li><b>Chart Styles</b> : ផ្លាស់ប្តូរពណ៌ និងរចនាបថ (Style) របស់ Chart</li>
+    <li><b>Change Chart Type</b> : ផ្លាស់ប្តូរប្រភេទ Chart ទៅជា Column, Bar, Line, Pie… ដោយមិនបង្កើតថ្មី</li>
+    <li><b>Move Chart</b> : ផ្លាស់ទី Chart ទៅ Sheet ថ្មី ឬនៅក្នុង Worksheet ដដែល</li>
+    <li><b>របៀប Add Chart</b> :
+      <ul>
+        <li>Select ទិន្នន័យ</li>
+        <li>ចូល Insert → ជ្រើសរើសប្រភេទ Chart</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+
+  {
+  module: 4,
+  task: 1,
+  title: "Structured Information",
+  page: 61,
+  summary: `
+  <ul>
+    <li>ស្គាល់ពី Structured Information</li>
+    <li>ស្គាល់ពី Database និង Table</li>
+    <li>ដឹងពីរបៀបបង្កើត Database និង Table</li>
+    <li><b>របៀបបង្កើត Database ក្នុងកម្មវិធី LibreOffice Base</b>
+      <ul>
+        <li>ចុចបើកកម្មវិធី LibreOffice Base</li>
+        <li>ចុចលើ Create a New Database</li>
+        <li>ចុចលើ Next រួច Finish</li>
+        <li>ធ្វើការដាក់ឈ្មោះ Database រួចចុចលើ Save</li>
+      </ul>
+    </li>
+    <li><b>Database</b> : គឺជាបណ្ដុំទិន្នន័យដែលយើងងាយក្នុងការគ្រប់គ្រង</li>
+    <li><b>Table</b> : គឺជាតារាងសម្រាប់រក្សាទុកទិន្នន័យដែលមាន Rows និង Column</li>
+    <li><b>Record</b> : គឺជាជួរដេករបស់ Table នៅក្នុង Database</li>
+    <li><b>Sort</b> : ប្រើសម្រាប់តម្រៀបទិន្នន័យ</li>
+    <li><b>Structured Information</b> : គឺជាទិន្នន័យដែលត្រូវបានរៀបចំជាមូលដ្ឋានតាមទម្រង់ជាក់លាក់ ដូចជា Tables, Rows និង Columns</li>
+    <li><b>Integer</b> : ប្រភេទទិន្នន័យជាចំនួនគត់</li>
+    <li><b>Decimal / Numeric</b> : ប្រភេទទិន្នន័យជាលេខមានក្បៀស</li>
+    <li><b>Text</b> : សម្រាប់អក្សរ និងលេខផ្សំ (String)</li>
+    <li><b>Memo</b> : សម្រាប់អត្ថបទវែងៗ ឬកំណត់សម្គាល់</li>
+    <li><b>Date</b> : ការកំណត់ជាថ្ងៃខែ និងឆ្នាំ</li>
+    <li><b>Time</b> : ការកំណត់ជាម៉ោង</li>
+    <li><b>Boolean</b> : ប្រភេទទិន្នន័យជម្រើស (Yes/No, True/False)</li>
+    <li><b>Binary</b> : សម្រាប់ផ្ទុកទិន្នន័យ Binary ដូចជា រូបភាព និងឯកសារ</li>
+    <li><b>Auto Number</b> : Field type ដែលតម្លៃបង្កើតដោយស្វ័យប្រវត្តិ</li>
+    <li><b>Primary Key</b> : Field ដែលមានតម្លៃឯកតា (Unique) និងមិនអាចទទេ</li>
+    <li><b>Foreign Key</b> : Field ដែលយោងទៅ Primary Key ក្នុង Table ផ្សេង</li>
+  </ul>
+  `
+},
+  {
+  module: 4,
+  task: 2,
+  title: "Use Data Entry Form",
+  page: 66,
+  summary: `
+  <ul>
+    <li><b>របៀបបង្កើត Form</b>
+      <ol>
+        <li>ចុចលើ Form</li>
+        <li>ចុចលើ Use Wizard to Create Form</li>
+        <li>ធ្វើការកំណត់ទិន្នន័យ ដែលចងបាន</li>
+        <li>ចុចលើទម្រង់ណាមួយ រួចចុចលើ Finish</li>
+      </ol>
+    </li>
+    <li><b>Next Record</b> : ចុចទៅមុខបន្ទាប់សម្រាប់បង្ហាញទិន្នន័យ</li>
+    <li><b>New Record</b> : សម្រាប់បញ្ចូលព័ត៌មានទិន្នន័យថ្មី</li>
+    <li><b>Delete Record</b> : សម្រាប់លុបមួយជួរដេក</li>
+    <li><b>Save Record</b> : សម្រាប់រក្សាទុកទិន្នន័យ</li>
+    <li><b>Data Entry Form</b> : ជា Interface សម្រាប់បញ្ចូលទិន្នន័យទៅ Database យ៉ាងងាយស្រួល</li>
+    <li><b>Design Form</b> : Form ដែលអ្នករៀបចំបង្កើតដោយផ្ទាល់</li>
+    <li><b>Form Wizard</b> : Form ដែលបង្កើតចេញពី Table មានស្រាប់</li>
+    <li><b>Navigation Bar</b> : ផ្នែកសម្រាប់ផ្លាស់ប្តូរទិន្នន័យ</li>
+    <li><b>Text Box</b> : ប្រអប់សម្រាប់វាយបញ្ចូលអក្សរ</li>
+    <li><b>Option Button</b> : ប៊ូតុងរាងមូល ជ្រើសបានតែមួយ</li>
+    <li><b>List Box</b> : ប្រអប់បង្ហាញបញ្ជីទិន្នន័យ</li>
+    <li><b>Combo Box</b> : ការបញ្ចូលគ្នារវាង Text Box និង List Box</li>
+    <li><b>Group Box</b> : ប្រអប់ស៊ុមសម្រាប់ដាក់ធាតុជាក្រុម</li>
+    <li><b>Image Button</b> : ប៊ូតុងប្រើរូបភាព</li>
+    <li><b>Label</b> : ប្រអប់សម្រាប់សរសេរអក្សរ</li>
+  </ul>
+  `
+},
+  {
+  module: 4,
+  task: 3,
+  title: "Filter the Data",
+  page: 72,
+  summary: `
+  <ul>
+    <li><b>Queries</b> : Tools សម្រាប់ទាញយក, ជ្រើសរើស, កែប្រែ, លុប និងបញ្ចូលទិន្នន័យក្នុង Database</li>
+    <li><b>Queries Wizard</b> : ទាញយកទិន្នន័យតាម Interface</li>
+    <li><b>Queries Design</b> : ទាញយកទិន្នន័យដោយ Commands</li>
+    <li><b>របៀបបង្កើត Queries</b>
+      <ol>
+        <li>ចុចលើ Queries</li>
+        <li>ចុចលើ Use Wizard to Create Query</li>
+        <li>ធ្វើការកំណត់ទិន្នន័យ</li>
+        <li>ចុចលើ Finish</li>
+      </ol>
+    </li>
+    <li><b>Sort</b> : ការរៀបចំទិន្នន័យតាមលំដាប់</li>
+    <li><b>Ascending</b> : ពីតូចទៅធំ (0-9 / A-Z)</li>
+    <li><b>Descending</b> : ពីធំទៅតូច (9-0 / Z-A)</li>
+    <li><b>Filter</b> : ការច្រោះយកទិន្នន័យតាមលក្ខខណ្ឌជាក់លាក់</li>
+  </ul>
+  `
+},
+  {
+  module: 4,
+  task: 4,
+  title: "Create a Report",
+  page: 77,
+  summary: `
+  <ul>
+    <li><b>Report Form</b> : ទម្រង់ឯកសារសម្រាប់រាយការណ៍ព័ត៌មាន</li>
+    <li><b>Report in Design View</b> : បង្កើត Report ដោយខ្លួនឯង</li>
+    <li><b>Wizard to Create Report</b> : បង្កើត Report ពីទិន្នន័យមានស្រាប់</li>
+    <li><b>របៀបបង្កើត Report</b>
+      <ul>
+        <li>ចុចលើ Report</li>
+        <li>ចុចលើ Use Wizard to Create Report</li>
+        <li>ជ្រើសរើសទិន្នន័យពី Table</li>
+        <li>ចុច Next រួច Finish</li>
+      </ul>
+    </li>
+    <li><b>Sort</b> : ការតំរៀបទិន្នន័យ</li>
+    <li><b>Portrait</b> : ទម្រង់បញ្ឈរ</li>
+    <li><b>Landscape</b> : ទម្រង់ផ្ដេក</li>
+    <li><b>របៀបកែ Report</b>
+      <ul>
+        <li>ចុច RC លើ Report</li>
+        <li>ចុច Edit</li>
+        <li>ធ្វើការកំណត់</li>
+        <li>ចុច OK</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 5,
+  task: 1,
+  title: "Introduction to Programming",
+  page: 86,
+  summary: `
+  <ul>
+    <li><b>What is a Program?</b>
+      <ul>
+        <li>Program គឺជា "សំណុំនៃការណែនាំ" ដែលប្រាប់ឱ្យកុំព្យូទ័រធ្វើកិច្ចការអ្វីមួយ។</li>
+        
+      </ul>
+    </li>
+
+    <li><b>Program Formula</b>
+      <ul>
+        <li>រូបមន្តសាមញ្ញ៖ Program = Algorithm (លំដាប់លំដោយ) + Command (ពាក្យបញ្ជា)</li>
+      </ul>
+    </li>
+
+    <li><b>Steps to Create a Program</b>
+      <ol>
+        <li>Define the Problem – កំណត់បញ្ហា ឬគោលដៅ</li>
+        <li>Design the Algorithm – រចនាអាល់ហ្គូរីសិន</li>
+        <li>Create Flowchart – បង្កើត Flowchart (អាចមាន ឬមិនមាន)</li>
+        <li>Write the Code – សរសេរកូដ</li>
+        <li>Test the Program – សាកល្បង និងបញ្ចូលទិន្នន័យ</li>
+        <li>Debug & Improve – កែតម្រូវ Bug និងលើកកម្ពស់កម្មវិធី</li>
+        <li>Save & Share – រក្សាទុក និងចែកចាយ</li>
+      </ol>
+    </li>
+
+    <li><b>What is an Algorithm?</b>
+      <ul>
+        <li>Algorithm: គឺជា "ជំហានដោះស្រាយបញ្ហា"</li>
+        <li>ប្រើសម្រាប់ដោះស្រាយបញ្ហា ឬបំពេញភារកិច្ចមួយ</li>
+      </ul>
+    </li>
+
+    <li><b>Flowchart</b>
+      <ul>
+        <li>Flowchart គឺជារាងក្រាហ្វិក (Diagram)ឬរូបភាពបង្ហាញពីជំហាន" នៃ Algorithm ដើម្បីឱ្យងាយមើលយល់</li>
+        <li>ប្រើសម្រាប់បង្ហាញលំហូរនៃដំណើរការកម្មវិធីតាមជំហានៗ</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 5,
+  task: 2,
+  title: "Variables and Commands",
+  page: 90,
+  summary: `
+  <ul>
+    <li><b>Understand the Problem</b>
+      <ul>
+        <li>ជំហានដំបូងត្រូវយល់ច្បាស់ថាបញ្ហាអ្វីដែលយើងត្រូវដោះស្រាយ</li>
+        <li>ត្រូវអាន និងវិភាគលក្ខខណ្ឌ (requirements) ឬតម្រូវការរបស់អ្នកប្រើប្រាស់</li>
+        <li>ឧទាហរណ៍៖ បញ្ហាគឺត្រូវការកម្មវិធីគណនាលទ្ធផល ax + b = 0</li>
+        <li>ត្រូវសួរខ្លួនឯងថា៖
+          <ul>
+            <li>Input (ទិន្នន័យបញ្ចូល) ជាអ្វី?</li>
+            <li>Process (ដំណើរការគណនា) ត្រូវធ្វើដូចម្តេច?</li>
+            <li>Output (លទ្ធផល) ត្រូវបានបង្ហាញយ៉ាងដូចម្តេច?</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Create the Algorithms</b>
+      <ul>
+        <li>Algorithm គឺជាជំហានសរសេរជាចំណុចៗ ដើម្បីដោះស្រាយបញ្ហា</li>
+        <li>ត្រូវសរសេរដោយតម្រៀបតាមលំដាប់ត្រឹមត្រូវ</li>
+        <li>ឧទាហរណ៍ Algorithm សម្រាប់ ax + b = 0
+          <ol>
+            <li>Step 1: បញ្ចូលតម្លៃ a និង b</li>
+            <li>Step 2: ប្រសិនបើ a ≠ 0 គណនាលទ្ធផល x = -b / a</li>
+            <li>Step 3: បង្ហាញតម្លៃ x</li>
+            <li>Step 4: បើ a = 0 ត្រូវបង្ហាញ “មិនមានដំណោះស្រាយ”</li>
+          </ol>
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Draw the Flowchart</b>
+      <ul>
+        <li>Flowchart សម្រាប់ ax + b = 0</li>
+        <li>1. ចាប់ផ្តើម</li>
+        <li>2. បញ្ចូល a, b</li>
+        <li>3. ពិនិត្យថា a ≠ 0?</li>
+        <li>បើត្រឹមត្រូវ → គណនា x = -b / a → បង្ហាញ x</li>
+        <li>បើមិនត្រឹមត្រូវ → បង្ហាញ “No Solution”</li>
+        <li>4. បញ្ចប់</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 5,
+  task: 3,
+  title: "More Programming",
+  page: 92,
+  summary: `
+  <ul>
+    <li><b>Motion</b> : គ្រប់គ្រងចលនារបស់ sprite ទីតាំង បង្វិល និងទិសដៅ</li>
+    <li><b>Looks</b> : គ្រប់គ្រងរូបរាង sprite ផ្ទៃខាងក្រោយ និងអក្សរ</li>
+    <li><b>Sound</b> : គ្រប់គ្រងមុខងារសំឡេង ដូចជាចាក់សំឡេង និងកែសម្រួលកម្រិតសំឡេង</li>
+    <li><b>Events</b> : បង្កើតព្រឹត្តិការណ៍ឲ្យប្លុកដែលបានកូដរួចដំណើរការ</li>
+    <li><b>Control</b> : គ្រប់គ្រង script ដោយប្រើលក្ខខណ្ឌ រង្វិលជុំ ធ្វើម្តងទៀត និងផ្អាក</li>
+    <li><b>Sensing</b> : ពិនិត្យការវាយក្តារចុច ចលនារបស់ mouse និងការឆ្លើយតប</li>
+    <li><b>Operators</b> : ប្រើសម្រាប់គណនា</li>
+    <li><b>Variables</b> : បង្កើត និងគ្រប់គ្រងអថេរ និងបញ្ជី</li>
+    <li><b>My Blocks</b> : បង្កើតប្លុកផ្ទាល់ខ្លួន</li>
+    <li><b>Variables</b> : ជាឈ្មោះដែលប្រើសម្រាប់រក្សាទុកតម្លៃ (value) ក្នុងកម្មវិធី</li>
+    <li><b>របៀបបង្កើត Variables</b>
+      <ol>
+        <li>ចុចចូលទៅក្នុង Block Variables</li>
+        <li>ចុចលើ Make a Variable</li>
+        <li>ដាក់ឈ្មោះ Variable</li>
+        <li>ចុច OK</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+{
+  module: 5,
+  task: 4,
+  title: "More Programming",
+  page: 96,
+  summary: `
+  <ul>
+    <li><b>Calculation with Number</b>
+      <ul>
+        <li>អាចបង្កើតកម្មវិធីសម្រាប់គណនាជាមួយ Scratch បាន</li>
+      </ul>
+    </li>
+
+    <li><b>Working with String</b>
+      <ul>
+        <li>String គឺជាអត្ថបទ សម្រាប់បង្ហាញព័ត៌មាន បង្កើតសារ និងចំណងជើង</li>
+      </ul>
+    </li>
+
+    <li><b>Loops ក្នុង Scratch</b>
+      <ol>
+        <li><b>Repeat</b> : ធ្វើសកម្មភាពចំនួនដងកំណត់
+          <br/>ឧ. repeat (10) → ប្លុករត់ 10 ដង
+        </li>
+        <li><b>Forever</b> : ធ្វើសកម្មភាពជាអចិន្ត្រៃយ៍
+          <br/>ឧ. forever → រត់មិនចប់ ត្រូវ stop
+        </li>
+        <li><b>Repeat until</b> : ធ្វើរហូតដល់លក្ខខណ្ឌពិត
+          <br/>ឧ. repeat until (score = 10)
+        </li>
+      </ol>
+    </li>
+
+    <li><b>Loops</b> : បញ្ជូនឲ្យ block ធ្វើសកម្មភាពម្តងហើយម្តងទៀតដោយស្វ័យប្រវត្តិ</li>
+
+    <li><b>Checking for bugs</b> : ការត្រួតពិនិត្យ និងរកកំហុសក្នុងកម្មវិធី
+      <ol>
+        <li>រកកំហុសក្នុងកូដ</li>
+        <li>ធានាថាកម្មវិធីដំណើរការត្រឹមត្រូវ</li>
+        <li>កែលម្អប្រសិទ្ធភាពកម្មវិធី</li>
+        <li>ការបង្ការ Error ពេលអ្នកប្រើប្រាស់</li>
+      </ol>
+    </li>
+
+    <li><b>Erase all</b> : លុបរូប និងខ្សែទាំងអស់</li>
+    <li><b>Stamp</b> : មុខងារនេះមិនមែនជាការគូសខ្សែទេ ប៉ុន្តែវាគឺ "ការថតចម្លងរូបភាព Sprite" ឱ្យជាប់នៅលើផ្ទៃ background។ នៅពេលអ្នកចុច Stamp វានឹងទុកផ្ដិតរូប Sprite មួយនៅកន្លែងនោះ ទោះបីជា Sprite ដើរចេញក៏រូបនោះនៅជាប់ទីនោះដែរ។</li>
+    <li><b>Pen down</b> : គឺដូចជាយើងដាក់ចុងប៊ិចទៅលើក្រដាស។  បើ Sprite ដើរទៅណា វានឹងគូសខ្សែតាមទីនោះ។</li>
+    <li><b>Pen up</b> : គឺដូចជាយើងលើកប៊ិចចេញពីក្រដាស។ នៅពេល Sprite ដើរ វាមិនមានគូសខ្សែអ្វីទាំងអស់។</li>
+    <li><b>Set pen color to</b> : ប្រើសម្រាប់ជ្រើសរើសពណ៌ជាក់លាក់ណាមួយ</li>
+    <li><b>Change pen color by</b> : ប្រើសម្រាប់ឱ្យពណ៌ប្រែប្រួលបន្តិចម្តងៗ។ បើប្រើជាមួយរង្វិលជុំ (Repeat) វានឹងបង្កើតបានជាខ្សែ "ពណ៌ឥន្ទធនូ"។</li>
+  </ul>
+  `
+}
 ],
   7: [
-  {module:1, task:1, title:"Formatting text", page:7},
-  {module:1, task:2, title:"Advanced font formatting", page:14},
-  {module:1, task:3, title:"Images and graphics", page:18},
-  {module:1, task:4, title:"Working with tables", page:22},
-  {module:1, task:5, title:"Check and print", page:27},
-  {module:1, task:"Project", title:"Project", page:34},
+  {
+  module: 1,
+  task: 1,
+  title: "Formatting Text",
+  page: 7,
+  summary: `
+  <ol>
+    <li><b>របៀបបើកឯកសារក្នុងកម្មវិធី MS Word</b>
+      <ul>
+        <li>ចុចលើ File</li>
+        <li>ចុចលើ Open (Ctrl + O)</li>
+        <li>ចុចលើ Browse</li>
+        <li>Select លើឯកសារចង់បើក</li>
+        <li>ចុចពាក្យ Open</li>
+      </ul>
+    </li>
 
-  {module:2, task:1, title:"Surfing the web", page:39},
-  {module:2, task:2, title:"Use online resources", page:47},
-  {module:2, task:3, title:"Send and receive email", page:52},
-  {module:2, task:4, title:"Organizing email", page:62},
-  {module:2, task:5, title:"Be safe online", page:68},
+    <li><b>ភាពខុសគ្នារវាង Save និង Save As</b>
+      <ul>
+        <li><b>Save (Ctrl + S)</b> : ប្រើសម្រាប់រក្សាទុកឯកសារដែលមានឈ្មោះស្រាប់ (ឯកសារចាស់)</li>
+        <li><b>Save As (F12)</b> : មានតួនាទីប្រើសម្រាប់រក្សាទុកឯកសារ (បង្កើតឯកសារថ្មី)</li>
+        <li><b>File Name</b> : ជាកន្លែងសម្រាប់កំណត់ឈ្មោះឱ្យឯកសារ</li>
+        <li><b>Save as type</b> : សូមជ្រើសរើសយកពាក្យ Word Document</li>
+      </ul>
+    </li>
+
+    <li><b>ដើម្បីរក្សាទុកឯកសារ</b>
+      <ul>
+        <li>ចុចលើ File</li>
+        <li>ចុច Save As → Browse</li>
+        <li>File Name : ដាក់ឈ្មោះឯកសារ</li>
+        <li>ចុច Save</li>
+      </ul>
+    </li>
+
+    <li><b>Formatting Text Tools</b>
+      <ul>
+        <li>Font (Ctrl + Shift + F) : សម្រាប់ផ្លាស់ប្តូរម៉ូតអក្សរ</li>
+        <li>Font Size (Ctrl + Shift + P) : សម្រាប់ផ្លាស់ប្តូរទំហំអក្សរ</li>
+        <li>Clear Formatting : សម្រាប់កំណត់មកធម្មតាវិញ</li>
+        <li>Bold (Ctrl + B) : សម្រាប់ដាក់អក្សរឱ្យដិត</li>
+        <li>Italic (Ctrl + I) : សម្រាប់ដាក់អក្សរឱ្យមានរាងទ្រេត</li>
+        <li>Underline (Ctrl + U) : សម្រាប់ដាក់បន្ទាត់ពីក្រោមអក្សរ</li>
+        <li>Strikethrough : សម្រាប់គូសបន្ទាត់កាត់ពាក្យឬអក្សរ</li>
+        <li>Subscript (Ctrl + Shift -) : សម្រាប់ដាក់អក្សរនៅក្រោម</li>
+        <li>Superscript (Ctrl + Shift +) : សម្រាប់ដាក់ជាស្វ័យគុណ</li>
+      </ul>
+    </li>
+
+    <li><b>Alignment និង List</b>
+      <ul>
+        <li>Align Left (Ctrl + L) : ការតម្រឹមអត្ថបទខាងឆ្វេង</li>
+        <li>Center (Ctrl + E) : ការតម្រឹមអត្ថបទកណ្ដាល</li>
+        <li>Align Right (Ctrl + R) : ការតម្រឹមអត្ថបទខាងស្ដាំ</li>
+        <li>Justify (Ctrl + J) : ការតម្រឹមអត្ថបទសងខាង</li>
+        <li>Bullet : គឺជាការដាក់ចំណុចរៀងគ្នា</li>
+        <li>Numbering : គឺជាការដាក់លេខរៀង</li>
+      </ul>
+    </li>
+  </ol>
+  `
+},
+  {
+  module: 1,
+  task: 2,
+  title: "Advanced Font Formatting",
+  page: 14,
+  summary: `
+  <ul>
+    <li><b>Border</b> : ប្រើសម្រាប់ដាក់បន្ទាត់ ឬ ដកបន្ទាត់</li>
+    <li><b>Page Border</b> : ប្រើសម្រាប់ដាក់ស៊ុមជុំវិញទំព័រក្នុងឯកសារ</li>
+    <li><b>Shading</b> : ប្រើសម្រាប់ដាក់ពណ៌ចូលទៅកាន់ផ្ទៃ</li>
+    <li><b>Alignment</b> : ការកំណត់ទៅលើអត្ថបទ</li>
+    <li><b>Before Text / After Text</b> : ការកំណត់ការចូលបន្ទាត់ទៅឆ្វេង និងស្ដាំ</li>
+    <li><b>Line Spacing</b> : ការកំណត់គម្លាតនៃជួរអក្សរ</li>
+  </ul>
+
+  <p><b>ដើម្បីចូលទៅដាក់ Border and Shading</b></p>
+  <ol>
+    <li>ចុចលើ Home → Borders and Shading</li>
+    <li>Custom → Style → Color → Borders</li>
+    <li>Paragraph → OK</li>
+  </ol>
+
+  <p><b>តួនាទីរបស់ Font Formatting</b></p>
+  <ul>
+    <li>Strikethrough : សម្រាប់គូសបន្ទាត់កាត់ពាក្យឬអក្សរ</li>
+    <li>Superscript : សម្រាប់សរសេរស្វ័យគុណ</li>
+    <li>Subscript : សម្រាប់វាយអក្សរនៅក្រោម</li>
+    <li>Small Caps : អក្សរធំ រូបរាងតូច</li>
+    <li>All Caps : អក្សរធំទាំងអស់</li>
+    <li>Hidden : មិនឱ្យបង្ហាញអក្សរ</li>
+  </ul>
+  `
+}
+,
+  {
+  module: 1,
+  task: 3,
+  title: "Image and Graphic",
+  page: 18,
+  summary: `
+  <ul>
+    <li><b>Picture Border</b> : ប្រើសម្រាប់ដាក់បន្ទាត់ជុំវិញរូបភាព</li>
+    <li><b>Crop</b> : ប្រើសម្រាប់កាត់រូបភាព</li>
+    <li><b>Picture Style</b> : ប្រើសម្រាប់ផ្លាស់ប្ដូរទម្រង់របស់រូបភាព</li>
+    <li><b>Picture Effects</b> : ប្រើសម្រាប់ផ្លាស់ប្ដូរម៉ូតឱ្យរូបភាព
+      (Preset, Shadow, Reflection…)
+    </li>
+    <li><b>Position</b> : ប្រើសម្រាប់រៀបចំរូបភាពទៅតាមទីតាំងជាក់លាក់ណាមួយ</li>
+    <li><b>Remove Background</b> : ប្រើសម្រាប់លុបផ្ទៃខាងក្រោយនៃរូបភាព</li>
+    <li><b>Add Text</b> : ប្រើសម្រាប់បញ្ជូលអក្សរចូលទៅក្នុង Shape</li>
+    <li><b>Wrap Text</b> : គឺជាមុខងារមួយប្រើសម្រាប់ប់រៀបចំតុល្យភាពរវាង "រូបភាព" និង "អត្ថបទ"</li>
+    <ul>
+  <li><b>In Line with Text</b>: រូបភាពនៅជាប់ជាមួយជួរអក្សរ (ពិបាករំកិល)។</li>
+  <li><b>Square</b>: អត្ថបទព័ទ្ធជុំវិញរូបភាពជារាងការ៉េ។</li>
+  <li><b>Tight</b>: អត្ថបទព័ទ្ធជុំវិញរូបភាពតាមរាងរបស់រូបភាព (បើប្អូនប្រើរូបភាពគ្មាន Background វានឹងព័ទ្ធតាមរាងរូបនោះតែម្ដង)។</li>
+  <li><b>Behind Text</b>: ដាក់រូបភាពនៅពីក្រោយអត្ថបទ (ដូចជាផ្ទៃ Background)។</li>
+  <li><b>In Front of Text</b>: ដាក់រូបភាពនៅពីមុខអត្ថបទ (បាំងអក្សរ តែងាយស្រួលរំកិលបំផុត)។</li>
+  <li><b>Top and Bottom</b>: អត្ថបទនៅខាងលើ និងខាងក្រោមរូបភាព (គ្មានអត្ថបទនៅសងខាងរូបភាពឡើយ)។</li>
+</ul>
+  </ul>
+  `
+}
+,
+  {
+  module: 1,
+  task: 4,
+  title: "Working with Table",
+  page: 14,
+  summary: `
+  <ul>
+    <li><b>Table</b> : គឺជាតារាងដែលយើងប្រើសម្រាប់បញ្ជូលទិន្នន័យ បង្កើតជាបញ្ជីឈ្មោះសិស្ស បង្កើតជាបញ្ជីចំណូលចំណាយជាដើម</li>
+    <li><b>Row</b> : គឺជាជួរដេករបស់តារាង</li>
+    <li><b>Column</b> : គឺជាជួរឈររបស់តារាង</li>
+    <li><b>Cell</b> : គឺជាប្រអប់របស់ Table</li>
+    <li><b>AutoFit</b> : គឺជាការកំណត់ ឬ រៀបចំទំហំរបស់ Table ដោយស្វ័យប្រវត្ត</li>
+    <li><b>AutoFit Content</b> : ប្រើសម្រាប់កំណត់ទំហំ Column និងប្រវែងអក្សរដោយស្វ័យប្រវត្ត</li>
+    <li><b>Table Design</b> : ប្រើសម្រាប់ដាក់ម៉ូត ឬ Style ចូលទៅក្នុង Table</li>
+    <li><b>Shading</b> : ប្រើសម្រាប់ដាក់ពណ៌ទៅលើផ្ទៃខាងក្រោយនៃអត្ថបទ ឬប្រអប់ក្នុងតារាង (Cells) ដើម្បីឱ្យងាយស្រួលចំណាំ។</li>
+    <li><b>Border</b> : ប្រើសម្រាប់ដាក់ ឬ ដកបន្ទាត់</li>
+    <li><b>Alignment ក្នុង Table</b> : ការតម្រឹមពាក្យក្នុង Cell ទៅលើ ក្រោម កណ្ដាល ឆ្វេង និងស្ដាំ តាមការចង់បាន</li>
+    <li><b>Insert Row Above</b> : ប្រើសម្រាប់បន្ថែម Row ផ្នែកខាងលើ</li>
+    <li><b>Insert Row Below</b> : ប្រើសម្រាប់បន្ថែម Row ផ្នែកខាងក្រោម</li>
+    <li><b>Insert Column Left</b> : ប្រើសម្រាប់បន្ថែម Column ផ្នែកខាងឆ្វេង</li>
+    <li><b>Insert Column Right</b> : ប្រើសម្រាប់បន្ថែម Column ផ្នែកខាងស្ដាំ</li>
+    <li><b>Text Direction</b> : កំណត់ទិសដៅពាក្យដែលមាននៅក្នុង Cell</li>
+  </ul>
+  `
+}
+,
+  {
+  module: 1,
+  task: 5,
+  title: "Check and Print",
+  page: 27,
+  summary: `
+  <ul>
+    <li><b>Print (Ctrl + P)</b> : ប្រើសម្រាប់បោះពុម្ពឯកសារ</li>
+    <li><b>Spelling & Grammar (F7)</b> : ប្រើសម្រាប់ពិនិត្យពាក្យត្រូវ ឬ ខុស ហើយអាចកែបាន (ប្រើបានតែភាសា English)</li>
+    <li><b>Thesaurus (Shift + F7)</b> : ប្រើសម្រាប់ស្វែងរកកម្រងពាក្យដែលមានអត្ថន័យដូចគ្នា ដើម្បីធ្វើការកែប្រែ</li>
+    <li><b>Find (Ctrl + F)</b> : ប្រើសម្រាប់ស្វែងរកពាក្យ</li>
+    <li><b>Replace (Ctrl + H)</b> : ប្រើសម្រាប់ផ្លាស់ប្ដូរពាក្យ</li>
+
+    <li><b>Document View</b> : ជាផ្ទាំងសម្រាប់បង្ហាញទម្រង់ឯកសារ
+      <ul>
+        <li><b>Print Layout</b> : បង្ហាញទម្រង់ឯកសារអាចកែប្រែបាន</li>
+        <li><b>Read Mode / Full Screen Reading</b> : បង្ហាញឯកសារពេញអេក្រង់ ដោយមិនអាចកែប្រែបាន</li>
+        <li><b>Web Layout</b> : បង្ហាញឯកសារជាទម្រង់ Webpage</li>
+      </ul>
+    </li>
+
+    <li><b>របៀប Print ឯកសារ</b>
+      <ol>
+        <li>ចុចពាក្យ File</li>
+        <li>ចុចពាក្យ Print → ជ្រើសរើសចំនួនក្រដាស</li>
+        <li>ចុច Print</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+{module:1, task:"Project", title:"Project", page:73},
+  {
+  module: 2,
+  task: 1,
+  title: "Surfing the Web",
+  page: 39,
+  summary: `
+  <ul>
+    <li><b>Web Browser</b> : គឺជាកម្មវិធីមួយដែលយើងប្រើសម្រាប់ស្វែងរកព័ត៌មានតាម Internet</li>
+
+    <li><b>កម្មវិធី Web Browser ដែលពេញនិយម</b>
+      <ul>
+        <li>Google Chrome</li>
+        <li>Microsoft Edge</li>
+        <li>Safari</li>
+        <li>Mozilla Firefox</li>
+      </ul>
+    </li>
+
+    <li><b>Website Search Engine ដែលពេញនិយម</b>
+      <ul>
+        <li>www.bing.com (Microsoft)</li>
+        <li>www.google.com (Google)</li>
+      </ul>
+    </li>
+
+    <li><b>Refresh (F5)</b> : ប្រើសម្រាប់ដំណើរការ Webpage ថ្មីឡើងវិញ ដើម្បីមើលព័ត៌មានថ្មី</li>
+    <li><b>Esc / Stop</b> : ប្រើសម្រាប់បញ្ឈប់ដំណើរការ Loading នៅលើ Web Page</li>
+  </ul>
+
+  <p><b>ពាក្យកាត់សំខាន់ៗដែលត្រូវស្វែងយល់</b></p>
+  <ul>
+    <li><b>URL</b> (Uniform Resource Locator) គឺជាអាសយដ្ឋានពេញលេញរបស់វេបសាយមួយ (ឧទាហរណ៍៖ https://www.google.com)។</li>
+    <li>ក្រុមដែលជា Protocol</li>
+    <li>Protocol គឺជាច្បាប់ ឬបទដ្ឋានសម្រាប់ធ្វើការទាក់ទងគ្នារវាងកុំព្យូទ័រ និងកុំព្យូទ័រតាមអ៊ីនធឺណិត</li>
+    <ul>
+    <li><b>IP</b> (Internet Protocol)សម្រាប់កំណត់អាសយដ្ឋានម៉ាស៊ីនក្នុងបណ្ដាញ</li>
+    <li><b>HTTP</b> (Hypertext Transfer Protocol) សម្រាប់ផ្ទេរទិន្នន័យវេបសាយ (អត្ថបទ រូបភាព)</li>
+    <li><b>HTTPS</b> (Hypertext Transfer Protocol Secure)ដូច HTTP ដែរ តែវាមានសុវត្ថិភាពខ្ពស់ជាង (មានការ encryption ការពារទិន្នន័យ)</li>
+    <li><b>FTP</b> (File Transfer Protocol) សម្រាប់ផ្ញើ ឬទទួលឯកសារ (Files) រវាងកុំព្យូទ័រ និង Server</li>
+    </ul>
+    <li><b>Domain Extensions</b></li>
+    <ul>
+    <li><b>COM</b> (Commercial)សម្រាប់ក្រុមហ៊ុន ឬអាជីវកម្ម</li>
+    <li><b>EDU</b> (Education)សម្រាប់សាលារៀន ឬគ្រឹះស្ថានអប់រំ</li>
+    <li><b>ORG</b> (Organization) សម្រាប់អង្គការ ឬសមាគមមិនរកប្រាក់ចំណេញ</li>
+    </ul>
+  </ul>
+  `
+},
+  {
+  module: 2,
+  task: 2,
+  title: "Use Online Resources",
+  page: 47,
+  summary: `
+  <ul>
+    <li>
+      <b>Internet</b> : គឺជាបណ្តាញសកលនៃកុំព្យូទ័រ និងម៉ាស៊ីនមេ
+      ដែលមានទំនាក់ទំនងគ្នាទៅវិញទៅមក។ 
+      វាអនុញ្ញាតឱ្យយើងស្វែងរកព័ត៌មាន ចែករំលែកព័ត៌មាន 
+      និងចូលទៅប្រើប្រាស់សេវាកម្មផ្សេងៗជាច្រើនទូទាំងពិភពលោក។
+    </li>
+
+    <li>
+      <b>Wiki​(វិគី)</b>:គឺជាប្រភេទគេហទំព័រមួយដែលអនុញ្ញាតឱ្យអ្នកប្រើប្រាស់ទូទៅអាច បង្កើត កែសម្រួល និងលុប 
+      ខ្លឹមសារព័ត៌មានបានដោយសេរី និងងាយស្រួលបំផុត តាមរយៈកម្មវិធីបើកអ៊ីនធឺណិត (Web browser)។
+      <ul>
+        <li><b>លក្ខណៈពិសេស</b></li>
+      <li>កិច្ចសហការ (Collaboration): មនុស្សច្រើននាក់អាចចូលរួមសរសេរអត្ថបទតែមួយជាមួយគ្នាបាន។</li>
+      <li>ភាពងាយស្រួល (Convenience): អ្នកមិនចាំបាច់ចេះសរសេរកូដស្មុគស្មាញដើម្បីកែប្រែព័ត៌មាននោះទេ។</li>
+      <li>ប្រវត្តិការកែប្រែ (History): រាល់ការផ្លាស់ប្តូរទាំងអស់ត្រូវបានរក្សាទុក។ ប្រសិនបើមាននរណាម្នាក់លុប 
+        ឬសរសេរខុស យើងអាចទាញយកទិន្នន័យដើមមកវិញបាន។</li>
+      <li>ការភ្ជាប់ទំនាក់ទំនង (Hyperlinking): ងាយស្រួលក្នុងការបង្កើតតំណភ្ជាប់ (Link) ពីទំព័រមួយទៅទំព័រមួយទៀត។</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><b>របៀប Copy អត្ថបទពី Wiki Website មកដាក់ក្នុង Microsoft Word</b></p>
+  <ol>
+    <li>Select លើអត្ថបទដែលចង់បាន</li>
+    <li>ចុច Right Click រួចជ្រើសរើសពាក្យ <b>Copy</b></li>
+    <li>ចូលទៅក្នុងកម្មវិធី Microsoft Word រួចចុច <b>Paste</b></li>
+  </ol>
+  `
+}
+,
+  {
+  module: 2,
+  task: 3,
+  title: "Send and Receive E-mail",
+  page: 52,
+  summary: `
+  <ul>
+    <li>
+      <b>Email</b> : ដើរតួនាទីយ៉ាងសំខាន់ក្នុងការបញ្ជូនសារបានយ៉ាងឆាប់រហ័ស 
+      មានភាពងាយស្រួល និងមានសុវត្ថិភាពខ្ពស់។ 
+      អ្នកអាចផ្ញើជា រូបភាព សម្លេង ឯកសារ Video ឬ Software ផ្សេងៗបាន។
+    </li>
+
+    <li><b>សេវាកម្ម Email Free ដែលពេញនិយម</b>
+      <ul>
+        <li>Yahoo Mail : yourname@yahoo.com</li>
+        <li>Outlook : yourname@outlook.com, yourname@hotmail.com</li>
+        <li>Gmail : yourname@gmail.com</li>
+      </ul>
+    </li>
+
+    <li><b>New Message</b> : ប្រើសម្រាប់ផ្ញើសារថ្មី</li>
+    <li><b>Inbox</b> : ជាកន្លែងផ្ទុកសារថ្មីៗ</li>
+    <li><b>Send Item</b> : ជាកន្លែងផ្ទុកសារដែលបានផ្ញើចេញហើយ</li>
+
+    <li>
+      <b>Attach File / Attachment</b> : 
+      ជា File ដែលភ្ជាប់ជាមួយ Email ដូចជា 
+      Video File, Image File, Document File, Compress File ជាដើម
+    </li>
+
+    <li><b>Reply</b> : ប្រើសម្រាប់ឆ្លើយតប Email ដែលបានផ្ញើមក</li>
+    <li>
+      <b>Reply All</b> : ឆ្លើយតបទៅអ្នកផ្ញើ និងអ្នកដែលមាននៅក្នុង CC
+    </li>
+    <li><b>Forward</b> : ប្រើសម្រាប់ផ្ញើសារបន្តទៅអ្នកទីបី</li>
+
+    <li>
+      <b>CC (Carbon Copy)</b> : 
+      ផ្ញើសារទៅមនុស្សជាច្រើន និងអាចមើលឃើញ Email គ្នាទៅវិញទៅមក
+    </li>
+    <li>
+      <b>BCC (Blind Carbon Copy)</b> : 
+      ផ្ញើសារទៅកាន់ភាគីដែលមានភាពសម្ងាត់
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 2,
+  task: 4,
+  title: "Organizing E-mail",
+  page: 62,
+  summary: `
+  <ul>
+    <li>
+      <b>Add Contact</b> :
+      ប្រើសម្រាប់រក្សាទុកព័ត៌មានទំនាក់ទំនងក្នុង Email 
+      ដើម្បីងាយស្រួលក្នុងការគ្រប់គ្រង ផ្ញើសារ កែប្រែ និងស្វែងរក។
+    </li>
+
+    <li>
+      <b>អត្ថប្រយោជន៍នៃការប្រើ Add Contact</b>
+      <ul>
+        <li>ងាយស្រួលផ្ញើ Email</li>
+        <li>ងាយស្រួលគ្រប់គ្រងទំនាក់ទំនង</li>
+        <li>ងាយស្រួលកែប្រែព័ត៌មាន</li>
+        <li>ងាយស្រួលស្វែងរក</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Calendar (ប្រតិទិន)</b> :
+      ជាមុខងារមួយដែលអនុញ្ញាតឱ្យយើង
+      កំណត់ពេល និងគ្រប់គ្រងការណាត់ជួប
+      ការប្រជុំ និងព្រឹត្តិការណ៍ផ្សេងៗ។
+    </li>
+
+    <li>
+      <b>របៀប Add Contact</b>
+      <ol>
+        <li>ចុចចូលទៅកាន់ <b>Switch to People</b></li>
+        <li>ផ្ទាំងព័ត៌មាន Contact នឹងបង្ហាញមក</li>
+        <li>បំពេញព័ត៌មានរបស់មិត្តភក្ដ</li>
+        <li>ចុច <b>Save</b></li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 2,
+  task: 5,
+  title: "Be Safe Online",
+  page: 68,
+  summary: `
+  <ul>
+    <li>
+      <b>Malware</b> :
+      គឺជាបណ្ដុំកម្មវិធីដែលត្រូវបានបង្កើតឡើង
+      ដើម្បីលួចយកទិន្នន័យ ឬបង្អាក់ប្រព័ន្ធប្រតិបត្តិការរបស់ Computer។
+    </li>
+
+    <li>
+      <b>ប្រភេទ Malware</b> :
+      Trojan Horse, Worm, Spyware, Adware និង Ransomware។
+    </li>
+
+    <li>
+      <b>Trojan Horse</b> :
+      ជាប្រភេទ Virus មួយដែលលាក់ខ្លួននៅក្នុង Software ស្របច្បាប់
+      ដែល Hacker បង្កើតឡើង ដើម្បី Access ចូល Computer របស់យើង។
+    </li>
+
+    <li>
+      <b>Worm</b> :
+      ជាប្រភេទ Virus ដែលអាចចម្លងខ្លួនឯងដោយស្វ័យប្រវត្ត
+      និងរាលដាលទៅ Computer ផ្សេងៗតាម Network។
+    </li>
+
+    <li>
+      <b>Spyware</b> :
+      ជាប្រភេទ Virus សម្រាប់តាមដាន និងប្រមូលព័ត៌មានសំខាន់ៗ
+      របស់អ្នកប្រើប្រាស់ Internet ដោយមិនឱ្យដឹងមុន។
+    </li>
+
+    <li>
+      <b>Adware</b> :
+      កម្មវិធីផ្ទាំងពាណិជ្ជកម្មដែលរំខាន។មេរោគនេះអាចឆ្លងចូលបានតាមរយៈកម្មវិធី Free និង គេហទំព័រមិនសុវត្ថិភាព។
+    </li>
+
+    <li>
+      <b>Spam / Junk Mail</b> :
+      ជាសារដែលផ្ញើមកច្រើនដងក្នុងពេលតែមួយ
+      ហើយភាគច្រើនមាន Link Website។
+    </li>
+
+    <li>
+      <b>Phishing Mail</b> :
+      ជាសារដែលព្យាយាមលួចយកព័ត៌មានសំខាន់ៗ
+      ដូចជា Username, Password និង Credit Card Numbers។
+    </li>
+
+    <li>
+      <b>Chain Mail / Chain Letter</b> :
+      ជាសារដែលបញ្ចុះបញ្ចូលឱ្យ User Copy និង Send បន្តទៅអ្នកដទៃ។
+    </li>
+
+    <li>
+      <b>Firewall</b> :
+      ជាប្រព័ន្ធសុវត្ថិភាពដែលជួយទប់ស្កាត់ការវាយប្រហារតាម Network។
+    </li>
+
+    <li>
+      <b>Padlock</b> :
+      ជាសញ្ញាសម្គាល់ថា Website មានសុវត្ថិភាពខ្ពស់ (HTTPS)។
+    </li>
+
+    <li>
+      <b>សំណួរសម្រាប់ពិភាក្សា</b>
+      <ul>
+        <li>Internet ផ្ដល់អត្ថប្រយោជន៍អ្វីខ្លះដល់អ្នកប្រើប្រាស់?</li>
+        <li>តើគេបង្កើត Virus ឡើងមកដើម្បីអ្វី?</li>
+        <li>តើ Calendar នៅក្នុង Outlook បង្កើតឡើងដើម្បីអ្វី?</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
   {module:2, task:"Project", title:"Project", page:73},
 
-  {module:3, task:1, title:"Rows and columns", page:77},
-  {module:3, task:2, title:"Advanced formatting", page:84},
-  {module:3, task:3, title:"Simple calculations", page:88},
-  {module:3, task:4, title:"Logical functions", page:92},
-  {module:3, task:5, title:"Create a chart", page:95},
+  {
+  module: 3,
+  task: 1,
+  title: "Row and Columns",
+  page: 77,
+  summary: `
+  <ul>
+    <li>
+      <b>Microsoft Excel</b> :
+      ជាកម្មវិធីដែលប្រើសម្រាប់គណនា និងគ្រប់គ្រងទិន្នន័យ។
+      Excel ត្រូវបានប្រើយ៉ាងទូលំទូលាយក្នុងវិស័យ
+      ហិរញ្ញវត្ថុ អាជីវកម្ម ការអប់រំ និងវិស្វកម្ម។
+    </li>
+
+    <li>
+      <b>របៀបបើកកម្មវិធី Microsoft Excel</b>
+      <ol>
+        <li>ចុច <b>Windows + R</b> → វាយពាក្យ <b>Excel</b> → ចុច <b>Enter</b></li>
+        <li>ចុច <b>Start</b> → វាយពាក្យ <b>Excel</b> → ចុចលើ <b>Microsoft Excel</b></li>
+      </ol>
+    </li>
+
+    <li>
+      <b>Save (Ctrl + S)</b> :
+      ប្រើសម្រាប់រក្សាទុកឯកសារដែលមានឈ្មោះស្រាប់ (ឯកសារចាស់)។
+    </li>
+
+    <li>
+      <b>Save As (F12)</b> :
+      ប្រើសម្រាប់រក្សាទុកឯកសារថ្មីដែលមិនទាន់មានឈ្មោះ។
+    </li>
+
+    <li>
+      <b>Worksheet</b> :
+      ជាសន្លឹកកិច្ចការងារ ដែលមាន
+      1,048,576 Rows និង 16,384 Columns (A – XFD)។
+    </li>
+
+    <li>
+      <b>Workbook</b> :
+      ជាសៀវភៅកិច្ចការមួយ ដែលផ្ទុក Sheet ជាច្រើន។
+    </li>
+
+    <li>
+      <b>Formula Bar</b> :
+      ជាកន្លែងបង្ហាញអត្ថបទ ឬរូបមន្ត
+      ដែលបានវាយនៅក្នុង Cell។
+    </li>
+
+    <li>
+      <b>Column Heading</b> :
+      ជាជួរឈរ A, B, C … XFD។
+    </li>
+
+    <li>
+      <b>Row Heading</b> :
+      ជាជួរដេក 1, 2, 3 … 1,048,576។
+    </li>
+
+    <li>
+      <b>Cell</b> :
+      ជាចំណុចប្រសព្វរវាង Column និង Row។
+    </li>
+
+    <li>
+      <b>Merge Cells</b> :
+      ប្រើសម្រាប់បញ្ចូល Cell ជាច្រើនឱ្យក្លាយជាមួយ។
+    </li>
+
+    <li>
+      <b>Shortcuts សំខាន់ៗ</b>
+      <ul>
+        <li>Ctrl + N : បើក Workbook ថ្មី</li>
+        <li>Ctrl + O : បើកឯកសារ</li>
+        <li>F2 : កែប្រែទិន្នន័យក្នុង Active Cell</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Row & Column Management</b>
+      <ul>
+        <li>Delete Column : លុបជួរឈរ</li>
+        <li>Delete Row : លុបជួរដេក</li>
+        <li>Insert Row : បន្ថែមជួរដេក</li>
+        <li>Insert Column : បន្ថែមជួរឈរ</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 3,
+  task: 2,
+  title: "Advanced Formatting",
+  page: 84,
+  summary: `
+  <ul>
+    <li>
+      <b>Format Cells</b>
+      <ul>
+        <li><b>General</b> : កំណត់ប្រភេទទិន្នន័យធម្មតា (លេខ ឬអក្សរ)</li>
+        <li><b>Number</b> : កំណត់ប្រភេទទិន្នន័យជាលេខ</li>
+        <li><b>Currency</b> : កំណត់ទិន្នន័យជានិមិត្តសញ្ញារូបិយប័ណ្ណ</li>
+        <li><b>Date and Time</b> : កំណត់ទិន្នន័យជាថ្ងៃ ខែ ឆ្នាំ</li>
+        <li><b>Percentage</b> : កំណត់ទិន្នន័យជាភាគរយ</li>
+        <li><b>Text</b> : កំណត់ទិន្នន័យជាអក្សរ មិនអាចគណនាបាន</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ចំណុចសំខាន់ផ្សេងៗ</b>
+      <ul>
+        <li><b>Wrap Text</b> : សរសេរអក្សរច្រើននៅក្នុង Cell តែមួយ</li>
+        <li><b>Merge Cells</b> : បញ្ចូល Cell ជាច្រើនឱ្យក្លាយជាមួយ</li>
+        <li><b>Border</b> : ដាក់ ឬដកបន្ទាត់ជុំវិញ Cell</li>
+        <li><b>Shading</b> : ដាក់ពណ៌ទៅឱ្យផ្ទៃ</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>របៀប Insert Picture Online</b>
+      <ol>
+        <li>ចូលទៅ <b>Insert Tab</b> → ចុច <b>Online Pictures</b></li>
+        <li>នៅក្នុងប្រអប់ <b>Search</b> ស្វែងរករូបភាពដែលចង់បាន</li>
+        <li>ជ្រើសរើសរូបភាព</li>
+        <li>ចុច <b>Insert</b></li>
+      </ol>
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  module: 3,
+  task: 3,
+  title: "Simple Calculation",
+  page: null,
+  summary: `
+  <ul>
+    <li>
+      <b>Operators (និមិត្តសញ្ញាសម្រាប់គណនា)</b>
+      <ul>
+        <li><b>+</b> (Add) : ប្រើសម្រាប់រកផលបូក</li>
+        <li><b>-</b> (Subtract) : ប្រើសម្រាប់រកផលដក</li>
+        <li><b>*</b> (Multiply) : ប្រើសម្រាប់រកផលគុណ</li>
+        <li><b>/</b> (Divide) : ប្រើសម្រាប់រកផលចែក</li>
+      </ul>
+    </li>
+
+    <li><b>Autofill Tool</b>: ប្រើសម្រាប់បំពេញទិន្នន័យ លេខរៀង កាលបរិច្ឆេទ ឬរូបមន្តដោយស្វ័យប្រវត្តិ</li>
+
+    <li>
+      <b>Functions សំខាន់ៗក្នុង Excel</b>
+      <ul>
+        <li>
+          <b>MIN()</b> :
+          សម្រាប់រកតម្លៃតូចបំផុត<br>
+          <code>=MIN(CellAddress:CellAddress)</code>
+        </li>
+
+        <li>
+          <b>MAX()</b> :
+          សម្រាប់រកតម្លៃធំបំផុត<br>
+          <code>=MAX(CellAddress:CellAddress)</code>
+        </li>
+
+        <li>
+          <b>AVERAGE()</b> :
+          សម្រាប់រកតម្លៃមធ្យម<br>
+          <code>=AVERAGE(CellAddress:CellAddress)</code>
+        </li>
+
+        <li>
+          <b>SUM()</b> :
+          សម្រាប់បូកសរុបទិន្នន័យ<br>
+          <code>=SUM(CellAddress:CellAddress)</code>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Cell Address</b> :
+      ជាជួរ Cell ដែលត្រូវ Select ដើម្បីយកមកគណនា។
+    </li>
+
+    <li>
+      <b>RANK()</b> :
+      ជារូបមន្តប្រើសម្រាប់រកចំណាត់ថ្នាក់
+      <ul>
+        <li><b>Number</b> : លេខដែលត្រូវដាក់ចំណាត់ថ្នាក់</li>
+        <li><b>Ref</b> : ជួរលេខដែលយកមកប្រៀបធៀប</li>
+        <li><b>[Order]</b> : មិនត្រូវបានយកមកប្រើទេ</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 3,
+  task: 4,
+  title: "Logical Function",
+  page: 92,
+  summary: `
+  <ul>
+    <li>
+      <b>IF Function</b> :
+      ជារូបមន្តប្រើសម្រាប់ផ្ទៀងផ្ទាត់លក្ខខណ្ឌថា ពិត ឬ មិនពិត
+      ដើម្បីទទួលបានលទ្ធផល។
+    </li>
+
+    <li>
+      <b>Syntax</b> :
+      <code>IF(Logical_Test, Value_If_True, Value_If_False)</code>
+    </li>
+    <ul>
+  <li><b>ឧទាហរណ៍៖ ឧបមាថាប្អូនមានពិន្ទុសិស្សនៅក្នុង Cell A2 ហើយប្អូនចង់កំណត់ថា</b> ការបញ្ជាក់លទ្ធផលប្រឡង (Pass/Fail)</li>
+  <li><b>លក្ខខណ្ឌ៖</b>
+    <ul>
+      <li>បើពិន្ទុចាប់ពី 50 ឡើងទៅ ឱ្យចេញពាក្យថា <b>"Pass"</b> (ជាប់)</li>
+      <li>បើពិន្ទុតិចជាង 50 ឱ្យចេញពាក្យថា <b>"Fail"</b> (ធ្លាក់)</li>
+    </ul>
+  </li>
+  <li><b>រូបមន្ត៖</b> <code>=IF(A2>=50, "Pass", "Fail")</code></li>
+</ul>
+    <li>
+      <b>Logical_Test</b> :
+      លក្ខខណ្ឌបញ្ចូល ឬការប្រៀបធៀបជាមួយតម្លៃណាមួយ។
+    </li>
+
+    <li>
+      <b>Value_If_True</b> :
+      តម្លៃត្រឡប់មកវិញ បើសិនលក្ខខណ្ឌពិត។
+    </li>
+
+    <li>
+      <b>Value_If_False</b> :
+      តម្លៃត្រឡប់មកវិញ បើសិនលក្ខខណ្ឌមិនពិត។
+    </li>
+
+    <li>
+      <b>ចំណាំ</b> :
+      បើសិនតម្លៃត្រឡប់មកវិញជា <b>អក្សរ</b>
+      ត្រូវដាក់នៅក្នុងសញ្ញា <b>" "</b>។
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 3,
+  task: 5,
+  title: "Create and Chart",
+  page: 95,
+  summary: `
+  <ul>
+    <li>
+      <b>Chart (ក្រាហ្វិក ឬសំនុំរូបភាព)</b> គឺជាការបង្ហាញទិន្នន័យពីក្នុងតារាងឱ្យមកជារូបភាព 
+      ឬក្រាហ្វិកវិញ ដើម្បីជួយឱ្យយើងងាយស្រួលយល់ ងាយស្រួលមើល និងងាយស្រួលក្នុងការធ្វើការវិភាគទិន្នន័យដែលស្មុគស្មាញ។
+    </li>
+
+    <li>
+      <b>ប្រភេទ Chart</b>
+      <ul>
+        <li>Column Chart</li>
+        <li>Line Chart</li>
+        <li>Pie Chart</li>
+        <li>Bar Chart</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>របៀប Add Chart ក្នុង M.S Excel</b>
+      <ol>
+        <li>Select លើទិន្នន័យដែលយើងចង់បង្ហាញ</li>
+        <li>ចុចទៅលើ Insert Tab</li>
+        <li>ជ្រើសរើសប្រភេទ Chart ដែលយើងចង់បាន</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
   {module:3, task:"Project", title:"Project", page:98},
 
-  {module:4, task:1, title:"Slides, text and images", page:103},
-  {module:4, task:2, title:"Transitions and animations", page:109},
-  {module:4, task:3, title:"Sound and video", page:112},
-  {module:4, task:4, title:"Charts and graphs", page:119},
-  {module:4, task:5, title:"Tips and tricks", page:122},
+  {
+  module: 4,
+  task: 1,
+  title: "Slide, Text and Images",
+  page: 103,
+  summary: `
+  <ul>
+    <li>
+      <b>M.S PowerPoint</b> : កម្មវិធីសម្រាប់បង្កើត Slide ដើម្បីធ្វើបទបង្ហាញ
+      និងអាច Design Slide បានយ៉ាងច្នៃប្រឌិត
+    </li>
+    <li>
+      <b>Shortcut</b> :
+      <ul>
+        <li>Ctrl + N : បង្កើត Slide ថ្មី</li>
+        <li>Ctrl + M : បន្ថែម Slide ថ្មីក្នុង File តែមួយ</li>
+      </ul>
+    </li>
+    <li>
+      <b>Save និង Save As</b> :
+      <ul>
+        <li>Ctrl + S : រក្សាទុកឯកសារដែលមានឈ្មោះស្រាប់</li>
+        <li>F12 : រក្សាទុកឯកសារថ្មី (Save As)</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 5,
+  task: 2,
+  title: "Transition and Animation",
+  page: 109,
+  summary: `
+  <ul>
+    <li><b>Transition</b> : ប្រើសម្រាប់ដាក់ចលនាទៅលើ Slide</li>
+    <li><b>Animation</b> : ប្រើសម្រាប់ដាក់ចលនាទៅលើរូបភាព អក្សរ ឬ Object ផ្សេងៗ</li>
+    <li><b>Apply All</b> : បញ្ចូល Transition មួយចូលទៅកាន់ស្លាយទាំងអស់</li>
+    <li><b>Duration</b> : កំណត់រយៈពេលសម្រាប់ Transition ឬ Animation</li>
+    <li><b>On Mouse Click</b> : កំណត់ចលនានៃ Slide តាមការប្រើ Mouse Click</li>
+    <li><b>After</b> ការកំណត់ទៅលើចលនានៃ Slide តាមរយៈការបញ្ជា Slideឲ្យដំណើរការដោយស្វ័យប្រវត្ត។</li>
+    <li><b>Animation Pane</b>: ប្រើសម្រាប់គ្រប់គ្រង រៀបលំដាប់លំដោយ និងកំណត់ពេលវេលានៃចលនា (Animation) ទាំងអស់ដែលមាននៅក្នុងស្លាយ។</li>
+    <li>កំណត់ការចាប់ផ្ដើម (Start Options): ប្អូនអាចជ្រើសរើសបាន ៣ បែប:</li>
+    <ul><li>On Click: ចលនានឹងដើរនៅពេលយើងចុច Mouse</li>
+    <li>With Previous: ចលនាដើរស្របពេលជាមួយចលនាមុនវា</li>
+    <li>After Previous: ចលនាដើរដោយស្វ័យប្រវត្តិ បន្ទាប់ពីចលនាមុនដើរចប់</li></ul>
+    <li><b>Trigger</b>: ប្រើសម្រាប់កំណត់ឱ្យចលនា (Animation) ដំណើរការបាន លុះត្រាតែយើងចុចចំលើ Object ណាមួយដែលបានកំណត់</li
+
+  </ul>
+  `
+}
+,
+  {
+  module: 5,
+  task: 3,
+  title: "Charts and Graphs",
+  page: 112,
+  summary: `
+  <ul>
+    <li><b>Audio</b> : មុខងារដើម្បីបញ្ចូលសម្លេងចូលក្នុង Slide</li>
+    <li><b>Video</b> : មុខងារដើម្បីបញ្ចូលវីដេអូចូលក្នុង Slide</li>
+    
+    <li><b>របៀប Insert Audio</b>
+      <ol>
+        <li>នៅលើ Insert Tab ចុចពាក្យ Audio</li>
+        <li>ជ្រើសរើស Audio on my PC...</li>
+        <li>ស្វែងរក Music ដែលមាននៅក្នុង Computer</li>
+        <li>ចុច Insert</li>
+      </ol>
+    </li>
+
+    <li><b>របៀប Insert Video</b>
+      <ol>
+        <li>នៅលើ Insert Tab ចុចពាក្យ Video</li>
+        <li>ជ្រើសរើស This Device...</li>
+        <li>ស្វែងរក Video ដែលមាននៅក្នុង Computer</li>
+        <li>ចុច Insert</li>
+      </ol>
+    </li>
+  </ul>
+  `
+}
+,
+ {
+  module: 5,
+  task: 4,
+  title: "Image and Graphic",
+  page: 119,
+  summary: `
+  <ul>
+    <li><b>SmartArt</b> : គំរូរចនាសម្ព័ន្ធដែលមានស្រាប់ ដើម្បីបង្កើតជារចនាសម្ព័ន្ធផ្សេងៗ
+      <ul>
+        <li>ប្រភេទ៖ List, Process, Cycle, Hierarchy, Relation, Matrix, Pyramid, Picture</li>
+      </ul>
+    </li>
+
+    <li><b>Chart</b> : គំនូសរូបភាពនៃទិន្នន័យ ដែលស្រដៀងទៅ Excel សម្រាប់បង្ហាញព័ត៍មាន
+      <ul>
+        <li>ប្រភេទ៖ Column, Line, Bar, Pie …</li>
+      </ul>
+    </li>
+
+    <li><b>របៀប Insert SmartArt</b>
+      <ol>
+        <li>នៅលើ Insert Tab ចុចពាក្យ SmartArt</li>
+        <li>ជ្រើសរើសប្រភេទ Chart ដែលចង់បាន</li>
+        <li>ចុច OK</li>
+      </ol>
+    </li>
+
+    <li><b>របៀប Insert Chart</b>
+      <ol>
+        <li>នៅលើ Insert Tab ចុចពាក្យ Chart</li>
+        <li>ជ្រើសរើសប្រភេទ Chart ដែលចង់បាន</li>
+        <li>ចុច OK</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 4,
+  task: 5,
+  title: "Tips and Tricks",
+  page: 122,
+  summary: `
+  <ul>
+    <li>
+      <b>1. ការត្រៀមខ្លួន និងគោលដៅ (Planning & Goals)</b>
+      <ul>
+        <li><b>Time is Precious (ពេលវេលាមានតម្លៃ)</b> : ធ្វើបទបង្ហាញឱ្យខ្លី, ខ្លឹម និងចំចំណុច មិនអូសបន្លាយ។</li>
+        <li><b>Define Your Purpose (កំណត់គោលបំណង)</b> : ដើម្បីដឹងច្បាស់ថា តើយើងចង់ឱ្យអ្នកស្ដាប់ទទួលបានអ្វីបន្ទាប់ពីចប់បទបង្ហាញ (ឧទាហរណ៍ ផ្ដល់ចំណេះដឹង ឬបញ្ចុះបញ្ចូល)។</li>
+        <li><b>Know Your Audience (ស្គាល់អ្នកស្ដាប់)</b> : រៀបចំខ្លឹមសារ និងពាក្យសម្តីឱ្យសមស្របទៅនឹងកម្រិតយល់ដឹង និងចំណាប់អារម្មណ៍របស់អ្នកស្ដាប់ (សិស្ស, គ្រូ, អាណាព្យាបាល…)។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>2. ការរៀបចំខ្លឹមសារ និងបរិយាកាស (Preparation)</b>
+      <ul>
+        <li><b>Keep Your Presentation Lively (ធ្វើឱ្យមានភាពរស់រវើក)</b> : ទាក់ទាញអ្នកស្ដាប់ កុំឱ្យធុញទ្រាន់ តាមរយៈសំនួរ, និទានរឿងខ្លី, ឬរូបភាពប្លែកៗ។</li>
+        <li><b>Check the Presentation Room (ពិនិត្យបន្ទប់)</b> : ដើម្បីបង្ការបញ្ហាបច្ចេកទេស ពិនិត្យកុំព្យូទ័រ, Projector និងសំឡេង មុនចាប់ផ្តើម។</li>
+        <li><b>Preparing Your Presentation (ការរៀបចំបទបង្ហាញ)</b> : រៀបចំ Slides ជាលំដាប់ ចាប់ពីចំណងជើង, សេចក្តីផ្ដើម រហូតដល់សេចក្តីសន្និដ្ឋាន។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>3. បច្ចេកទេសរចនាស្លាយ (Design Skills)</b>
+      <ul>
+        <li><b>Use Simple Color (ប្រើពណ៌សាមញ្ញ)</b> : អ្នកស្ដាប់ងាយស្រួលមើល និងមិនឈឺភ្នែក។ ប្រើពណ៌ផ្ទុយគ្នា (អក្សរខ្មៅលើផ្ទៃស) និងកុំប្រើពណ៌ច្រើនពេក។</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
   {module:4, task:"Project", title:"Project", page:122}
 ],
 
   8: [
-  {module:1, task:1, title:"Tabs and columns", page:7},
-  {module:1, task:2, title:"Headers and footers", page:16},
-  {module:1, task:3, title:"HTML and PDF", page:21},
-  {module:1, task:4, title:"Mail merge", page:27},
-  {module:1, task:5, title:"Advanced topics", page:34},
-  {module:1, task:"Project", title:"Project", page:38},
+  {
+  module: 1,
+  task: 1,
+  title: "Tabs and Columns",
+  page: 7,
+  summary: `
+  <ul>
+    <li><b>Microsoft Word</b> គឺជាកម្មវិធីមួយសម្រាប់វាយអត្ថបទ រៀបចំឯកសារ និងធ្វើការងារផ្នែករដ្ឋបាល។</li>
 
-  {module:2, task:1, title:"Complex calculations", page:43},
-  {module:2, task:2, title:"Functions", page:46},
-  {module:2, task:3, title:"References", page:56},
-  {module:2, task:4, title:"Advanced charts", page:60},
-  {module:2, task:5, title:"Import and export data", page:65},
+    <li>កម្មវិធី Microsoft Word ជាកម្មវិធីមួយរក្សាទុក Files ជាប្រភេទ <b>DOCX</b> ចំពោះ Files នេះងាយស្រួលក្នុងការកែប្រែអត្ថបទ។</li>
+
+    <li><b>របៀបបើកឯកសារក្នុងកម្មវិធី MS. Word</b>
+      <ol>
+        <li>ចុចលើ File → ចុចលើ Open (Ctrl + O) → ចុចលើ Browse</li>
+        <li>Select លើឯកសារចង់បើក → ចុចពាក្យ Open</li>
+      </ol>
+    </li>
+
+    <li><b>របៀបបើកចូលកម្មវិធី Word</b>
+      <ul>
+        <li>នៅក្នុង Windows យក Start Menu</li>
+        <li>ចុចលើ Office</li>
+        <li>ចុចលើ Word</li>
+      </ul>
+    </li>
+
+    <li><b>ភាពខុសគ្នារវាង Save និង Save As</b>
+      <ul>
+        <li>Save (Ctrl + S) : ប្រើសម្រាប់រក្សាទុកឯកសារដែលមានឈ្មោះស្រាប់ (ឯកសារចាស់)</li>
+        <li>Save As (F12) : មានតួនាទីប្រើសម្រាប់រក្សាទុកឯកសារ (បង្កើតឯកសារថ្មី)</li>
+      </ul>
+    </li>
+
+    <li><b>ដើម្បីរក្សាទុកឯកសារ</b>
+      <ol>
+        <li>ចុចលើ File → Save As → Browse</li>
+        <li>ជ្រើសរើស Documents ឬ Folder</li>
+        <li>File Name : ដាក់ឈ្មោះឯកសារ</li>
+        <li>ចុច Save</li>
+      </ol>
+    </li>
+    <li><b>Tabs (ថេប)</b>ប្រើសម្រាប់កំណត់ទីតាំងអក្សរឲ្យបានស្មើគ្នា និងងាយស្រួលតម្រឹមអក្សរទៅតាមចំណុចដែលយើងចង់បាន។</li>
+    <li><b>ការប្រើប្រាស់ Tabs</b>
+      <ol>
+        <li>Left Tab : សរសេរចេញពីចំណុចខាងឆ្វេង</li>
+        <li>Right Tab : សរសេរចេញពីចំណុចខាងស្តាំ</li>
+        <li>Center Tab : តម្រឹមអត្ថបទកណ្តាល</li>
+        <li>Decimal Tab : សរសេរលេខ និងទសភាគ</li>
+        <li>Bar Tab : បង្កើតបន្ទាត់បញ្ឈរ</li>
+      </ol>
+    </li>
+
+    <li><b>ការប្រើប្រាស់ Alignment</b>
+      <ol>
+        <li>Align Left (Ctrl + L)</li>
+        <li>Align Right (Ctrl + R)</li>
+        <li>Center (Ctrl + E)</li>
+        <li>Justify (Ctrl + J)</li>
+      </ol>
+    </li>
+
+    <li><b>Columns</b> គឺជាការបែងចែកអត្ថបទជា 2 ឬ 3 ជួរឈរ
+      <ul>
+        <li>Number of Columns ចំនួនជួរឈរ</li>
+        <li>Line Between ដាក់បន្ទាត់ចន្លោះរវាង Column និង Column</li>
+        <li>Whole Document ទំព័រទាំងអស់នឹងមាន Columns ដូចគ្នា</li>
+        <li>This Point Forward បង្កើតColumnsចាប់ពី ទីតាំង Cursor ទៅ</li>
+      </ul>
+    </li>
+
+    <li><b>Column Break</b> គឺជាការបំបែកជួរឈរ</li>
+    <li><b>Page Break</b> គឺជាការបំបែកទំព័រ</li>
+
+    <li>Section Break នៅក្នុង Microsoft Word ប្រើសម្រាប់បែងចែកឯកសារជាផ្នែកៗ (Section)។
+      <ul>
+        <li>Next Page បង្កើត Section ថ្មី នៅទំព័របន្ទាប់</li>
+        <li>Continuous​ បង្កើត Section ថ្មី នៅទំព័រដដែល</li>
+        <li>Even Page​ បង្កើត Section ថ្មី នៅទំព័រគូ (Even Page)</li>
+        <li>Odd Page បង្កើត Section ថ្មី នៅទំព័រសេស (Odd Page)</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 1,
+  task: 2,
+  title: "Header and Footer",
+  page: 16,
+  summary: `
+  <ul>
+    <li><b>Header</b> : គឺជាក្បាលទំព័រនៃសន្លឹកកិច្ចការ</li>
+
+    <li><b>Footer</b> : គឺជាជើងទំព័រនៃសន្លឹកកិច្ចការ</li>
+
+    <li><b>ដើម្បីបង្កើត Header</b>
+      <ul>
+        <li>ចូលទៅ Insert</li>
+        <li>ជ្រើសរើស Header</li>
+        <li>ធ្វើការដាក់ចំណងជើងសន្លឹកកិច្ចការរបស់យើង</li>
+      </ul>
+    </li>
+
+    <li><b>ដើម្បីបង្កើត Footer</b>
+      <ul>
+        <li>ចូលទៅ Insert</li>
+        <li>ជ្រើសរើស Footer</li>
+        <li>ធ្វើការដាក់ចំណងជើងសន្លឹកកិច្ចការរបស់យើង</li>
+      </ul>
+    </li>
+
+    <li><b>ស្វែងយល់អំពីការប្រើប្រាស់ Page Number</b>
+      <ul>
+        <li><b>Top of Page</b> : គឺជាការបញ្ចូលលេខទំព័រ ក្បាលទំព័រ</li>
+        <li><b>Bottom of Page</b> : គឺជាការបញ្ចូលលេខទំព័រ ជើងទំព័រ</li>
+        <li><b>Page Margins</b> : គឺជាការបញ្ចូលលេខទំព័រសងខាងអត្ថបទ</li>
+        <li><b>Current Position</b> : គឺជាការបញ្ចូលលេខទំព័រត្រង់ Insertion Point ស្ថិតនៅ</li>
+        <li><b>Format Page Number</b> : សម្រាប់កំណត់លេខទំព័រដែលត្រូវចាប់ផ្តើម</li>
+        <li><b>Date & Time</b> : គឺជាការបញ្ចូលថ្ងៃខែឆ្នាំ ពេលវេលា</li>
+        <li><b>Remove Page Number</b> : គឺជាការលុបលេខទំព័រសន្លឹកកិច្ចការ</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},         
+  {
+  module: 1,
+  task: 3,
+  title: "HTML and PDF",
+  page: 21,
+  summary: `
+  <ul>
+    <li>
+      <b>HTML (HyperText Markup Language)</b> : គីជាភាសាស្តងដារមួយដែលយើងប្រើសម្រាប់រចនាគេហទំព័រ ឬក៏ Website
+    </li>
+
+    <li>
+      <b>PDF (Portable Document Format)</b> : គីជាប្រភេទ File ដែលមានទំហំតូច ដែលមិនអាចកែប្រែបាន
+    </li>
+
+    <li>
+      <b>Web Page</b> : គឺជាឯកសារមួយដែលមាននៅលើ Internet 
+      យើងអាចស្វែងរកបានតាមរយៈ Browser 
+      (Google Chrome, Microsoft Edge, Firefox…)
+    </li>
+
+    <li>
+      <b>របៀប Save ជា Webpage</b>
+      <ol>
+        <li>ចុច File</li>
+        <li>ចុចយក Save As</li>
+        <li>ចុច Browse (រើសទីតាំង និងដាក់ឈ្មោះ)</li>
+        <li>Save as type រើសជាប្រភេទ Webpage រួចចុច Save</li>
+      </ol>
+    </li>
+
+    <li>
+      <b>របៀប Save ជា PDF</b>
+      <ol>
+        <li>ចុច File</li>
+        <li>ចុចយក Save As</li>
+        <li>ចុច Browse (រើសទីតាំង និងដាក់ឈ្មោះ)</li>
+        <li>Save as type រើសជាប្រភេទ PDF រួចចុច Save</li>
+      </ol>
+    </li>
+
+    <li>
+      <b>Shortcut Keys</b>
+      <ul>
+        <li>Save = Ctrl + S</li>
+        <li>Open = Ctrl + O</li>
+        <li>Save As = Ctrl + Shift + S</li>
+        <li>Print = Ctrl + P</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 1,
+  task: 4,
+  title: "Mail Merge",
+  page: 27,
+  summary: `
+  <ul>
+    <li>
+      <b>Mail Merge</b> : គឺជាមុខងារមួយក្នុង Microsoft Word ដែលប្រើសម្រាប់បង្កើតឯកសារច្រើនៗដោយស្វ័យប្រវត្តិ 
+      ដោយយកទិន្នន័យពីតារាងមួយ (ដូចជា Excel, Access ឬ List ក្នុង Word) មកបញ្ចូលក្នុងឯកសារមេ។
+    </li>
+
+    <li>
+      <b>ការប្រើប្រាស់ Mail Merge</b>
+      <ul>
+        <li>ការធ្វើបណ្ណសរសើរ ឬ វិញ្ញាបនបត្រ</li>
+        <li>ការធ្វើលិខិតអញ្ជើញ</li>
+        <li>ការធ្វើកាតសិស្ស ឬ កាតបុគ្គលិក</li>
+        <li>ការធ្វើស្លាកឈ្មោះ (Labels)</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Start Mail Merge Options</b>
+      <ul>
+        <li><b>Letters</b> : បង្កើតលិខិតផ្ទាល់ខ្លួនសម្រាប់អ្នកទទួលម្នាក់ៗ</li>
+        <li><b>E-mail Messages</b> : បង្កើតសារអេឡិចត្រូនិក ផ្ញើតាមអ៊ីមែល</li>
+        <li><b>Envelopes</b> : បោះពុម្ពអាសយដ្ឋានលើស្រោមសំបុត្រ</li>
+        <li><b>Labels</b> : បង្កើតស្លាកអាសយដ្ឋាន ឬ ស្លាកឈ្មោះ</li>
+        <li><b>Directory</b> : បង្កើតឯកសារជាបញ្ជី (ឧ. បញ្ជីបុគ្គលិក)</li>
+        <li><b>Normal Word Document</b> : ប្តូរត្រលប់ទៅឯកសារ Word ធម្មតា</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>របៀបប្រើប្រាស់ Mail Merge ទី១</b>
+      <ol>
+        <li>ចុច Start Mail Merge</li>
+        <li>ចុច Step-by-step Mail Merge</li>
+        <li>ចុច Starting Document</li>
+        <li>ចុច Select Recipients</li>
+        <li>ជ្រើសរើស Type a new list</li>
+        <li>ចុច Create (បំពេញទិន្នន័យជា List)</li>
+        <li>ដាក់ឈ្មោះ និង ចុច Save</li>
+      </ol>
+    </li>
+
+    <li>
+      <b>របៀបប្រើប្រាស់ Mail Merge ទី២ (ប្រើ File Excel)</b>
+      <ol>
+        <li>ចុច Select Recipients</li>
+        <li>ចុច Use an existing list</li>
+        <li>ស្វែងរក File Excel ដែលបានបង្កើត</li>
+        <li>ចុច Open (File នឹង Link មកកាន់ MS Word)</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 1,
+  task: 5,
+  title: "Advanced Topics",
+  page: 34,
+  summary: `
+  <ul>
+    <li>
+      <b>Symbols</b> : 
+      Symbols (រូបសញ្ញា) គឺជាតួអក្សរ ឬសញ្ញាពិសេស 
+      ដែលមិនមាននៅលើក្តារចុចធម្មតា។
+      <br/>ឧទាហរណ៍៖ ©, ®, ✓, ♥, €, $, ¥
+    </li>
+    <li>របៀប Insert Symbols: ចូលទៅកាន់ Insert tab -> ក្នុង Symbols Group -> ចុចពាក្យ  Symbols</li>
+
+    <li>
+      <b>Mathematical Formulas</b> :
+      Mathematical Formulas (រូបមន្តគណិតវិទ្យា) 
+      គឺជាមុខងារនៅក្នុង Microsoft Word 
+      ដែលអនុញ្ញាតឱ្យអ្នកបញ្ចូលរូបមន្តគណិតវិទ្យាស្មុគស្មាញបាន។
+    </li>
+
+    <li>
+      <b>Citation</b> :
+      Citation គឺជាមុខងារដែលជួយក្នុងការគ្រប់គ្រងប្រភពព័ត៌មាន 
+      និងបញ្ចូលការដកស្រង់យោង (Reference) 
+      ទៅក្នុងឯកសារបានត្រឹមត្រូវ។
+    </li>
+
+    <li>
+      <b>Footnote</b> :
+      <ul>
+        <li>
+          <b>Footnote</b> : 
+          ជាមុខងារសម្រាប់បន្ថែមការពន្យល់ យោបល់ 
+          ឬការយោងប្រភព នៅផ្នែកខាងក្រោមនៃទំព័រនីមួយៗ។
+        </li>
+        <li>
+          <b>Endnotes</b> :
+          ជាកំណត់ចំណាំ ឬឯកសារយោង 
+          ដែលដាក់នៅចុងបញ្ចប់នៃឯកសារទាំងមូល។
+        </li>
+        <li>
+          <b>Custom mark</b> :
+          ជាជម្រើសសម្រាប់ដាក់សញ្ញាយោងតាមការកំណត់ផ្ទាល់ខ្លួន។
+        </li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+  {module:1, task:"Project", title:"Project", page:38},
+  {
+  module: 2,
+  task: 2,
+  title: "Functions",
+  page: 46,
+  summary: `
+  <ul>
+    <li><b>COUNT</b> : រូបមន្ដសម្រាប់រាប់ចំនួនក្រឡាដែលមានលេខ</li>
+
+    <li><b>TODAY</b> : រូបមន្ដសម្រាប់បង្ហាញកាលបរិច្ឆេទបច្ចុប្បន្ន</li>
+
+    <li>
+      <b>SUBSTITUTE</b> : 	រូបមន្ត 
+      SUBSTITUTE ត្រូវបានប្រើសម្រាប់ ផ្លាស់ប្តូរ ឬជំនួសអត្ថបទចាស់ ដោយអត្ថបទថ្មី នៅក្នុង Cell ជាក់លាក់ណាមួយ។
+    </li>
+
+    <li>
+      <b>CONCATENATE</b> : បញ្ចូលអត្ថបទពីក្រឡាជាច្រើន
+      ចូលទៅក្នុងក្រឡាតែមួយ 
+    </li>
+
+    <li>
+      <b>COUNTIF</b> :  រូបមន្ដប្រើសម្រាប់រាប់តម្លៃមួយលក្ខណ្ឌ
+    </li>
+
+    <ul>
+  <li><b>Auto Fill</b> : ប្រើសម្រាប់បំពេញទិន្នន័យ(ដូចជាលេខរៀង កាលបរិច្ឆេទ) និងសម្រាប់ចម្លងរូបមន្ត ឬអត្ថបទដោយស្វ័យប្រវត្តិ</li>
+</ul>
+
+    <li>
+      <b>LEFT, RIGHT, MID</b> : រូបមន្តសម្រាប់ដកស្រង់អក្សរ
+      ឬតួលេខ (Text) ចេញពីក្នុង Cell
+      <ul>
+        <li>
+          <b>LEFT</b> : ដកស្រង់តួអក្សរពីខាងឆ្វេង  
+          <br>Syntax: =LEFT(text, num_chars)
+        </li>
+        <li>
+          <b>RIGHT</b> : ដកស្រង់តួអក្សរពីខាងស្តាំ  
+          <br>Syntax: =RIGHT(text, num_chars)
+        </li>
+        <li>
+          <b>MID</b> : ដកស្រង់តួអក្សរពីកណ្តាល
+          ឬពីទីតាំងណាមួយដែលចង់បាន  
+          <br>Syntax: =MID(text, start_num, num_chars)
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>IF</b> : រូបមន្តប្រើសម្រាប់ផ្ទៀងផ្ទាត់លក្ខខណ្ឌ
+      ពិត ឬមិនពិត ដើម្បីទទួលបានលទ្ធផល
+      <ul>
+        <li><b>Logical_test</b> : លក្ខខណ្ឌដែលត្រូវផ្ទៀងផ្ទាត់</li>
+        <li><b>Value_if_true</b> : លទ្ធផលបើ Logical_test ពិត</li>
+        <li><b>Value_if_false</b> : លទ្ធផលបើ Logical_test មិនពិត</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>AND</b> : រូបមន្តសម្រាប់រកលក្ខខណ្ឌ
+      ដែលត្រូវពិតទាំងអស់ ទើបទទួលបានលទ្ធផលត្រឹមត្រូវ
+      <ul>
+        <li>
+          ឧទាហរណ៍៖ លក្ខខណ្ឌដើម្បីជាប់អាហារូបករណ៍
+          គឺសិស្សត្រូវមាន “ពិន្ទុលើស ៩០” AND “អវត្តមានសូន្យ”
+        </li>
+        <li>ពិន្ទុ ៩៥ តែអវត្តមាន ១ ថ្ងៃ → FALSE (មិនជាប់)</li>
+        <li>ពិន្ទុ ៩៥ ហើយអវត្តមាន ០ ថ្ងៃ → TRUE (ជាប់)</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>OR</b> : រូបមន្តសម្រាប់រកលក្ខខណ្ឌច្រើន
+      បើមានលក្ខខណ្ឌមួយពិត ក៏ទទួលបានលទ្ធផល
+      <ul>
+        <li>
+          ឧទាហរណ៍៖ លក្ខខណ្ឌដើម្បីបានការបញ្ចុះតម្លៃ
+          គឺអ្នកជា “សិស្ស” OR “អ្នកមានបណ្ណសមាជិក”
+        </li>
+        <li>ជាសិស្ស តែគ្មានបណ្ណ → TRUE (បានចុះតម្លៃ)</li>
+        <li>មិនមែនសិស្ស និងគ្មានបណ្ណ → FALSE (មិនបានចុះតម្លៃ)</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>COUNTIF</b>
+      <ul>
+        <li>Syntax: =COUNTIF(range, criteria)</li>
+        <li><b>Range</b> : ជាលំដាប់ទិន្នន័យសម្រាប់ផ្ទៀងផ្ទាត់</li>
+        <li><b>Criteria</b> : ជាលក្ខខណ្ឌដែលត្រូវរាប់</li>
+      </ul>
+    </li>
+  </ul>
+  `
+},
+  {
+  module: 2,
+  task: 3,
+  title: "References",
+  page: 56,
+  summary: `
+  <ul>
+    <li>
+      <b>1. Relative Reference (ការយោងតាមទីតាំងធៀប)</b><br>
+      ជាប្រភេទ Default (ធម្មតា) របស់ Excel។
+      នៅពេលទាញរូបមន្តចុះក្រោម ឬទៅចំហៀង
+      ឈ្មោះ Cell នឹងប្រែប្រួលទៅតាមទីតាំងដែលបានទាញ។
+      <br><b>រូបរាង:</b> A1, B2, C10 (គ្មានសញ្ញា $)<br>
+      <b>របៀបដើរ: បើប្អូនសរសេរ =A1+B1 ក្នុងជួរទី១ រួចទាញចុះមកជួរទី២ វានឹងដូរទៅជា =A2+B2 ដោយស្វ័យប្រវត្តិ។</b>
+      <br><b>ប្រើសម្រាប់:</b>
+      គណនាទិន្នន័យជាជួរដេក
+      ឬជួរឈរស្របគ្នា
+      (ឧ. បូកសរុបតម្លៃទំនិញតាមមុខនីមួយៗ)
+    </li>
+    <li>
+      <b>2. Absolute Reference (ការយោងទីតាំងថេរ)</b><br>
+      គឺជាការចាក់សោ Cell មួយឲ្យនៅថេរដដែល
+      ទោះបីទាញរូបមន្តទៅកន្លែងណាក៏ដោយ
+      វានៅតែយោងទៅ Cell ដើម។
+      <br><b>រូបរាង:</b> $A$1 (មានសញ្ញាដុល្លារ $ នៅពីមុខអក្សរជួរឈរ និងលេខជួរដេក)
+      <br><b>របៀបដើរ:</b>	របៀបដើរ: បើប្អូនសរសេរ =$A$1+B1 រួចទាញចុះក្រោម វានឹងដូរទៅជា =$A$1+B2, =$A$1+B3... (ឃើញថា $A$1 នៅដដែល)។<br>
+      <b>ប្រើសម្រាប់:</b>
+      តម្លៃថេរ ដូចជា
+      អត្រាប្តូរប្រាក់ ($),
+      ភាគរយពន្ធ (%),
+      ឬតម្លៃបញ្ចុះតម្លៃ
+    </li>
+    <li>
+      <b>AVERAGE</b> :
+      ប្រើសម្រាប់គណនារកមធ្យមភាគ
+    </li>
+
+    <li>
+      <b>#VALUE!</b> :
+      កើតឡើងនៅពេល
+      រូបមន្តប្រើទិន្នន័យខុសប្រភេទ
+      (ឧ. បូកលេខជាមួយអក្សរ)
+    </li>
+
+    <li>
+      <b>#NAME?</b> :
+      កើតឡើងនៅពេល
+      Excel មិនស្គាល់ឈ្មោះក្នុងរូបមន្ត
+      (ឧ. វាយ Function ខុស)
+    </li>
+
+    <li>
+      <b>#DIV/0!</b> :
+      កើតឡើងនៅពេល
+      រូបមន្តព្យាយាមចែកលេខនឹងសូន្យ (0)
+    </li>
+
+    <li>
+      <b>#######</b> :
+      កើតឡើងនៅពេល
+      ទទឹងជួរឈរតូចពេក
+      មិនអាចបង្ហាញតម្លៃទាំងអស់បាន
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 2,
+  "task": 4,
+  "title": "Advanced Charts",
+  "page": 60,
+  "summary": `
+  <ul>
+    <li>
+      <b>Chart</b>: នៅក្នុង Ms Excel ត្រូវបានគេបង្កើតឡើងដើម្បីបង្ហាញទិន្នន័យជាទម្រង់រូបភាព ឬក្រាហ្វិក
+      ដើម្បីឲ្យងាយស្រួលក្នុងការមើល និងវិភាគទិន្នន័យ។
+    </li>
+
+    <li>
+      <b>របៀប Insert Chart:</b> Select ទៅលើទិន្នន័យ → ចូល Insert Tab → ជ្រើសប្រភេទ Chart តាមចំណូលចិត្ត
+    </li>
+
+    <li>
+      <b>Column / Bar Chart</b>: បង្ហាញការប្រៀបធៀបរវាងទិន្នន័យជាសរស
+    </li>
+
+    <li>
+      <b>Line Chart</b>: បង្ហាញទិន្នន័យឡើងចុះតាមពេលវេលា និងនិន្នាការ
+    </li>
+
+    <li>
+      <b>Pie Chart</b>: បង្ហាញទិន្នន័យតែមួយសំណុំ
+    </li>
+
+    <li>
+      <b>Scatter Chart</b>: បង្ហាញតម្លៃពីរ និងប្រៀបធៀបពួកវាតាមពេលវេលា
+    </li>
+
+    <li>
+      <b>Area Chart</b>: បង្ហាញបរិមាណសរុបដោយបំពេញពណ៌ខាងក្រោមបន្ទាត់ ស្រដៀងទៅនឹង Line Chart
+    </li>
+
+    <li>
+      <b>Doughnut Chart</b>: បង្ហាញទិន្នន័យជា ភាគរយ ឬសមាមាត្រ
+    </li>
+
+    <li>
+      <b>Conditional Formatting</b>: មុខងារដើម្បីកំណត់សំគាត់តម្លៃផ្សេងៗក្នុង Cell ដោយប្រើលក្ខណៈវិនិច្ឆ័យ
+      ដើម្បីធ្វើការវិភាគទិន្នន័យ
+    </li>
+  </ul>
+  `
+}
+,{
+  "module": 2,
+  "task": 5,
+  "title": "Import and Export Data",
+  "page": 65,
+  "summary": `
+  <ul>
+    <li>
+      <b>Import Data:</b> ប្រើសម្រាប់បញ្ចូលទិន្នន័យពីខាងក្រៅចូលទៅក្នុង Excel។ 
+      ប្រភេទ File អាច Import បាន៖ Excel, CSV, Text Files, និង File ផ្សេងៗទៀត
+    </li>
+
+    <li>
+      <b>Export Data:</b> ប្រើសម្រាប់បញ្ចេញទិន្នន័យពី Excel ទៅជាប្រភេទ File ផ្សេងៗ
+      ប្រភេទ File អាច Export បាន៖ Excel, CSV, Text Files, និង File ផ្សេងៗទៀត
+    </li>
+
+    <li>
+      <b>CSV (Comma-Separated Values):</b> ប្រភេទ File មានទំហំតូច, ងាយក្នុងការផ្ទេរទិន្នន័យ
+      <ul>
+        <li><b>Comma:</b> សញ្ញាក្បៀស (,)</li>
+        <li><b>Separated:</b> ត្រូវបានបំបែកចេញពីគ្នា</li>
+        <li><b>Values:</b> តម្លៃ ឬទិន្នន័យ</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Import data from TXT or CSV File:</b>
+      <ol>
+        <li>ចុច Data Tab</li>
+        <li>ចុច From Text/CSV</li>
+        <li>ជ្រើសរើសប្រភេទឯកសារជា Text</li>
+        <li>ចុច Import</li>
+        <li>ជ្រើសរើសប្រភេទ Delimiter</li>
+        <li>ចុច Load</li>
+      </ol>
+    </li>
+
+    <li>
+      <b>Export data from Excel to TXT or CSV File:</b>
+      <ol>
+        <li>ចុច File Tab</li>
+        <li>ចុច Save As និងចុច Browse</li>
+        <li>ជ្រើសរើសទីតាំងសម្រាប់ដាក់ File</li>
+        <li>សរសេរឈ្មោះ File</li>
+        <li>ជ្រើសរើសប្រភេទ File (CSV (Comma delimited))</li>
+        <li>ចុច Save</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
   {module:2, task:"Project", title:"Project", page:70},
 
-  {module:3, task:1, title:"Introduction to databases", page:75},
-  {module:3, task:2, title:"Filter and sort", page:79},
-  {module:3, task:3, title:"Keys and relationships", page:82},
-  {module:3, task:4, title:"Contact management", page:87},
-  {module:3, task:5, title:"Lab data collection", page:91},
+  {
+  "module": 3,
+  "task": 1,
+  "title": "Introduction to Databases",
+  "page": 75,
+  "summary": `
+  <ul>
+    <li>
+      <b>What is Database?</b>
+    </li>
+
+    <li>
+      <b>Data (ទិន្នន័យ)</b> :
+      គឺជាប្រភេទព័ត៌មាន (Information) នៅជុំវិញខ្លួនយើង។
+      <br>
+      <b>ឧទាហរណ៍</b> : Name, ID, Gender, Place of Birth...
+    </li>
+
+    <li>
+      <b>Information (ព័ត៌មាន)</b> :
+      គឺជាការពិត ឬព័ត៌មានលម្អិត។
+      <br>
+      <b>ឧទាហរណ៍</b> : ចំនួនសិស្ស ៦នាក់, ភេទប្រុស ៦នាក់...
+    </li>
+
+    <li>
+      <b>Database (មូលដ្ឋានទិន្នន័យ)</b> :
+      គឺជាប្រព័ន្ធសម្រាប់រៀបចំ និងគ្រប់គ្រងទិន្នន័យ។
+      វាដូចជាឃ្លាំងឌីជីថលដ៏ធំមួយសម្រាប់រក្សាទុកព័ត៌មាន។
+    </li>
+
+    <li>
+      <b>Field (វាល)</b> = <b>Column (ជួរឈរ)</b> :
+      ជាប្រភេទព័ត៌មានដែលអ្នកចង់ប្រមូល
+      ជាគ្រោងឆ្អឹង ឬក្បាលនៃតារាង។
+    </li>
+
+    <li>
+      <b>Record (សំណុំ)</b> = <b>Row (ជួរដេក)</b> :
+      ជាព័ត៌មានពេញលេញសម្រាប់មនុស្សម្នាក់
+      ឬវត្ថុមួយ។
+    </li>
+
+    <li>
+      <b>Format as a Table (កំណត់ទម្រង់ជាតារាង)</b> :
+      ជាមុខងារមួយដែលជួយរៀបចំទិន្នន័យឱ្យមានសណ្តាប់ធ្នាប់
+      និងបន្ថែមមុខងារដូចជា
+      <b>Sort (តម្រៀប)</b> និង <b>Filter (ត្រង)</b>
+      ដោយស្វ័យប្រវត្តិ។
+    </li>
+  </ul>
+  `
+},
+  {
+  "module": 3,
+  "task": 2,
+  "title": "Filter and Sort",
+  "page": 79,
+  "summary": `
+  <ul>
+    <li>
+      <b>Filter</b> :
+      មានន័យថាប្រើសម្រាប់ស្រង់យកទិន្នន័យ
+      តាមលក្ខខណ្ឌដែលយើងបានកំណត់។
+    </li>
+
+    <li>
+      <b>Sort</b> :
+      មានន័យថាការតម្រៀបទិន្នន័យ
+      ឲ្យមានលំដាប់។
+    </li>
+
+    <li>
+      <b>Sort (A to Z)/Ascending </b> :
+      មានន័យថាការតម្រៀបទិន្នន័យ
+      ពីតូចទៅធំ។
+    </li>
+
+    <li>
+      <b>Sort (Z to A)/Descending </b> :
+      មានន័យថាការតម្រៀបទិន្នន័យ
+      ពីធំទៅតូច។
+    </li>
+
+    <li>
+      <b>Multi-level Sorting (ការតម្រៀបពហុកម្រិត)</b> :
+      គឺជាការតម្រៀបទិន្នន័យច្រើនជាន់
+      ដោយផ្អែកលើ Field ច្រើន។
+    </li>
+
+    <li>
+      <b>របៀប Filter ទិន្នន័យក្នុង Excel</b> :
+      <ol>
+        <li>ចុចលើ Column Header ដែលចង់ Filter</li>
+        <li>Select ឈ្មោះ ឬតម្លៃដែលចង់ Filter</li>
+        <li>ចុច OK</li>
+      </ol>
+    </li>
+
+    <li>
+      <b>របៀប Sort ទិន្នន័យក្នុង Excel</b> :
+      <ol>
+        <li>ចុចលើ Column Header រូប Arrow</li>
+        <li>ជ្រើសរើសប្រភេទ Sort (A to Z ឬ Z to A)</li>
+        <li>Record ទាំងអស់នឹងត្រូវបានតម្រៀបដោយ Automatic</li>
+      </ol>
+    </li>
+  </ul>
+  `
+},
+  {
+  "module": 3,
+  "task": 3,
+  "title": "Keys and Relationships",
+  "page": 82,
+  "summary": `
+  <ul>
+    <li>
+      <b>Relationship</b> :
+      គឺជាទំនាក់ទំនងរវាង Table និង Table
+      តាមរយៈ Fields ដោយប្រើ
+      <b>Primary Key</b> ក្នុង Table មួយ
+      និង <b>Foreign Key</b> ក្នុង Table ផ្សេង។
+    </li>
+
+    <li>
+      <b>Table Relationships</b> :
+      គឺជាការភ្ជាប់តារាងពីរ ឬច្រើន
+      នៅក្នុង Database
+      ដើម្បីអាចទាញយកទិន្នន័យ
+      ពីតារាងទាំងនោះក្នុងពេលតែមួយ។
+    </li>
+
+    <li>
+      <b>ប្រភេទ Relationship មាន ៣ ប្រភេទ</b> :
+      <ol>
+        <li>One to One (មួយ ទៅ មួយ)</li>
+        <ul>
+          <li>ឧទាហរណ៍៖ មនុស្សម្នាក់ និង អត្តសញ្ញាណប័ណ្ណ។</li>
+          <li>មនុស្សម្នាក់ មានអត្តសញ្ញាណប័ណ្ណតែមួយ។</li>
+          <li>អត្តសញ្ញាណប័ណ្ណមួយ សម្គាល់មនុស្សបានតែម្នាក់។</li>
+          </ul>
+        <li>One to Many (មួយ ទៅ ច្រើន)</li>
+        <ul>
+        <li>ឧទាហរណ៍៖ ម្ដាយ និង កូន</li>
+        <li>ម្ដាយម្នាក់ អាចមានកូនច្រើននាក់។</li>
+        <li>ប៉ុន្តែកូនម្នាក់ៗ មានម្ដាយបង្កើតតែម្នាក់គត់។</li>
+        </ul>
+        <li>Many to Many (ច្រើន ទៅ ច្រើន)</li>
+        <ul>
+        <li>ឧទាហរណ៍៖ សិស្ស និង មុខវិជ្ជា</li>
+        <li>សិស្សម្នាក់ អាចរៀនមុខវិជ្ជាច្រើន (ខ្មែរ, គណិត, អង់គ្លេស...)។</li>
+        <li>មុខវិជ្ជាម្នាក់ ក៏មានសិស្សរៀនច្រើននាក់ដែរ។</li>  
+        </ul>
+      </ol>
+    </li>
+
+    <li>
+      <b>Primary Key</b> :
+      គឺជា Field ដែលត្រូវបានកំណត់
+      ឲ្យមានតម្លៃជាក់លាក់តែមួយគត់
+      មិនស្ទួនគ្នា។
+    </li>
+
+    <li>
+      <b>Table</b> :
+      ផ្គុំឡើងដោយ
+      <b>Field (Column)</b> និង
+      <b>Record (Row)</b>។
+    </li>
+
+    <li>
+      <b>Field</b> :
+      ជាជួរឈររបស់ Table
+      ដែលមានប្រភេទទិន្នន័យដូចគ្នា។
+    </li>
+
+    <li>
+      <b>Record</b> :
+      ជាជួរដេករបស់ Table
+      សម្រាប់បង្ហាញទិន្នន័យពេញលេញ
+      មួយសំណុំ។
+    </li>
+  </ul>
+  `
+},
+  {
+  "module": 3,
+  "task": 4,
+  "title": "Contact Management",
+  "page": 87,
+  "summary": `
+  <ul>
+    <li>
+      <b>Contact Management (ការគ្រប់គ្រងទំនាក់ទំនង)</b> :
+      Outlook គឺជាកម្មវិធីមួយរបស់ Microsoft
+      ដែលប្រើសម្រាប់រៀបចំ និងរក្សាទុក
+      ព័ត៌មានទំនាក់ទំនង
+      (ឧ. ឈ្មោះ លេខទូរស័ព្ទ អ៊ីមែល)
+      ឱ្យមានសណ្ដាប់ធ្នាប់
+      និងងាយស្រួលក្នុងការស្វែងរក និងប្រើប្រាស់។
+    </li>
+
+    <li>
+      <b>Get & Transform Data</b> :
+      ជាមុខងារមួយសម្រាប់យកទិន្នន័យ
+      ពីប្រភពផ្សេងៗ
+      ហើយកែច្នៃ (Transform)
+      ឱ្យបានត្រឹមត្រូវ
+      មុននឹងយកមកប្រើក្នុង Excel។
+    </li>
+
+    <li>
+      <b>Import Data</b> :
+      ប្រើសម្រាប់បញ្ចូលទិន្នន័យ
+      ពីខាងក្រៅចូលមកក្នុងកម្មវិធី។
+      <br>
+      <b>ប្រភេទ File ដែលអាច Import បាន</b> :
+      Excel, CSV, Text Files
+    </li>
+
+    <li>
+      <b>Export Data</b> :
+      ប្រើសម្រាប់បញ្ចេញទិន្នន័យ
+      ចេញទៅជាប្រភេទ File ផ្សេងៗ។
+      <br>
+      <b>ប្រភេទ File ដែលអាច Export បាន</b> :
+      Excel, CSV, Text Files
+    </li>
+  </ul>
+  `
+},
+  {
+  "module": 3,
+  "task": 5,
+  "title": "Lab Data Collection",
+  "page": 91,
+  "summary": `
+  <ul>
+    <li>
+      <b>Data Logger (ឧបករណ៍កត់ត្រាទិន្នន័យ)</b> :
+      គឺជាឧបករណ៍អេឡិចត្រូនិក
+      ដែលមាន Sensor
+      សម្រាប់វាស់វែង និងកត់ត្រាទិន្នន័យ
+      ដោយស្វ័យប្រវត្តិ
+      ក្នុងរយៈពេលណាមួយ
+      (ឧ. សីតុណ្ហភាព ពន្លឺ សំឡេង)។
+    </li>
+
+    <li>
+      <b>ដំណើរការពីការប្រមូលទិន្នន័យដល់ការសន្និដ្ឋាន</b> :
+      គឺជាជំហាននៃការប្រើ
+      Data Logger
+      សម្រាប់ការពិសោធន៍
+      ដើម្បីវិភាគ និងរកលទ្ធផល
+      (ឧ. ស្វែងរកកន្លែងក្តៅបំផុតនៅក្នុងសាលា)។
+    </li>
+
+    <li>
+      <b>ជំហានទី១៖ ប្រមូលទិន្នន័យ</b><br>
+      ប្រើឧបករណ៍ Data Logger
+      ដើម្បីវាស់សីតុណ្ហភាព
+      ពន្លឺ និងសំឡេង
+      នៅតាមទីតាំងផ្សេងៗ
+      ជុំវិញសាលា។
+    </li>
+
+    <li>
+      <b>ជំហានទី២៖ បញ្ចូលទិន្នន័យ</b><br>
+      ភ្ជាប់ Data Logger
+      ទៅកុំព្យូទ័រ
+      ហើយប្រើកម្មវិធី
+      ដើម្បីបង្ហាញទិន្នន័យ
+      ជាតារាង
+      រួចចម្លង (Copy) ទិន្នន័យ។
+    </li>
+
+    <li>
+      <b>ជំហានទី៣៖ រៀបចំទិន្នន័យក្នុង Excel</b><br>
+      បើក Microsoft Excel
+      ហើយបិទភ្ជាប់ (Paste)
+      ទិន្នន័យទៅក្នុង
+      Worksheet ថ្មី
+      ដើម្បីរៀបចំជាតារាង។
+    </li>
+
+    <li>
+      <b>ជំហានទី៤៖ វិភាគលទ្ធផល</b><br>
+      តម្រៀប (Sort)
+      និងវិភាគទិន្នន័យ
+      ដើម្បីរកចម្លើយ។
+      <br>
+      <b>ឧទាហរណ៍:</b>
+      តម្រៀបជួរឈរ
+      “សីតុណ្ហភាព”
+      ពីខ្ពស់ទៅទាប
+      ដើម្បីស្វែងរក
+      កន្លែងក្តៅបំផុត។
+    </li>
+  </ul>
+  `
+},
   {module:3, task:"Project", title:"Project", page:94},
 
-  {module:4, task:1, title:"Design your website", page:99},
-  {module:4, task:2, title:"Publish your website", page:106},
-  {module:4, task:3, title:"Introduction to infographic design", page:108},
-  {module:4, task:4, title:"Creating custom infographics", page:119},
-  {module:4, task:5, title:"Science projects", page:124},
+  {
+  "module": 4,
+  "task": 1,
+  "title": "Design Your Website",
+  "page": 99,
+  "summary": `
+  <ul>
+    <li>
+      <b>Sign Up</b> :
+      គឺជាការចុះឈ្មោះក្នុងគេហទំព័រណាមួយ។
+    </li>
+
+    <li>
+      <b>Password</b> :
+      ពាក្យសម្ងាត់សម្រាប់ការពារគណនី។
+    </li>
+
+    <li>
+      <b>Email Address</b> :
+      គឺជាសារអេឡិចត្រូនិច
+      សម្រាប់ធ្វើទំនាក់ទំនងគ្នាតាមរយៈសារ។
+    </li>
+
+    <li>
+      <b>Update</b> :
+      ការកែប្រែទិន្នន័យ
+      ឱ្យស្របតាមស្ថានភាពបច្ចុប្បន្ន។
+    </li>
+
+    <li>
+      <b>Large Banner</b> :
+      ផ្ទាំងរូបភាពធំៗនៅលើគេហទំព័រ
+      (ផ្សព្វផ្សាយផលិតផល
+      សេវាកម្ម
+      ឬព្រឹត្តិការណ៍)។
+    </li>
+
+    <li>
+      <b>Banner</b> :
+      ផ្ទាំងផ្សាយពាណិជ្ជកម្ម (Add)
+      នៅលើគេហទំព័រ។
+    </li>
+
+    <li>
+      <b>Theme</b> :
+      រចនាបថ
+      និង Layout
+      របស់គេហទំព័រ។
+    </li>
+
+    <li>
+      <b>Hero Slide</b> :
+      បែប Dynamic
+      ដែលប្រើ Slideshow
+      ដើម្បីបង្ហាញរូបភាព
+      និងអត្ថបទច្រើន
+      លើផ្ទាំងដើម Website
+      ដោយផ្លាស់ប្តូរបន្តៗ។
+    </li>
+
+    <li>
+      <b>Show Hero Banner</b> :
+      បង្ហាញផ្ទាំងធំៗ
+      នៅផ្នែកលើគេហទំព័រ
+      ដូចជា
+      រូបភាព
+      + ចំណងជើង
+      + អត្ថបទ
+    </li>
+
+    <li>
+      <b>Website</b> :
+      គឺជាការប្រមូលផ្ដុំគេហទំព័រ
+      (Web Pages)
+      ជាច្រើន
+      ដែលផ្ទុកនៅលើ
+      ម៉ាស៊ីនមេ (Server)
+      ហើយអាចចូលមើលបាន
+      តាមអ៊ីនធឺណិត
+      ដោយប្រើ
+      កម្មវិធីរុករក (Browser)
+      ដូចជា
+      Chrome,
+      Safari,
+      Firefox
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 4,
+  "task": 2,
+  "title": "Publish Your Website",
+  "page": 106,
+  "summary": `
+  <ul>
+    <li>
+      <b>Domain</b> :
+      (គឺជា Hosting)
+      ឬជាឈ្មោះអាសយដ្ឋាន
+      ដែលប្រើក្នុងអ៊ីនធឺណិត
+      ដើម្បីឲ្យមនុស្សអាចចូល
+      ទៅកាន់វេបសាយបានងាយស្រួល។
+      <br>
+      <b>IP Address</b>:គឺជាលេខសំគាល់តែមួយគត់ដែលបំលែងចេញពី Website។
+      (ឧ. www.google.com ->លេខសំគាល់ip:172.217.194.100)
+    </li>
+
+    <li>
+      <b>Testing</b> :
+      គឺជាការបង្ហោះ
+      ឬតេស្ត Website
+      មុនពេលឲ្យប្រើប្រាស់ពិតប្រាកដ។
+    </li>
+
+    <li>
+      <b>Publish Website</b> :
+      គឺជាគេហទំព័រ
+      ដែលអាចដំណើរការ
+      និងបង្ហាញលើអ៊ីនធឺណិត
+      សម្រាប់មនុស្សទូទៅ
+      មើលឃើញបាន។
+    </li>
+
+    <li>
+      <b>Domain Configuration</b> :
+      គឺជាដំណើរការរបស់ Domain
+      ដើម្បីឲ្យវាអាចភ្ជាប់បានត្រឹមត្រូវ
+      ទៅកាន់
+      Web Hosting,
+      Email,
+      DNS,
+      Server
+      ឬប្រព័ន្ធផ្សេងៗ។
+    </li>
+
+    <li>
+      <b>Web Hosting</b> :
+      គឺជាការផ្ទុកឯកសារ
+      និងទិន្នន័យនៃ Website
+      (HTML, CSS, JavaScript,
+      រូបភាព, វីដេអូ, Database...)
+      លើ Server
+      ដែលតភ្ជាប់ជាមួយអ៊ីនធឺណិត។
+    </li>
+
+    <li>
+      <b>Preview</b> :
+      គឺជាការមើល
+      ឬការបង្ហាញអ្វីមួយជាមុន
+      ដើម្បីឱ្យយើងអាចដឹងពីលទ្ធផល។
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 4,
+  "task": 3,
+  "title": "Introduction to Infographic Design",
+  "page": 108,
+  "summary": `
+  <ul>
+    <li>
+      <b>Infographics</b> :
+      គឺជាការបង្ហាញទិន្នន័យ
+      ព័ត៌មាន ឬចំណេះដឹង
+      ជាលក្ខណៈរូបភាព។
+      វាផ្សំបញ្ចូលគ្នារវាង
+      រូបភាព និងអត្ថបទ
+      ដើម្បីបញ្ជូនសារជាក់លាក់ណាមួយ
+      ឱ្យបានឆាប់រហ័ស។
+    </li>
+
+    <li>
+      <b>Informational / List (បញ្ជីព័ត៌មាន)</b> :
+      វាមានអត្ថបទជាចម្បង
+      ដែលរាយបញ្ជីព័ត៌មាន
+      អំពីប្រធានបទជាក់លាក់ណាមួយ។
+    </li>
+
+    <li>
+      <b>Mixed Chart (តារាងចម្រុះ)</b> :
+      មានតារាងផ្សេងៗគ្នាជាច្រើន
+      ដើម្បីតំណាងឱ្យទិន្នន័យ។
+    </li>
+
+    <li>
+      <b>Single Chart (តារាងតែមួយ)</b> :
+      ជា Infographics
+      ដែលបង្ហាញទិន្នន័យ
+      លើប្រធានបទតែមួយ។
+    </li>
+
+    <li>
+      <b>Map / Location (ផែនទី / ទីតាំង)</b> :
+      វាបង្ហាញព័ត៌មាន
+      ទាក់ទងនឹងតំបន់ភូមិសាស្ត្រ។
+    </li>
+
+    <li>
+      <b>Photo-based / Photo-graphic</b> :
+      វាប្រើរូបថត
+      អត្ថបទ និងទិន្នន័យ
+      ដើម្បីពន្យល់ពីចំណុចណាមួយ។
+    </li>
+
+    <li>
+      <b>Hierarchical (ឋានានុក្រម)</b> :
+      វាបែងចែកព័ត៌មាន
+      តាមកម្រិត
+      ដូចជា កម្រិតសារៈសំខាន់
+      ភាពលំបាក
+      ឬប្រាក់ចំណូល។
+    </li>
+
+    <li>
+      <b>Anatomical (កាយវិភាគសាស្ត្រ)</b> :
+      វាបំបែកព័ត៌មានស្មុគស្មាញ
+      និងពន្យល់វា
+      ជាលក្ខណៈរូបភាព
+      និងមានប្រសិទ្ធភាព។
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 4,
+  "task": 4,
+  "title": "Creating Custom Infographics",
+  "page": 119,
+  "summary": `
+  <ul>
+    <li>
+      <b>១. ចាប់ផ្តើមគម្រោង</b>
+      <ul>
+        <li>ចូលទៅកាន់ Canva រួចចុចលើ <b>Custom size</b>។</li>
+        <li>បញ្ចូល <b>Width (ទទឹង)</b> និង <b>Height (បណ្តោយ)</b> រួចចុច <b>Create new design</b>។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>២. បន្ថែមធាតុផ្សេងៗ (ប្រើរបារឧបករណ៍ខាងឆ្វេង)</b>
+      <ul>
+        <li><b>Background</b> : ជ្រើសរើសពណ៌សម្រាប់ផ្ទៃខាងក្រោយ។</li>
+        <li><b>Text</b> : បន្ថែមចំណងជើងធំ និងអត្ថបទ។</li>
+        <li>
+          <b>Elements</b> :
+          ស្វែងរក <b>Photos (រូបថត)</b> និង
+          <b>Graphics (ក្រាហ្វិក)</b> ដើម្បីបន្ថែម។
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>៣. កែសម្រួល</b>
+      <ul>
+        <li>
+          ចុចលើធាតុណាមួយ
+          (រូបភាព, អត្ថបទ)
+          ដើម្បីកែសម្រួល។
+        </li>
+        <li>
+          ប្រើឧបករណ៍ដែលបង្ហាញនៅខាងលើ
+          ដើម្បីប្តូរទំហំ
+          ពណ៌
+          ឬភាពថ្លា
+          (<b>Transparency</b>)។
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Elements (ធាតុ)</b>
+      គឺជាផ្នែកមួយ
+      ដែលអ្នកអាចស្វែងរក
+      គ្រឿងតុបតែង
+      ឬសមាសភាគ
+      សម្រាប់ការរចនារបស់អ្នក។
+      វារួមមាន៖
+      <ul>
+        <li><b>Graphics</b> : រូបក្រាហ្វិកផ្សេងៗ</li>
+        <li><b>Lines & Shapes</b> : បន្ទាត់ និងរូបរាង (រង្វង់, បួនជ្រុង, ត្រីកោណ)</li>
+        <li><b>Photos</b> : រូបថត</li>
+        <li><b>Stickers</b> : រូបបិទ</li>
+        <li><b>Videos</b> : វីដេអូ</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>៤. ទាញយក ឬបោះពុម្ព</b>
+      <ul>
+        <li>
+          ចុចប៊ូតុង <b>Share (ចែករំលែក)</b>
+          នៅជ្រុងខាងស្តាំលើ។
+        </li>
+        <li>
+          ជ្រើសរើស <b>Download (ទាញយក)</b>។
+        </li>
+        <li>
+          ជ្រើសរើសប្រភេទឯកសារ
+          <b>PDF Print</b>
+          ដើម្បីរក្សាទុក។
+        </li>
+        <li>
+          បើកឯកសារ PDF
+          ដែលបានទាញយក
+          ដើម្បីបោះពុម្ព។
+        </li>
+      </ul>
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 4,
+  "task": 5,
+  "title": "Science Projects",
+  "page": 124,
+  "summary": `
+  <h4>🔹 គោលបំណងមេរៀន</h4>
+  <ul>
+    <li>ឲ្យសិស្សយល់ពី <b>Science Project</b> និងសារៈសំខាន់ៗទាក់ទងនិងផ្នែកវិទ្យាសាស្រ</li>
+    <li>អភិវឌ្ឍជំនាញ គិតវិទ្យាសាស្ត្រ ការស្រាវជ្រាវ និងការដោះស្រាយបញ្ហា</li>
+  </ul>
+
+  <hr>
+
+  <h4>🔹 Science Project គឺជាអ្វី?</h4>
+  <p>
+    <b>Science Project</b> គឺជា
+    គម្រោងស្រាវជ្រាវ
+    ឬការពិសោធន៍
+    ដែលសិស្សធ្វើ
+    ដើម្បីស្វែងយល់ពីបញ្ហា
+    ឬបាតុភូតវិទ្យាសាស្ត្រ
+    ដើម្បីជួយដោះស្រាយបញ្ហា
+    របស់មនុស្សទូទាំងសកលលោក។
+  </p>
+
+  <hr>
+
+  <h4>🔹 ជំហានសំខាន់ៗនៃ Science Project</h4>
+  <ol>
+    <li>
+      <b>ជ្រើសរើសប្រធានបទ</b>
+      <ul>
+        <li>ជាបញ្ហាដែលចាប់អារម្មណ៍ និងអាចស្រាវជ្រាវបាន</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>សំណួរស្រាវជ្រាវ</b>
+      <ul>
+        <li>“តើអ្វីដែលកើតឡើង?” ឬ “ហេតុអ្វី?”</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការព្យាករណ៍ (Hypothesis)</b>
+      <ul>
+        <li>ទស្សន៍ទាយលទ្ធផលមុនពេលពិសោធន៍</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការពិសោធន៍ / ការប្រមូលទិន្នន័យ</b>
+      <ul>
+        <li>ធ្វើតេស្ត និងកត់ត្រាលទ្ធផល</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>វិភាគលទ្ធផល</b>
+      <ul>
+        <li>ប្រៀបធៀបលទ្ធផលជាមួយការព្យាករណ៍</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>សន្និដ្ឋាន និងបង្ហាញ</b>
+      <ul>
+        <li>
+          សន្និដ្ឋានអ្វីដែលបានរៀន
+          និងបង្ហាញជារបាយការណ៍
+          ឬការបង្ហាញដោយផ្ទាល់
+        </li>
+      </ul>
+    </li>
+  </ol>
+
+  <hr>
+
+  <h4>🔹 អត្ថប្រយោជន៍នៃ Science Project</h4>
+  <ul>
+    <li>បង្កើនជំនាញគិត និងការស្រាវជ្រាវ</li>
+    <li>បង្កើតភាពច្នៃប្រឌិត</li>
+    <li>អនុវត្តចំណេះដឹងក្នុងជីវិតពិត</li>
+    <li>អភិវឌ្ឍការងារជាក្រុម និងការទំនាក់ទំនង</li>
+  </ul>
+
+  <hr>
+
+  <h4>🔹 ឧទាហរណ៍ Science Project</h4>
+  <ul>
+    <li>ការលូតលាស់រុក្ខជាតិក្នុងលក្ខខណ្ឌផ្សេងៗ</li>
+    <li>ផលប៉ះពាល់នៃពន្លឺ ឬទឹក</li>
+    <li>ការកកើតសំណល់ និងការកែច្នៃឡើងវិញ</li>
+  </ul>
+
+  <hr>
+
+  <h4>📌 សរុប</h4>
+  <p>
+    <b>Science Project</b>
+    ជួយឲ្យសិស្សរៀនដោយអនុវត្ត
+    ផ្ដល់បទពិសោធន៍ពិត
+    និងបង្កើនសមត្ថភាពវិទ្យាសាស្ត្រ។
+  </p>
+  `
+}
+,
   {module:4, task:"Project", title:"Project", page:128}
 ],
     9: [
-  {module:1, task:1, title:"Data representation", page:6},
-  {module:1, task:1, title:"Data manipulation", page:7},
-  {module:1, task:2, title:"Computer architecture", page:14},
-  {module:1, task:3, title:"Operating systems", page:18},
-  {module:1, task:4, title:"Computer fundamentals", page:22},
-  {module:1, task:5, title:"Computers in society", page:28},
+  {
+  "level": 9,
+  "module": 1,
+  "task": 1,
+  "title": "Data Manipulation",
+  "page": 7,
+  "summary": `
+  <h4>• តើអ្វីទៅជា Decimal System?</h4>
+  <p>
+    Decimal System គឺជាប្រព័ន្ធលេខដែលមនុស្សភាគច្រើនស្គាល់ថាជាប្រព័ន្ធគោល១០។
+    ប្រព័ន្ធនេះ ប្រើលេខ១០ខ្ទង់ (0 - 9) ដែលត្រូវបានគេស្គាល់និងប្រើប្រាស់រហូតដល់សព្វថ្ងៃ។
+  </p>
+  <p><b>• ប្រើ ខ្ទង់ 10 (Digits):</b> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9</p>
+
+  <hr>
+
+  <h4>• តើអ្វីទៅជា Binary System?</h4>
+  <p>
+    Binary System គឺជាប្រព័ន្ធគោល២។
+    ប្រព័ន្ធនេះ ប្រើលេខតែ២ខ្ទង់ប៉ុណ្ណោះ (0 - 1)
+    ដែលត្រូវបានគេស្គាល់និងប្រើប្រាស់សម្រាប់កុំព្យូទ័រ។
+  </p>
+  <ul>
+    <li>0 = បិទ (OFF)</li>
+    <li>1 = បើក (ON)</li>
+    <li>ប្រើ ខ្ទង់ 2 តែប៉ុណ្ណោះ (Digits): 0, 1</li>
+    <li>តម្លៃនីមួយៗត្រូវបានគណនាតាម ប្រព័ន្ធគោល 2 (Power of 2) ដូចជា 2⁰, 2¹, 2²...</li>
+  </ul>
+
+  <hr>
+
+  <h4>⮚ការបំលែងប្រព័ន្ធគោល១០ ទៅប្រព័ន្ធគោល២</h4>
+  <p>បើសិនគេឱ្យតម្លៃលេខ 131 ដើម្បីបំលែងទៅជាប្រព័ន្ធគោល២ ដូចខាងក្រោម៖</p>
+  <pre>
+131 ÷ 2 = 65  សំណល់ 1
+65 ÷ 2  = 32  សំណល់ 1
+32 ÷ 2  = 16  សំណល់ 0
+16 ÷ 2  = 8   សំណល់ 0
+8 ÷ 2   = 4   សំណល់ 0
+4 ÷ 2   = 2   សំណល់ 0
+2 ÷ 2   = 1   សំណល់ 0
+1 ÷ 2   = 0   សំណល់ 1
+  </pre>
+
+  <hr>
+
+  <h4>⮚ការបំលែងប្រព័ន្ធគោល២ ទៅប្រព័ន្ធគោល១០</h4>
+  <p>បើសិនគេឱ្យតម្លៃលេខ 10000011 ដើម្បីបំលែងជាប្រព័ន្ធគោល១០</p>
+  <pre>
+2⁷ = 128 × 1
+2⁶ = 64  × 0
+2⁵ = 32  × 0
+2⁴ = 16  × 0
+2³ = 8   × 0
+2² = 4   × 0
+2¹ = 2   × 1
+2⁰ = 1   × 1
+= 131
+  </pre>
+
+  <hr>
+
+  <h4>⮚តើអ្វីទៅជា Hexadecimal System?</h4>
+  <p>
+    Hexadecimal system គឺជាប្រព័ន្ធលេខដែលគេស្គាល់ថាជាប្រព័ន្ធគោល១៦។
+    ប្រព័ន្ធនេះ ប្រើលេខ១៦ខ្ទង់
+    ដែលត្រូវបានគេស្គាល់ថា លេខ១០ជំនួសដោយអក្សរ A,
+    លេខ១១ ជំនួសដោយអក្សរ B។
+  </p>
+  <p><b>តារាងប្រព័ន្ធគោល១៦:</b> 0 1 2 3 4 5 6 7 8 9 A B C D E F</p>
+
+  <hr>
+
+  <h4>⮚ការបំលែងប្រព័ន្ធគោល១៦ ទៅប្រព័ន្ធគោល១០</h4>
+  <p>គេឱ្យតម្លៃលេខ 1C8A</p>
+  <ul>
+    <li>1 = 1</li>
+    <li>C = 12</li>
+    <li>8 = 8</li>
+    <li>A = 10</li>
+  </ul>
+
+  <p><b>គណនាតាមប្រព័ន្ធគោល 16:</b></p>
+  <pre>
+1C8A₁₆ = (1 × 16³) + (12 × 16²) + (8 × 16¹) + (10 × 16⁰)
+= 4096 + 3072 + 128 + 10
+= 7306
+  </pre>
+
+  <p><b>ចំណាំ៖</b> A=10, B=11, C=12, D=13, E=14, F=15</p>
+
+  <hr>
+
+  <h4>⮚ការបំលែងលេខផ្សេងៗ</h4>
+  <pre>
+(1A0)₁₆ = (1×16²)+(10×16¹)+(0×16⁰)
+
+(2591)₁₀ = (A1F)₁₆
+(2753)₁₀ = (AC1)₁₆
+(458)₁₀  = (1CA)₁₆
+
+(1CAB)₁₆ = 7339
+  </pre>
+
+  <hr>
+
+  <h4>⮚ការបំលែងប្រព័ន្ធគោល១០ និងគោល២</h4>
+  <pre>
+(20)₁₀     = (10100)₂
+(100011)₂  = (35)₁₀
+(1001011)₂ = (75)₁₀
+(123)₁₀    = (1111011)₂
+  </pre>
+
+  <hr>
+
+  <h4>Data Representation</h4>
+  <p>
+    Data Representation គឺជាតារាងទិន្នន័យត្រូវបានបង្ហាញ
+    និងផ្ទុកនៅក្នុងកុំព្យូទ័រ
+    ដើម្បីឱ្យកុំព្យូទ័រអាចយល់បាន និងដំណើរការបាន។
+  </p>
+  <p>វាជាប្រព័ន្ធគ្រប់គ្រងលើ Software, Hardware, Database, Multimedia</p>
+
+  <hr>
+
+  <h4>Data Representation Color</h4>
+  <p>
+    Data representations Color គឺសំដៅលើវិធីផ្សេងៗ
+    ដែលត្រូវបានរៀបចំសម្រាប់កំណត់ទៅលើពណ៍
+    ដូចជា RGB និង CMYK
+  </p>
+
+  <hr>
+
+  <h4>Logic Gates</h4>
+  <ul>
+    <li><b>NOT:</b> បញ្ចូល 1 → បញ្ចេញ 0, បញ្ចូល 0 → បញ្ចេញ 1</li>
+    <li><b>AND:</b> បញ្ចូល 1 និង 1 → បញ្ចេញ 1 បើមិនដូចគ្នា → 0</li>
+    <li><b>OR:</b> បញ្ចូល 0 និង 0 → 0 បើមិនដូចគ្នា → 1</li>
+    <li><b>XOR:</b> បញ្ចូលដូចគ្នា → 0 បញ្ចូលខុសគ្នា → 1</li>
+  </ul>
+  `
+},
+  {
+  "module": 1,
+  "task": 2,
+  "title": "Computer Architecture",
+  "page": 14,
+  "summary": `
+  <ul>
+    <li><b>Computer Architecture</b> : កុំព្យូទ័រទាំងអស់អាចអនុវត្តន៍តាមសកម្មភាពចំនួន 3 ដែលមានដូចជា៖
+      <ol>
+        <li>ការរក្សាទុក (Storage)</li>
+        <li>ការទាញយក (Fetching)</li>
+        <li>ការដំណើរការទិន្នន័យ (Processing)</li>
+      </ol>
+    </li>
+
+    <li>យើងអាចបែងចែកសមាសធាតុដាច់ដោយឡែកមួយចំនួនជាមួយគ្នាដើម្បីឱ្យកុំព្យូទ័រដំណើរការ។</li>
+
+    <li><b>BUS (Input Devices, CPU, Main Memory, Output Devices)</b>
+      <ul>
+        <li><b>Input Devices</b> : ឧបករណ៍បញ្ចូលទិន្នន័យគឺបញ្ជូនទិន្នន័យពីពិភពខាងក្រៅចូលក្នុងកុំព្យូទ័រ។
+          ការងារទាំងនេះមានដូចជា៖ Mouse, Scanner, WebCamera និង Keyboard
+        </li>
+
+        <li><b>Output Devices</b> : ឧបករណ៍បញ្ចេញទិន្នន័យគឺបញ្ជូនទិន្នន័យពីពិភពខាងក្នុងកុំព្យូទ័រមកខាងក្រៅវិញ។
+          ការងារទាំងនេះមានដូចជា៖ Monitor, Speaker, Projector, Headphone ឬ Printer
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Central Processing Unit (CPU)</b> : គឺជាសមាសធាតុចម្បងនៃកុំព្យូទ័រ ឬហៅថាជាខួរក្បាលនៃកុំព្យូទ័រ
+      ព្រោះ CPU មានតួនាទីគ្រប់គ្រងផ្នែកដទៃផ្សេងទៀត។
+    </li>
+
+    <li><b>BUS</b> : សមាសធាតុទាំងអស់ត្រូវភ្ជាប់គ្នាទៅវិញទៅមកដោយបណ្តុំនៃខ្សែ BUS ដែលធ្វើការនៅក្នុងកុំព្យូទ័រ។</li>
+
+    <li><b>Main Memory</b> : គឺសំដៅទៅលើ RAM (Random Access Memory) គឺជាសមាសធាតុសំខាន់មួយ
+      ដែលរក្សាទុកទិន្នន័យបណ្តោះអាសន្នដែល CPU ត្រូវការពេលដំណើរការ។
+    </li>
+
+    <li><b>ដំណើរការរបស់ CPU</b>
+      <ol>
+        <li><b>Get more data</b> : ប្រសិនបើចាំបាច់ អាស្រ័យលើការណែនាំ រកទិន្នន័យបន្ថែមពីអង្គចងចាំមេ (RAM)
+          ដែលបានមកពីការបញ្ចូលព័ត៌មានសម្រាប់ដំណើរការមុខងារនេះ។
+        </li>
+
+        <li><b>Fetch instruction</b> : CPU ទាញយកការណែនាំដើម្បីប្រតិបត្តិការមកពីអង្គចងចាំមេ
+          ហើយរក្សាទុកវិញក្នុងអង្គចងចាំពិសេសមួយនៅក្នុង CPU។
+        </li>
+
+        <li><b>Decode instruction (CU)</b> : ប្រើសម្រាប់ធ្វើការបកស្រាយការណែនាំថ្មីៗ
+          ហើយបំលែងទៅជាសញ្ញាបញ្ជាដែលអាចយល់បានដោយ ALU។
+        </li>
+
+        <li><b>Execute instruction (ALU)</b> : នៅពេលការណែនាំត្រូវបានបញ្ចប់ដំណើរការ
+          និងទិន្នន័យទាំងអស់ត្រូវបានទាញយកដោយ ALU នោះ ប្រតិបត្តិការនៃការណែនាំនឹងត្រូវអនុវត្ត
+          ហើយវដ្តនឹងចាប់ផ្តើមម្តងទៀត។
+        </li>
+
+        <li><b>Store results</b> : លទ្ធផលនៃប្រតិបត្តិការត្រូវបានរក្សាទុកនៅក្នុងអង្គចងចាំមេ (RAM)។</li>
+      </ol>
+    </li>
+
+    <li><b>Secondary Storage</b> : ជាឧបករណ៍រក្សាទុកទិន្នន័យជាអចិន្ត្រៃយ៍ ឬរយៈពេលវែង
+      ដែលមិនបាត់បង់ទិន្នន័យពេលបិទកុំព្យូទ័រ។
+      <ul>
+        <li>HDDs : Hard Disk Drives</li>
+        <li>SSDs : Solid-State Drives</li>
+        <li>CDs, DVDs : Optical Discs</li>
+        <li>USB Flash Drives</li>
+      </ul>
+    </li>
+
+    <li><b>Hard Disk Drives</b> : ជាឧបករណ៍រក្សាទុកទិន្នន័យជាអចិន្ត្រៃយ៍។
+      Hard Disk អាចបណ្តាលឱ្យកុំព្យូទ័រមិនដំណើរការ ដោយសារ៖
+      <ul>
+        <li>BIOS មិនស្គាល់ Hard Disk</li>
+        <li>ខ្សែ Hard Disk មិនភ្ជាប់ត្រឹមត្រូវទៅ Motherboard</li>
+        <li>លឺសំឡេងខុសពីធម្មតា</li>
+        <li>កម្មវិធីមិនដំណើរការ ដោយសារ Hard Disk ខូច</li>
+      </ul>
+    </li>
+
+    <li><b>Optical Media</b> : ជាឧបករណ៍រក្សាទុកទិន្នន័យជាអចិន្ត្រៃយ៍
+      ដូចជា CD, DVD ឬ Blu-ray Drives។
+      របៀបដំណើរការ គឺប្រើប្រព័ន្ធឡេស័រ ឆ្លាក់ទៅលើស្រទាប់អាលុយមីញ៉ូម
+      នៅពេលថាសកំពុងបង្វិល។
+    </li>
+  </ul>
+  `
+},
+  {
+  "module": 1,
+  "task": 3,
+  "title": "Operating System",
+  "page": 18,
+  "summary": `
+  <ul>
+    <li><b>Operating System គឺជាអ្វី?</b>
+      <ul>
+        <li>Operating System គឺជាប្រព័ន្ធប្រតិបត្តិការសំខាន់របស់ប្រព័ន្ធកម្មវិធី
+          ដែលមានតួនាទីគ្រប់គ្រងផ្នែករឹងកុំព្យូទ័រ (Hardware)
+          និងផ្នែកទន់ (Software)។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Hardware និង Software</b>
+      <ul>
+        <li><b>Hardware</b> គឺជាផ្នែករឹងរបស់កុំព្យូទ័រ
+          (Monitor, Keyboard, Mouse, Printer, Scanner)
+        </li>
+        <li><b>Software</b> គឺជាផ្នែកទន់ដែលអាចមើលឃើញ
+          ប៉ុន្តែមិនអាចប៉ះបាន។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>ប្រភេទ Software</b>
+      <ul>
+        <li>Software ត្រូវបានចែកចេញជា 2 ប្រភេទគឺ
+          <ul>
+            <li><b>System Software</b></li>
+            <li><b>Application Software</b></li>
+          </ul>
+        </li>
+
+        <li><b>System Software</b> គឺជាប្រភេទកម្មវិធីកុំព្យូទ័រ
+          ដែលត្រូវបានបង្កើតឡើងដើម្បីគ្រប់គ្រងសមាសធាតុផ្នែករឹង
+          របស់កុំព្យូទ័រ និងអនុញ្ញាតឱ្យកម្មវិធីផ្សេងៗអាចដំណើរការបាន។
+        </li>
+
+        <li><b>Application Software</b> គឺជាប្រភេទកម្មវិធីកុំព្យូទ័រ
+          ដែលបង្កើតឡើងដើម្បីជួយអ្នកប្រើប្រាស់
+          អនុវត្តការងារ ឬសកម្មភាពជាក់លាក់។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Memory Management</b>
+      <ul>
+        <li>នៅក្នុងប្រព័ន្ធ Operating System
+          ត្រូវបានបែងចែកជា 2 មុខងារ៖
+          <ol>
+            <li>ការដឹងពីដំណើរការ និងតាមដានទីតាំង Program
+              ត្រូវរក្សាទុកក្នុង Memory
+            </li>
+            <li>បំលែង Logical Address ទៅជាអង្គចងចាំពិត</li>
+          </ol>
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Address</b>
+      <ul>
+        <li>Address គឺជាលេខចំនួនគត់
+          ចាប់ផ្តើមពីលេខសូន្យ
+          ដែលជា Memory Address ដំបូងគេ។
+        </li>
+
+        <li>Address ត្រូវបានបែងចែកចេញជា 2 គឺ
+          <ul>
+            <li><b>Logical Address</b></li>
+            <li><b>Address Binding</b></li>
+          </ul>
+        </li>
+
+        <li><b>Logical Address (Virtual)</b>
+          គឺជាអង្គចងចាំសប្បនិម្មិតមួយ
+          ដែលបង្កើតឡើងដោយ CPU
+          នៅពេលមានដំណើរការ។
+        </li>
+
+        <li><b>Address Binding</b>
+          គឺជាដំណើរការនៃការភ្ជាប់
+          Logical Address របស់ Program
+          ជាមួយនឹង Physical Address
+          នៅក្នុងអង្គចងចាំ។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Secondary Storage (Hard Disk)</b>
+      <ul>
+        <li>នៅក្នុង Secondary Storage
+          ដែលយើងស្គាល់ថាជា Hard Disk
+          មានប្រភេទឯកសារដូចជា៖
+        </li>
+
+        <li><b>File</b> គឺជាឯកសារដែលបានបង្កើតឡើងដោយកុំព្យូទ័រ។</li>
+
+        <li><b>File System</b>
+          គឺជាប្រព័ន្ធកម្មវិធី
+          ដែលអនុញ្ញាតឱ្យអ្នកប្រើប្រាស់
+          អាចគ្រប់គ្រងឯកសារបាន។
+        </li>
+
+        <li><b>Directory</b>
+          គឺជាឈ្មោះមួយ
+          ដែលសំដៅលើ Folder។
+        </li>
+
+        <li><b>Parent Directory</b>
+          គឺជា Folder មួយ
+          ដែលនៅក្នុង Folder នោះ
+          មានឯកសារ ឬ Folder ដទៃទៀត
+          ហើយ Folder ឬឯកសារនោះ
+          ត្រូវបានហៅថា Subdirectory។
+        </li>
+
+        <li><b>Root Directory</b>
+          គឺជា Folder នៅលើគេបង្អស់
+          ដែលមាន Folder ខាងក្នុងជាច្រើន
+          ដូចជា Parent Directory
+          និង Subdirectory។
+        </li>
+      </ul>
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 1,
+  "task": 4,
+  "title": "Network Fundamentals",
+  "page": 22,
+  "summary": `
+  <ul>
+    <li><b>Packet Switching</b>
+      <ul>
+        <li>
+          Packet Switching គឺជាការបញ្ជូនទិន្នន័យតាមបណ្តាញ Network
+          ដែលទិន្នន័យត្រូវបានបែងចែកជាកញ្ចប់តូចៗ
+          ដែលហៅថា Packets មុនពេលត្រូវផ្ញើតាមបណ្តាញ។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Routers</b>
+      <ul>
+        <li>
+          Routers គឺជាឧបករណ៍ Network
+          ដែលបញ្ជូនទិន្នន័យរវាងបណ្តាញផ្សេងៗគ្នា
+          ដោយបញ្ជូនជាកញ្ចប់ទិន្នន័យ។
+        </li>
+        <li>
+          វាដើរតួជាច្រកមួយ
+          ដែលធានាថាទិន្នន័យពីប្រភពណាមួយ
+          អាចផ្ញើទៅគោលដៅត្រឹមត្រូវ
+          ប្រកបដោយប្រសិទ្ធភាព។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Network Addresses</b>
+      <ul>
+        <li>
+          Network Address គឺជាអត្តសញ្ញាណតែមួយគត់
+          ដែលត្រូវបានកំណត់ទៅឱ្យឧបករណ៍
+          ឬប្រព័ន្ធនៅលើបណ្តាញ
+          ដើម្បីអាចទំនាក់ទំនងគ្នាទៅវិញទៅមក។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Hostname</b>
+      <ul>
+        <li>
+          Hostname គឺជាឈ្មោះតែមួយគត់
+          ដែលត្រូវកំណត់ទៅឱ្យឧបករណ៍
+          សម្រាប់ភ្ជាប់ជាមួយបណ្តាញ Network។
+        </li>
+        <li>
+          ឧទាហរណ៍ Website:
+          <br>
+          https://www.ais.edu.kh/en
+        </li>
+      </ul>
+    </li>
+
+    <li><b>IP Address</b>
+      <ul>
+        <li>
+          IP Address (Internet Protocol Address)
+          គឺជាលេខសម្គាល់តែមួយគត់
+          ដែលត្រូវបានកំណត់ទៅរាល់ឧបករណ៍
+          ដែលភ្ជាប់ទៅបណ្តាញ Network
+          ដើម្បីធ្វើការទំនាក់ទំនង។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>DNS (Domain Name System)</b>
+      <ul>
+        <li>
+          DNS គឺជាប្រព័ន្ធឈ្មោះ
+          ដែលបានចុះក្នុងបញ្ជី
+          ដើម្បីសម្គាល់ IP Address
+          របស់ Website។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Network Protocol</b>
+      <ul>
+        <li>
+          Network Protocol គឺជាសំណុំនៃច្បាប់
+          ដែលកំណត់ពីរបៀប
+          ទិន្នន័យត្រូវបានបញ្ជូន
+          និងទទួលឆ្លងកាត់បណ្តាញ។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Firewall</b>
+      <ul>
+        <li>
+          Firewall គឺជាឧបករណ៍ការពារសុវត្ថិភាព
+          ឬជាកម្មវិធី
+          ដែលត្រួតពិនិត្យសុវត្ថិភាព
+          និងគ្រប់គ្រងចរាចរណ៍ទិន្នន័យ
+          ចូល និងចេញ
+          នៅលើបណ្តាញ Network។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Local Area Network (LAN)</b>
+      <ul>
+        <li>
+          LAN គឺជាបង្គុំនៃ PCs
+          ដែលមានទំនាក់ទំនងគ្នា
+          តាមរយៈការបញ្ជូន Data
+          និងការចែករំលែកប្រព័ន្ធទំនាក់ទំនង Data។
+        </li>
+        <li>
+          LAN ផ្តល់ល្បឿនខ្ពស់
+          ក្នុងការផ្លាស់ប្តូរ Data
+          រវាង Server, Peripheral Devices
+          និង PCs។
+        </li>
+        <li>
+          LAN ជាទូទៅស្ថិតនៅក្នុង
+          ភូមិសាស្ត្រតែមួយ
+          អគារតែមួយ
+          ឬ Department មួយ
+          ដែលមានចម្ងាយមិនលើសពី 100 ម៉ែត្រ។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>Wide Area Network (WAN)</b>
+      <ul>
+        <li>
+          WAN គឺជាបង្គុំរវាង LAN និង LAN
+          ឬ LAN និង MAN
+          ដើម្បីធ្វើការផ្លាស់ប្តូរ
+          ព័ត៌មានគ្នាទៅវិញទៅមក
+          នៅចម្ងាយឆ្ងាយ។
+        </li>
+        <li>
+          ឧទាហរណ៍:
+          ពីរដ្ឋមួយទៅរដ្ឋមួយ
+          ពីខេត្តមួយទៅខេត្តមួយ
+          ឬពីប្រទេសមួយទៅប្រទេសមួយ។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>TCP/IP</b>
+      <ul>
+        <li>
+          TCP/IP (Transmission Control Protocol / Internet Protocol)
+          គឺជាមូលដ្ឋានភាសាទំនាក់ទំនង
+          ឬប្រូតូកូល
+          របស់អ៊ីនធឺណិត។
+        </li>
+        <li>
+          វាអាចប្រើសម្រាប់
+          Network ឯកជន
+          ដូចជា Intranet និង Extranet។
+        </li>
+        <li>
+          TCP/IP គឺជាស្រទាប់ប្រូតូកូល
+          ដែលមិនប្រើទាំងអស់
+          លើស្រទាប់ OSI។
+        </li>
+      </ul>
+    </li>
+
+    <li><b>ប្រូតូកូល Network សំខាន់ៗ</b>
+      <ul>
+        <li>FTP – File Transfer Protocol</li>
+        <li>SMTP – Simple Mail Transfer Protocol</li>
+        <li>HTTP – HyperText Transfer Protocol</li>
+        <li>HTTPS – HyperText Transfer Protocol Secure</li>
+        <li>DNS – Domain Name System</li>
+        <li>IP – Internet Protocol</li>
+        <li>TCP – Transmission Control Protocol</li>
+        <li>UDP – User Datagram Protocol</li>
+      </ul>
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 1,
+  "task": 5,
+  "title": "Computer in Society",
+  "page": 28,
+  "summary": `
+  <ul>
+    <li>
+      <b>ICT (Information Communication Technology)</b> គឺជាពាក្យផ្លូវការមួយមកពីពាក្យពេញ
+      (Information_Communication_Technology) ដែលក្ដោបយកក្រុមនៃឧបករណ៍ ឬ កម្មវិធីអាចទំនាក់ទំនងគ្នាបាន
+      ក្នុងនោះមានដូចជា៖ វិទ្យុ, ទូរទស្សន៍, ប្រព័ន្ធកុំព្យូទ័រ, ឧបករណ៍កុំព្យូទ័រ និងកម្មវិធីកុំព្យូទ័រ។
+    </li>
+
+    <li>
+      <b>I = Information</b>
+      <ul>
+        <li>
+          គឺចង់ផ្ដោតទៅលើការផ្ទុក និងគ្រប់គ្រងទិន្នន័យឲ្យមានលក្ខណៈសុក្រឹត
+          និងរៀបរយទៅតាមប្រភេទទិន្នន័យនីមួយៗ
+        </li>
+        <li>
+          អនុញ្ញាតឲ្យគេងាយទាញយកទិន្នន័យមកប្រើប្រាស់បានយ៉ាងឆាប់រហ័សបំផុត
+        </li>
+        <li>
+          កម្មវិធីប្រើសម្រាប់ការរក្សាទុកទិន្នន័យមានដូចជា
+          Ms. Access, SQL Server, My SQL, Oracle, MDX និងកម្មវិធីជាច្រើនទៀត
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>C = Communication</b>
+      <ul>
+        <li>
+          ការបង្កើតទំនាក់ទំនងដោយប្រព័ន្ធអេឡិចត្រូនិករវាងឧបករណ៍និងឧបករណ៍
+          ឬកម្មវិធីនិងកម្មវិធី
+        </li>
+        <li>Video Conference</li>
+        <li>ការសិក្សាពីចម្ងាយ</li>
+        <li>ការបញ្ជូនទិន្នន័យពីកន្លែងមួយទៅកន្លែងមួយទៀត</li>
+        <li>ប្រព័ន្ធពិគ្រោះយោបល់សុខភាព</li>
+        <li>ប្រព័ន្ធបណ្ណាល័យអេឡិចត្រូនិក (E-Library)</li>
+        <li>
+          ប្រព័ន្ធច្របាច់បញ្ចូលគ្នារវាងប្រព័ន្ធទូរស័ព្ទ និងកុំព្យូទ័រ
+          អាចឲ្យ Call ពីកុំព្យូទ័រទៅទូរស័ព្ទដៃបាន
+          (VOIP = Voice Over Internet Protocol)
+        </li>
+        <li>ការជជែកកម្សាន្តនៅលើអ៊ីនធឺណិត</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>T = Technology</b>
+      <ul>
+        <li>ការបញ្ជូនទិន្នន័យ</li>
+        <li>ការបង្កើតទំនាក់ទំនង</li>
+        <li>ការផ្ទុកទិន្នន័យ</li>
+        <li>ការគណនា</li>
+        <li>ការបញ្ចូលទិន្នន័យ</li>
+        <li>ការទាញទិន្នន័យពីកម្មវិធីដែលផ្ទុកមកវិញដោយបច្ចេកវិទ្យា</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Cloud Storage</b>
+      <ul>
+        <li>
+          Cloud storage គឺជាសេវាកម្មដែលអនុញ្ញាតឱ្យអ្នកប្រើប្រាស់រក្សាទុកឯកសារ
+          និងគ្រប់គ្រងទិន្នន័យនៅលើម៉ាស៊ីនមេពីចម្ងាយ
+          ដែលចូលប្រើតាមរយៈអ៊ីនធឺណិត
+        </li>
+        <li>
+          ជំនួសការរក្សាទុកនៅលើឧបករណ៍ក្នុងកុំព្យូទ័រ ឬ Hard Drive
+        </li>
+        <li>
+          ឧទាហរណ៍៖ OneDrive, Google Drive, Dropbox, iCloud
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>E-commerce</b>
+      <ul>
+        <li>
+          E-commerce ពាក្យពេញគឺ Electronic Commerce
+        </li>
+        <li>
+          សំដៅទៅលើការទិញទំនិញ ឬការទិញសេវាកម្មនៅលើអ៊ីនធឺណិត
+        </li>
+      </ul>
+    </li>
+  </ul>
+  `
+}
+,
   {module:1, task:"Project", title:"Project", page:34},
 
-  {module:2, task:1, title:"Structured information", page:36},
-  {module:2, task:2, title:"Data entry forms", page:41},
-  {module:2, task:3, title:"Queries", page:47},
-  {module:2, task:4, title:"Reports", page:53},
-  {module:2, task:5, title:"Import and export data", page:58},
+  {
+  "module": 2,
+  "task": 1,
+  "title": "Structured Information",
+  "page": 36,
+  "summary": `
+  <ul>
+    <li>
+      <b>Microsoft Access</b> ជា DBMS (Database Management System) មួយប្រភេទរបស់ក្រុមហ៊ុន Microsoft
+      ដែលបង្កើតឡើងក្នុងគោលបំណងសម្រាប់អនុញ្ញាតឱ្យយើងយកវាទៅប្រើប្រាស់
+      ដើម្បីគ្រប់គ្រងទិន្នន័យ និងបង្កើតជាកម្មវិធីតូចៗ
+      សម្រាប់គ្រប់គ្រងតាមបណ្តាស្ថាប័ននានា។
+    </li>
+
+    <li>
+      <b>របៀបបង្កើត Database</b>
+      <ul>
+        <li>ចុចលើ Start Windows</li>
+        <li>ចុចលើ Search Microsoft Access</li>
+        <li>ចុចលើ Access 2021</li>
+        <li>ចុចលើ Blank Database</li>
+        <li>ដាក់ឈ្មោះ Database និងរក្សាទុក Database នៅក្នុងកុំព្យូទ័រ</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Table</b>
+      <ul>
+        <li>
+          Table គឺជាតារាងសម្រាប់ផ្ទុកទិន្នន័យ
+          ដូចជា បញ្ជីឈ្មោះអ្នកទិញទំនិញ អ្នកលក់ ទំនិញក្នុងឃ្លាំង វិក័យប័ត្រ ជាដើម
+        </li>
+        <li>Table ផ្គុំឡើងដោយ Field (ជួរឈរ) និង Record (ជួរដេក)</li>
+        <li>Field គឺជាជួរឈរដែលមានប្រភេទទិន្នន័យដូចគ្នា</li>
+        <li>
+          Record គឺជាជួរដេកសម្រាប់បង្ហាញទិន្នន័យប្រភេទផ្សេងៗគ្នា
+          ដែលបានកត់ត្រា
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Database</b>
+      <ul>
+        <li>
+          Database គឺជាបណ្តុះទិន្នន័យដែលបានផ្ទុក និងកត់ត្រាព័ត៌មាន
+          របស់អង្គភាព ឬស្ថាប័នណាមួយ
+        </li>
+        <li>
+          ឧទាហរណ៍៖ សាលារៀន ឬមហាវិទ្យាល័យ
+          រក្សាទុកទិន្នន័យគ្រូ សិស្ស បុគ្គលិក ពិន្ទុ និងប្រាក់ខែ
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Field Property</b>
+      <ul>
+        <li>
+          Field property គឺសំដៅទៅលើ Characteristics នីមួយៗរបស់ Field
+          នៅក្នុង Table
+        </li>
+        <li>
+          អាចកំណត់ គ្រប់គ្រង ឬបង្ហាញទិន្នន័យនៅក្នុង Field នីមួយៗ
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Data Type</b>
+      <ul>
+        <li>
+          Data type គឺជាចំណាត់ថ្នាក់ដែលបែងចែកប្រភេទនៃទិន្នន័យ
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Datasheet View</b>
+      <ul>
+        <li>
+          ប្រើសម្រាប់ Display ទិន្នន័យពី Table
+          ដូច Spreadsheet
+        </li>
+        <li>
+          ងាយស្រួលក្នុងការមើល បញ្ចូល និងកែប្រែទិន្នន័យ
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Design View</b>
+      <ul>
+        <li>
+          ប្រើសម្រាប់រចនាតារាង
+          ដោយកំណត់ Field, Data type និង Field property
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Relationship</b>
+      <ul>
+        <li>
+          Relationship គឺជាទំនាក់ទំនងរវាង Table និង Table
+          តាមរយៈ Primary Key និង Foreign Key
+        </li>
+        <li>One to One</li>
+        <li>One to Many</li>
+        <li>Many to Many</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Primary Key</b>
+      <ul>
+        <li>
+          Primary Key គឺជាការកំណត់ឱ្យ Field មួយ
+          មានតម្លៃតែមួយគត់ មិនស្ទួនគ្នា
+        </li>
+      </ul>
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 2,
+  "task": 2,
+  "title": "Data Entry Forms",
+  "page": 41,
+  "summary": `
+  <ul>
+    <li>
+      <b>ណែនាំសិស្សបង្កើត Form ថ្មីតាម Form Wizard</b>
+      <ul>
+        <li>ណែនាំសិស្សប្រើប្រាស់ Button Next និង Previous នៅខាងក្រោម</li>
+        <li>ពន្យល់ និងណែនាំសិស្សឱ្យចេះប្តូរ Data source របស់ Textbox Name ដោយចូលទៅកាន់ Property sheet</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>តើ Form គឺជាអ្វី?</b>
+      <ul>
+        <li>Form គឺជា Interface មួយដែលអនុញ្ញាតឱ្យអ្នកប្រើប្រាស់ បញ្ចូល, កែប្រែ, មើល ឬស្វែងរកទិន្នន័យដែលបានរក្សាទុកនៅក្នុងតារាង។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>តើ Form Wizard គឺជាអ្វី?</b>
+      <ul>
+        <li>Form wizard គឺជា Tool មួយដែលជួយអ្នកប្រើប្រាស់ ឱ្យបង្កើត Form យ៉ាងឆាប់រហ័ស និងងាយស្រួល ដោយគ្រាន់តែជ្រើសតាមការណែនាំតាមរយៈដំណើរការជាជំហានៗ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>តើ Form View ប្រើសម្រាប់ធ្វើអ្វី?</b>
+      <ul>
+        <li>Form View ប្រើសម្រាប់ Display ទិន្នន័យមកពីតារាង ឬ Query ដែលអនុញ្ញាតឱ្យអ្នកប្រើប្រាស់ មើល, បញ្ចូល និងកែប្រែទិន្នន័យ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>តើ Layout View ប្រើសម្រាប់ធ្វើអ្វី?</b>
+      <ul>
+        <li>Layout View ប្រើសម្រាប់ រចនា, ប្តូរទីតាំង Tools និង Property នៅក្នុង Form បានយ៉ាងឆាប់រហ័ស។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>តើ Design View ប្រើសម្រាប់ធ្វើអ្វី?</b>
+      <ul>
+        <li>Design View ប្រើសម្រាប់ រចនា Form ដែលមាន Tools និងអាចបញ្ចូល Sub Form ផងដែរ។</li>
+      </ul>
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 2,
+  "task": 3,
+  "title": "Queries",
+  "page": 47,
+  "summary": `
+  <ul>
+    <li>
+      <b>តើ Query គឺជាអ្វី?</b>
+      <ul>
+        <li>Query គឺជាមុខងារមួយសម្រាប់ទាញយកទិន្នន័យដែលបានរក្សាទុកនៅក្នុងតារាង។ អនុញ្ញាតិឱ្យអ្នកប្រើប្រាស់ធ្វើការទាញយកទិន្នន័យតាមលក្ខណៈដែលចង់បាន។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>តើ Criteria គឺជាអ្វី?</b>
+      <ul>
+        <li>Criteria គឺជា លក្ខណៈដែលអ្នកប្រើប្រាស់ប្រើក្នុងការទាញយកទិន្នន័យយ៉ាងជាក់លាក់ពីតារាង។</li>
+        <li>ឧទាហរណ៍: ចង់មើលតែសិស្សដែល "ភេទស្រី" ឬ ទំនិញដែល "តម្លៃ > $10"។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>តើ Complex Criteria គឺជាអ្វី?</b>
+      <ul>
+        <li>Complex Criteria គឺជា លក្ខណៈឆ្នាប់ ឬសញ្ញាឆ្នាប់ដែលអ្នកប្រើប្រាស់ប្រើក្នុងការទាញយកទិន្នន័យយ៉ាងជាក់លាក់ពីតារាង។</li>
+        <li>ឧទាហរណ៍: ចង់រកសិស្សដែល "នៅភ្នំពេញ" AND "រៀនថ្នាក់ទី១២"។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>តើ Parameter Queries គឺជាអ្វី?</b>
+      <ul>
+        <li>Parameter queries គឺជាការទាញយកទិន្នន័យពីតារាងដោយតម្រូវឱ្យវាយបញ្ចូលតាមលក្ខណៈជាក់លាក់ណាមួយ ឬច្រើនដែលអ្នកប្រើប្រាស់ចង់បាន។</li>
+        <li>អត្ថប្រយោជន៍: ងាយស្រួល មិនបាច់ចូលទៅកែ Query រាល់ដង គ្រាន់តែវាយឈ្មោះអ្នកដែលចង់រកក្នុងប្រអប់ជាការស្រេច។</li>
+        </ul>
+    </li>
+
+    <li>
+      <b>Sort និង Filter</b>
+      <ul>
+        <li>Sort: តម្រៀបទិន្នន័យតាមលំដាប់អក្សរ ឬលេខ</li>
+        <li>Filter: ច្រោះយកទិន្នន័យដែលចង់បាន</li>
+        <li>Descending: តម្រៀបពី Z-A ឬធំទៅតូច</li>
+        <li>Ascending: តម្រៀបពី A-Z ឬតូចទៅធំ</li>
+      </ul>
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 2,
+  "task": 4,
+  "title": "Reports",
+  "page": 53,
+  "summary": `
+  <ul>
+    <li>
+      <b>តើ Report គឺជាអ្វី?</b>
+      <ul>
+        <li>Report គឺជា Tool មួយដែលសម្រាប់ធ្វើការបង្ហាញទិន្នន័យទៅតាមការចង់បាន។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>តើ Report Wizard គឺជាអ្វី?</b>
+      <ul>
+        <li>Report Wizard គឺជា Tool មួយដែលជួយអ្នកប្រើប្រាស់ ឱ្យបង្កើត Report យ៉ាងឆាប់រហ័ស និងងាយស្រួល ដោយគ្រាន់តែជ្រើសតាមការណែនាំតាមដំណើរការ ជាជំហានៗ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>តើ Group Data គឺជាអ្វី?</b>
+      <ul>
+        <li>Group Data គឺសំដៅទៅលើការរៀបចំទិន្នន័យតាមលំដាប់ ឬតាមប្រភេទទិន្នន័យ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Parameter Queries</b>
+      <ul>
+        <li>Parameter queries គឺជាការទាញយកទិន្នន័យពីតារាងដោយតម្រូវឱ្យធ្វើការវាយបញ្ចូលទៅតាមលក្ខណៈជាក់លាក់ណាមួយ ឬច្រើនដែលអ្នកប្រើប្រាស់ចង់បាន។</li>
+      </ul>
+    </li>
+  </ul>
+  `
+}
+,
+  {
+  "module": 2,
+  "task": 5,
+  "title": "Import and Export Data",
+  "page": 58,
+  "summary": `
+  <ol>
+    <li>
+      <b>ការយល់ដឹងពី Import និង Export</b>
+      <p>ប្អូនអាចចាំយ៉ាងងាយដោយប្រើពាក្យ "ការទាញយកទិន្នន័យចូល" និង "ការទាញយកទិន្នន័យចេញ":</p>
+      <ul>
+        <li><b>Import (ការទាញយកទិន្នន័យចូល)</b>: គឺយកទិន្នន័យពីខាងក្រៅ (ដូចជា Excel) មកដាក់ក្នុង Database (Access) របស់យើង។ វាជួយឱ្យយើងមិនបាច់វាយទិន្នន័យឡើងវិញ បើមានស្រាប់ក្នុង Excel។</li>
+        <li><b>Export (ការទាញយកទិន្នន័យចេញ)</b>: គឺយកទិន្នន័យពីក្នុង Database របស់យើង ទៅបង្កើតជា File ផ្សេង (ដូចជា PDF ឬ Excel) ដើម្បីផ្ញើឱ្យអ្នកផ្សេងដែលមិនមានកម្មវិធី Access ប្រើ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>External Data Tab</b>
+      <p>នៅក្នុង Microsoft Access អ្នកប្រើប្រាស់នឹងឃើញ Tab មួយឈ្មោះថា <b>External Data</b>។ វាគឺជា "មជ្ឈមណ្ឌលបញ្ជា" សម្រាប់រាល់ការដោះដូរទិន្នន័យទាំងអស់៖</p>
+      <ul>
+        <li><b>Import & Link Group</b>: សម្រាប់នាំទិន្នន័យចូល</li>
+        <li><b>Export Group</b>: សម្រាប់នាំទិន្នន័យចេញ</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Import database objects from Other Database</b>
+      <p>ចំណុចនេះប្លែកបន្តិច៖ វាមិនមែននាំចូលត្រឹមតែទិន្នន័យក្នុងតារាង (Table) នោះទេ ប៉ុន្តែអាច Import Table, Query, Form, ឬ Report ពី File Access ផ្សេងទៀតមក Database របស់យើងបានតែម្តង។</p>
+      <p>ឧទាហរណ៍៖ ប្អូនបានបង្កើត Form ស្អាតក្នុង Database ចាស់ មិនចាំបាច់ធ្វើថ្មីទេ គ្រាន់តែ Import វាចូល Database ថ្មី។</p>
+    </li>
+  </ol>
+  `
+}
+,
   {module:2, task:"Project", title:"Project", page:64},
 
-  {module:3, task:1, title:"Networking basics", page:66},
-  {module:3, task:2, title:"What is a blog?", page:74},
-  {module:3, task:3, title:"Social Media", page:83},
-  {module:3, task:4, title:"Communication tools", page:95},
-  {module:3, task:5, title:"Digital citizenship", page:101},
+  {
+  "module": 3,
+  "task": 1,
+  "title": "Networking Basics",
+  "page": 66,
+  "summary": `
+  <ol>
+    <li>
+      <b>Computer Network (បណ្តាញកុំព្យូទ័រ)</b>
+      <p>Network គឺជាការតភ្ជាប់ម៉ាស៊ីនកុំព្យូទ័រជាច្រើន និងឧបករណ៍ផ្សេងៗនៅលើបណ្តាញតែមួយ ដើម្បីផ្លាស់ប្តូរ Files, Voice, Video, E-mail, Print និងធនធានផ្សេងៗទៀត។</p>
+    </li>
+
+    <li>
+      <b>Network Topologies (រូបរាងបណ្តាញ)</b>
+      <p>ជារបៀបភ្ជាប់ម៉ាស៊ីនកុំព្យូទ័រ និងឧបករណ៍ផ្សេងៗចូលគ្នា ដោយគិតគូរពីចម្ងាយ ភាពងាយស្រួល និងសុវត្ថិភាពនៃទិន្នន័យ។</p>
+    </li>
+
+    <li>
+      <b>Client-Server Model (គំរូម៉ាស៊ីនមេ និងម៉ាស៊ីនកូន)</b>
+      <ul>
+        <li><b>Server</b>: គឺជាម៉ាស៊ីនមេ ដែលមានតួនាទីទទួល និងឆ្លើយតបទៅតាមតម្រូវការរបស់ Client។</li>
+        <li><b>Client</b>: គឺជាម៉ាស៊ីនកូន ដែលមានសមត្ថភាពអាចស្នើសុំ (Request) ធនធាន ឬសេវាកម្មផ្សេងៗពី Server។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Types of Networks (ប្រភេទនៃបណ្តាញ)</b>
+      <ul>
+        <li><b>PAN (Personal Area Network)</b>: បណ្តាញផ្ទាល់ខ្លួនតូចបំផុត ប្រើសម្រាប់មនុស្សម្នាក់ (ដូចជាការភ្ជាប់ទូរស័ព្ទទៅកាសប៊្លូធូស)</li>
+        <li><b>LAN (Local Area Network)</b>: បណ្តាញក្នុងទីកន្លែងជិតៗគ្នា ដូចជាក្នុងផ្ទះ ការិយាល័យ ឬសាលារៀន</li>
+        <li><b>MAN (Metropolitan Area Network)</b>: បណ្តាញភូមិសាស្ត្រធំទូលាយ ដែលភ្ជាប់បណ្តាញ LAN ច្រើនបញ្ចូលគ្នា (ដូចជាបណ្តាញក្នុងក្រុងមួយ)</li>
+        <li><b>WAN (Wide Area Network)</b>: ភ្ជាប់តាមរយៈក្រុមហ៊ុន ISP នៅតំបន់ឆ្ងាយៗ ឬប្រទេសផ្សេងៗជុំវិញពិភពលោក</li>
+        <li><b>WLAN (Wireless LAN)</b>: បណ្តាញមូលដ្ឋានដែលមិនប្រើខ្សែ (ប្រើ Wi-Fi) ងាយស្រួលក្នុងការផ្លាស់ទី</li>
+        <li><b>VPN (Virtual Private Network)</b>: បណ្តាញឯកជននិម្មិត ដែលបង្កើតឡើងនៅលើបណ្តាញសាធារណៈ ដើម្បីសុវត្ថិភាព</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>Firewall (របាំងការពារ)</b>
+      <p>គឺជាឧបករណ៍ (Hardware) ឬកម្មវិធី (Software) សម្រាប់ការពារ និងគ្រប់គ្រងចរាចរណ៍ទិន្នន័យចេញ-ចូល ក្នុងបណ្តាញកុំព្យូទ័រ ដើម្បីទប់ស្កាត់ការវាយប្រហារផ្សេងៗ។</p>
+    </li>
+  </ol>
+  `
+}
+,
+  {
+  "module": 3,
+  "task": 2,
+  "title": "Blogger",
+  "page": 74,
+  "summary": `
+  <p><b>Blogger</b> (<a href="https://www.blogger.com/" target="_blank">https://www.blogger.com/</a>)</p>
+  <p>គឺជាសេវាកម្មរបស់ Google ដែលអនុញ្ញាតឱ្យអ្នកប្រើប្រាស់បង្កើត និងគ្រប់គ្រងគេហទំព័រផ្ទាល់ខ្លួន (Blog) ដើម្បីសរសេរអត្ថបទ ចែករំលែកចំណេះដឹង ឬបទពិសោធន៍ផ្សេងៗ។</p>
+
+  <ol>
+    <li>
+      <b>Publish (ការដាក់ផ្សាយ)</b>
+      <p>គឺជាការដាក់ផ្សាយព័ត៌មាន ឬអត្ថបទដែលយើងបានសរសេរទៅកាន់មហាជន ដើម្បីឱ្យសាធារណជនទូទៅអាចមើលឃើញ និងប្រើប្រាស់បានតាមរយៈអ៊ីនធឺណិត។</p>
+    </li>
+
+    <li>
+      <b>Update (បច្ចុប្បន្នភាព)</b>
+      <p>គឺជាការធ្វើបច្ចុប្បន្នភាពឱ្យអ្វីមួយទាន់សម័យ ឬជាការកែសម្រួលបន្ថែមព័ត៌មានថ្មីៗទៅក្នុងអត្ថបទ ឬគេហទំព័រដែលបានផ្សាយរួច។</p>
+    </li>
+
+    <li>
+      <b>Sign Up (ការចុះឈ្មោះ)</b>
+      <p>គឺជាការចុះឈ្មោះបង្កើតគណនីថ្មីនៅក្នុងគេហទំព័រណាមួយ ដើម្បីទទួលបានសិទ្ធិប្រើប្រាស់សេវាកម្មរបស់គេហទំព័រនោះ។</p>
+    </li>
+
+    <li>
+      <b>Password (ពាក្យសម្ងាត់)</b>
+      <p>គឺជាលេខ ឬអក្សរសម្ងាត់សម្រាប់ការពារគណនី និងព័ត៌មានផ្ទាល់ខ្លួន ដើម្បីកុំឱ្យអ្នកដទៃអាចចូលប្រើប្រាស់បានដោយគ្មានការអនុញ្ញាត។</p>
+    </li>
+  </ol>
+  `
+}
+,
+  {
+  "module": 3,
+  "task": 3,
+  "title": "Social Media",
+  "page": 83,
+  "summary": `
+  <ol>
+    <li>
+      <b>តើ Facebook គឺជាអ្វី?</b>
+      <p>Facebook គឺជាបណ្តាញសង្គមមួយដែលអនុញ្ញាតឱ្យអ្នកប្រើប្រាស់ធ្វើការចែករំលែក និងទំនាក់ទំនងជាមួយមិត្តភក្តិ គ្រួសារ និងសហគមន៍តាមអ៊ីនធឺណិត។</p>
+    </li>
+
+    <li>
+      <b>និយមន័យសំខាន់ៗ (Core Definitions)</b>
+      <ul>
+        <li>
+          <b>Sign up (ការចុះឈ្មោះ)</b>: សំដៅទៅលើការបង្កើតគណនីថ្មី ឬចុះឈ្មោះថ្មីដោយផ្តល់ព័ត៌មានផ្ទាល់ខ្លួន អាសយដ្ឋាន អ៊ីមែល និងពាក្យសម្ងាត់ផ្សេងៗ។ 
+        </li>
+        <li>
+          <b>Sign in (ការចូលប្រើ)</b>: សំដៅទៅលើដំណើរការនៃការចូលប្រើគណនីដែលមានស្រាប់ ដោយបញ្ចូលឈ្មោះអ្នកប្រើ ឬអ៊ីមែល និងពាក្យសម្ងាត់ដែលបានចុះឈ្មោះពីមុន។
+        </li>
+        <li>
+          <b>Chat (ការជជែកកម្សាន្ត)</b>: សំដៅទៅលើពេលវេលាជាក់ស្តែងនៃការទំនាក់ទំនងលើអត្ថបទជាពាក្យ ឬសារសំឡេង រវាងអ្នកប្រើប្រាស់ពីរនាក់ ឬច្រើននាក់តាមអ៊ីនធឺណិត ឬកម្មវិធីបណ្តាញសង្គម។
+        </li>
+        <li>
+          <b>Upload (ការបញ្ជូនឡើង)</b>: សំដៅទៅលើការបញ្ចូល ឬការផ្ទេរឯកសារ និងទិន្នន័យពីឧបករណ៍ផ្ទាល់ខ្លួន (ដូចជាទូរស័ព្ទ ឬកុំព្យូទ័រ) ទៅកាន់ប្រព័ន្ធអ៊ីនធឺណិត។ 
+        </li>
+      </ul>
+    </li>
+  </ol>
+  `
+}
+,
+  {
+  "module": 3,
+  "task": 4,
+  "title": "Communication Tools",
+  "page": 95,
+  "summary": `
+  <ol>
+    <li>
+      <b>អ្វីទៅជាការទំនាក់ទំនង? (What is Communication?)</b>
+      <p>ការទំនាក់ទំនង គឺជាការចែករំលែកព័ត៌មាន គំនិត ឬអារម្មណ៍ រវាងមនុស្សម្នាក់ទៅមនុស្សម្នាក់ទៀត។ ធាតុផ្សំ ៣ សំខាន់រួមមាន៖</p>
+      <ul>
+        <li><b>អ្នកផ្ញើ (Sender)</b>: អ្នកដែលនិយាយ ឬសរសេរព័ត៌មានចេញទៅ។</li>
+        <li><b>ព័ត៌មាន (Message)</b>: អ្វីដែលជាខ្លឹមសារដែលយើងចង់ប្រាប់គេ។</li>
+        <li><b>អ្នកទទួល (Receiver)</b>: អ្នកដែលស្ដាប់ ឬអានព័ត៌មាននោះ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ប្រភេទនៃឧបករណ៍ទំនាក់ទំនង (Types of Communication Tools)</b>
+      <ul>
+        <li>
+          <b>ក. ឧបករណ៍បុរាណ (Traditional Tools)</b>
+          <ul>
+            <li><b>សំបុត្រ (Letters)</b>: ការសរសេរលើក្រដាស រួចផ្ញើតាមប្រៃសណីយ៍ (ចំណាយពេលយូរ)។</li>
+            <li><b>ការនិយាយផ្ទាល់មាត់</b>: ការជជែកគ្នាដោយជួបមុខគ្នាផ្ទាល់។</li>
+          </ul>
+        </li>
+        <li>
+          <b>ខ. ឧបករណ៍ទំនើប/ឌីជីថល (Modern/Digital Tools)</b>
+          <ul>
+            <li><b>ទូរសព្ទ (Telephone/Smartphone)</b>: ការនិយាយឆ្លងឆ្លើយគ្នាភ្លាមៗ ទោះបីជានៅឆ្ងាយពីគ្នា។</li>
+            <li><b>អ៊ីមែល (Email)</b>: ការផ្ញើសារជាលក្ខណៈផ្លូវការតាមរយៈអ៊ីនធឺណិត។</li>
+            <li><b>បណ្តាញសង្គម (Social Media)</b>: កម្មវិធីដូចជា Telegram, Facebook សម្រាប់ផ្ញើរូបភាព វីដេអូ និងសារជាអត្ថបទ។</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ol>
+  `
+}
+,
+{
+  "module": 3,
+  "task": 5,
+  "title": "Digital Citizenship",
+  "page": 101,
+  "summary": `
+  <ol>
+    <li>
+      <b>ការគោរព (Respect Yourself / Respect Others)</b>
+      <ul>
+        <li><b>សីលធម៌ឌីជីថល (Digital Etiquette)</b>: ការប្រើប្រាស់ពាក្យសម្តីសមរម្យ មិនជេរប្រមាថ ឬបង្កជម្លោះតាមអនឡាញ (Cyberbullying)।</li>
+        <li><b>សិទ្ធិ និងទំនួលខុសត្រូវ (Digital Rights & Responsibilities)</b>: យល់ពីសិទ្ធិសេរីភាពក្នុងការបញ្ចេញមតិ ប៉ុន្តែត្រូវគោរពសិទ្ធិអ្នកដទៃផងដែរ។</li>
+        <li><b>ច្បាប់ឌីជីថល (Digital Law)</b>: ការមិនលួចចម្លងស្នាដៃអ្នកដទៃ (Copyright) ឬការ Hack ចូលគណនីគេដែលជាអំពើខុសច្បាប់។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការអប់រំ (Educate Yourself / Connect with Others)</b>
+      <ul>
+        <li><b>អក្ខរកម្មឌីជីថល (Digital Literacy)</b>: ការរៀនពីរបៀបប្រើឧបករណ៍ (Computer/Phone) និងចេះវាយតម្លៃថាព័ត៌មានណាពិត ព័ត៌មានណាក្លែងក្លាយ (Fake News)។</li>
+        <li><b>ការទំនាក់ទំនង (Digital Communication)</b>: ចេះជ្រើសរើសមធ្យោបាយទាក់ទងគ្នាឱ្យចំគោលដៅ (ឧទាហរណ៍៖ ពេលណាត្រូវផ្ញើអ៊ីមែល ពេលណាត្រូវឆាត)។</li>
+        <li><b>ការចូលប្រើប្រាស់ (Digital Access)</b>: ការយល់ដឹងថា មិនមែនគ្រប់គ្នាសុទ្ធតែមានអ៊ីនធឺណិតប្រើឡើយ ដូច្នេះយើងត្រូវចេះចែករំលែក និងផ្តល់ឱកាសឱ្យគ្នា។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការការពារ (Protect Yourself / Protect Others)</b>
+      <ul>
+        <li><b>សន្តិសុខឌីជីថល (Digital Security)</b>: របៀបការពារគណនី (ដូចជាការដាក់ Password ឱ្យខ្លាំង) និងការមិនចុចលើ Link ផ្តេសផ្តាស (Phishing)។</li>
+        <li><b>សុខភាពឌីជីថល (Digital Health & Wellness)</b>: ការចេះកំណត់ពេលវេលាប្រើប្រាស់អេក្រង់ (Screen time) ដើម្បីកុំឱ្យប៉ះពាល់ភ្នែក និងសុខភាពផ្លូវចិត្ត។</li>
+        <li><b>ពាណិជ្ជកម្មឌីជីថល (Digital Commerce)</b>: ការចេះទិញទំនិញតាមអនឡាញដោយសុវត្ថិភាព និងមិនឱ្យគេបោកប្រាស់។</li>
+      </ul>
+    </li>
+  </ol> `
+  
+}
+  
+,
   {module:3, task:"Project", title:"Project", page:106},
 
-  {module:4, task:1, title:"Text documents", page:110},
-  {module:4, task:2, title:"Spreadsheets", page:123},
-  {module:4, task:3, title:"Presentations", page:130},
-  {module:4, task:4, title:"Project 1 - Leaflet", page:136},
-  {module:4, task:5, title:"Project 2 - Labels", page:138},
+   {
+  "module": 4,
+  "task": 1,
+  "title": "Text Document",
+  "page": 110,
+  "summary": `
+  <ol>
+    <li>
+      <b>ការបង្កើត និងការរៀបចំទម្រង់អត្ថបទ (Formatting)</b>
+      <ul>
+        <li><b>ការរៀបចំ Font</b>: របៀបប្តូរប្រភេទអក្សរ ទំហំអក្សរ ពណ៌អក្សរ និងការដាក់អក្សរដិត (Bold), អក្សរផ្អៀង (Italic), ឬបន្ទាត់ពីក្រោម (&lt;u&gt;Underline&lt;/u&gt;)។</li>
+        <li><b>ការតម្រឹមអត្ថបទ (Alignment)</b>: របៀបដាក់អត្ថបទនៅខាងឆ្វេង កណ្តាល ខាងស្តាំ ឬតម្រឹមឱ្យស្មើឆ្វេងស្តាំ (Justify)។</li>
+        <li><b>គម្លាតបន្ទាត់ (Line Spacing)</b>: ការកំណត់ចន្លោះរវាងបន្ទាត់នីមួយៗឱ្យងាយស្រួលអាន។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការរៀបចំទំព័រ និងរចនាសម្ព័ន្ធ (Page Setup)</b>
+      <ul>
+        <li><b>ការកំណត់រឹមទំព័រ (Margins)</b>: ការកំណត់ចន្លោះទំនេរជុំវិញក្រដាស (លើ ក្រោម ឆ្វេង ស្តាំ)។</li>
+        <li><b>ការប្រើប្រាស់ Header & Footer</b>: ការដាក់ចំណងជើងនៅផ្នែកខាងលើ ឬលេខទំព័រនៅផ្នែកខាងក្រោមនៃក្រដាស។</li>
+        <li><b>ការបង្កើតតារាង (Tables)</b>: របៀបបញ្ចូលតារាងដើម្បីរៀបចំទិន្នន័យឱ្យមានសណ្តាប់ធ្នាប់។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការគ្រប់គ្រងឯកសារ (Document Management)</b>
+      <ul>
+        <li><b>ការរក្សាទុក (Saving)</b>: របៀបរក្សាទុកឯកសារក្នុងទម្រង់ផ្សេងៗ (ដូចជា .docx ឬ .pdf)។</li>
+        <li><b>ការដាក់ឈ្មោះឯកសារ</b>: ការដាក់ឈ្មោះឱ្យមានរបៀប ដើម្បីងាយស្រួលស្វែងរកមកវិញ។</li>
+        <li><b>ការបោះពុម្ព (Printing)</b>: ការពិនិត្យមើលឯកសារមុននឹងបោះពុម្ព (Print Preview)។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ជំនាញបន្ថែម (Advanced Features)</b>
+      <ul>
+        <li><b>ការប្រើប្រាស់ Bullets & Numbering</b>: ដើម្បីរៀបចំបញ្ជីឱ្យមានលំដាប់លំដោយ។</li>
+        <li><b>ការបញ្ចូលរូបភាព (Inserting Images)</b>: របៀបដាក់រូបភាពចូលក្នុងអត្ថបទ និងការរៀបចំរូបភាពឱ្យស៊ីគ្នាជាមួយអក្សរ។</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>គោលបំណងនៃមេរៀន៖ មេរៀន Text Documents នេះ បង្រៀនឱ្យប្អូនៗចេះប្រើប្រាស់កម្មវិធីកុំព្យូទ័រ ដើម្បីសរសេររបាយការណ៍ ធ្វើលិខិត ឬកិច្ចការសាលាឱ្យបានស្អាត និងត្រឹមត្រូវតាមស្តង់ដារ។</p>
+  `
+}
+,
+  {
+  "module": 4,
+  "task": 2,
+  "title": "Spreadsheets",
+  "page": 123,
+  "summary": `
+  <ol>
+    <ul>
+      <li>M.S Excel : យើងប្រើប្រាស់កម្មវិធី Microsoft Excel ដើម្បីគណនា និងគ្រប់គ្រងទៅលើទិន្នន័យ។ Excel ត្រូវបានគេប្រើប្រាស់យ៉ាងទូលំទូលាយក្នុងវិស័យផ្សេងៗជាច្រើនដូចជា ហិរញ្ញវត្ថុ អាជីវកម្ម ការអប់រំ និងវិស្វកម្មជាដើម។</li>
+      <li>Save (Ctrl + S)	: ប្រើសម្រាប់រក្សាទុកឯកសារដែលមានឈ្មោះស្រាប់ (ឯកសារចាស់)។</li>
+      <li>Save As (F12)	: ប្រើសម្រាប់រក្សាទុកឯកសារដែលពុំមានឈ្មោះ (ឯកសារថ្មី)។</li>
+    <li>Spreadsheet គឺជាឯកសារឌីជីថលដែលប្រើសម្រាប់ការរៀបចំ រក្សាទុក វិភាគ 
+          និងគ្រប់គ្រងទិន្នន័យក្នុងទម្រង់តារាងដែលផ្សំឡើងដោយជួរដេក និងជួរឈរ។ </li>
+    <li>Freeze panes គឺជាមុខងារមួយនៅក្នុងកម្មវិធី Spreadsheet ដែលអនុញ្ញាតឱ្យអ្នកចាក់សោជួរដេក ឬជួរឈរនៅនឹងថ្កល់មួយកន្លែងនៅពេលមានការរំកិលជួរដេក ឬជួរឈរ។</li>
+        <li>Pivot tables គឺជាតារាង Table មួយដែលអនុញ្ញាតិឱ្យអ្នកធ្វើការត្រួតពិនិត្យនិងវិភាគទិន្នន័យជា លក្ខណៈដែលអាចកំណត់បាន។</li>  
+  </ul>
+    <li>
+      <b>មូលដ្ឋានគ្រឹះនៃ Spreadsheet</b>
+      <ul>
+        <li><b>Cell, Row, and Column</b>: ស្គាល់ពី \"ជួរឈរ\" (Column - ប្រើអក្សរ A, B, C...) \"ជួរដេក\" (Row - ប្រើលេខ 1, 2, 3...) និង \"ប្រអប់ទិន្នន័យ\" (Cell - ជាចំណុចប្រសព្វរវាងជួរឈរ និងជួរដេក ឧទាហរណ៍៖ A1)។</li>
+        <li><b>Worksheet</b>: ការយល់ដឹងពីសន្លឹកកិច្ចការក្នុងឯកសារតែមួយ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការបញ្ចូល និងរៀបចំទិន្នន័យ (Data Entry)</b>
+      <ul>
+        <li>របៀបវាយបញ្ចូលលេខ និងអក្សរទៅក្នុងប្រអប់ (Cell)។</li>
+        <li>ការកំណត់ទម្រង់អក្សរ (Font), ពណ៌, និងការដាក់ព្រំដែនតារាង (Borders) ដើម្បីឱ្យមើលទៅមានរបៀប។</li>
+        <li>ការទាញពង្រីកជួរឈរ ឬជួរដេកឱ្យត្រូវនឹងទំហំអត្ថបទ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការប្រើប្រាស់រូបមន្តមូលដ្ឋាន (Basic Formulas)</b>
+      <p>ចំណុចនេះសំខាន់បំផុត គឺការប្រើប្រាស់សញ្ញា = ដើម្បីគណនា៖</p>
+      <ul>
+        <li>ការបូក (+): ឧទាហរណ៍ =A1+B1</li>
+        <li>ការដក (-): ឧទាហរណ៍ =A1-B1</li>
+        <li>ការគុណ (*): ឧទាហរណ៍ =A1*B1</li>
+        <li>ការចែក (/): ឧទាហរណ៍ =A1/B1</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការប្រើប្រាស់អនុគមន៍ងាយៗ (Simple Functions)</b>
+      <ul>
+        <li>SUM: សម្រាប់បូកសរុបចំនួនច្រើនបញ្ចូលគ្នា។</li>
+        <li>AVERAGE: សម្រាប់រកមធ្យមភាគ។</li>
+        <li>MAX/MIN: សម្រាប់រកតម្លៃខ្ពស់បំផុត ឬទាបបំផុតក្នុងតារាង។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>សារៈសំខាន់នៃ Spreadsheets</b>
+      <p>គេសិក្សាមេរៀននេះដើម្បីឱ្យសិស្សចេះ៖</p>
+      <ul>
+        <li>រៀបចំបញ្ជីឈ្មោះ ឬបញ្ជីអីវ៉ាន់ឱ្យមានសណ្តាប់ធ្នាប់។</li>
+        <li>គណនាបានលឿន និងមិនងាយខុស (ដូចជាការធ្វើតារាងពិន្ទុសិស្ស ឬបញ្ជីចំណាយ)។</li>
+        <li>បង្កើតក្រាហ្វ (Charts): បំប្លែងលេខទៅជារូបភាពដើម្បីងាយស្រួលយល់។</li>
+      </ul>
+    </li>
+  </ol>
+  `
+}
+,
+  {
+  "module": 4,
+  "task": 3,
+  "title": "Presentations",
+  "page": 130,
+  "summary": `
+  <ol>
+    <li>
+      <b>មូលដ្ឋានគ្រឹះនៃកម្មវិធី Presentation</b>
+      <ul>
+        <li>តើអ្វីទៅជា Slide? ការយល់ដឹងថា Presentation ត្រូវបានបង្កើតឡើងដោយផ្ទាំងនីមួយៗដែលហៅថា Slide។</li>
+        <li>Layout: របៀបជ្រើសរើសទម្រង់ Slide (ដូចជា Slide សម្រាប់ដាក់ចំណងជើង ឬ Slide សម្រាប់ដាក់អត្ថបទ និងរូបភាព)។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការរចនា និងការបញ្ចូលមាតិកា (Designing & Content)</b>
+      <ul>
+        <li>ការវាយអត្ថបទ: របៀបដាក់ចំណងជើង (Title) និងខ្លឹមសារខ្លីៗ (Bullet points) ដើម្បីឱ្យអ្នកដទៃងាយអាន។</li>
+        <li>ការប្រើប្រាស់ Themes/Design: ការជ្រើសរើសពណ៌ និងផ្ទៃខាងក្រោយ (Background) ឱ្យស្អាត និងសមរម្យ។</li>
+        <li>ការបញ្ចូលរូបភាព (Inserting Pictures): របៀបដាក់រូបភាពដើម្បីជួយពន្យល់អត្ថបទឱ្យកាន់តែច្បាស់។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការធ្វើឱ្យមានចលនា (Animations & Transitions)</b>
+      <ul>
+        <li>Transitions: ការដាក់ចលនាពេលប្តូរពី Slide មួយទៅ Slide មួយទៀត។</li>
+        <li>Animations: ការដាក់ចលនាឱ្យអក្សរ ឬរូបភាព (ដូចជាឱ្យអក្សរហោះចូល ឬរំកិល) ដើម្បីឱ្យអ្នកមើលចាប់អារម្មណ៍។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>របៀបធ្វើបទបង្ហាញឱ្យបានល្អ (Presentation Skills)</b>
+      <ul>
+        <li>ភាពខ្លីខ្លឹម: មិនត្រូវដាក់អក្សរច្រើនពេកក្នុង Slide មួយឡើយ។</li>
+        <li>ការនិយាយ: របៀបនិយាយឱ្យច្បាស់ និងមើលទៅកាន់អ្នកស្ដាប់។</li>
+        <li>ការប្រើ Slide Show: របៀបចាក់បញ្ចាំង Slide ឱ្យពេញអេក្រង់កុំព្យូទ័រ (ប្រើប៊ូតុង F5)។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>គោលបំណងនៃមេរៀន</b>
+      <p>គេសិក្សាមេរៀននេះដើម្បីឱ្យប្អូនៗចេះ៖</p>
+      <ul>
+        <li>ចែករំលែកចំណេះដឹង: អាចយកអ្វីដែលបានរៀនទៅប្រាប់មិត្តភក្តិ ឬគ្រូបានយ៉ាងច្បាស់។</li>
+        <li>ភាពជឿជាក់: បង្កើនភាពក្លាហានក្នុងការឈរនិយាយនៅមុខសិស្សដទៃ។</li>
+        <li>ការច្នៃប្រឌិត: ចេះរៀបចំរូបភាព និងអក្សរឱ្យមើលទៅស្អាត និងគួរឱ្យចាប់អារម្មណ៍។</li>
+      </ul>
+      <p>ក្នុងមេរៀនេះត្រូវបានផ្ដោតសំខាន់ទៅលើការប្រើប្រាស់កម្មវិធី (ដូចជា Microsoft PowerPoint) ដើម្បីបង្កើតស្លាយ (Slides) សម្រាប់បង្ហាញព័ត៌មានឱ្យមានភាពទាក់ទាញ។</p>
+    </li>
+  </ol>
+  `
+}
+,
+  {
+  "module": 4,
+  "task": 4,
+  "title": "Project 1 – Leaflet",
+  "page": 136,
+  "summary": `
+  <ol>
+    <li>
+      <b>អ្វីទៅជា Leaflet (ខិត្តប័ណ្ណ)?</b>
+      <p>Leaflet គឺជាក្រដាសផ្ដល់ព័ត៌មានតូចៗ (ភាគច្រើនបត់ជា ២ ឬជា ៣) ដែលគេប្រើសម្រាប់៖</p>
+      <ul>
+        <li>ផ្សព្វផ្សាយអំពីព្រឹត្តិការណ៍សាលារៀន។</li>
+        <li>ណែនាំពីការថែរក្សាបរិស្ថាន ឬសុខភាព។</li>
+        <li>ផ្សាយពាណិជ្ជកម្មផលិតផលងាយៗ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ការរៀបចំរចនាសម្ព័ន្ធ (Layout)</b>
+      <p>ក្នុងមេរៀននេះ គេនឹងបង្រៀនឱ្យប្អូនចេះរៀបចំទំព័រក្រដាស៖</p>
+      <ul>
+        <li>Page Orientation: ប្តូរក្រដាសពីបញ្ឈរ (Portrait) មកជា ផ្ដេក (Landscape)។</li>
+        <li>Columns: របៀបបែងចែកក្រដាសមួយសន្លឹកឱ្យទៅជា ២ ឬ ៣ ជួរឈរ ដើម្បីបត់បានយ៉ាងស្អាត។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ធាតុផ្សំសំខាន់ៗនៅក្នុង Leaflet</b>
+      <p>ដើម្បីឱ្យ Leaflet មួយមើលទៅល្អ គេសិក្សាពីការដាក់៖</p>
+      <ul>
+        <li>Catchy Headline: ចំណងជើងធំៗ និងទាក់ទាញ។</li>
+        <li>Short Text: អត្ថបទខ្លីៗ ងាយយល់ (មិនសរសេរវែងពេកទេ)។</li>
+        <li>Visuals: ការប្រើរូបភាព ឬតុក្កតាដែលពាក់ព័ន្ធនឹងប្រធានបទ។</li>
+        <li>Contact Information: ព័ត៌មានទំនាក់ទំនង (ដូចជា លេខទូរសព្ទ ឬអាសយដ្ឋាន)។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ជំហាននៃការធ្វើគម្រោង (Project Steps)</b>
+      <ul>
+        <li>ជ្រើសរើសប្រធានបទ: (ឧទាហរណ៍៖ \"របៀបលាងដៃឱ្យស្អាត\" ឬ \"មកលេងភូមិរបស់ខ្ញុំ\")។</li>
+        <li>សរសេរព្រាង: រៀបចំខ្លឹមសារក្នុងក្រដាសសិន។</li>
+        <li>រចនាតាមកុំព្យូទ័រ: ប្រើកម្មវិធី (ដូចជា MS Word) ដើម្បីដាក់ពណ៌ រូបភាព និងតម្រឹមអក្សរ។</li>
+        <li>បោះពុម្ព និងបត់: (Printing & Folding)។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>គោលបំណងនៃមេរៀន</b>
+      <ul>
+        <li>ការអនុវត្ត: ចេះយកកម្មវិធីវាយអត្ថបទមកប្រើក្នុងជីវភាពជាក់ស្តែង។</li>
+        <li>ការរៀបចំ: ចេះរៀបចំព័ត៌មានឱ្យមានសណ្តាប់ធ្នាប់លើផ្ទៃក្រដាសដែលមានកំណត់។</li>
+        <li>ការច្នៃប្រឌិត: រៀនធ្វើឱ្យខិត្តប័ណ្ណមើលទៅគួរឱ្យចង់អាន។</li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>សង្ខេបខ្លី៖ មេរៀននេះបង្រៀនប្អូនឱ្យក្លាយជា \"អ្នករចនាក្រាហ្វិកវ័យក្មេង\" ដែលចេះបង្កើតខិត្តប័ណ្ណផ្សព្វផ្សាយដោយខ្លួនឯង។</p>
+  `
+}
+,
+  {
+  "module": 4,
+  "task": 5,
+  "title": "Project 2 – Labels",
+  "page": 138,
+  "summary": `
+  <ol>
+    <li>
+      <b>អ្វីទៅជា Labels (ស្លាក)?</b>
+      <p>Labels គឺជាបណ្ណតូចៗដែលគេប្រើសម្រាប់បិទលើវត្ថុអ្វីមួយ ដើម្បីសម្គាល់ ឬផ្ដល់ព័ត៌មាន។ ក្នុងមេរៀននេះ ប្អូននឹងរៀនធ្វើស្លាកដូចជា៖</p>
+      <ul>
+        <li>ស្លាកឈ្មោះ (Name Labels): សម្រាប់បិទលើសៀវភៅ ឬសម្ភារៈសិក្សា។</li>
+        <li>ស្លាកតម្លៃ ឬស្លាកផលិតផល: សម្រាប់បិទលើរបស់របរ (ឧទាហរណ៍៖ ស្លាកដបទឹក ឬប្រអប់អាហារ)។</li>
+        <li>ស្លាកអាសយដ្ឋាន (Address Labels): សម្រាប់បិទលើស្រោមសំបុត្រ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ជំនាញបច្ចេកទេសដែលត្រូវប្រើ</b>
+      <p>ដើម្បីធ្វើ Labels ឱ្យបានស្អាត ប្អូនត្រូវរៀនពី៖</p>
+      <ul>
+        <li>ការប្រើ Shapes: របៀបគូររូបរាងផ្សេងៗ (រង្វង់ ការ៉េ ឬចតុកោណកែង) ដើម្បីធ្វើជាប្លង់ស្លាក។</li>
+        <li>Text Boxes: របៀបសរសេរអក្សរនៅខាងក្នុងរូបរាង (Shapes) ទាំងនោះ។</li>
+        <li>Copy & Paste (Duplicate): គន្លឹះក្នុងការបង្កើតស្លាកមួយឱ្យស្អាត រួចចម្លងវាឱ្យបានច្រើនក្នុងក្រដាសតែមួយសន្លឹក ដើម្បីកុំឱ្យខាតក្រដាសពេលបោះពុម្ព។</li>
+        <li>ការដាក់ពណ៌ និងស្ទីល (Fill & Outline): របៀបដាក់ពណ៌ផ្ទៃខាងក្រោយ និងបន្ទាត់ជុំវិញស្លាកឱ្យមើលទៅលេចធ្លោ។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ធាតុផ្សំនៃស្លាក</b>
+      <ul>
+        <li>ភាពច្បាស់លាស់ (Clarity): អក្សរត្រូវតែធំល្មម និងងាយអាន។</li>
+        <li>ព័ត៌មានសង្ខេប: ដាក់តែអ្វីដែលចាំបាច់ (ចំណងជើង ឬឈ្មោះផលិតផល, ឈ្មោះម្ចាស់ ឬឈ្មោះក្រុមហ៊ុន)។</li>
+        <li>រូបភាពតំណាង: អាចដាក់ Logo តូចៗ ឬ Icon งាយៗដើម្បីឱ្យមើលទៅស្អាត។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>ជំហាននៃការអនុវត្តគម្រោង</b>
+      <ul>
+        <li>វាស់ទំហំ: គិតថាប្អូនចង់បានស្លាកទំហំប៉ុណ្ណា (តូច ឬធំ)។</li>
+        <li>រចនាម៉ូដ: ជ្រើសរើសពណ៌ និងរូបរាងនៅក្នុងកម្មវិធីកុំព្យូទ័រ។</li>
+        <li>បញ្ចូលទិន្នន័យ: វាយឈ្មោះ ឬព័ត៌មានចូល។</li>
+        <li>រៀបចំពេញមួយទំព័រ: រៀបចំឱ្យមានស្លាកច្រើនក្នុងមួយសន្លឹក (Grid layout)។</li>
+        <li>បោះពុម្ព និងកាត់: (Printing & Cutting)។</li>
+      </ul>
+    </li>
+
+    <li>
+      <b>គោលបំណងនៃមេរៀន</b>
+      <ul>
+        <li>ភាពមានសណ្តាប់ធ្នាប់: បង្រៀនឱ្យប្អូនចេះរៀបចំរបស់របរឱ្យមានរបៀបតាមរយៈការបិទស្លាកសម្គាល់។</li>
+        <li>ជំនាញរចនា: ចេះប្រើប្រាស់ឧបករណ៍ Shapes និង Text ក្នុងកម្មវិធី (ដូចជា MS Word) ឱ្យកាន់តែស្ទាត់ជំនាញ។</li>
+      </ul>
+    </li>
+  </ol>
+  `
+}
+,
   {module:4, task:6, title:"Project 3 - Market research", page:140}
 ],
 };
