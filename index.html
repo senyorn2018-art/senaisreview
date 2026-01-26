@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AIS 9 Level System</title>
+<title>AIS eSkills System</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -24,6 +24,7 @@ body{
   padding:25px;
   border-radius:15px;
 }
+
 /*Logo */
 .main-box { background: white; max-width: 900px; margin: 40px auto; 
     border-radius: 20px; padding: 30px; } 
@@ -38,22 +39,22 @@ tr:hover{background:#f1f1f1;cursor:pointer;}
 </head>
 
 <body>
-
 <div class="main-box">
-<h3 class="text-center text-primary mb-3">AIS 9 Level Module System</h3>
+<h3 class="text-center text-primary mb-3">AIS Level Module System</h3>
 
 <!-- ✅ LEVEL BUTTONS -->
 <div class="text-center mb-3">
-  <button class="btn btn-outline-primary level-btn" data-level="Level 1">Level 1</button>
-  <button class="btn btn-outline-primary level-btn" data-level="Level 2">Level 2</button>
-  <button class="btn btn-outline-primary level-btn" data-level="Level 3">Level 3</button>
-  <button class="btn btn-outline-primary level-btn" data-level="Level 4">Level 4</button>
-  <button class="btn btn-outline-primary level-btn" data-level="Level 5">Level 5</button>
-  <button class="btn btn-outline-primary level-btn" data-level="Level 6">Level 6</button>
-  <button class="btn btn-outline-primary level-btn" data-level="Level 7">Level 7</button>
-  <button class="btn btn-outline-primary level-btn" data-level="Level 8">Level 8</button>
-  <button class="btn btn-outline-primary level-btn" data-level="Level 9">Level 9</button>
+  <button class="btn btn-outline-primary level-btn" data-level="Level 1">eSkill1</button>
+  <button class="btn btn-outline-primary level-btn" data-level="Level 2">eSkill2</button>
+  <button class="btn btn-outline-primary level-btn" data-level="Level 3">eSkill3</button>
+  <button class="btn btn-outline-primary level-btn" data-level="Level 4">eSkill4</button>
+  <button class="btn btn-outline-primary level-btn" data-level="Level 5">eSkill5</button>
+  <button class="btn btn-outline-primary level-btn" data-level="Level 6">eSkill6</button>
+  <button class="btn btn-outline-primary level-btn" data-level="Level 7">eSkill7</button>
+  <button class="btn btn-outline-primary level-btn" data-level="Level 8">eSkill8</button>
+  <button class="btn btn-outline-primary level-btn" data-level="Level 9">eSkill9</button>
   <a href="lesson.html" target="_bland" class="btn btn-outline-primary level-btn" data-level="lesson">All lesson</a>
+
 </div>
 <!--Form Date and Examp-->
 <div class="card p-3 mb-3">
@@ -80,7 +81,7 @@ tr:hover{background:#f1f1f1;cursor:pointer;}
             <span class="me-2">សូមជ្រើសកាលបរិច្ឆេទ៖</span>
             <input type="date" id="date"
                    class="form-control text-center"
-                   style="width: 160px;border:none" />
+                   style="width: 160px;border:none"/>
         </div>
 
     </div>
@@ -325,7 +326,6 @@ const titleByLevel = {
 const pageByTitle = {
 
   // ================= LEVEL 1
- // ================= LEVEL 1 ✅ FIXED
 "Dinosaurs and computers": "8",
 "They are everywhere": "10",
 "The computer": "12",
@@ -891,7 +891,4 @@ function exportImage(){
 
 </body>
 </html>
-
-
-
 
