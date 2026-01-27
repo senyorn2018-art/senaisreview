@@ -5,6 +5,13 @@
 <title>AIS Level eSkills</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Summernote CSS -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.css" rel="stylesheet">
+
+<!-- Summernote JS -->
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-lite.min.js"></script>
+
+
 <style>
 body{
   background: linear-gradient(to bottom,#7ec8ff,#ffe066);
@@ -6376,13 +6383,10 @@ function renderTable(level){
 </div>
 
   <!-- EDIT MODE -->
-  <textarea class="form-control mt-2 summary-edit d-none"
-rows="5">${
-  (
-    localStorage.getItem(getSummaryKey(level,i))
-    || d.summary
-    || ""
-  ).replace(/<[^>]*>/g,'')
+  <textarea class="form-control mt-2 summary-edit d-none" rows="5">${
+  localStorage.getItem(getSummaryKey(level,i))
+  || d.summary
+  || ""
 }</textarea>
 
   <div class="mt-2 text-right">
@@ -6390,8 +6394,9 @@ rows="5">${
       onclick="editSummary(this)">✏️ Edit</button>
 
     <button class="btn btn-sm btn-success d-none"
-      onclick="saveSummary(${level},${i},this)">💾 Save</button>
-  </div>
+  onclick="saveSummary(${level},${i},this)">
+  💾 Save
+</button>
 </div>
 
       </td>
@@ -6429,50 +6434,83 @@ $(document).ready(function(){
   $(".level-btn[data-level='1']").addClass("active"); // បង្ហាញ button active
   renderTable(1); // បង្ហាញ table Level 1
 });
-//edit and sumarize
+// Edit summary using Summernote
 function editSummary(btn){
+
+  // 🔒 CLOSE all other editors first
+  $(".summary-box").each(function(){
+    let box = $(this);
+    let textarea = box.find(".summary-edit");
+
+    // if summernote is active → destroy
+    if(textarea.next('.note-editor').length){
+      textarea.summernote('destroy');
+    }
+
+    box.find(".summary-edit").addClass("d-none");
+    box.find(".summary-view").removeClass("d-none");
+    box.find(".btn-success").addClass("d-none");
+    box.find(".btn-warning").removeClass("d-none");
+  });
+
+  // ✅ OPEN only clicked one
   let box = $(btn).closest(".summary-box");
+  let textarea = box.find(".summary-edit");
+
   box.find(".summary-view").addClass("d-none");
-  box.find(".summary-edit").removeClass("d-none");
+  textarea.removeClass("d-none");
   $(btn).addClass("d-none");
   box.find(".btn-success").removeClass("d-none");
+
+  // ✅ Init Summernote
+  textarea.summernote({
+    height: 200,
+    toolbar: [
+      ['style', ['bold','italic','underline','clear']],
+      ['font', ['fontname','fontsize']],
+      ['para', ['ul','ol','paragraph','align']],
+      ['view', ['codeview']]
+    ],
+    fontNames: ['Tw Cen MT','Khmer OS Battambang','Arial'],
+    fontNamesIgnoreCheck: true,
+    callbacks:{
+      onInit(){
+        textarea.summernote('fontName','Khmer OS Battambang');
+      }
+    }
+  });
 }
 
-//save to local storage
+// Save summary
 function saveSummary(level,index,btn){
   let box = $(btn).closest(".summary-box");
-  let text = box.find(".summary-edit").val();
+  let textarea = box.find(".summary-edit");
+  let view = box.find(".summary-view");
 
-  let html = "<ul>" +
-    text.split("\n").filter(t=>t.trim())
-        .map(t=>`<li>${t}</li>`).join("") +
-    "</ul>";
+  // Get HTML from Summernote
+  let html = textarea.summernote('code');
+
+  if(!html || html === "<p><br></p>"){
+    alert("មិនមានមាតិកាដើម្បីរក្សាទុកទេ");
+    return;
+  }
 
   // ✅ Save to localStorage
   localStorage.setItem(getSummaryKey(level,index), html);
-
-  // Update object (optional)
   lessonsLevel[level][index].summary = html;
 
-  // Refresh
-  renderTable(level);
+  // ✅ Destroy Summernote editor
+  textarea.summernote('destroy');
+
+  // ✅ Switch back to view mode
+  view.html(html).removeClass("d-none");
+  textarea.addClass("d-none");
+
+  // ✅ Toggle buttons
+  box.find(".btn-success").addClass("d-none");
+  box.find(".btn-warning").removeClass("d-none");
 }
 
-function toggleSummary(level,index,btn){
-  let row = $("#summary-"+level+"-"+index);
-
-  row.stop(true,true).slideToggle(250);
-
-  if($(btn).text().includes("▼")){
-    $(btn).html("Summary ▲")
-          .removeClass("btn-info")
-          .addClass("btn-secondary");
-  }else{
-    $(btn).html("Summary ▼")
-          .removeClass("btn-secondary")
-          .addClass("btn-info");
-  }
-}
 
 
 </script>
