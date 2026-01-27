@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -191,6 +192,10 @@ tr:hover{background:#f1f1f1;cursor:pointer;}
 </div>
 
 <script>
+
+function showLevel(level){
+  return level.replace("Level ", "eSkill");
+}
 let editIndex = null;
 let currentLevel = "";
 
@@ -671,20 +676,23 @@ function loadData(){
 
 /* ✅ FILTER BY LEVEL */
 function filterByLevel(){
- let list=JSON.parse(localStorage.getItem("aisData"))||[];
- let html="";
+ let list = JSON.parse(localStorage.getItem("aisData")) || [];
+ let html = "";
+
  list.forEach((d,i)=>{
    if(d.level === currentLevel){
-     html+=`
+     html += `
      <tr onclick="editRow(${i})">
-       <td>${d.level}</td>
+       <td>${showLevel(d.level)}</td>
        <td>${d.title}</td>
        <td class="page-number">${d.page}</td>
      </tr>`;
    }
  });
+
  $("#dataTable tbody").html(html);
 }
+
 
 /* ✅ EDIT */
 /*function editRow(i){
