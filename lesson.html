@@ -6466,9 +6466,14 @@ function editSummary(btn){
   textarea.summernote({
     height: 200,
     toolbar: [
-      ['style', ['bold','italic','underline','clear']],
+     /* ['style', ['bold','italic','underline','clear']],
       ['font', ['fontname','fontsize']],
       ['para', ['ul','ol','paragraph','align']],
+      ['view', ['codeview']]*/
+       ['style', ['bold','italic','underline','clear']], 
+      ['font', ['fontname','fontsize','color']], 
+      ['para', ['ul','ol','paragraph','height','align']], 
+      ['insert', ['link']], 
       ['view', ['codeview']]
     ],
     fontNames: ['Tw Cen MT','Khmer OS Battambang','Arial'],
@@ -6517,3 +6522,4 @@ function saveSummary(level,index,btn){
 
 </body>
 </html>
+
