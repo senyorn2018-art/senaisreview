@@ -216,7 +216,7 @@ let lessonsLevel = {
   <li>System Unit គឺជាធុងសម្រាប់ផ្ទុកសមាសធាតុសំខាន់ៗរបស់ Computer</li>
   <li>Monitor មានតួនាទីសម្រាប់បង្ហាញរូបភាព និងព័ត៌មាន</li>
   <li>Keyboard ប្រើសម្រាប់ចុចអក្សរ និងលេខ</li>
-  <li>Mouse ប្រើសម្រាប់បញ្ជាសញ្ញាព្រួញ និងចុចជម្រើស</li>
+  <li>Mouse ប្រើសម្រាប់បញ្ជាសញ្ញាព្រួញ</li>
   <li>Speakers មានតួនាទីសម្រាប់បញ្ចេញសម្លេង</li>
   <li>Microphone មានតួនាទីសម្រាប់ស្រូបសម្លេង</li>
   <li>Printer មានតួនាទីសម្រាប់បោះពុម្ពឯកសារ</li>
@@ -249,7 +249,7 @@ let lessonsLevel = {
   <li>Desktop:ផ្ទៃការងារដំបូងគេបន្ទាប់ពីបើក Computerរួច</li>
   <li>This PC:គឺជាកន្លែងសម្រាប់ចូលទៅគ្រប់គ្រងរាល់ទិន្នន័យទាំងអស់នៅក្នុងកុំព្យូទ័រ</li>
   <li>Recycle Bin: ធុងសំរាម</li>
-  <li>Folder: ថតសម្រាប់ទុកឯកសារ</li>
+  <li>Folder: ថតឬប្រអប់សម្រាប់រក្សាទុកឯកសារ</li>
   <li>Microsoft Edge: កម្មវិធីសម្រាប់ប្រើជាមួយអ៊ីនធឺណិត</li>
 </ul>
 `
@@ -557,7 +557,7 @@ let lessonsLevel = {
   <li>Cut ប្រើសម្រាប់កាត់យកអក្សរ ឬរូបភាព</li>
   <li>Copy ប្រើសម្រាប់ចម្លងអក្សរ ឬរូបភាព</li>
   <li>Paste ប្រើសម្រាប់បញ្ចេញអ្វីដែលបាន Copy</li>
-  <li><b>របៀប Copyអត្ថបទក្នុងកម្មវិធី Wordpad</b></li>
+  <li><b>របៀប Copy និង Paste អត្ថបទក្នុងកម្មវិធី Wordpad</b></li>
   <ul>
   <li>ចុច Select លើអក្សរដែលចង់ Copy</li>  
   <li>ចុច Copy</li>
@@ -574,6 +574,9 @@ let lessonsLevel = {
     page: 32,
     summary: `
 <ul>
+  <li>Font គឺជាពុម្ពនៃអក្សរ</li>
+  <li>Font Style គឺជាម៉ូតនៃអក្សរ</li>
+  <li>Font Size គឺជាទំហំនៃអក្សរ</li>
   <li>របៀបប្ដូ Font អក្សរ</li>
     <ul><li>Select លើពាក្យ ឬអក្សរ</li>
       <li>ចុច Font ហើយជ្រើស Font</li>
@@ -612,15 +615,14 @@ let lessonsLevel = {
     summary: `
 <ul>
   <li>Save ប្រើសម្រាប់រក្សាទុកឯកសារ</li>
+  <li>របៀបរក្សាទុកឯកសារ</li>
   <ul>
-  <li>របៀបរក្សាទុកឯកសារ/li>
   <li>ចុចចូល File </li>
   <li>យកពាក្យ Save as</li>
   <li>រើសទីតាំង បន្ទាប់មកដាក់ឈ្មោះ</li>
   <li> Save</li>
   </ul>
   <li>Print ប្រើសម្រាប់បោះពុម្ពឯកសារ</li>
-  
   <ul>
     <li>របៀប Print ឯកសារ</li>
     <ul>
@@ -658,8 +660,8 @@ let lessonsLevel = {
   <li>Scroll up and down ប្រើសម្រាប់រំកិលឡើង និងចុះ</li>
   <li>Hyperlinks ប្រើសម្រាប់ចុចទៅកាន់ Website ផ្សេង</li>
   <li>របៀបចូលមើល Web page</li>
-  <li>បើក Microsoft Edge</li>
-  <ul><li>វាយ www.google.com</li>
+  <ul><li>បើក Microsoft Edge</li>
+  <li>វាយ www.google.com</li>
   <li>វាយពាក្យដែលចង់រក</li>
   <li>ចុច Search</li>
   <li>ចុច Link ដែលចង់មើល</li></ul>
@@ -775,7 +777,7 @@ let lessonsLevel = {
   <li>lt – បត់ឆ្វេង</li>
   <li>pd – ដាក់បន្ទាត់</li>
   <li>pu – ដកបន្ទាត់</li>
-  <li>cs – សុបបន្ទាត់ទាំងអស់</li>
+  <li>cs – លុបបន្ទាត់ទាំងអស់</li>
 </ul>
 `
   },
@@ -785,14 +787,24 @@ let lessonsLevel = {
     title: "Draw a shape",
     page: 72,
     summary: `
+  <ul>
+    <li>How to make a Triangle</li>
+  <ul><li>pd</li>
+  <li>fd 100</li>
+  <li>rt 120</li>
+  <li>fd 100</li>
+  <li>rt 120</li>
+  <li>fd 100</li>
+  </ul>
+</ul>
 <ul>
   <li>គូរត្រីកោណ (Triangle)</li>
   <ul><li>repeat 3 [fd 100 rt 120]</li></ul>
   <li>គូរការេ (Square)</li>
   <ul><li>repeat 4 [fd 100 rt 90]</li></ul>
-  <li>គូរប្រាំមុំ (Hexagon)</li>
+  <li>គូរប្រាំមួយមុំ (Hexagon)</li>
   <ul><li>repeat 6 [fd 100 rt 60]</li></ul>
-  <li>គូរវង់មូល (Circle)</li>
+  <li>គូររង្វង់មូល (Circle)</li>
   <ul><li>repeat 360 [fd 1 rt 1]</li></ul>
 </ul>
 `
@@ -897,9 +909,9 @@ let lessonsLevel = {
   <li>File គឺជាឯកសារដែលបង្កើតឡើងដោយកុំព្យូទ័រ</li>
   <li>File មានច្រើនប្រភេទ និងមានលក្ខណៈសម្គាល់របស់វាដូចជា (Icon, File name and Extension)។
 </li>
-  <li>Icon គឺជារូបតំណាងរបស់ឯកសារ</li>
+  <li>Icon គឺជារូបតំណាង ឬក៏រូបសភាពសម្គាល់របស់ឯកសារ</li>
   <li>File name គឺជាឈ្មោះរបស់ឯកសារ</li>
-  <li>Extension គឺជាពាក្យបន្ថែមនៅចុងឈ្មោះឯកសារ</li>
+  <li>Extension គឺជាពាក្យបន្ថែម ឬក៏ពាក្យសម្គាល់នៅចុងឈ្មោះឯកសារ</li>
   <li>Right-Click លើ File អាច Open, Delete, Copy និងមើល Properties</li>
 </ul>
 `
@@ -1000,9 +1012,9 @@ let lessonsLevel = {
   <ul>
     <li>Bullet: គឺជាការដាក់ចំនុចរៀងគ្នា</li>
     <li>Numbering: គឺជាការដាក់លេខរៀង</li>
-    <li>Symbol: គឺជាការដាក់តួអក្សរពិសេស</li>
+    <li>Symbol: គឺជាការដាក់តួអក្សរ ឬនិមិតសញ្ញាពិសេស</li>
     <li>ដើម្បីបញ្ចប់ការដាក់លេខរៀង ឬចំនុច ត្រូវចុច Enter Key ពីរដង</li>
-    <li>ដើម្បីលុបលេខរៀង ឬចំនុច និងតួអក្សរពិសេស ត្រូវចុច Backspace Key</li>
+    <li>ដើម្បីលុបលេខរៀង ឬចំណុច និងតួអក្សរពិសេស ត្រូវចុច Backspace Key</li>
   </ul>
   `
 },
@@ -1018,7 +1030,7 @@ let lessonsLevel = {
     <li>F7 Key: ប្រើសម្រាប់បើកផ្ទាំង Spelling and Grammar</li>
     <li>Ignore Once: រំលងពាក្យខុសមួយ ដោយមិនចាំបាច់កែ</li>
     <li>Ignore All: រំលងពាក្យខុសទាំងអស់ ដោយមិនចាំបាច់កែ</li>
-    <li>Save As: ប្រើសម្រាប់រក្សាទុកឯកសារ និងផ្លាស់ប្ដូទីតាំងបាន</li>
+    <li>Save As: ប្រើសម្រាប់រក្សាទុកឯកសារ ដែលអាចប្ដូរឈ្មោះនិងផ្លាស់ប្ដូរទីតាំងបាន</li>
     <li> របៀបរក្សាទុកឯកសារក្នុងកម្មវិធី Microsoft Word</li>
     <ul><li>->ចុចចូល File ->ចុចពាក្យ Save us -> រើសទីតាំងនិងដាក់ឈ្មោះ -> ចុច Save</li></ul>
   </ul>
@@ -1149,9 +1161,9 @@ let lessonsLevel = {
   summary: `
   <ul>
     <li>Textbox: ប្រអប់សម្រាប់សរសេរអក្សរ ដែលទំហំប្រែប្រួលតាមអក្សរដែលសរសេរ</li>
-    <li>Shapes: ប្រអប់សម្រាប់គូររូបរាង ដែលអាចពង្រីក និងបង្រួមបាន</li>
-    <li>Shape Fill: សម្រាប់ចាក់ពណ៌ឱ្យប្រអប់</li>
-    <li>Text Fill: សម្រាប់ចាក់ពណ៌ឱ្យអក្សរ</li>
+    <li>Shapes: ប្រអប់សម្រាប់គូររូបរាង</li>
+    <li>Shape Fill: សម្រាប់ចាក់ពណ៌ឱ្យប្រអប់នៃ Shapes ឬក៏ Textbox</li>
+    <li>Text Fill: សម្រាប់ចាក់ពណ៌ឱ្យអក្សរដែលនៅក្នុង Shapes ឬក៏ Textbox</li>
     <li>របៀបគូរប្រអប់សរសេរអក្សរ:</li>
     <ol>
       <li>ចូលទៅ Insert tab → Shapes → ជ្រើស Textbox</li>
@@ -1171,7 +1183,7 @@ let lessonsLevel = {
   <ul>
     <li>PowerPoint ប្រើសម្រាប់ធ្វើបទបង្ហាញ បង្រៀន ឬការណែនាំជាលក្ខណៈ Slide</li>
     <li>ដើម្បីធ្វើបទបង្ហាញឱ្យបានល្អ គួរប្រើ ClipArt ឬ Picture ជំនួសការសរសេរអក្សរ</li>
-    <li>របៀបបញ្ចូលរូបភាពពីអ៊ីនធឺណេត:</li>
+    <li>របៀបបញ្ចូលរូបភាពពីអ៊ីនធឺណេត (Onling Picture):</li>
     <ol>
       <li>ចូល Insert tab → Picture → Online Picture</li>
       <li>បញ្ចូលពាក្យ ឬឃ្លា រួចចុច Enter</li>
@@ -1188,25 +1200,25 @@ let lessonsLevel = {
   page: 90,
   summary: `
   <ul>
-    <li>ការធ្វើបទបង្ហាញ គឺការបញ្ចាំងស្លាយឱ្យពេញអេក្រង់ ដើម្បីបង្ហាញគំនិតដល់ទស្សនិកជន</li>
+    <li>ការធ្វើបទបង្ហាញ គឺការបញ្ចាំងស្លាយឱ្យពេញអេក្រង់ ដើម្បីបង្ហាញពីគំនិតដល់ទស្សនិកជន</li>
     <li>វិធីបញ្ចាំងស្លាយ:</li>
     <ul>
-      <li>ចុច F5 សម្រាប់បញ្ចាំងពីស្លាយដំបូង</li>
+      <li>ចុច F5 សម្រាប់បញ្ចាំងពីស្លាយចាប់ពីដំបូង</li>
       <li>ចុច Shift + F5 សម្រាប់បញ្ចាំងពីស្លាយបច្ចុប្បន្ន</li>
     </ul>
-    <li>ទៅស្លាយបន្ទាប់:</li>
+    <li>ដើម្បីទៅស្លាយបន្ទាប់យើងអាចចុច Key:</li>
     <ul>
       <li>Enter</li>
       <li>Arrow Down (↓)</li>
       <li>Arrow Right (→)</li>
     </ul>
-    <li>ត្រលប់ទៅស្លាយមុន:</li>
+    <li>ដើម្បីត្រលប់ទៅស្លាយមុនយើងអាចចុច:</li>
     <ul>
       <li>Backspace</li>
       <li>Arrow Up (↑)</li>
       <li>Arrow Left (←)</li>
     </ul>
-    <li>ចាកចេញពីការបង្ហាញ: ចុច Key ESC</li>
+    <li>ដើម្បីចាកចេញពីការបង្ហាញ: ចុច Key ESC</li>
   </ul>
   `
 }
@@ -1223,7 +1235,7 @@ let lessonsLevel = {
   page: 9,
   summary: `
   <ul>
-    <li>File គឺជាឯកសារដែលមាននៅក្នុងកុំព្យូទ័រ</li>
+    <li>File គឺជាឯកសារដែលបង្កើតឡើងដោយកុំព្យូទ័រ</li>
     <li>Folder គឺជាប្រអប់សម្រាប់ផ្ទុករាល់ឯកសារ</li>
     <li>Shortcut គឺជាផ្លូវកាត់សម្រាប់បើកកម្មវិធី, ឯកសារ និង Folder យ៉ាងរហ័ស</li>
     <li>របៀបបង្កើត Shortcut:</li>
@@ -1244,7 +1256,7 @@ let lessonsLevel = {
   page: 12,
   summary: `
   <ul>
-    <li>Compressed file or folder គឺជាការប្រមូលផ្ដុំ Files ច្រើនក្នុង File តែមួយ ដែលទំហំតូច</li>
+    <li>Compressed file or folder គឺជាការប្រមូលផ្ដុំ Files or Folder ច្រើន​ឱ្យស្ដិតចូលក្នុងតែមួយ ដែលទំហំតូច</li>
     <li>របៀប Compress Folder or File:</li>
     <ol>
       <li>Right Click លើ Folder or File</li>
@@ -1262,14 +1274,14 @@ let lessonsLevel = {
   page: 18,
   summary: `
   <ul>
-    <li>ប្ដូរ Screen resolution:</li>
+    <li>របៀបប្ដូរ Screen resolution:</li>
     <ol>
       <li>Right click លើ Desktop → Click Screen resolution</li>
       <li>បង្ហាញផ្ទាំង Screen resolution</li>
       <li>ជ្រើសរើសទំហំ Screen resolution</li>
       <li>Click Apply → Click Revert</li>
     </ol>
-    <li>ប្ដូររូបភាព Desktop:</li>
+    <li>របៀបប្ដូររូបភាព Desktop:</li>
     <ol>
       <li>Right click លើ Desktop → Click Personalize</li>
       <li>ជ្រើសរើសរូបភាពដែលចូលចិត្ត</li>
@@ -1285,7 +1297,8 @@ let lessonsLevel = {
   page: 22,
   summary: `
   <ul>
-    <li>Malware គឺជាកម្មវិធីដែលអាចធ្វើឲ្យកុំព្យូទ័រគាំង និងបំផ្លាញឯកសារ</li>
+  <li><b>Malware</b> : គឺជាកម្មវិធីមេរោគដែលត្រូវបានបង្កើតឡើងក្នុងគោលបំណងបំផ្លាញឯកសារ លួចទិន្នន័យ ឬធ្វើឱ្យកុំព្យូទ័រគាំង។</li>
+  <li><b>ប្រភេទMalware (កម្មវិធីមេរោគ)</b> : រួមមាន Virus, Worm, Trojan, Spyware និង Ransomware។</li>
     <li>ការការពារ៖</li>
     <ol>
       <li>ប្រើកម្មវិធីកម្ចាត់មេរោគ</li>
@@ -1305,9 +1318,9 @@ let lessonsLevel = {
   summary: `
   <ul>
     <li>Align Text: កំណត់ទីតាំងអក្សរឱ្យនៅឆ្វេង, ស្តាំ ឬ កណ្តាល</li>
-    <li>Align មាន ៤ ប្រភេទ: Align Left, Align Right, Align Center, Align Justify</li>
-    <li>Line Spacing: កំណត់ចន្លោះរវាងជួរអក្សរ</li>
-    <li>Border: ដាក់/ដកបន្ទាត់ជុំវិញអក្សរ</li>
+    <li>Align មាន ៤ ប្រភេទ: Align Left(Ctrl + L), Align Right(Ctrl + R), Align Center(Ctrl + C), Align Justify(Ctrl + J)</li>
+    <li>Line Spacing: ប្រើសម្រាប់កំណត់ចន្លោះរវាងជួរអក្សរ</li>
+    <li>Border: ប្រើសម្រាប់ដាក់/ដកបន្ទាត់</li>
     <li>Shading: ចាក់ពណ៌ទៅក្នុងផ្ទៃអត្ថបទ ឬ អក្សរ</li>
   </ul>
   `
@@ -1345,12 +1358,11 @@ let lessonsLevel = {
       <li>View tab → Spelling & Grammar (ឬ F7)</li>
       <li>ត្រួតពិនិត្យពាក្យ → Change / Change all</li>
     </ol>
-    <li>Shift + F7: ត្រួតពិនិត្យពាក្យ/ឃ្លា ដោយផ្អែកលើវចនានុក្រម</li>
+    <li>Thesaurus (Shift + F7): ត្រួតពិនិត្យពាក្យ/ឃ្លា ដោយផ្អែកលើវចនានុក្រម</li>
     <li>Spelling & Grammar (F7): ត្រួតពិនិតអក្ខរាវិរុទ្ធ និងកែប្រែ</li>
   </ul>
   `
 },
-
 {
   module: 2,
   task: 4,
@@ -1358,8 +1370,8 @@ let lessonsLevel = {
   page: 40,
   summary: `
   <ul>
-    <li>Print គឺបោះពុម្ពឯកសារចេញក្រៅតាមម៉ាស៊ីនព្រីន</li>
-    <li>ចូលទៅកន្លែង Print: Ctrl + P ឬ File → Print</li>
+    <li>Print ប្រើសម្រាប់បោះពុម្ពឯកសារ</li>
+    <li>របៀប Printឯកសារ : Ctrl + P ឬ File → Print </li>
     <li>កំណត់មុនបោះពុម្ព:</li>
     <ul>
       <li>Copies: ចំនួនសន្លឹក</li>
@@ -1379,7 +1391,7 @@ let lessonsLevel = {
   page: 46,
   summary: `
   <ul>
-    <li>កម្មវិធី Voice Recorder  គឺជាកម្មវិធីប្រើសម្រាប់ Record សម្លេង។</li>
+    <li>កម្មវិធី Voice Recorder  គឺជាកម្មវិធីប្រើសម្រាប់ Record សម្លេង</li>
     <li>របៀបបើកកម្មវិធី Voice Recorder</li>
     <ul>
       <li>ចុច Start window</li>
@@ -1396,7 +1408,6 @@ let lessonsLevel = {
   </ul>
   `
 },
-
 {
   module: 3,
   task: 2,
@@ -1760,12 +1771,12 @@ let lessonsLevel = {
   page: 19,
   summary: `
   <ul>
-    <li>Document View: ការបង្ហាញព័ត៌មានផ្សេងៗរបស់ឯកសារ</li>
-    <li>Print Layout: ទម្រង់ទូទៅ Microsoft Word</li>
-    <li>Read Mode: បង្ហាញដូចស្លាយ, មិនអាចកែប្រែ</li>
+    <li>Document View: គឺជាមុខងារមួយដែលអនុញ្ញាតឱ្យយើងផ្លាស់ប្តូររបៀបមើលឯកសារទៅតាមតម្រូវការផ្សេងៗគ្នា</li>
+    <li>Print Layout: បង្ហាញទម្រង់ឯកសារទូទៅ Microsoft Word</li>
+    <li>Read Mode: ជាការបង្ហាញទម្រង់ឯកសារពេញអេក្រង់ ដោយមិនអាចកែប្រែបាន។</li>
     <li>Web Layout: បង្ហាញជា Web Page, អូសពីលើចុះក្រោម</li>
-    <li>Outline: បង្ហាញជាចំណុច</li>
-    <li>Draft: ទម្រង់ Microsoft Word ចាស់</li>
+    <li>Outline: បង្ហាញទម្រង់ឯកសារជាចំណុច</li>
+    <li>Draft: ទម្រង់ឯកសារជា Microsoft Word ចាស់</li>
     <li>Zoom In: ពង្រីកផ្ទៃការងារ</li>
     <li>Zoom Out: បង្រួមផ្ទៃការងារ</li>
   </ul>
@@ -1779,11 +1790,15 @@ let lessonsLevel = {
   summary: `
   <ul>
   <li><b>Scanner</b> – សម្រាប់ចម្លងរូបភាពចូលក្នុងកុំព្យូទ័រ</li>
-  <li><b>Digital Camera</b> – សម្រាប់ថតរូបភាព</li>
-  <li><b>Digital Video Camera</b> – សម្រាប់ថតវីដេអូ</li>
+  <li><b>Digital Camera</b> – គឺជាឧបករណ៍ប្រើសម្រាប់ផ្ដោតសំខាន់ទៅលើការថតរូបភាព</li>
+  <li><b>Digital Video Camera</b> –  គឺជាឧបករណ៍ប្រើសម្រាប់ផ្ដោតសំខាន់ទៅលើការថតវីដេអូ</li>
   <li><b>Microphone</b> – សម្រាប់ស្រូបសំឡេង ឬនិយាយ</li>
   <li><b>USB Port</b> – សម្រាប់ដោតភ្ជាប់ USB Devices</li>
   <li><b>Sound Port</b> – សម្រាប់ដោត Headphone</li>
+  <li>តើអ្វីទៅជា File Extensions ?</li>
+  <li>File Extensions : គឺជាការកំណត់សំគាល់ប្រភេទ File នៃឯកសារ ដែលស្ថិតនៅផ្នែកខាងក្រោយគេបំផុត។ Ex-Ex. .doc, .jpg, .xlsx….។
+</li>
+
 </ul>
   `
 },
@@ -1879,6 +1894,11 @@ let lessonsLevel = {
       </ul>
     </li>
     <li>Search Engines: ស្វែងរកទិន្នន័យផ្សេងៗតាម Internet យ៉ាងងាយ និងលឿន</li>
+    <li>Website ដែលជាប្រភេទ Search Engine</li>
+    <ul>
+    <li>www.google.com</li>  
+    <li>www.bing.com</li>
+    </ul>
   </ul>
   `
 },
@@ -1890,7 +1910,7 @@ let lessonsLevel = {
   page: 54,
   summary: `
   <ul>
-    <li>Email: សារអេឡិចត្រូនិច សម្រាប់ផ្ញើរសារ, Video Call, រូបភាព, …</li>
+    <li>Email: គឺជាសារអេឡិចត្រូនិច ដែលយើងប្រើសម្រាប់ផ្ញើរសារ, Video Call, រូបភាព, …</li>
     <li>Email platforms: Gmail, Yahoo, Windows Live Mail, …</li>
     <li>Chat platforms: Gmail, Yahoo, Telegram, Line, Skype, Facebook, …</li>
   </ul>
@@ -1903,7 +1923,10 @@ let lessonsLevel = {
   page: 62,
   summary: `
   <ul>
-    <li>OneDrive: រក្សាទុកឯកសារផ្ទាល់ខ្លួន (រូបភាព, វីដេអូ, ឯកសារផ្សេងៗ) យ៉ាងងាយស្រួល</li>
+    <li>តើអ្វីទៅជា OneDrive ?</li>
+    <li>OneDrive គឺជាសេវាកម្មរក្សាទុកទិន្នន័យលើក្លោដ (Cloud Storage)មួយដែលត្រូវបានបង្កើតឡើងដោយក្រុមហ៊ុន Microsoft។</li>
+    <li>តើអ្វីទៅជា Google Drive</li>
+    <li>Google Drive គឺជាសេវាកម្មរក្សាទុកទិន្នន័យលើក្លោដ (Cloud Storage)មួយដែលត្រូវបានបង្កើតឡើងដោយក្រុមហ៊ុន Google ។</li>
     <li>Intellectual Property (កម្មសិទ្ធិបញ្ញា): វាជាការរក្សាសិទ្ធទៅលើឯកសារតាមប្រព័ន្ធ Internet ដែលមានដូចជា សៀវភៅ រូបភាព ចម្រៀង វីដេអូ ជាដើម</li>
     <li>Intellectual Property Law: ច្បាប់កំណត់អ្នកប្រើប្រាស់</li>
     <li>Copyrighted Material:
@@ -1929,7 +1952,6 @@ let lessonsLevel = {
   </ul>
   `
 },
-
 {
   module: 3,
   task: 4,
@@ -1956,7 +1978,6 @@ let lessonsLevel = {
   </ul>
   `
 },
-
   {
   module: 4,
   task: 1,
@@ -1966,8 +1987,8 @@ let lessonsLevel = {
   <ul>
     <li>Table: តារាងផ្តុំឡើងដោយជួរឈរ និងជួរដេក</li>
     <li>Cells: ចំណុចប្រសព្វរវាងជួរឈរ និងជួរដេក</li>
-    <li>Column: ជួរឈរ</li>
-    <li>Row: ជួរដេក</li>
+    <li>Column: គឺជាជួរឈរ</li>
+    <li>Row: គឺជាជួរដេក</li>
     <li>Microsoft Excel ប្រើសម្រាប់គ្រប់គ្រង និងគណនាទិន្នន័យ (ឧ. ពិន្ទុសិស្ស, ប្រាក់ចំណូលចំណាយ, បញ្ជីមុខទំនិញ)</li>
     <li>Merge Cells:
       <ol>
@@ -1979,7 +2000,6 @@ let lessonsLevel = {
   </ul>
   `
 },
-
 {
   module: 4,
   task: 2,
@@ -1997,7 +2017,6 @@ let lessonsLevel = {
   </ul>
   `
 },
-
 {
   module: 4,
   task: 3,
@@ -2005,7 +2024,7 @@ let lessonsLevel = {
   page: 92,
   summary: `
   <ul>
-    <li>Graph/Chart: បង្ហាញព័ត៌មាន និងទិន្នន័យតាមរូបភាព ងាយស្រួលយល់ និងវិភាគ</li>
+    <li>Graph/Chart: គឺជាមុខងារមួយប្រើសម្រាប់បង្ហាញព័ត៌មាន និងទិន្នន័យតាមរូបភាព ងាយស្រួលយល់ និងវិភាគ</li>
     <li>ប្រភេទ Chart: Column, Pie, Line, …</li>
     <li>របៀបបង្កើត Graphi ឬ Chart </li>
     <ul>
@@ -2025,9 +2044,10 @@ let lessonsLevel = {
   page: 94,
   summary: `
   <ul>
-    <li>Print: បោះពុម្ពឯកសារ ឬកិច្ចការ</li>
+    <li>Print: ប្រើសម្រាប់បោះពុម្ពឯកសារ ឬកិច្ចការ</li>
+    <li>Print->Shortcut (Ctrl + P)</li>
     <li>របៀបបោះពុម្ភ Print -> ចូលFile -> ចុចពាក្យ Print -> ចុច Print </li>
-    <li>Margins: គែមក្រដាសនៅសល់ព័ទ្ធជុំវិញឯកសារពេល Print</li>
+    <li>Margins: ប្រើសម្រាប់កំណត់គែមនៃសន្លឹកកិច្ចការឱ្យមានរបៀប</li>
     <li>Orientation:
       <ul>
         <li>Portrait: បោះពុម្ពទម្រង់បញ្ឈរ</li>
@@ -2046,7 +2066,7 @@ let lessonsLevel = {
   summary: `
   <ul>
     <li>Data: ព័ត៌មានផ្សេងៗដែលបានរក្សាទុក</li>
-    <li>Database: ការប្រមូលព័ត៌មានផ្សេងៗនៅលើកុំព្យូទ័រ</li>
+    <li>Database: ប្រព័ន្ធសម្រាប់រៀបចំ និងរក្សាទុកទិន្នន័យ, អាចផ្លាស់ប្ដូរ តំរៀប និងស្វែងរកបានលឿន</li>
   </ul>
   `
 },
@@ -2059,7 +2079,7 @@ let lessonsLevel = {
   summary: `
   <ul>
     <li>Database: ប្រព័ន្ធសម្រាប់រៀបចំ និងរក្សាទុកទិន្នន័យ, អាចផ្លាស់ប្ដូរ តំរៀប និងស្វែងរកបានលឿន</li>
-    <li>A record (ជួរដេក): ធាតុមួយនៃព័ត៌មានក្នុងតារាង</li>
+    <li>A record (ជួរដេក): ធាតុមួយនៃព័ត៌មានក្នុងតារាង ឬទិន្នន័យមួយជួរដេក</li>
     <li>Field: លក្ខណៈនៃធាតុ, ឧ. name, date of birth, address</li>
   </ul>
   `
@@ -2153,12 +2173,12 @@ let lessonsLevel = {
   page: 13,
   summary: `
   <ul>
-    <li><b>Columns</b> : បែងចែក 2 ឬ 3 ជួរឈរ</li>
-    <li><b>Tabs / Tab Stop</b> : តម្រឹមអត្ថបទតាម Tab</li>
-    <li><b>Indent</b> : ការចូលបន្ទាត់</li>
-    <li><b>Line Between</b> : បន្ទាត់ចន្លោះជួរឈរ</li>
-    <li><b>This Point Forward</b> : ចាប់ពីចំណុចនេះទៅមុខ</li>
-    <li><b>Whole Document</b> : កំណត់ទាំងឯកសារ</li>
+    <li><b>Columns</b> : ប្រើសម្រាប់បែងចែក 2 ឬ 3 ជួរឈរ</li>
+    <li><b>Tabs / Tab Stop</b> : ប្រើសម្រាប់តម្រឹមអត្ថបទតាម Tab</li>
+    <li><b>Indent</b> : ប្រើសម្រាប់ចូលបន្ទាត់</li>
+    <li><b>Line Between</b> : ដាក់បន្ទាត់ចន្លោះជួរឈរ(Column)</li>
+    <li><b>This Point Forward</b> : ចាប់ពីចំណុចទំព័រដែលមាន Cursor ទៅមុខនិងអនុវត្ត</li>
+    <li><b>Whole Document</b> : ចាប់ពីចំណុចទំព័រដំបូងរហូតដល់ទំព័រចុងក្រោយនិងអនុវត្ត</li>
   </ul>
 
   <p><b>Columns</b></p>
@@ -2190,9 +2210,9 @@ let lessonsLevel = {
   page: 16,
   summary: `
   <ul>
-    <li><b>Header</b> : ក្បាលទំព័រ</li>
-    <li><b>Footer</b> : ជើងទំព័រ</li>
-    <li><b>Symbol</b> : និមិត្តសញ្ញាពិសេស</li>
+    <li><b>Header</b> : ប្រើសម្រាប់កំណត់ក្បាលទំព័រ</li>
+    <li><b>Footer</b> : ប្រើសម្រាប់កំណត់ជើងទំព័រ</li>
+    <li><b>Symbol</b> : ដាក់និមិត្តសញ្ញាពិសេស</li>
     <li><b>Date & Time</b> : ថ្ងៃខែឆ្នាំ និងពេលវេលា</li>
   </ul>
 
@@ -2227,7 +2247,7 @@ let lessonsLevel = {
   <ul>
     <li><b>Cover Page</b> : ផ្នែកសំខាន់នៃឯកសារដែលមានចំណងជើង រូបភាព និងព័ត៌មានផ្សេងៗ</li>
     <li><b>Heading Style</b> : រៀបចំឯកសារ និង Table of Contents</li>
-    <li><b>Page Break</b> : ចាប់ផ្តើមទំព័រថ្មី</li>
+    <li><b>Page Break</b> : ចាប់ផ្តើមទំព័រថ្មី (ប្រើសម្រាប់រុញអត្តបទចូលទៅទំព័រថ្មី)</li>
   </ul>
 
   <p><b>Cover Page</b></p>
@@ -2282,8 +2302,8 @@ let lessonsLevel = {
     <li><b>Large Banner</b> : ផ្ទាំងរូបភាពធំៗនៅលើគេហទំព័រ (ផ្សព្វផ្សាយផលិតផល សេវាកម្ម ឬព្រឹត្តិការណ៍)</li>
     <li><b>Banner</b> : ផ្ទាំងផ្សាយពាណិជ្ជកម្ម (Ads) នៅលើគេហទំព័រ</li>
     <li><b>Theme</b> : រចនាបថ និង Layout របស់គេហទំព័រ</li>
-    <li><b>Hero Slide</b> : បែប Dynamic ដែលប្រើ Slideshow ដើម្បីបង្ហាញរូបភាព និងអត្ថបទច្រើនលើផ្ទាំងដើម Website ដោយផ្លាស់ប្តូរបន្តៗ</li>
-    <li><b>Show Hero Banner</b> : បង្ហាញផ្ទាំងធំៗនៅផ្នែកលើគេហទំព័រ ដូចជា រូបភាព + ចំណងជើង + អត្ថបទ</li>
+    <li><b>Hero Slide</b> : គឺជាទម្រង់រូបភាពច្រើនបង្ហាញជាលក្ខណ (Slider/Carousel) ដែលផ្លាស់ប្តូរពីមួយទៅមួយបាន</li>
+    <li><b>Show Hero Banner</b> : គឺជារូបភាព(Static Image) ដែលបង្ហាញនៅផ្នែកខាងលើនៃទំព័រដើម</li>
   </ul>
   `
 },
@@ -2294,10 +2314,12 @@ let lessonsLevel = {
   page: 32,
   summary: `
   <ul>
-    <li><b>Template</b> : គឺជាទម្រង់ដែលមានស្រាប់ៗ ហើយងាយស្រួលយកមកប្រើ</li>
-    <li><b>Apps</b> : កម្មវិធីដែលត្រូវបានរចនាឡើងដើម្បីបំពេញភារកិច្ច ឬមុខងារជាក់លាក់</li>
+    <li><b>Template</b> : គឺជាទម្រង់ដែលមានស្រាប់ៗ ហើយងាយស្រួលយកមកប្រើប្រាស់</li>
+    <li><b>Apps</b> : គឺជាមុខងារបន្ថែមដែលដាក់បញ្ចូលក្នុងវេបសាយ</li>
     <li><b>Sections</b> : ដាក់បញ្ចូលមាតិកាដែលពាក់ព័ន្ធជាមួយគ្នា layout ដូចជា Header, Body, Footer</li>
-    <li><b>Forms</b> : ជាទម្រង់សំដៅទៅលើរូបរាង រចនាសម្ព័ន្ធ ឬការកំណត់រចនាសម្ព័ន្ធនៃវត្ថុ ឬគំនិត</li>
+    <li>Element គីជាមុខងារមួយដែលផ្ដល់ភាពងាយស្រួលទៅដល់អ្នកបង្កើត Website 
+      ដែលអាចឱ្យពួកគេទាញយកទៅប្រើបាន Heading , Paragraph, Image និង Videos ជាដើម។</li>
+    <li><b>Forms</b> : គឺជាទម្រង់សម្រាប់ឱ្យអ្នកប្រើប្រាស់បំពេញព័ត៌មាន (ដូចជាទម្រង់ទំនាក់ទំនង ឬការចុះឈ្មោះ) ដើម្បីងាយស្រួលប្រមូលពត័មានសំខាន់ៗ</li>
   </ul>
   `
 },
@@ -2308,7 +2330,7 @@ let lessonsLevel = {
   page: 34,
   summary: `
   <ul>
-    <li><b>Domain</b> : (គឺជា Hosting) ឬជាឈ្មោះអាសយដ្ឋានដែលប្រើក្នុងអ៊ីនធឺណិត ដើម្បីឲ្យមនុស្សអាចចូលទៅកាន់វេបសាយបានងាយស្រួល (IP Address ឧ. 142.250.190.78)</li>
+    <li><b>Domain (ឬ Domain Name)</b> គឺជា "ឈ្មោះ Website" សម្រាប់សម្គាល់គេហទំព័ររបស់អ្នកនៅលើអ៊ីនធឺណិត</li>
     <li><b>Testing</b> : គឺជាការបង្ហោះ ឬតេស្ត Website មុនពេលឲ្យប្រើប្រាស់ពិតប្រាកដ</li>
     <li><b>Upload Files</b> : គឺជា FileZilla ដែលផ្ទុកឯកសារ Website (HTML, CSS, JavaScript, រូបភាព, វីដេអូ…)</li>
     <li><b>Domain Configuration</b> : គឺជាដំណើរការរបស់ Domain ដើម្បីឲ្យវាអាចភ្ជាប់បានត្រឹមត្រូវទៅកាន់ Web Hosting, Email, DNS, Server ឬប្រព័ន្ធផ្សេងៗ</li>
@@ -2358,16 +2380,11 @@ let lessonsLevel = {
   summary: `
   <ul>
     <li><b>Function</b> : គឺជារូបមន្ត ឬអនុគមន៍ដែលមានស្រាប់ប្រើសម្រាប់ដោះស្រាយបញ្ហា</li>
-    <li>Function មាន 2 ប្រភេទ :
-      <ul>
-        <li><b>Pre-Build Function</b> : អនុគមន៍ដែលមានស្រាប់ក្នុងកម្មវិធី</li>
-        <li><b>Writing Function</b> : អនុគមន៍ដែលបង្កើតឡើងដោយអ្នកប្រើប្រាស់</li>
-      </ul>
     </li>
-    <li><b>COUNT</b> : ការគណនាចំនួនទិន្នន័យជាលេខ</li>
-    <li><b>TODAY</b> : បង្ហាញកាលបរិច្ឆេទ (ទម្រង់ខ្លី)</li>
-    <li><b>NOW</b> : បង្ហាញកាលបរិច្ឆេទ និងម៉ោងបច្ចុប្បន្ន (ទម្រង់វែង)</li>
-    <li><b>CONCAT</b> : បញ្ចូលអក្សរពី Cell ជាច្រើនៗចូលគ្នាតែមួយ</li>
+    <li><b>COUNT</b> : រូបមន្ដប្រើសម្រាប់រាប់តម្លៃដែលគិតជាលេខ</li>
+    <li><b>TODAY</b> : រូបមន្ដសម្រាប់រកកាលបរិច្ឆេទ (ទម្រង់ខ្លី)</li>
+    <li><b>NOW</b> : រូបមន្ដសម្រាប់រកកាលបរិច្ឆេទ និងម៉ោងបច្ចុប្បន្ន (ទម្រង់វែង)</li>
+    <li><b>CONCAT</b> : រូបមន្ដប្រើសម្រាប់ភ្ជាប់អត្ថបទពី Cell ជាច្រើនចូលក្នុង Cell តែមួយ</li>
     <li><b>LEN</b> : គណនាចំនួនតួអក្សរ</li>
   </ul>
   `
@@ -2409,6 +2426,9 @@ let lessonsLevel = {
   page: 54,
   summary: `
   <ul>
+    <li><b>Chart or Graphic </b> :គឺជាការបង្ហាញទិន្នន័យពីក្នុងតារាងឱ្យមកជារូបភាព ឬក្រាហ្វិកវិញ ដើម្បីជួយឱ្យយើងងាយស្រួលយល់ ងាយស្រួលមើល និងងាយស្រួលក្នុងការធ្វើការវិភាគទិន្នន័យដែលស្មុគស្មាញ។
+</li>
+<li><b>Chart type </b> : Column, Bar, Line, Pie…</li>
     <li><b>Chart Layouts</b> : ជ្រើសរើសរចនាបថប្លង់ (Layout) សម្រាប់ Chart</li>
     <li><b>Chart Styles</b> : ផ្លាស់ប្តូរពណ៌ និងរចនាបថ (Style) របស់ Chart</li>
     <li><b>Change Chart Type</b> : ផ្លាស់ប្តូរប្រភេទ Chart ទៅជា Column, Bar, Line, Pie… ដោយមិនបង្កើតថ្មី</li>
@@ -2559,7 +2579,7 @@ let lessonsLevel = {
   <ul>
     <li><b>What is a Program?</b>
       <ul>
-        <li>Program គឺជា "សំណុំនៃការណែនាំ" ដែលប្រាប់ឱ្យកុំព្យូទ័រធ្វើកិច្ចការអ្វីមួយ។</li>
+        <li>Program គឺជា "សំណុំនៃការណែនាំ" សម្រាប់បញ្ជាឱ្យកុំព្យូទ័រធ្វើការងារអ្វីមួយតាមលំដាប់លំដោយ</li>
         
       </ul>
     </li>
@@ -2891,14 +2911,14 @@ let lessonsLevel = {
   summary: `
   <ul>
     <li><b>Print (Ctrl + P)</b> : ប្រើសម្រាប់បោះពុម្ពឯកសារ</li>
-    <li><b>Spelling & Grammar (F7)</b> : ប្រើសម្រាប់ពិនិត្យពាក្យត្រូវ ឬ ខុស ហើយអាចកែបាន (ប្រើបានតែភាសា English)</li>
+    <li><b>Spelling & Grammar (F7)</b> : ប្រើសម្រាប់ត្រួតពិនិត្យ "អក្ខរាវិរុទ្ធ" (ការសរសេរខុសតួអក្សរ) និង "វេយ្យាករណ៍"</li>
     <li><b>Thesaurus (Shift + F7)</b> : ប្រើសម្រាប់ស្វែងរកកម្រងពាក្យដែលមានអត្ថន័យដូចគ្នា ដើម្បីធ្វើការកែប្រែ</li>
     <li><b>Find (Ctrl + F)</b> : ប្រើសម្រាប់ស្វែងរកពាក្យ</li>
     <li><b>Replace (Ctrl + H)</b> : ប្រើសម្រាប់ផ្លាស់ប្ដូរពាក្យ</li>
 
     <li><b>Document View</b> : ជាផ្ទាំងសម្រាប់បង្ហាញទម្រង់ឯកសារ
       <ul>
-        <li><b>Print Layout</b> : បង្ហាញទម្រង់ឯកសារអាចកែប្រែបាន</li>
+        <li><b>Print Layout</b> : បង្ហាញទម្រង់ទូទៅរបស់កម្មវិធីជាប្រភេទ</li>
         <li><b>Read Mode / Full Screen Reading</b> : បង្ហាញឯកសារពេញអេក្រង់ ដោយមិនអាចកែប្រែបាន</li>
         <li><b>Web Layout</b> : បង្ហាញឯកសារជាទម្រង់ Webpage</li>
       </ul>
@@ -3285,7 +3305,7 @@ let lessonsLevel = {
       <b>ចំណុចសំខាន់ផ្សេងៗ</b>
       <ul>
         <li><b>Wrap Text</b> : សរសេរអក្សរច្រើននៅក្នុង Cell តែមួយ</li>
-        <li><b>Merge Cells</b> : បញ្ចូល Cell ជាច្រើនឱ្យក្លាយជាមួយ</li>
+        <li><b>Merge Cells</b> : បញ្ចូល Cell ជាច្រើនឱ្យក្លាយជា Cell ​តែមួយ</li>
         <li><b>Border</b> : ដាក់ ឬដកបន្ទាត់ជុំវិញ Cell</li>
         <li><b>Shading</b> : ដាក់ពណ៌ទៅឱ្យផ្ទៃ</li>
       </ul>
@@ -3498,7 +3518,7 @@ let lessonsLevel = {
     <li><b>Animation Pane</b>: ប្រើសម្រាប់គ្រប់គ្រង រៀបលំដាប់លំដោយ និងកំណត់ពេលវេលានៃចលនា (Animation) ទាំងអស់ដែលមាននៅក្នុងស្លាយ។</li>
     <li>កំណត់ការចាប់ផ្ដើម (Start Options): ប្អូនអាចជ្រើសរើសបាន ៣ បែប:</li>
     <ul><li>On Click: ចលនានឹងដើរនៅពេលយើងចុច Mouse</li>
-    <li>With Previous: ចលនាដើរស្របពេលជាមួយចលនាមុនវា</li>
+    <li>With Previous: ប្រើសម្រាប់ដំណើរការចលនាមុន។</li>
     <li>After Previous: ចលនាដើរដោយស្វ័យប្រវត្តិ បន្ទាប់ពីចលនាមុនដើរចប់</li></ul>
     <li><b>Trigger</b>: ប្រើសម្រាប់កំណត់ឱ្យចលនា (Animation) ដំណើរការបាន លុះត្រាតែយើងចុចចំលើ Object ណាមួយដែលបានកំណត់</li
 
@@ -4792,7 +4812,7 @@ let lessonsLevel = {
   "title": "Science Projects",
   "page": 124,
   "summary": `
-  <h4>🔹 គោលបំណងមេរៀន</h4>
+  <h4> គោលបំណងមេរៀន</h4>
   <ul>
     <li>ឲ្យសិស្សយល់ពី <b>Science Project</b> និងសារៈសំខាន់ៗទាក់ទងនិងផ្នែកវិទ្យាសាស្រ</li>
     <li>អភិវឌ្ឍជំនាញ គិតវិទ្យាសាស្ត្រ ការស្រាវជ្រាវ និងការដោះស្រាយបញ្ហា</li>
@@ -4800,7 +4820,7 @@ let lessonsLevel = {
 
   <hr>
 
-  <h4>🔹 Science Project គឺជាអ្វី?</h4>
+  <h4> Science Project គឺជាអ្វី?</h4>
   <p>
     <b>Science Project</b> គឺជា
     គម្រោងស្រាវជ្រាវ
@@ -4814,7 +4834,7 @@ let lessonsLevel = {
 
   <hr>
 
-  <h4>🔹 ជំហានសំខាន់ៗនៃ Science Project</h4>
+  <h4> ជំហានសំខាន់ៗនៃ Science Project</h4>
   <ol>
     <li>
       <b>ជ្រើសរើសប្រធានបទ</b>
@@ -4865,7 +4885,7 @@ let lessonsLevel = {
 
   <hr>
 
-  <h4>🔹 អត្ថប្រយោជន៍នៃ Science Project</h4>
+  <h4> អត្ថប្រយោជន៍នៃ Science Project</h4>
   <ul>
     <li>បង្កើនជំនាញគិត និងការស្រាវជ្រាវ</li>
     <li>បង្កើតភាពច្នៃប្រឌិត</li>
@@ -4875,7 +4895,7 @@ let lessonsLevel = {
 
   <hr>
 
-  <h4>🔹 ឧទាហរណ៍ Science Project</h4>
+  <h4> ឧទាហរណ៍ Science Project</h4>
   <ul>
     <li>ការលូតលាស់រុក្ខជាតិក្នុងលក្ខខណ្ឌផ្សេងៗ</li>
     <li>ផលប៉ះពាល់នៃពន្លឺ ឬទឹក</li>
@@ -4884,7 +4904,7 @@ let lessonsLevel = {
 
   <hr>
 
-  <h4>📌 សរុប</h4>
+  <h4> សរុប</h4>
   <p>
     <b>Science Project</b>
     ជួយឲ្យសិស្សរៀនដោយអនុវត្ត
@@ -6466,14 +6486,9 @@ function editSummary(btn){
   textarea.summernote({
     height: 200,
     toolbar: [
-     /* ['style', ['bold','italic','underline','clear']],
+      ['style', ['bold','italic','underline','clear']],
       ['font', ['fontname','fontsize']],
       ['para', ['ul','ol','paragraph','align']],
-      ['view', ['codeview']]*/
-       ['style', ['bold','italic','underline','clear']], 
-      ['font', ['fontname','fontsize','color']], 
-      ['para', ['ul','ol','paragraph','height','align']], 
-      ['insert', ['link']], 
       ['view', ['codeview']]
     ],
     fontNames: ['Tw Cen MT','Khmer OS Battambang','Arial'],
@@ -6522,4 +6537,3 @@ function saveSummary(level,index,btn){
 
 </body>
 </html>
-
